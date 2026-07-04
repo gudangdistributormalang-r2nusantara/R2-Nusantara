@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2 Nusantara | Official B2B Distributor Portal</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- SweetAlert2 for Professional Modals -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0B1120', // Deeper corporate navy
+                            800: '#111827',
+                            700: '#1E293B',
+                        },
+                        gold: {
+                            300: '#FDE68A',
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(245, 158, 11, 0.15)',
+                        'glow-lg': '0 0 30px rgba(245, 158, 11, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Overrides */
+        body {
+            background-color: #0B1120;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Sleek Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
+
+        /* Hide scrollbar for cart items but keep functionality */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cart Drawer Animation */
+        #cartDrawer {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cart-open { transform: translateX(0) !important; }
+
+        /* Toast Animation */
+        @keyframes slideInUp {
+            from { transform: translate(-50%, 100%); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+        .toast-animate {
+            animation: slideInUp 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Konfigurasi -->
+    <script>
+        const WA_NUMBER = "6285715905079";
+    </script>
+
+    <!-- Overlay Global (for Cart/Modals) -->
+    <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300" onclick="closeCart()"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-40 glass transition-all duration-300 border-b border-white/10" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-navy-900 shadow-glow group-hover:shadow-glow-lg transition-all">
+                        <!-- Professional SVG Logo -->
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 20h.01M7 20h.01M12 20h.01M17 20h.01M22 20h.01M4 15l4-4 4 4 4-4 4 4"></path>
+                            <path d="M4 15V9a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v6"></path>
+                            <path d="M9 5V3m6 2V3"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-black text-xl tracking-wide text-white leading-none">R2 NUSANTARA</span>
+                        <span class="text-[10px] text-gold-400 font-semibold tracking-[0.2em] uppercase">Gudang Distributor</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                    <a href="#katalog" class="hover:text-gold-400 transition-colors">Katalog Produk</a>
+                    <a href="#sistem" class="hover:text-gold-400 transition-colors">Sistem Bisnis</a>
+                    <a href="#kontak" class="hover:text-gold-400 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Cart Button -->
+                    <button onclick="toggleCart()" class="relative p-2 text-slate-300 hover:text-gold-400 transition-colors group">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-navy-900 scale-0 transition-transform origin-center">0</span>
+                    </button>
+                    <!-- WA Button (Desktop) -->
+                    <a href="https://wa.me/6285715905079" target="_blank" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all transform hover:-translate-y-0.5 shadow-[0_4px_15px_rgba(34,197,94,0.3)]">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937 0 3.825-3.113 6.938-6.939 6.938z"/></svg>
+                        Hubungi Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Abstract Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-600/10 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                        Official B2B Distributor
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.1] mb-6">
+                        Mitra <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-600">Terpercaya</span><br>
+                        Distribusi Skala Besar.
+                    </h1>
+                    <p class="text-slate-300 text-lg mb-8 max-w-xl leading-relaxed border-l-4 border-gold-500 pl-4">
+                        Pusat pengadaan produk tembakau resmi. Tersedia 50+ merek ternama dengan sistem pembayaran Escrow (Bayar Setelah Resi) yang menjamin keamanan transaksi Anda 100%.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#katalog" class="bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-900 font-bold px-8 py-4 rounded-xl transition-all shadow-glow flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                            Mulai Belanja Grosir
+                        </a>
+                        <a href="#sistem" class="bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Pelajari Sistem
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Badges -->
+                    <div class="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-6 items-center">
+                        <div class="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            100% Produk Original
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Verified Distributor
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Pengiriman Nasional
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic (Simulated Dashboard/Package visual) -->
+                <div class="hidden lg:block relative reveal" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-gold-500/20 to-transparent rounded-2xl blur-2xl"></div>
+                    <div class="glass-card rounded-2xl p-6 relative z-10 border border-white/10">
+                        <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                            <div class="font-heading font-bold text-lg text-white">Live Status Pengiriman</div>
+                            <span class="flex h-3 w-3 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Simulated Live Feed -->
+                            <div class="flex items-center gap-4 bg-navy-800/50 p-3 rounded-lg border border-white/5">
+                                <div class="w-10 h-10 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">CG</div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">Bpk. Anton - Jakarta</div>
+                                    <div class="text-xs text-slate-400">Order 5 Bal (100 Slop) • <span class="text-green-400">Sedang Dikemas</span></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-navy-800/50 p-3 rounded-lg border border-white/5">
+                                <div class="w-10 h-10 rounded bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">SBY</div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">Toko Makmur - Surabaya</div>
+                                    <div class="text-xs text-slate-400">Order 2 Bal (40 Slop) • <span class="text-blue-400">Diserahkan ke Kurir</span></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-navy-800/50 p-3 rounded-lg border border-white/5">
+                                <div class="w-10 h-10 rounded bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">MKS</div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">CV. Indah Jaya - Makassar</div>
+                                    <div class="text-xs text-slate-400">Order 10 Bal (200 Slop) • <span class="text-emerald-400">Pesanan Selesai</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics Partners -->
+    <section class="py-6 border-y border-white/5 bg-navy-800/50">
+        <div class="max-w-7xl mx-auto px-4 overflow-hidden">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Logistics Text Placeholders to look formal -->
+                <span class="font-heading font-black text-xl italic tracking-tighter">J&T CARGO</span>
+                <span class="font-heading font-bold text-xl uppercase tracking-widest text-blue-400">JNE Trucking</span>
+                <span class="font-heading font-bold text-xl uppercase text-red-500">INDAH LOGISTIK</span>
+                <span class="font-heading font-bold text-xl uppercase text-orange-400">POS INDONESIA</span>
+                <span class="font-heading font-bold text-xl uppercase text-yellow-500">LION PARCEL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistem Bisnis / Keunggulan -->
+    <section id="sistem" class="py-24 bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold text-gold-500 tracking-widest uppercase mb-2">Mengapa R2 Nusantara?</h2>
+                <h3 class="text-3xl md:text-4xl font-heading font-black">Standar B2B Profesional</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl reveal group">
+                    <div class="w-14 h-14 bg-navy-800 rounded-xl border border-white/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl mb-3">Keamanan Transaksi Escrow</h4>
+                    <p class="text-slate-400 leading-relaxed text-sm">Pembayaran ditahan dan hanya dilakukan <b>SETELAH resi pengiriman resmi keluar</b> dari pihak logistik. Kami tidak meminta transfer di awal.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl reveal group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-navy-800 rounded-xl border border-white/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl mb-3">Kapasitas Gudang Besar</h4>
+                    <p class="text-slate-400 leading-relaxed text-sm">Stok puluhan merek selalu sedia. Mampu melayani partai kecil maupun skala distributor agen besar tanpa *indent* atau *pre-order*.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl reveal group relative overflow-hidden" style="transition-delay: 200ms;">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-gold-500/20 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 bg-navy-800 rounded-xl border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors relative z-10">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl mb-3 text-gold-400">Subsidi / Gratis Ongkir</h4>
+                    <p class="text-slate-300 leading-relaxed text-sm relative z-10">Spesial mitra setia: Pembelian minimum <b>1 Bal (20 Slop)</b> otomatis mendapatkan pembebasan biaya kirim (Subsidi Gudang).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk (E-commerce Style) -->
+    <section id="katalog" class="py-24 bg-navy-800 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6 reveal">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black mb-3">Market Grosir</h2>
+                    <p class="text-slate-400 text-sm md:text-base">Pilih produk dan masukkan ke keranjang PO Anda. Harga tertera adalah per-Slop.</p>
+                </div>
+                
+                <!-- Filter & Search -->
+                <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+                    <div class="relative w-full sm:w-64">
+                        <input type="text" id="searchInput" placeholder="Cari nama produk..." class="w-full bg-navy-900 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors placeholder:text-slate-500">
+                        <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <select id="sortSelect" class="w-full sm:w-40 bg-navy-900 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 appearance-none cursor-pointer">
+                        <option value="default">Urutan Default</option>
+                        <option value="name_asc">Nama (A-Z)</option>
+                        <option value="price_asc">Harga Terendah</option>
+                        <option value="price_desc">Harga Tertinggi</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 reveal">
+                <!-- JS will inject product cards here -->
+            </div>
+
+            <div id="noResult" class="hidden text-center py-20">
+                <svg class="w-16 h-16 text-slate-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 class="text-xl font-heading font-bold text-white mb-2">Produk Tidak Ditemukan</h3>
+                <p class="text-slate-400 text-sm">Coba kata kunci lain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Corporate -->
+    <footer id="kontak" class="bg-navy-900 border-t border-white/5 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center text-navy-900 font-heading font-bold text-xl">R2</div>
+                        <span class="font-heading font-black text-xl tracking-wide text-white">NUSANTARA</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Mitra andalan B2B untuk pengadaan dan distribusi produk tembakau ke seluruh wilayah Indonesia. Profesional, aman, dan terpercaya.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center border border-white/10 opacity-50 cursor-not-allowed" title="Instagram">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center border border-white/10 opacity-50 cursor-not-allowed" title="Facebook">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informasi Kontak -->
+                <div class="lg:col-span-1">
+                    <h4 class="font-heading font-bold text-lg mb-6 text-white border-b border-white/10 pb-2 inline-block">Kantor Pusat</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 shrink-0 text-gold-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span class="leading-relaxed">Desa Karangduren,<br>Kec. Pakisaji, Kab. Malang,<br>Jawa Timur 65162</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 shrink-0 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+62 857-1590-5079</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tautan Menu -->
+                <div class="lg:col-span-1">
+                    <h4 class="font-heading font-bold text-lg mb-6 text-white border-b border-white/10 pb-2 inline-block">Bantuan</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Cara Pemesanan</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">FAQ / Tanya Jawab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legalitas & Security -->
+                <div class="lg:col-span-1">
+                    <h4 class="font-heading font-bold text-lg mb-6 text-white border-b border-white/10 pb-2 inline-block">Keamanan</h4>
+                    <div class="bg-navy-800 p-4 rounded-xl border border-white/5 mb-4 flex items-center gap-3">
+                        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div>
+                            <div class="text-xs text-slate-400">Transaksi Dijamin</div>
+                            <div class="text-sm font-bold text-white">100% Aman & Terpercaya</div>
+                        </div>
+                    </div>
+                    <div class="bg-red-900/20 p-4 rounded-xl border border-red-500/20 text-slate-300 text-xs">
+                        <div class="flex items-center gap-2 mb-1 text-white font-bold">
+                            <span class="bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded text-[10px]">18+</span>
+                            Peringatan Usia
+                        </div>
+                        <p class="text-[11px] leading-tight text-slate-400">Hanya untuk 18+. Merokok sebabkan kanker, penyakit jantung, dll.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 R2 Nusantara Distributor. Hak Cipta Dilindungi.</p>
+                <div class="flex gap-4">
+                    <span class="flex items-center gap-1"><svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg> SSL Secured</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer (Right Side) -->
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-navy-900 shadow-2xl z-50 transform translate-x-full border-l border-white/10 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-5 border-b border-white/10 flex justify-between items-center bg-navy-800">
+            <h2 class="font-heading font-bold text-xl flex items-center gap-2">
+                <svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                Purchase Order (PO)
+            </h2>
+            <button onclick="closeCart()" class="text-slate-400 hover:text-white transition-colors p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Cart Items Container -->
+        <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-4 no-scrollbar">
+            <!-- Items injected by JS -->
+            <div class="h-full flex flex-col items-center justify-center text-slate-500 text-center opacity-50">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                <p>PO masih kosong.<br>Silakan pilih produk.</p>
+            </div>
+        </div>
+
+        <!-- Checkout Summary Area -->
+        <div class="bg-navy-800 border-t border-white/10 p-5">
+            <div id="freeShippingAlert" class="hidden mb-4 bg-green-500/10 border border-green-500/20 text-green-400 text-xs px-3 py-2 rounded-lg flex items-center justify-between">
+                <span class="flex items-center gap-1 font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Target 20 Slop Tercapai!</span>
+                <span class="font-bold">GRATIS ONGKIR</span>
+            </div>
+            
+            <div class="flex justify-between text-sm text-slate-400 mb-2">
+                <span>Total Item (Slop)</span>
+                <span id="cartTotalItems" class="font-bold text-white">0</span>
+            </div>
+            <div class="flex justify-between items-end mb-6">
+                <span class="text-slate-400 text-sm">Estimasi Total</span>
+                <span id="cartTotalPrice" class="font-heading font-bold text-2xl text-gold-400">Rp 0</span>
+            </div>
+            
+            <button onclick="openCheckoutModal()" id="btnProcessPO" disabled class="w-full bg-gold-500 hover:bg-gold-400 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-navy-900 font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2">
+                Proses Pesanan Sekarang
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal Form -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center px-4 py-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeCheckoutModal()"></div>
+        
+        <div class="bg-navy-900 border border-white/10 rounded-2xl w-full max-w-2xl max-h-full overflow-y-auto relative z-10 shadow-2xl">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-navy-800 border-b border-white/10 px-6 py-4 flex justify-between items-center z-20">
+                <h3 class="font-heading font-bold text-xl text-white">Formulir Pengiriman B2B</h3>
+                <button onclick="closeCheckoutModal()" class="text-slate-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <form id="checkoutForm" onsubmit="submitOrder(event)" class="p-6">
+                <!-- Payment Method Information -->
+                <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 mb-6 flex gap-4 items-start">
+                    <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div>
+                        <h4 class="font-bold text-blue-400 text-sm mb-1">Metode Pembayaran: Escrow / Invoice</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Anda tidak perlu mentransfer dana sekarang. Pembayaran dilakukan setelah resi fisik/digital diterbitkan oleh ekspedisi. Form ini akan diteruskan ke sistem WhatsApp Admin.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Nama Lengkap / Toko *</label>
+                        <input type="text" id="co_name" required class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">No. WhatsApp Aktif *</label>
+                        <input type="tel" id="co_phone" required placeholder="08..." class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                    </div>
+                </div>
+                
+                <div class="mb-5">
+                    <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman *</label>
+                    <textarea id="co_address" required rows="3" placeholder="Nama Jalan, No. Rumah, RT/RW, Kel, Kec, Kota/Kab, Provinsi, Kode Pos" class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500"></textarea>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Catatan Ekspedisi / Packing (Opsional)</label>
+                    <input type="text" id="co_notes" placeholder="Misal: Tolong packing kayu, kirim via J&T Cargo" class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                </div>
+
+                <!-- Fixed Footer within Modal -->
+                <div class="pt-5 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <div class="text-sm text-slate-400 text-center sm:text-left">
+                        Total Pembayaran:<br>
+                        <strong class="text-xl text-white font-heading" id="co_totalPrice">Rp 0</strong>
+                    </div>
+                    <button type="submit" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 px-8 rounded-xl flex justify-center items-center gap-2 transition-colors shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+                        Kirim Invoice ke WA
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Status Badge -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-3 pointer-events-none">
+        <div class="bg-white text-navy-900 text-xs font-bold px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2 toast-animate pointer-events-auto">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            Admin Online
+        </div>
+        <a href="https://wa.me/6285715905079" target="_blank" class="bg-gradient-to-tr from-green-500 to-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-glow hover:scale-110 transition-transform pointer-events-auto group">
+            <svg class="w-8 h-8 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937 0 3.825-3.113 6.938-6.939 6.938z"/></svg>
+        </a>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script>
+        // Data Produk Induk (52 Item)
+        const products = [
+            { id: 1, name: "Age Pro", price: 65000 }, { id: 2, name: "Bani Click", price: 85000 },
+            { id: 3, name: "Bigben", price: 80000 }, { id: 4, name: "Booster", price: 80000 },
+            { id: 5, name: "Brand Djati", price: 85000 }, { id: 6, name: "Cahaya Pro", price: 85000 },
+            { id: 7, name: "Cartel", price: 80000 }, { id: 8, name: "Cesa", price: 80000 },
+            { id: 9, name: "Coffee Stick", price: 80000 }, { id: 10, name: "Connext", price: 80000 },
+            { id: 11, name: "Djanda", price: 85000 }, { id: 12, name: "DTE", price: 80000 },
+            { id: 13, name: "ERA", price: 90000 }, { id: 14, name: "Excel Click", price: 85000 },
+            { id: 15, name: "Feloz", price: 85000 }, { id: 16, name: "GA Bold", price: 80000 },
+            { id: 17, name: "Gan Bold", price: 80000 }, { id: 18, name: "Gess Bold", price: 80000 },
+            { id: 19, name: "H&D", price: 85000 }, { id: 20, name: "IB", price: 80000 },
+            { id: 21, name: "Jeco", price: 85000 }, { id: 22, name: "Kalbaco", price: 85000 },
+            { id: 23, name: "King Garet", price: 80000 }, { id: 24, name: "Konser", price: 85000 },
+            { id: 25, name: "Link Bold", price: 80000 }, { id: 26, name: "Liox", price: 80000 },
+            { id: 27, name: "Mami Baru", price: 85000 }, { id: 28, name: "Manchester", price: 90000 },
+            { id: 29, name: "Manggo Top", price: 80000 }, { id: 30, name: "Martel", price: 85000 },
+            { id: 31, name: "MBS", price: 85000 }, { id: 32, name: "Naxan Bold", price: 80000 },
+            { id: 33, name: "Naxan Click", price: 85000 }, { id: 34, name: "Nayan Bold", price: 80000 },
+            { id: 35, name: "Nayan Click", price: 85000 }, { id: 36, name: "Novem", price: 85000 },
+            { id: 37, name: "PMS", price: 85000 }, { id: 38, name: "PS Djeram", price: 70000 },
+            { id: 39, name: "QQ", price: 80000 }, { id: 40, name: "R9 Bold", price: 80000 },
+            { id: 41, name: "Rastel", price: 80000 }, { id: 42, name: "RC", price: 80000 },
+            { id: 43, name: "Rocker", price: 80000 }, { id: 44, name: "Saga", price: 80000 },
+            { id: 45, name: "San Marino", price: 90000 }, { id: 46, name: "Slava", price: 80000 },
+            { id: 47, name: "Smith", price: 75000 }, { id: 48, name: "Stigma", price: 75000 },
+            { id: 49, name: "Tabaco", price: 85000 }, { id: 50, name: "Toracino", price: 80000 },
+            { id: 51, name: "Van Bold", price: 80000 }, { id: 52, name: "Win Click", price: 85000 }
+        ];
+
+        let cart = [];
+        let currentProducts = [...products];
+
+        // Format Currency
+        const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
+
+        // Render Grid Produk
+        function renderGrid(data) {
+            const grid = document.getElementById('productGrid');
+            const noResult = document.getElementById('noResult');
+            grid.innerHTML = '';
+
+            if (data.length === 0) {
+                noResult.classList.remove('hidden');
+            } else {
+                noResult.classList.add('hidden');
+                data.forEach((item) => {
+                    // Create box visual placeholder
+                    const firstLetter = item.name.charAt(0);
+                    
+                    const card = document.createElement('div');
+                    card.className = "bg-navy-900 border border-white/5 rounded-xl overflow-hidden hover:border-gold-500/50 transition-all group flex flex-col shadow-lg";
+                    card.innerHTML = `
+                        <!-- Placeholder Image Area -->
+                        <div class="h-32 bg-gradient-to-br from-navy-800 to-navy-700 relative flex items-center justify-center border-b border-white/5">
+                            <div class="text-4xl font-heading font-black text-white/10 select-none">${firstLetter}</div>
+                            <div class="absolute top-2 right-2 bg-black/50 backdrop-blur text-[10px] px-2 py-1 rounded text-slate-300">Ready</div>
+                        </div>
+                        <!-- Content Area -->
+                        <div class="p-4 flex-1 flex flex-col">
+                            <h3 class="font-bold text-white text-sm md:text-base leading-tight mb-1 truncate" title="${item.name}">${item.name}</h3>
+                            <p class="text-gold-400 font-heading font-bold text-sm md:text-base mb-4">${formatRupiah(item.price)} <span class="text-[10px] text-slate-500 font-normal">/ Slop</span></p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center gap-2">
+                                    <!-- Custom Number Input -->
+                                    <div class="flex items-center bg-navy-800 rounded-lg border border-white/10 w-24">
+                                        <button onclick="decrementQty(${item.id})" class="px-2.5 py-1.5 text-slate-400 hover:text-white">-</button>
+                                        <input type="number" id="qty_${item.id}" value="1" min="1" class="w-full bg-transparent text-center text-sm text-white focus:outline-none no-scrollbar appearance-none m-0" style="-moz-appearance: textfield;">
+                                        <button onclick="incrementQty(${item.id})" class="px-2.5 py-1.5 text-slate-400 hover:text-white">+</button>
+                                    </div>
+                                    
+                                    <!-- Add button -->
+                                    <button onclick="addToCart(${item.id}, '${item.name}', ${item.price})" class="flex-1 bg-gold-500/10 hover:bg-gold-500 text-gold-400 hover:text-navy-900 border border-gold-500/30 font-semibold py-2 rounded-lg text-sm transition-colors flex justify-center items-center">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        // Input Qty Helpers
+        function incrementQty(id) {
+            const input = document.getElementById(`qty_${id}`);
+            input.value = parseInt(input.value) + 1;
+        }
+        function decrementQty(id) {
+            const input = document.getElementById(`qty_${id}`);
+            if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
+        }
+
+        // Filter & Sort Logic
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            currentProducts = products.filter(p => p.name.toLowerCase().includes(term));
+            applySort(); // Re-apply sort if active
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', () => {
+            applySort();
+        });
+
+        function applySort() {
+            const val = document.getElementById('sortSelect').value;
+            let sorted = [...currentProducts];
+            
+            if (val === 'name_asc') sorted.sort((a, b) => a.name.localeCompare(b.name));
+            else if (val === 'price_asc') sorted.sort((a, b) => a.price - b.price);
+            else if (val === 'price_desc') sorted.sort((a, b) => b.price - a.price);
+            else sorted = [...products].filter(p => p.name.toLowerCase().includes(document.getElementById('searchInput').value.toLowerCase())); // Reset to original filtered
+
+            renderGrid(sorted);
+        }
+
+        // --- CART LOGIC ---
+        function addToCart(id, name, price) {
+            const qty = parseInt(document.getElementById(`qty_${id}`).value);
+            
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({ id, name, price, qty });
+            }
+            
+            // SweetAlert Toast Success
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: `${qty} Slop ${name} ditambahkan`,
+                showConfirmButton: false,
+                timer: 2000,
+                background: '#1E293B',
+                color: '#fff',
+                iconColor: '#F59E0B'
+            });
+
+            // Reset input to 1
+            document.getElementById(`qty_${id}`).value = 1;
+            updateCartUI();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartItemQty(id, newQty) {
+            const item = cart.find(i => i.id === id);
+            if(item) {
+                if(newQty < 1) removeFromCart(id);
+                else {
+                    item.qty = newQty;
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItems');
+            const countBadge = document.getElementById('cartCountBadge');
+            const totalItemsEl = document.getElementById('cartTotalItems');
+            const totalPriceEl = document.getElementById('cartTotalPrice');
+            const coTotalPriceEl = document.getElementById('co_totalPrice');
+            const btnProcess = document.getElementById('btnProcessPO');
+            const freeShippingAlert = document.getElementById('freeShippingAlert');
+
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-slate-500 text-center opacity-50 pt-20">
+                        <svg class="w-16 h-16 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <p>PO masih kosong.<br>Silakan pilih produk.</p>
+                    </div>`;
+                btnProcess.disabled = true;
+            } else {
+                btnProcess.disabled = false;
+                container.innerHTML = '';
+                cart.forEach(item => {
+                    totalQty += item.qty;
+                    totalPrice += (item.price * item.qty);
+
+                    container.innerHTML += `
+                        <div class="bg-navy-800 p-3 rounded-xl border border-white/5 flex items-center justify-between gap-3">
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-bold text-white text-sm truncate">${item.name}</h4>
+                                <div class="text-gold-400 text-xs">${formatRupiah(item.price)}</div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="flex items-center bg-navy-900 rounded border border-white/10">
+                                    <button onclick="updateCartItemQty(${item.id}, ${item.qty - 1})" class="px-2 py-1 text-slate-400 hover:text-white">-</button>
+                                    <span class="w-6 text-center text-xs text-white font-medium">${item.qty}</span>
+                                    <button onclick="updateCartItemQty(${item.id}, ${item.qty + 1})" class="px-2 py-1 text-slate-400 hover:text-white">+</button>
+                                </div>
+                                <button onclick="removeFromCart(${item.id})" class="text-slate-500 hover:text-red-500 p-1 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Update Badges & Totals
+            if (totalQty > 0) {
+                countBadge.classList.remove('scale-0');
+                countBadge.innerText = totalQty;
+            } else {
+                countBadge.classList.add('scale-0');
+            }
+
+            totalItemsEl.innerText = `${totalQty} Slop`;
+            totalPriceEl.innerText = formatRupiah(totalPrice);
+            coTotalPriceEl.innerText = formatRupiah(totalPrice);
+
+            // Free Shipping Logic
+            if (totalQty >= 20) {
+                freeShippingAlert.classList.remove('hidden');
+            } else {
+                freeShippingAlert.classList.add('hidden');
+            }
+        }
+
+        // Cart Drawer Controls
+        const overlay = document.getElementById('overlay');
+        const cartDrawer = document.getElementById('cartDrawer');
+        const checkoutModal = document.getElementById('checkoutModal');
+
+        function toggleCart() {
+            if (cartDrawer.classList.contains('cart-open')) closeCart();
+            else openCart();
+        }
+        function openCart() {
+            cartDrawer.classList.add('cart-open');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden'; // prevent bg scroll
+        }
+        function closeCart() {
+            cartDrawer.classList.remove('cart-open');
+            overlay.classList.add('opacity-0');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Checkout Modal Controls
+        function openCheckoutModal() {
+            if(cart.length === 0) return;
+            closeCart();
+            checkoutModal.classList.remove('hidden');
+            setTimeout(() => checkoutModal.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCheckoutModal() {
+            checkoutModal.classList.add('opacity-0');
+            setTimeout(() => {
+                checkoutModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Submit Final Order (Generate Professional WA Invoice)
+        function submitOrder(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('co_name').value;
+            const phone = document.getElementById('co_phone').value;
+            const address = document.getElementById('co_address').value;
+            const notes = document.getElementById('co_notes').value;
+
+            // Generate Item List String
+            let totalSlop = 0;
+            let totalPrice = 0;
+            let itemListText = "";
+            
+            cart.forEach((item, index) => {
+                totalSlop += item.qty;
+                const sub = item.price * item.qty;
+                totalPrice += sub;
+                itemListText += `${index+1}. ${item.name} | ${item.qty} Slop (Rp ${sub.toLocaleString('id-ID')})\n`;
+            });
+
+            // Ongkir Logic string
+            let ongkirText = totalSlop >= 20 ? "*SUBSIDI/GRATIS ONGKIR DARI GUDANG*" : "Menunggu estimasi admin ekspedisi";
+
+            // Generate Professional PO Format
+            const invoiceFormat = `📑 *PURCHASE ORDER (PO) R2 NUSANTARA*
+------------------------------------------------------
+*ID Pesanan:* #PO-${Math.floor(Date.now() / 1000)}
+*Tanggal:* ${new Date().toLocaleDateString('id-ID')}
+
+*DATA PEMESAN:*
+Nama Toko/Penerima: ${name}
+No. HP / WA: ${phone}
+Alamat Pengiriman:
+${address}
+
+*DETAIL PESANAN:*
+${itemListText}
+------------------------------------------------------
+*Total Item:* ${totalSlop} Slop
+*Estimasi Ongkos Kirim:* ${ongkirText}
+*TOTAL PEMBAYARAN:* *${formatRupiah(totalPrice)}*
+
+*Catatan Khusus:* ${notes ? notes : '-'}
+*Sistem Pembayaran:* ESCROW (Bayar setelah resi terbit)
+
+_Mohon admin mengecek ketersediaan stok & menyiapkan dokumentasi packing._ 🙏`;
+
+            const encodedURL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(invoiceFormat)}`;
+            
+            // Show Success Alert before redirect
+            Swal.fire({
+                title: 'Pesanan Dibuat!',
+                text: 'Meneruskan ke WhatsApp Admin...',
+                icon: 'success',
+                background: '#1E293B',
+                color: '#fff',
+                confirmButtonColor: '#F59E0B',
+                timer: 2000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            }).then(() => {
+                window.open(encodedURL, '_blank');
+                // Clear cart after success
+                cart = [];
+                updateCartUI();
+                closeCheckoutModal();
+            });
+        }
+
+        // Initialize Everything
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGrid(products);
+
+            // Sticky Header & Scroll Animations Setup
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 50) {
+                    header.classList.add('shadow-lg', 'bg-navy-900/95');
+                } else {
+                    header.classList.remove('shadow-lg', 'bg-navy-900/95');
+                }
+            });
+
+            // Intersection Observer for scroll reveals
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
