@@ -2,7 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <!-- === META UNTUK THUMBNAIL PREVIEW WHATSAPP / OPEN GRAPH === -->
     <meta property="og:title" content="R2 Nusantara">
@@ -16,19 +16,24 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Gudang Distributor — R2 Nusantara">
 
-    <title>R2 NUSANTARA | Portal Distributor Resmi</title>
-    <meta name="description" content="Portal Distributor & Wholesale Partner R2 NUSANTARA. Gudang Malang, Ready Stock, Pengiriman Nasional.">
+    <title>R2 NUSANTARA | Portal Distributor & Wholesale Resmi</title>
+    <meta name="description" content="Portal Distributor & Wholesale Partner R2 NUSANTARA. Gudang Malang, Ready Stock, Pengiriman Nasional dengan keamanan transaksi terbaik.">
     
-    <!-- Google Fonts: Plus Jakarta Sans for premium corporate look -->
+    <!-- Favicon Fallback -->
+    <link rel="icon" href="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" type="image/jpeg">
+
+    <!-- Google Fonts: Plus Jakarta Sans for a premium, modern corporate look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Tailwind CSS (CDN for Single File requirement) -->
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -38,94 +43,118 @@
                     },
                     colors: {
                         corp: {
-                            blue: '#0B1E36', // Deep Corporate Blue
-                            light: '#1A365D',
-                            accent: '#D4AF37', // Gold Accent
-                            silver: '#E2E8F0',
+                            blue: '#0a192f',     // Deep Executive Blue
+                            light: '#172a45',    // Lighter Blue
+                            gold: '#d4af37',     // Premium Gold Accent
+                            silver: '#f8f9fa',   // Silver/Light Gray
                         }
                     },
                     boxShadow: {
-                        'premium': '0 10px 40px -10px rgba(11,30,54,0.1)',
-                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                        'premium': '0 20px 40px -15px rgba(10, 25, 47, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'float': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
                     }
                 }
             }
         }
     </script>
 
-    <!-- Inline CSS for custom animations & specific styling -->
+    <!-- Custom CSS -->
     <style>
-        /* Base & Scrollbar */
+        /* Base & Resets */
+        body {
+            -webkit-tap-highlight-color: transparent;
+            background-color: #f8f9fa;
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        body { -webkit-tap-highlight-color: transparent; }
 
         /* Watermark Background */
-        .bg-watermark {
+        .watermark-bg {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('https://i.ibb.co.com/hxtcLcNc/IMG-20251224-122739.jpg');
             background-repeat: repeat;
-            background-size: 300px;
-            opacity: 0.04; /* 4% opacity */
+            background-size: 250px;
+            opacity: 0.04; /* 4% as requested */
             z-index: -1;
             pointer-events: none;
         }
 
-        /* Glassmorphism utility */
+        /* Glassmorphism */
         .glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
         
-        .glass-dark {
-            background: rgba(11, 30, 54, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        /* Animations */
+        /* Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0; height: 4px;
+            background: linear-gradient(to right, #d4af37, #f3e5ab);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Preloader */
+        #loader {
+            position: fixed; inset: 0; z-index: 10000;
+            background: #ffffff;
+            display: flex; flex-col; justify-content: center; align-items: center;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+        }
+        .spinner {
+            width: 50px; height: 50px;
+            border: 3px solid rgba(10, 25, 47, 0.1);
+            border-radius: 50%;
+            border-top-color: #0a192f;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Animations (Scroll Reveal) */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
-
-        /* Loader */
-        #loader {
-            position: fixed; inset: 0; z-index: 9999;
-            background: #ffffff;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.5s ease;
-        }
-        .spinner {
-            width: 50px; height: 50px;
-            border: 3px solid rgba(11,30,54,0.1);
-            border-radius: 50%;
-            border-top-color: #0B1E36;
-            animation: spin 1s ease-in-out infinite;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* Scroll Progress */
-        #progress-bar {
-            position: fixed; top: 0; left: 0; height: 4px; background: #D4AF37;
-            width: 0%; z-index: 1000; transition: width 0.1s;
-        }
 
         /* Ripple Effect */
         .ripple {
@@ -135,7 +164,7 @@
             content: ""; display: block; position: absolute;
             width: 100%; height: 100%; top: 0; left: 0;
             pointer-events: none;
-            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-image: radial-gradient(circle, rgba(255,255,255,0.7) 10%, transparent 10.01%);
             background-repeat: no-repeat;
             background-position: 50%; transform: scale(10, 10); opacity: 0;
             transition: transform .5s, opacity 1s;
@@ -144,11 +173,19 @@
             transform: scale(0, 0); opacity: .3; transition: 0s;
         }
 
-        /* Hide Number Input Arrows */
+        /* Form Inputs */
         input[type="number"]::-webkit-inner-spin-button, 
         input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
 
-        /* Offcanvas Cart */
+        /* Cart Drawer */
         #cart-drawer {
             transform: translateX(100%);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -156,131 +193,152 @@
         #cart-drawer.open {
             transform: translateX(0);
         }
-        #cart-overlay {
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        #cart-overlay.open {
-            opacity: 1; pointer-events: auto;
+        
+        /* Mobile Bottom Sheet Cart */
+        @media (max-width: 768px) {
+            #cart-drawer {
+                transform: translateY(100%);
+                width: 100%; max-width: 100%; height: 85vh;
+                bottom: 0; top: auto;
+                border-radius: 24px 24px 0 0;
+            }
+            #cart-drawer.open {
+                transform: translateY(0);
+            }
         }
 
-        /* Product Card Hover */
-        .product-card { transition: all 0.3s ease; }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(11,30,54,0.15);
-            border-color: #D4AF37;
+        /* Product Card */
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #d4af37;
+        }
+
+        /* Accordion */
+        .accordion-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+        }
+        
+        /* Hide element utility */
+        .hidden-safely { display: none !important; }
     </style>
 </head>
-<body class="text-slate-800 antialiased bg-slate-50 relative">
+<body class="text-slate-800 relative pb-20 md:pb-0">
 
-    <!-- Scroll Progress -->
-    <div id="progress-bar"></div>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
 
     <!-- Watermark Background -->
-    <div class="bg-watermark"></div>
+    <div class="watermark-bg"></div>
 
     <!-- Loading Screen -->
-    <div id="loader">
-        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="h-20 mb-6 object-contain rounded-lg shadow-lg">
+    <div id="loader" class="flex flex-col items-center justify-center">
+        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="h-24 w-auto mb-8 rounded-xl shadow-lg object-contain">
         <div class="spinner"></div>
-        <p class="mt-4 text-corp-blue font-semibold tracking-widest text-sm">INITIALIZING PORTAL...</p>
+        <p class="mt-6 text-corp-blue font-bold tracking-[0.2em] text-sm uppercase">Memuat Portal...</p>
     </div>
 
     <!-- Toast Notification Container -->
-    <div id="toast-container" class="fixed top-24 right-4 z-50 flex flex-col gap-2"></div>
+    <div id="toast-container" class="fixed top-24 right-4 sm:right-8 z-[60] flex flex-col gap-3 pointer-events-none"></div>
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 w-full z-40 transition-all duration-300" id="navbar">
-        <div class="glass mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-            <div class="flex justify-between items-center h-20 max-w-7xl mx-auto">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="h-12 w-auto rounded object-contain">
-                    <div class="hidden sm:block">
-                        <h1 class="font-bold text-xl text-corp-blue leading-tight tracking-tight">R2 NUSANTARA</h1>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Wholesale Partner</p>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#keunggulan" class="text-sm font-semibold text-slate-600 hover:text-corp-accent transition-colors">Keunggulan</a>
-                    <a href="#katalog" class="text-sm font-semibold text-slate-600 hover:text-corp-accent transition-colors">Katalog</a>
-                    <a href="#informasi" class="text-sm font-semibold text-slate-600 hover:text-corp-accent transition-colors">Informasi</a>
-                    <a href="#pemesanan" class="text-sm font-semibold text-slate-600 hover:text-corp-accent transition-colors">Pemesanan</a>
-                </nav>
-
-                <!-- Actions -->
-                <div class="flex items-center gap-4">
-                    <button onclick="window.open('https://wa.me/6285715905079', '_blank')" class="hidden sm:flex items-center gap-2 text-sm font-bold text-corp-blue bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full transition-all ripple">
-                        <i class="fa-brands fa-whatsapp text-green-600 text-lg"></i>
-                        Support
-                    </button>
-                    
-                    <button id="cart-btn" class="relative p-2 text-corp-blue hover:text-corp-accent transition-colors group">
-                        <i class="fa-solid fa-cart-shopping text-xl"></i>
-                        <span id="cart-badge" class="absolute top-0 right-0 -mt-1 -mr-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow transform scale-0 transition-transform duration-300">0</span>
-                    </button>
-
-                    <!-- Mobile Menu Toggle -->
-                    <button id="mobile-menu-btn" class="md:hidden p-2 text-corp-blue">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
+    <!-- Success Popup (WhatsApp Redirect) -->
+    <div id="success-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[70] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl transform scale-95 transition-transform duration-300" id="success-modal-content">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <i class="fa-solid fa-check text-4xl text-green-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-corp-blue mb-2">Pesanan Diproses!</h3>
+            <p class="text-slate-600 mb-6 text-sm">Anda akan dialihkan ke WhatsApp untuk konfirmasi pesanan dalam <span id="countdown" class="font-bold text-corp-gold">3</span> detik...</p>
+            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                <div class="bg-green-500 h-full w-0 transition-all duration-3000 ease-linear" id="modal-progress"></div>
             </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-slate-200 absolute w-full shadow-lg">
-            <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="#keunggulan" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-corp-blue hover:bg-slate-50 rounded-md">Keunggulan</a>
-                <a href="#katalog" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-corp-blue hover:bg-slate-50 rounded-md">Katalog</a>
-                <a href="#informasi" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-corp-blue hover:bg-slate-50 rounded-md">Informasi</a>
-                <a href="#pemesanan" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-corp-blue hover:bg-slate-50 rounded-md">Form Pemesanan</a>
+    </div>
+
+    <!-- 1. Header (Sticky) -->
+    <header class="fixed top-0 w-full z-40 transition-all duration-300" id="header">
+        <div class="glass border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20 md:h-24">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="h-12 md:h-14 w-auto rounded object-contain shadow-sm">
+                        <div class="hidden sm:block">
+                            <h1 class="font-extrabold text-xl md:text-2xl text-corp-blue leading-none tracking-tight">R2 NUSANTARA</h1>
+                            <p class="text-[10px] md:text-xs uppercase tracking-widest text-corp-gold font-bold mt-1">Wholesale Partner</p>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Nav -->
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#hero" class="text-sm font-bold text-slate-600 hover:text-corp-gold transition-colors">Beranda</a>
+                        <a href="#keunggulan" class="text-sm font-bold text-slate-600 hover:text-corp-gold transition-colors">Keunggulan</a>
+                        <a href="#katalog" class="text-sm font-bold text-slate-600 hover:text-corp-gold transition-colors">Katalog Grosir</a>
+                        <a href="#sistem-pembayaran" class="text-sm font-bold text-slate-600 hover:text-corp-gold transition-colors">Sistem Pembayaran</a>
+                    </nav>
+
+                    <!-- Actions -->
+                    <div class="flex items-center gap-3">
+                        <button onclick="window.open('https://wa.me/6285715905079', '_blank')" class="hidden md:flex items-center gap-2 bg-slate-100 text-corp-blue border border-slate-200 hover:border-corp-gold hover:bg-white px-5 py-2.5 rounded-full text-sm font-bold transition-all ripple shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-green-600 text-lg"></i> Admin WA
+                        </button>
+                        
+                        <button onclick="openCart()" class="relative p-3 text-corp-blue hover:text-corp-gold transition-colors bg-white rounded-full shadow-sm border border-slate-100 group">
+                            <i class="fa-solid fa-cart-shopping text-xl"></i>
+                            <span id="header-cart-badge" class="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-corp-gold text-white text-[11px] font-bold shadow-md transform scale-0 transition-transform duration-300">0</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-24 lg:pt-0 lg:min-h-screen flex items-center overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 py-12 lg:py-0">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
+    <!-- 2. Hero Section -->
+    <section id="hero" class="relative pt-28 lg:pt-0 lg:min-h-screen flex items-center overflow-hidden bg-white">
+        <!-- Abstract Background Elements -->
+        <div class="absolute top-0 left-0 w-72 h-72 bg-corp-gold rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-72 h-72 bg-corp-blue rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 lg:py-0">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Text -->
                 <div class="reveal">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-corp-blue/10 border border-corp-blue/20 text-corp-blue text-xs font-bold tracking-widest uppercase mb-6">
-                        <i class="fa-solid fa-building-circle-check"></i> B2B Portal Distributor
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-corp-blue/5 border border-corp-blue/10 text-corp-blue text-xs md:text-sm font-bold tracking-wider uppercase mb-6">
+                        <i class="fa-solid fa-crown text-corp-gold"></i> Executive Distributor Portal
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-corp-blue leading-tight mb-6">
-                        Kemitraan <span class="text-transparent bg-clip-text bg-gradient-to-r from-corp-accent to-yellow-600">Premium</span> Distribusi Tembakau.
-                    </h1>
-                    <p class="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
-                        Akses eksklusif untuk agen dan wholesaler. Kami menyediakan suplai produk kualitas terbaik dengan sistem pemesanan dan pengiriman yang sangat aman, transparan, dan profesional.
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-corp-blue leading-[1.1] mb-6">
+                        Kemitraan Distribusi <span class="text-transparent bg-clip-text bg-gradient-to-r from-corp-gold to-yellow-600">Premium</span> Nusantara.
+                    </h2>
+                    <p class="text-slate-600 text-lg md:text-xl mb-8 leading-relaxed max-w-lg">
+                        Solusi logistik dan suplai produk wholesale terpercaya. Gudang pusat Malang, siap kirim nasional dengan keamanan transaksi 100%.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#katalog" class="bg-corp-blue text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-corp-light hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-2 ripple">
-                            Lihat Katalog Grosir <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#sistem-pembayaran" class="bg-white text-corp-blue border border-slate-300 px-8 py-4 rounded-lg font-bold shadow-sm hover:bg-slate-50 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-green-600"></i> Keamanan Transaksi
-                        </a>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="document.getElementById('katalog').scrollIntoView()" class="bg-corp-blue text-white px-8 py-4 rounded-xl font-bold shadow-premium hover:bg-corp-light transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 ripple text-lg">
+                            Mulai Pemesanan <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="document.getElementById('sistem-pembayaran').scrollIntoView()" class="bg-white text-corp-blue border-2 border-slate-200 px-8 py-4 rounded-xl font-bold hover:border-corp-gold hover:bg-slate-50 transition-all flex items-center justify-center gap-3 text-lg">
+                            <i class="fa-solid fa-shield-halved text-corp-gold"></i> Garansi Aman
+                        </button>
                     </div>
                 </div>
 
-                <!-- Image / Visual Content -->
-                <div class="relative lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl reveal delay-200 group">
-                    <div class="absolute inset-0 bg-gradient-to-t from-corp-blue/90 via-corp-blue/40 to-transparent z-10 mix-blend-multiply"></div>
-                    <img src="https://i.ibb.co.com/bq2xSSQ/1750480573786.jpg" alt="R2 Nusantara Warehouse" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <!-- Image with Parallax & Dark Overlay -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl reveal delay-200 animate-float">
+                    <div class="absolute inset-0 bg-corp-blue/30 z-10 mix-blend-overlay"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-corp-blue/90 via-corp-blue/20 to-transparent z-10"></div>
+                    <img src="https://i.ibb.co.com/bq2xSSQ/1750480573786.jpg" alt="Gudang Distributor R2 Nusantara" loading="lazy" class="w-full h-[400px] lg:h-[600px] object-cover scale-105 hover:scale-110 transition-transform duration-1000">
                     
                     <!-- Floating Badge -->
-                    <div class="absolute bottom-6 left-6 right-6 z-20 glass-dark rounded-xl p-4 flex items-center gap-4 text-white">
-                        <div class="w-12 h-12 rounded-full bg-corp-accent/20 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-warehouse text-corp-accent text-xl"></i>
+                    <div class="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 z-20 glass-card rounded-2xl p-5 flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fa-solid fa-warehouse text-corp-blue text-2xl"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-sm">Pusat Distribusi Malang</p>
-                            <p class="text-xs text-slate-300">Ready stock untuk pengiriman nasional.</p>
+                            <p class="font-extrabold text-white text-lg">Gudang Utama Malang</p>
+                            <p class="text-slate-200 text-sm font-medium">Ready Stock Nasional</p>
                         </div>
                     </div>
                 </div>
@@ -288,177 +346,214 @@
         </div>
     </section>
 
-    <!-- Pembayaran Aman Banner (CRUCIAL) -->
-    <section id="sistem-pembayaran" class="py-8 bg-corp-blue relative overflow-hidden">
-        <!-- Abstract shape -->
-        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-corp-accent opacity-20 rounded-full blur-3xl"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-gradient-to-r from-corp-accent to-yellow-600 p-[1px] rounded-2xl reveal">
-                <div class="bg-corp-blue rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div class="flex items-center gap-6">
-                        <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 animate-pulse">
-                            <i class="fa-solid fa-lock text-corp-accent text-2xl"></i>
+    <!-- 7. Sistem Pembayaran (Sangat Jelas & Menonjol) -->
+    <section id="sistem-pembayaran" class="py-12 bg-corp-blue relative overflow-hidden">
+        <!-- Pattern background -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#d4af37 1px, transparent 1px); background-size: 24px 24px;"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+            <div class="bg-gradient-to-br from-corp-gold to-yellow-600 p-[2px] rounded-3xl shadow-float">
+                <div class="bg-corp-blue rounded-[22px] p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 relative">
+                            <div class="absolute inset-0 border-2 border-corp-gold rounded-full animate-ping opacity-20"></div>
+                            <i class="fa-solid fa-shield-check text-corp-gold text-4xl"></i>
                         </div>
                         <div>
-                            <h2 class="text-2xl font-bold text-white mb-1 uppercase tracking-wide">Sistem Pembayaran 100% Aman</h2>
-                            <p class="text-slate-300 text-sm md:text-base">Bayar <strong class="text-white border-b border-corp-accent">SETELAH</strong> nomor resi resmi diterbitkan oleh ekspedisi. <br class="hidden md:block">✅ Bukan COD &nbsp; ✅ Bukan Transfer di Awal</p>
+                            <h2 class="text-xs md:text-sm font-bold text-corp-gold uppercase tracking-widest mb-2">Keamanan Transaksi Terjamin</h2>
+                            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">SISTEM PEMBAYARAN</h3>
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 text-slate-300 font-medium">
+                                <span class="flex items-center justify-center md:justify-start gap-2"><i class="fa-solid fa-xmark text-red-500 text-xl"></i> BUKAN COD</span>
+                                <span class="flex items-center justify-center md:justify-start gap-2"><i class="fa-solid fa-xmark text-red-500 text-xl"></i> BUKAN TRANSFER AWAL</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="#pemesanan" class="whitespace-nowrap px-6 py-3 bg-corp-accent text-corp-blue font-bold rounded-lg hover:bg-white transition-colors ripple shadow-lg">
-                        Buat Pesanan
-                    </a>
+                    <div class="bg-white/10 border border-white/20 p-5 rounded-2xl w-full md:w-auto">
+                        <p class="text-white text-sm md:text-base leading-relaxed text-center font-semibold">
+                            Pembayaran <span class="text-corp-gold border-b-2 border-corp-gold">HANYA DILAKUKAN SETELAH</span><br>
+                            Nomor Resi Resmi diterbitkan oleh Ekspedisi.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Keunggulan Section -->
-    <section id="keunggulan" class="py-20 bg-white">
+    <!-- 3. Keunggulan Distributor -->
+    <section id="keunggulan" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-sm font-bold text-corp-accent uppercase tracking-widest mb-2">Mengapa Memilih Kami</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-corp-blue">Standar Korporat dalam Layanan Distribusi</h3>
+                <h2 class="text-sm font-bold text-corp-gold uppercase tracking-widest mb-3">Keunggulan Kemitraan</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-corp-blue">Standar Korporat Layanan B2B</h3>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-premium transition-all reveal">
-                    <div class="w-14 h-14 rounded-xl bg-corp-blue/5 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-tags text-corp-blue text-2xl"></i>
+                <!-- Data Keunggulan -->
+                <div class="bg-white p-8 rounded-3xl shadow-card hover:shadow-premium transition-all border border-slate-100 reveal group">
+                    <div class="w-16 h-16 rounded-2xl bg-corp-blue text-white flex items-center justify-center mb-6 group-hover:bg-corp-gold transition-colors">
+                        <i class="fa-solid fa-tags text-2xl"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-3">Harga Grosir Kompetitif</h4>
-                    <p class="text-slate-600 leading-relaxed">Penawaran harga terbaik khusus mitra distributor untuk margin keuntungan yang optimal.</p>
+                    <h4 class="text-xl font-bold text-corp-blue mb-3">Harga Grosir</h4>
+                    <p class="text-slate-600">Margin keuntungan maksimal untuk reseller dengan harga dasar distributor resmi termurah.</p>
                 </div>
-                <!-- Card 2 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-premium transition-all reveal delay-100">
-                    <div class="w-14 h-14 rounded-xl bg-corp-blue/5 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-truck-fast text-corp-blue text-2xl"></i>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-card hover:shadow-premium transition-all border border-slate-100 reveal delay-100 group">
+                    <div class="w-16 h-16 rounded-2xl bg-corp-blue text-white flex items-center justify-center mb-6 group-hover:bg-corp-gold transition-colors">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-3">Pengiriman Nasional</h4>
-                    <p class="text-slate-600 leading-relaxed">Jangkauan pengiriman ke seluruh nusantara dengan ekspedisi terpercaya dan asuransi.</p>
+                    <h4 class="text-xl font-bold text-corp-blue mb-3">Pengiriman Nasional</h4>
+                    <p class="text-slate-600">Bekerjasama dengan ekspedisi mayor untuk menjangkau seluruh pelosok nusantara.</p>
                 </div>
-                <!-- Card 3 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-premium transition-all reveal delay-200">
-                    <div class="w-14 h-14 rounded-xl bg-corp-blue/5 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-boxes-stacked text-corp-blue text-2xl"></i>
+
+                <div class="bg-white p-8 rounded-3xl shadow-card hover:shadow-premium transition-all border border-slate-100 reveal delay-200 group">
+                    <div class="w-16 h-16 rounded-2xl bg-corp-blue text-white flex items-center justify-center mb-6 group-hover:bg-corp-gold transition-colors">
+                        <i class="fa-solid fa-boxes-stacked text-2xl"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-3">Gudang Ready Stock</h4>
-                    <p class="text-slate-600 leading-relaxed">Ketersediaan barang terjamin di pusat distribusi kami, siap dikirim kapan saja.</p>
+                    <h4 class="text-xl font-bold text-corp-blue mb-3">Gudang Ready Stock</h4>
+                    <p class="text-slate-600">Ribuan stok selalu tersedia di Gudang Malang. Tidak perlu pre-order, siap kirim hari ini.</p>
                 </div>
-                <!-- Card 4 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-premium transition-all reveal">
-                    <div class="w-14 h-14 rounded-xl bg-corp-blue/5 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-file-invoice-dollar text-corp-blue text-2xl"></i>
+
+                <div class="bg-white p-8 rounded-3xl shadow-card hover:shadow-premium transition-all border border-slate-100 reveal group">
+                    <div class="w-16 h-16 rounded-2xl bg-corp-blue text-white flex items-center justify-center mb-6 group-hover:bg-corp-gold transition-colors">
+                        <i class="fa-solid fa-shield-halved text-2xl"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-3">Pembayaran Aman</h4>
-                    <p class="text-slate-600 leading-relaxed">Sistem pembayaran transparan. Transfer hanya dilakukan setelah resi pengiriman valid diterbitkan.</p>
+                    <h4 class="text-xl font-bold text-corp-blue mb-3">Pembayaran Aman</h4>
+                    <p class="text-slate-600">Sistem pembayaran anti penipuan. Transfer setelah barang masuk ekspedisi dan resi keluar.</p>
                 </div>
-                <!-- Card 5 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-premium transition-all reveal delay-100">
-                    <div class="w-14 h-14 rounded-xl bg-corp-blue/5 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-box-open text-corp-blue text-2xl"></i>
+
+                <div class="bg-white p-8 rounded-3xl shadow-card hover:shadow-premium transition-all border border-slate-100 reveal delay-100 group">
+                    <div class="w-16 h-16 rounded-2xl bg-corp-blue text-white flex items-center justify-center mb-6 group-hover:bg-corp-gold transition-colors">
+                        <i class="fa-solid fa-headset text-2xl"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-3">Packing Profesional</h4>
-                    <p class="text-slate-600 leading-relaxed">Standar pengemasan korporat untuk memastikan produk tiba dalam kondisi sempurna.</p>
+                    <h4 class="text-xl font-bold text-corp-blue mb-3">Support Reseller</h4>
+                    <p class="text-slate-600">Layanan pelanggan responsif yang siap mendampingi proses bisnis dan tracking pesanan Anda.</p>
                 </div>
-                <!-- Card 6 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-premium transition-all reveal delay-200">
-                    <div class="w-14 h-14 rounded-xl bg-corp-blue/5 flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-headset text-corp-blue text-2xl"></i>
+
+                <div class="bg-white p-8 rounded-3xl shadow-card hover:shadow-premium transition-all border border-slate-100 reveal delay-200 group">
+                    <div class="w-16 h-16 rounded-2xl bg-corp-blue text-white flex items-center justify-center mb-6 group-hover:bg-corp-gold transition-colors">
+                        <i class="fa-solid fa-box-open text-2xl"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-3">Support Prioritas</h4>
-                    <p class="text-slate-600 leading-relaxed">Layanan pelanggan responsif siap membantu proses pemesanan hingga pelacakan barang.</p>
+                    <h4 class="text-xl font-bold text-corp-blue mb-3">Packing Profesional</h4>
+                    <p class="text-slate-600">Standar keamanan paket tinggi untuk memastikan barang tiba tanpa cacat atau kerusakan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Katalog Produk -->
-    <section id="katalog" class="py-20 bg-slate-50/50">
+    <!-- 4. Daftar Produk -->
+    <section id="katalog" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 reveal">
                 <div>
-                    <h2 class="text-sm font-bold text-corp-accent uppercase tracking-widest mb-2">Katalog Wholesale</h2>
-                    <h3 class="text-3xl font-extrabold text-corp-blue">Daftar Produk & SKU</h3>
+                    <h2 class="text-sm font-bold text-corp-gold uppercase tracking-widest mb-3">Wholesale Catalog</h2>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-corp-blue mb-4">Pilih Produk & SKU</h3>
+                    <p class="text-slate-600 max-w-xl">Daftar harga di bawah adalah harga grosir resmi. Gunakan fitur pencarian untuk menemukan produk dengan cepat.</p>
                 </div>
                 
-                <!-- Search -->
-                <div class="relative w-full md:w-96">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
-                    <input type="text" id="searchInput" placeholder="Cari nama produk..." class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-corp-blue focus:border-transparent shadow-sm bg-white transition-all">
+                <!-- Live Search & Filter -->
+                <div class="w-full lg:w-[400px] flex flex-col gap-4">
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchInput" placeholder="Cari nama rokok..." class="w-full pl-12 pr-4 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-corp-blue focus:border-transparent transition-all font-medium text-slate-700 shadow-sm">
+                    </div>
+                    <!-- Quick filters -->
+                    <div class="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">
+                        <button onclick="filterProducts('all')" class="filter-btn active whitespace-nowrap px-4 py-2 rounded-lg bg-corp-blue text-white text-xs font-bold transition-colors">Semua</button>
+                        <button onclick="filterProducts('click')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold transition-colors">Click</button>
+                        <button onclick="filterProducts('bold')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold transition-colors">Bold</button>
+                        <button onclick="filterProducts('pro')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold transition-colors">Pro</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Product Grid -->
-            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Products dynamically injected here -->
+            <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Dinamis dari JS -->
             </div>
             
-            <div id="no-result" class="hidden text-center py-12">
-                <i class="fa-solid fa-box-open text-slate-300 text-6xl mb-4"></i>
-                <p class="text-slate-500 font-medium text-lg">Produk tidak ditemukan.</p>
+            <div id="no-result" class="hidden text-center py-20 bg-slate-50 rounded-3xl border border-slate-100">
+                <i class="fa-solid fa-magnifying-glass-minus text-5xl text-slate-300 mb-4"></i>
+                <h4 class="text-xl font-bold text-corp-blue">Produk tidak ditemukan</h4>
+                <p class="text-slate-500 mt-2">Coba gunakan kata kunci pencarian yang lain.</p>
             </div>
         </div>
     </section>
 
-    <!-- Informasi Pengiriman -->
-    <section id="informasi" class="py-20 bg-white">
+    <!-- 6. Informasi Pengiriman -->
+    <section id="informasi" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-            <div class="bg-corp-blue rounded-3xl overflow-hidden shadow-2xl">
-                <div class="grid md:grid-cols-2">
-                    <div class="p-10 md:p-16 flex flex-col justify-center text-white relative">
-                        <!-- BG pattern -->
-                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
-                        
+            <div class="bg-white rounded-[32px] overflow-hidden shadow-premium border border-slate-100">
+                <div class="grid lg:grid-cols-5">
+                    <div class="lg:col-span-2 bg-corp-blue p-10 lg:p-14 text-white relative">
+                        <div class="absolute inset-0 opacity-10" style="background-image: url('https://i.ibb.co.com/hxtcLcNc/IMG-20251224-122739.jpg'); background-size: cover; mix-blend-mode: overlay;"></div>
                         <div class="relative z-10">
-                            <h2 class="text-sm font-bold text-corp-accent uppercase tracking-widest mb-4">Logistik & Distribusi</h2>
-                            <h3 class="text-3xl font-bold mb-8 leading-tight">Informasi Pengiriman<br>R2 Nusantara</h3>
+                            <div class="w-12 h-12 rounded-xl bg-corp-gold flex items-center justify-center mb-8">
+                                <i class="fa-solid fa-dolly text-corp-blue text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-extrabold mb-6 leading-tight">Logistik &<br>Distribusi</h3>
+                            <p class="text-slate-300 mb-8 leading-relaxed text-sm">Sistem pengiriman terstruktur untuk memastikan pasokan bisnis Anda tidak pernah terputus.</p>
                             
-                            <ul class="space-y-6">
-                                <li class="flex items-start gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                        <i class="fa-solid fa-location-dot text-corp-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-lg">Pusat Logistik</h4>
-                                        <p class="text-slate-300 text-sm">Gudang Distributor Utama - Malang, Jawa Timur.</p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                        <i class="fa-solid fa-clock text-corp-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-lg">Estimasi Waktu (SLA)</h4>
-                                        <p class="text-slate-300 text-sm">Dalam pulau Jawa: 1-2 hari. Luar pulau: ±2-3 hari kerja tergantung area.</p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-corp-accent/20 border border-corp-accent/30 flex items-center justify-center flex-shrink-0">
-                                        <i class="fa-solid fa-gift text-corp-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-lg text-corp-accent">Promo Khusus</h4>
-                                        <p class="text-slate-200 text-sm">Gratis Ongkir seluruh Indonesia untuk minimal pembelian 1 Bal (20 Slop).</p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="p-6 bg-white/10 border border-white/20 rounded-2xl backdrop-blur-md">
+                                <div class="flex items-center gap-4 mb-2">
+                                    <i class="fa-solid fa-gift text-corp-gold text-2xl"></i>
+                                    <h4 class="font-bold text-lg text-corp-gold">Promo Pengiriman</h4>
+                                </div>
+                                <p class="text-sm font-medium">Gratis Ongkir ke seluruh Indonesia untuk pemesanan minimal <span class="font-bold text-white border-b border-corp-gold">1 Bal (20 Slop)</span>.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-slate-50 p-10 md:p-16 border-l border-slate-200">
-                        <h3 class="text-xl font-bold text-corp-blue mb-6">Mitra Ekspedisi Kami</h3>
-                        <p class="text-slate-600 text-sm mb-8">Kami bekerja sama dengan berbagai penyedia layanan logistik terkemuka untuk memastikan barang Anda sampai dengan aman dan tepat waktu.</p>
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Ekspedisi List (Text based for clean look) -->
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> JNE</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> J&T Express</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> SiCepat</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> POS Indonesia</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> Ninja Express</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> AnterAja</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> Lion Parcel</div>
-                            <div class="bg-white border border-slate-200 py-3 px-4 rounded-lg flex items-center gap-3 font-semibold text-slate-700 shadow-sm"><i class="fa-solid fa-check text-green-500"></i> Indah Cargo</div>
+                    
+                    <div class="lg:col-span-3 p-10 lg:p-14">
+                        <div class="grid sm:grid-cols-2 gap-8 mb-10">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-slate-100 text-corp-blue flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-corp-blue mb-1">Gudang Utama</h4>
+                                    <p class="text-sm text-slate-600">Pusat distribusi berlokasi di Malang, Jawa Timur.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-slate-100 text-corp-blue flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-box-check"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-corp-blue mb-1">Ketersediaan</h4>
+                                    <p class="text-sm text-slate-600">Ready Stock. Barang langsung disiapkan setelah order.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-slate-100 text-corp-blue flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-earth-asia"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-corp-blue mb-1">Cakupan Wilayah</h4>
+                                    <p class="text-sm text-slate-600">Pengiriman Nasional menjangkau seluruh pulau.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-slate-100 text-corp-blue flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-stopwatch"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-corp-blue mb-1">Estimasi SLA</h4>
+                                    <p class="text-sm text-slate-600">Jawa: 1-2 Hari. Luar Pulau: ±2–3 Hari Kerja.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Accordion -->
+                        <h4 class="font-bold text-corp-blue mb-4 border-b border-slate-100 pb-2">Pertanyaan Umum (FAQ)</h4>
+                        <div class="space-y-3">
+                            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold text-slate-700 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+                                    Apakah melayani eceran? <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                                </button>
+                                <div class="accordion-content bg-white">
+                                    <p class="px-5 py-4 text-sm text-slate-600">Mohon maaf, kami khusus melayani mitra distributor dan reseller (Wholesale/Grosir) untuk menjaga harga tetap termurah. Minimal order yang disarankan adalah hitungan slop/bal.</p>
+                                </div>
+                            </div>
+                            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold text-slate-700 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+                                    Bagaimana prosedur pembayarannya? <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                                </button>
+                                <div class="accordion-content bg-white">
+                                    <p class="px-5 py-4 text-sm text-slate-600">Sangat aman. Anda isi form, barang kami packing, kami bawa ke ekspedisi. Setelah pihak ekspedisi menerbitkan resi resmi, resi akan kami kirimkan ke Anda. Anda bisa cek resi tersebut, lalu baru lakukan transfer pembayaran.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -466,77 +561,83 @@
         </div>
     </section>
 
-    <!-- Form Pemesanan (Checkout) -->
-    <section id="pemesanan" class="py-20 bg-slate-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 reveal">
-                <h2 class="text-sm font-bold text-corp-accent uppercase tracking-widest mb-2">Purchase Order</h2>
-                <h3 class="text-3xl font-extrabold text-corp-blue">Formulir Pemesanan</h3>
-                <p class="text-slate-600 mt-3">Lengkapi data di bawah ini. Pesanan akan diteruskan ke WhatsApp resmi kami.</p>
+    <!-- 8. Form Pemesanan -->
+    <section id="pemesanan" class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-sm font-bold text-corp-gold uppercase tracking-widest mb-3">Formulir Order</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-corp-blue">Purchase Order Resmi</h3>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Isi data pengiriman dengan lengkap dan benar. Invoice dan konfirmasi akan diteruskan melalui WhatsApp Admin Official kami.</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-premium border border-slate-200 p-6 md:p-10 reveal">
-                <form id="orderForm" class="space-y-8">
+            <div class="bg-white rounded-3xl shadow-premium border border-slate-100 p-6 md:p-12 reveal delay-100">
+                <form id="orderForm" class="space-y-10">
                     
-                    <!-- Section: Data Diri -->
+                    <!-- Section 1 -->
                     <div>
-                        <h4 class="text-lg font-bold text-corp-blue border-b border-slate-200 pb-2 mb-4 flex items-center gap-2">
-                            <i class="fa-regular fa-id-card"></i> 1. Informasi Penerima
-                        </h4>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-8 h-8 rounded-full bg-corp-blue text-white flex items-center justify-center font-bold text-sm">1</span>
+                            <h4 class="text-xl font-bold text-corp-blue">Informasi Pemesan</h4>
+                        </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Nama Lengkap / Toko *</label>
-                                <input type="text" id="f_nama" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap / Toko <span class="text-red-500">*</span></label>
+                                <input type="text" id="f_nama" required class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Nomor WhatsApp *</label>
-                                <input type="tel" id="f_hp" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all" placeholder="Contoh: 08123456789">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section: Alamat -->
-                    <div>
-                        <h4 class="text-lg font-bold text-corp-blue border-b border-slate-200 pb-2 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-map-location-dot"></i> 2. Alamat Pengiriman
-                        </h4>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Alamat Lengkap (Jalan, RT/RW, No. Rumah) *</label>
-                                <textarea id="f_alamat" rows="2" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all resize-none"></textarea>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Provinsi *</label>
-                                    <input type="text" id="f_provinsi" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Kabupaten / Kota *</label>
-                                    <input type="text" id="f_kota" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Kecamatan *</label>
-                                    <input type="text" id="f_kecamatan" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Kode Pos *</label>
-                                    <input type="number" id="f_kodepos" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section: Pengiriman -->
-                    <div>
-                        <h4 class="text-lg font-bold text-corp-blue border-b border-slate-200 pb-2 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-truck"></i> 3. Preferensi Pengiriman
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Pilih Ekspedisi *</label>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Nomor WhatsApp Aktif <span class="text-red-500">*</span></label>
                                 <div class="relative">
-                                    <select id="f_ekspedisi" required class="w-full appearance-none px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all bg-white">
-                                        <option value="" disabled selected>Pilih Kurir...</option>
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-400">+62</span>
+                                    <input type="tel" id="f_hp" required class="form-input w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none" placeholder="81234567890">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="border-t border-slate-100 pt-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-8 h-8 rounded-full bg-corp-blue text-white flex items-center justify-center font-bold text-sm">2</span>
+                            <h4 class="text-xl font-bold text-corp-blue">Alamat Pengiriman</h4>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap (Jalan, RT/RW, No) <span class="text-red-500">*</span></label>
+                                <textarea id="f_alamat" rows="2" required class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none resize-none"></textarea>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Provinsi <span class="text-red-500">*</span></label>
+                                    <input type="text" id="f_provinsi" required class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Kabupaten / Kota <span class="text-red-500">*</span></label>
+                                    <input type="text" id="f_kota" required class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Kecamatan <span class="text-red-500">*</span></label>
+                                    <input type="text" id="f_kecamatan" required class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Kode Pos <span class="text-red-500">*</span></label>
+                                    <input type="number" id="f_kodepos" required class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="border-t border-slate-100 pt-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-8 h-8 rounded-full bg-corp-blue text-white flex items-center justify-center font-bold text-sm">3</span>
+                            <h4 class="text-xl font-bold text-corp-blue">Pengiriman & Catatan</h4>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Pilih Ekspedisi <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <select id="f_ekspedisi" required class="form-input w-full appearance-none px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none cursor-pointer">
+                                        <option value="" disabled selected>Pilih Kurir Logistik...</option>
                                         <option value="JNE">JNE</option>
                                         <option value="J&T Express">J&T Express</option>
                                         <option value="SiCepat">SiCepat</option>
@@ -547,159 +648,181 @@
                                         <option value="SAP Express">SAP Express</option>
                                         <option value="Indah Cargo">Indah Cargo</option>
                                     </select>
-                                    <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                                    <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Catatan Tambahan (Opsional)</label>
-                                <input type="text" id="f_catatan" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-corp-blue focus:border-transparent outline-none transition-all" placeholder="Misal: Titip di pos satpam">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Catatan Pesanan (Opsional)</label>
+                                <input type="text" id="f_catatan" class="form-input w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none" placeholder="Cth: Packing kayu, atau warna khusus">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Order Summary Box -->
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 mt-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="font-bold text-corp-blue text-lg">Ringkasan Pesanan</h4>
-                            <button type="button" onclick="openCart()" class="text-sm font-semibold text-corp-accent hover:underline">Edit Keranjang</button>
+                    <!-- Summary Box in Form -->
+                    <div class="bg-corp-blue p-6 rounded-2xl text-white mt-8 shadow-xl">
+                        <div class="flex justify-between items-center mb-4 border-b border-white/20 pb-4">
+                            <h4 class="font-bold text-lg"><i class="fa-solid fa-file-invoice mr-2 text-corp-gold"></i> Ringkasan Pesanan</h4>
+                            <button type="button" onclick="openCart()" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-colors">Edit</button>
                         </div>
                         
-                        <div id="form-cart-summary" class="text-slate-600 text-sm space-y-2 mb-4 border-b border-slate-200 pb-4 max-h-40 overflow-y-auto">
-                            <!-- Injected by JS -->
-                            <p class="text-center italic py-2">Keranjang masih kosong.</p>
+                        <div id="form-summary-list" class="text-sm space-y-2 mb-4 max-h-40 overflow-y-auto pr-2 custom-scrollbar text-slate-200">
+                            <!-- JS Inject -->
+                            <p class="text-center italic opacity-70">Keranjang belum diisi.</p>
                         </div>
                         
-                        <div class="flex justify-between items-end">
+                        <div class="flex justify-between items-end pt-4 border-t border-white/20">
                             <div>
-                                <p class="text-sm text-slate-500 font-medium">Total Estimasi Belanja</p>
-                                <p class="text-xs text-slate-400 mt-1">*Belum termasuk ongkir</p>
+                                <p class="text-sm text-slate-300">Total Harga Grosir</p>
+                                <p class="text-[10px] text-corp-gold mt-1">*Belum termasuk ongkir</p>
                             </div>
-                            <p id="form-total-price" class="text-2xl font-bold text-corp-blue">Rp 0</p>
+                            <p id="form-grand-total" class="text-2xl font-extrabold">Rp 0</p>
                         </div>
                     </div>
 
-                    <!-- Submit -->
-                    <button type="submit" class="w-full bg-corp-blue hover:bg-corp-light text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 ripple">
-                        <i class="fa-brands fa-whatsapp text-xl text-green-400"></i> Kirim Pesanan Sekarang
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-corp-gold hover:bg-yellow-500 text-corp-blue font-extrabold text-lg py-5 rounded-2xl shadow-float transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 ripple">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Pesanan ke Admin (WhatsApp)
                     </button>
                     
-                    <p class="text-center text-xs text-slate-500 mt-4 font-medium flex items-center justify-center gap-1">
-                        <i class="fa-solid fa-lock"></i> Data Anda aman. Pembayaran dilakukan <strong class="text-corp-blue">setelah resi terbit</strong>.
-                    </p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-corp-blue text-white pt-16 pb-8 border-t-[4px] border-corp-accent relative overflow-hidden">
-        <!-- Abstract bg footer -->
-        <div class="absolute bottom-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full"><polygon fill="white" points="0,100 100,0 100,100"/></svg>
-        </div>
-
+    <!-- 10. Footer -->
+    <footer class="bg-corp-blue text-white pt-20 pb-24 md:pb-10 border-t-4 border-corp-gold relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand -->
                 <div class="md:col-span-5">
-                    <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="h-16 w-auto rounded bg-white p-1 mb-6 object-contain">
-                    <p class="text-slate-300 mb-6 max-w-sm leading-relaxed">
-                        Portal Distributor Resmi & Wholesale Partner. Menyediakan layanan suplai produk tembakau dengan standar korporat, aman, dan terpercaya.
+                    <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="h-16 w-auto rounded bg-white p-1 mb-6">
+                    <h3 class="text-xl font-bold mb-2">R2 NUSANTARA</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed max-w-sm">
+                        Mitra wholesale dan distributor rokok terpercaya. Menyediakan sistem logistik profesional, aman, dan harga grosir terbaik untuk bisnis Anda.
                     </p>
-                    <div class="flex gap-4">
-                        <!-- Social links placeholder -->
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-corp-accent hover:text-corp-blue transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-corp-accent hover:text-corp-blue transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
                 </div>
                 
+                <!-- Links -->
                 <div class="md:col-span-3">
-                    <h4 class="text-lg font-bold mb-6 text-corp-accent">Tautan Cepat</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#hero" class="text-slate-300 hover:text-white transition-colors">Beranda</a></li>
-                        <li><a href="#keunggulan" class="text-slate-300 hover:text-white transition-colors">Keunggulan Kami</a></li>
-                        <li><a href="#katalog" class="text-slate-300 hover:text-white transition-colors">Katalog Produk</a></li>
-                        <li><a href="#informasi" class="text-slate-300 hover:text-white transition-colors">Info Pengiriman</a></li>
+                    <h4 class="text-lg font-bold text-corp-gold mb-6">Pintasan</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#hero" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#katalog" class="hover:text-white transition-colors">Katalog & Harga</a></li>
+                        <li><a href="#informasi" class="hover:text-white transition-colors">Info Pengiriman</a></li>
+                        <li><a href="#sistem-pembayaran" class="hover:text-white transition-colors">Sistem Pembayaran</a></li>
                     </ul>
                 </div>
                 
+                <!-- Contacts -->
                 <div class="md:col-span-4">
-                    <h4 class="text-lg font-bold mb-6 text-corp-accent">Hubungi Kami</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-slate-400"></i>
-                            <span class="text-slate-300">Gudang Distributor Malang<br>Jawa Timur, Indonesia</span>
+                    <h4 class="text-lg font-bold text-corp-gold mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-5 text-slate-400">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <p class="font-bold text-white mb-1">Gudang Distributor</p>
+                                <p class="text-sm">Malang, Jawa Timur, Indonesia</p>
+                            </div>
                         </li>
-                        <li class="flex items-center gap-3 group cursor-pointer" onclick="copyText('085715905079', 'Nomor WhatsApp')">
-                            <i class="fa-solid fa-phone text-slate-400 group-hover:text-corp-accent transition-colors"></i>
-                            <span class="text-slate-300 group-hover:text-white transition-colors">(+62) 857-1590-5079</span>
-                            <i class="fa-regular fa-copy opacity-0 group-hover:opacity-100 transition-opacity text-xs"></i>
+                        <li class="flex items-center gap-4 cursor-pointer group" onclick="copyText('085715905079', 'WhatsApp')">
+                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-corp-gold group-hover:text-corp-blue transition-colors"><i class="fa-brands fa-whatsapp text-lg"></i></div>
+                            <div>
+                                <p class="font-bold text-white mb-1 group-hover:text-corp-gold transition-colors">(+62) 857-1590-5079</p>
+                                <p class="text-xs flex items-center gap-1"><i class="fa-regular fa-copy"></i> Klik untuk salin</p>
+                            </div>
                         </li>
-                        <li class="flex items-center gap-3 group cursor-pointer" onclick="copyText('gudangdistributormalang@gmail.com', 'Email')">
-                            <i class="fa-solid fa-envelope text-slate-400 group-hover:text-corp-accent transition-colors"></i>
-                            <span class="text-slate-300 group-hover:text-white transition-colors truncate">gudangdistributormalang@gmail.com</span>
-                            <i class="fa-regular fa-copy opacity-0 group-hover:opacity-100 transition-opacity text-xs"></i>
+                        <li class="flex items-center gap-4 cursor-pointer group" onclick="copyText('gudangdistributormalang@gmail.com', 'Email')">
+                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-corp-gold group-hover:text-corp-blue transition-colors"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <p class="font-bold text-white mb-1 group-hover:text-corp-gold transition-colors truncate">gudangdistributormalang@gmail.com</p>
+                                <p class="text-xs flex items-center gap-1"><i class="fa-regular fa-copy"></i> Klik untuk salin</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
                 <p>&copy; <span id="year"></span> R2 NUSANTARA. Hak Cipta Dilindungi.</p>
-                <p>Designed for Corporate Excellence.</p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> Corporate Trusted Portal</p>
             </div>
         </div>
     </footer>
 
-    <!-- Offcanvas Cart (Right Drawer) -->
-    <div id="cart-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50"></div>
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col">
-        <!-- Drawer Header -->
-        <div class="px-6 py-5 border-b border-slate-200 flex justify-between items-center bg-slate-50">
-            <h3 class="font-bold text-xl text-corp-blue flex items-center gap-2">
-                <i class="fa-solid fa-basket-shopping text-corp-accent"></i> Keranjang Pesanan
+    <!-- 5. Shopping Cart Drawer -->
+    <div id="cart-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeCart()"></div>
+    <div id="cart-drawer" class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col">
+        <!-- Header -->
+        <div class="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-white rounded-t-2xl md:rounded-none">
+            <h3 class="font-extrabold text-xl text-corp-blue flex items-center gap-3">
+                <i class="fa-solid fa-cart-flatbed text-corp-gold"></i> Keranjang
+                <span id="drawer-item-count" class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded-md">0 item</span>
             </h3>
-            <button onclick="closeCart()" class="text-slate-400 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-slate-200">
-                <i class="fa-solid fa-xmark text-xl"></i>
+            <button onclick="closeCart()" class="w-10 h-10 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-red-500 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
             </button>
         </div>
         
-        <!-- Drawer Body (Items) -->
-        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
-            <!-- Items injected by JS -->
+        <!-- Items Container -->
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50">
+            <!-- Dinamis via JS -->
         </div>
 
-        <!-- Drawer Footer -->
-        <div class="border-t border-slate-200 p-6 bg-slate-50">
+        <!-- Footer -->
+        <div class="border-t border-slate-200 p-6 bg-white shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
             <div class="flex justify-between items-center mb-2">
-                <span class="text-slate-500 font-medium">Subtotal</span>
-                <span id="cart-subtotal" class="font-semibold text-slate-800">Rp 0</span>
+                <span class="text-slate-500 font-semibold text-sm">Subtotal Produk</span>
+                <span id="cart-subtotal" class="font-bold text-slate-800">Rp 0</span>
             </div>
             <div class="flex justify-between items-center mb-6">
-                <span class="text-lg font-bold text-corp-blue">Total Estimasi</span>
-                <span id="cart-total" class="text-2xl font-bold text-corp-blue">Rp 0</span>
+                <span class="text-lg font-extrabold text-corp-blue">Total Estimasi</span>
+                <span id="cart-total" class="text-2xl font-extrabold text-corp-blue">Rp 0</span>
             </div>
-            <a href="#pemesanan" onclick="closeCart()" class="block w-full bg-corp-blue hover:bg-corp-light text-white text-center font-bold py-4 rounded-xl shadow transition-colors ripple">
-                Lanjut ke Form Pemesanan
-            </a>
-            <p class="text-center text-xs text-slate-400 mt-3">*Biaya ongkir dihitung terpisah oleh admin.</p>
+            <button onclick="checkoutToForm()" class="w-full bg-corp-blue hover:bg-corp-light text-white text-center font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-1 ripple">
+                Lanjut ke Pemesanan
+            </button>
+            <p class="text-center text-xs text-slate-400 mt-4 font-medium"><i class="fa-solid fa-info-circle"></i> Biaya pengiriman dihitung admin saat konfirmasi.</p>
         </div>
     </div>
 
-    <!-- Floating Buttons -->
-    <a href="https://wa.me/6285715905079" target="_blank" class="fixed bottom-6 left-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 transition-all ripple group">
+    <!-- Mobile Bottom Navigation -->
+    <div class="md:hidden fixed bottom-0 w-full bg-white border-t border-slate-200 flex justify-around items-center h-16 z-40 pb-safe shadow-[0_-5px_15px_-10px_rgba(0,0,0,0.1)]">
+        <a href="#hero" class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-corp-blue transition-colors">
+            <i class="fa-solid fa-house text-lg mb-1"></i>
+            <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a href="#katalog" class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-corp-blue transition-colors">
+            <i class="fa-solid fa-box-open text-lg mb-1"></i>
+            <span class="text-[10px] font-bold">Katalog</span>
+        </a>
+        <button onclick="openCart()" class="flex flex-col items-center justify-center w-full h-full text-corp-blue relative">
+            <div class="absolute -top-5 bg-corp-gold w-12 h-12 rounded-full border-4 border-white flex items-center justify-center shadow-lg transform transition-transform active:scale-95">
+                <i class="fa-solid fa-cart-shopping text-white text-lg"></i>
+                <span id="bottom-cart-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm scale-0 transition-transform">0</span>
+            </div>
+            <span class="text-[10px] font-bold mt-7">Cart</span>
+        </button>
+        <a href="#pemesanan" class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-corp-blue transition-colors">
+            <i class="fa-solid fa-file-invoice text-lg mb-1"></i>
+            <span class="text-[10px] font-bold">Order</span>
+        </a>
+    </div>
+
+    <!-- Floating Buttons (Desktop) -->
+    <a href="https://wa.me/6285715905079" target="_blank" class="hidden md:flex fixed bottom-6 left-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full items-center justify-center shadow-float hover:scale-110 transition-transform ripple group">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <span class="absolute left-16 bg-white text-slate-800 text-xs font-bold px-3 py-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Hubungi Admin</span>
+        <span class="absolute left-16 bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Chat Admin Resmi</span>
     </a>
 
-    <button id="back-to-top" class="fixed bottom-6 right-6 z-40 bg-corp-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-all hover:bg-corp-light transform translate-y-4">
-        <i class="fa-solid fa-arrow-up"></i>
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-40 bg-corp-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-float opacity-0 pointer-events-none transition-all duration-300 hover:bg-corp-gold hover:text-corp-blue transform translate-y-4">
+        <i class="fa-solid fa-chevron-up"></i>
     </button>
 
 
-    <!-- Javascript Application Logic -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // --- 1. PRODUCT DATA ---
-        const productsData = [
+        // 1. Data Produk (52 SKU sesuai instruksi, no data altered)
+        const rawProducts = [
             { id: 1, name: "Age Pro", price: 65000 },
             { id: 2, name: "Bani Click", price: 85000 },
             { id: 3, name: "Bigben", price: 80000 },
@@ -754,33 +877,37 @@
             { id: 52, name: "Win Click", price: 85000 }
         ];
 
-        // --- 2. STATE ---
+        // 2. Global State
         let cart = [];
+        let currentProducts = [...rawProducts];
 
-        // --- 3. UTILITIES ---
-        const formatRupiah = (angka) => {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+        // 3. Helper Functions
+        const formatRupiah = (number) => {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
         };
 
         const showToast = (message, type = 'success') => {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             
-            const bgColor = type === 'success' ? 'bg-green-500' : (type === 'error' ? 'bg-red-500' : 'bg-corp-blue');
-            const icon = type === 'success' ? 'fa-check-circle' : (type === 'error' ? 'fa-circle-xmark' : 'fa-info-circle');
+            const styles = type === 'success' 
+                ? 'bg-corp-blue border-l-4 border-corp-gold text-white' 
+                : 'bg-red-500 text-white';
+            
+            const icon = type === 'success' ? 'fa-check-circle text-corp-gold' : 'fa-circle-exclamation';
 
-            toast.className = `flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg text-white text-sm font-medium transform transition-all duration-300 translate-x-full opacity-0 ${bgColor}`;
-            toast.innerHTML = `<i class="fa-solid ${icon} text-lg"></i> ${message}`;
+            toast.className = `flex items-center gap-3 px-5 py-4 rounded-xl shadow-float transform transition-all duration-300 translate-x-full opacity-0 ${styles}`;
+            toast.innerHTML = `<i class="fa-solid ${icon} text-xl"></i> <span class="font-semibold text-sm">${message}</span>`;
             
             container.appendChild(toast);
             
-            // Animate in
-            setTimeout(() => { toast.classList.remove('translate-x-full', 'opacity-0'); }, 10);
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-x-full', 'opacity-0');
+            });
             
-            // Animate out and remove
             setTimeout(() => {
                 toast.classList.add('translate-x-full', 'opacity-0');
-                setTimeout(() => { toast.remove(); }, 300);
+                setTimeout(() => toast.remove(), 300);
             }, 3000);
         };
 
@@ -790,317 +917,378 @@
             });
         };
 
-        // --- 4. CORE FUNCTIONS (RENDER, CART) ---
-        
-        // Render Products
-        const renderProducts = (productsToRender) => {
+        // 4. Render Logic
+        const renderProducts = (products) => {
             const grid = document.getElementById('productGrid');
             const noResult = document.getElementById('no-result');
+            
             grid.innerHTML = '';
-
-            if (productsToRender.length === 0) {
-                grid.classList.add('hidden');
+            
+            if (products.length === 0) {
+                grid.classList.add('hidden-safely');
                 noResult.classList.remove('hidden');
                 return;
             }
-
-            grid.classList.remove('hidden');
+            
+            grid.classList.remove('hidden-safely');
             noResult.classList.add('hidden');
 
-            productsToRender.forEach((product, index) => {
-                // Determine icon based on name roughly for visual variety (optional, keeping it uniform is also corporate)
-                // Let's stick to a uniform premium box/cube icon
-                
+            products.forEach((product, i) => {
                 const card = document.createElement('div');
-                card.className = `product-card bg-white rounded-xl border border-slate-200 p-5 flex flex-col reveal ${index % 4 === 1 ? 'delay-100' : (index % 4 === 2 ? 'delay-200' : (index % 4 === 3 ? 'delay-300' : ''))}`;
+                // Alternating delay for staggered animation
+                const delayClass = `delay-${(i % 4) * 100}`;
                 
+                card.className = `product-card bg-white rounded-2xl border border-slate-100 p-4 sm:p-5 flex flex-col reveal ${delayClass}`;
                 card.innerHTML = `
                     <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center">
-                            <i class="fa-solid fa-box text-corp-accent/80 text-xl"></i>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center">
+                            <!-- Premium Tobacco Leaf Silhouette using FontAwesome -->
+                            <i class="fa-brands fa-pagelines text-corp-gold text-xl sm:text-2xl transform -rotate-45"></i>
                         </div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-2 py-1 rounded">SKU-${product.id.toString().padStart(3, '0')}</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-1 rounded-md border border-slate-100">SKU-${String(product.id).padStart(3, '0')}</span>
                     </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-lg text-corp-blue mb-1">${product.name}</h4>
-                        <p class="text-corp-accent font-extrabold text-lg">${formatRupiah(product.price)}</p>
+                    <div class="flex-1 mb-4">
+                        <h4 class="font-extrabold text-sm sm:text-base text-corp-blue mb-1 line-clamp-1" title="${product.name}">${product.name}</h4>
+                        <p class="text-corp-gold font-bold text-base sm:text-lg">${formatRupiah(product.price)}</p>
                     </div>
-                    <div class="mt-5 border-t border-slate-100 pt-4">
-                        <button onclick="addToCart(${product.id})" class="w-full py-2.5 rounded-lg border-2 border-corp-blue text-corp-blue font-bold hover:bg-corp-blue hover:text-white transition-colors flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-solid fa-cart-plus"></i> Tambah
-                        </button>
-                    </div>
+                    <button onclick="addToCart(${product.id})" class="w-full py-2.5 rounded-xl border border-corp-blue text-corp-blue font-bold hover:bg-corp-blue hover:text-white transition-all flex items-center justify-center gap-2 text-xs sm:text-sm active:scale-95 group">
+                        <i class="fa-solid fa-cart-plus group-hover:animate-bounce"></i> Tambah
+                    </button>
                 `;
                 grid.appendChild(card);
-                
-                // Trigger reveal immediately for dynamically added elements if they are in viewport
-                setTimeout(() => { card.classList.add('active'); }, 50);
             });
+
+            // Trigger observe for new elements
+            observeReveals();
         };
 
-        // Cart Operations
-        const addToCart = (productId) => {
-            const product = productsData.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
+        // 5. Cart Logic
+        const addToCart = (id) => {
+            const product = rawProducts.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
 
-            if (existingItem) {
-                existingItem.qty += 1;
+            if (existing) {
+                existing.qty++;
             } else {
                 cart.push({ ...product, qty: 1 });
             }
 
             updateCartUI();
-            showToast(`${product.name} ditambahkan ke keranjang.`);
-            
-            // Bounce effect on cart badge
-            const badge = document.getElementById('cart-badge');
-            badge.classList.add('scale-125');
-            setTimeout(() => badge.classList.remove('scale-125'), 200);
+            showToast(`${product.name} dimasukkan ke keranjang`);
+            animateCartBadge();
         };
 
-        const updateQuantity = (productId, delta) => {
-            const itemIndex = cart.findIndex(item => item.id === productId);
-            if (itemIndex > -1) {
-                cart[itemIndex].qty += delta;
-                if (cart[itemIndex].qty <= 0) {
-                    cart.splice(itemIndex, 1);
-                }
+        const updateQty = (id, delta) => {
+            const index = cart.findIndex(item => item.id === id);
+            if (index > -1) {
+                cart[index].qty += delta;
+                if (cart[index].qty <= 0) cart.splice(index, 1);
                 updateCartUI();
             }
         };
 
-        const removeFromCart = (productId) => {
-            cart = cart.filter(item => item.id !== productId);
+        const removeItem = (id) => {
+            cart = cart.filter(item => item.id !== id);
             updateCartUI();
         };
 
         const updateCartUI = () => {
-            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            
+            // Badges
+            const desktopBadge = document.getElementById('header-cart-badge');
+            const mobileBadge = document.getElementById('bottom-cart-badge');
+            const drawerCount = document.getElementById('drawer-item-count');
+            
+            [desktopBadge, mobileBadge].forEach(badge => {
+                badge.innerText = totalQty;
+                if (totalQty > 0) badge.classList.remove('scale-0');
+                else badge.classList.add('scale-0');
+            });
+            drawerCount.innerText = `${totalQty} item`;
 
-            // Update Badge
-            const badge = document.getElementById('cart-badge');
-            badge.innerText = totalItems;
-            if (totalItems > 0) {
-                badge.classList.remove('scale-0');
-            } else {
-                badge.classList.add('scale-0');
-            }
-
-            // Update Drawer
-            const cartItemsContainer = document.getElementById('cart-items');
+            // Drawer Items
+            const itemsContainer = document.getElementById('cart-items');
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="h-full flex flex-col items-center justify-center text-slate-400 space-y-4">
+                itemsContainer.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-slate-400 space-y-4 py-10">
                         <i class="fa-solid fa-cart-arrow-down text-6xl opacity-20"></i>
-                        <p class="font-medium">Keranjang masih kosong</p>
-                        <button onclick="closeCart(); document.getElementById('katalog').scrollIntoView();" class="px-4 py-2 bg-slate-100 text-corp-blue rounded-lg text-sm font-bold hover:bg-slate-200">Belanja Sekarang</button>
+                        <p class="font-bold text-sm">Keranjang kosong</p>
+                        <button onclick="closeCart(); document.getElementById('katalog').scrollIntoView();" class="px-5 py-2 bg-corp-blue text-white rounded-full text-xs font-bold hover:bg-corp-light transition-colors">Lihat Katalog</button>
                     </div>`;
             } else {
-                cartItemsContainer.innerHTML = cart.map(item => `
-                    <div class="flex gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-slate-50 rounded flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-box text-slate-400"></i>
+                itemsContainer.innerHTML = cart.map(item => `
+                    <div class="flex gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm relative group">
+                        <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center flex-shrink-0 border border-slate-100">
+                            <i class="fa-brands fa-pagelines text-slate-300 text-xl transform -rotate-45"></i>
                         </div>
                         <div class="flex-1">
-                            <h5 class="font-bold text-sm text-corp-blue truncate">${item.name}</h5>
-                            <p class="text-corp-accent font-bold text-sm">${formatRupiah(item.price)}</p>
+                            <h5 class="font-bold text-sm text-corp-blue pr-6 line-clamp-1">${item.name}</h5>
+                            <p class="text-corp-gold font-extrabold text-sm mb-3">${formatRupiah(item.price)}</p>
                             
-                            <div class="flex items-center justify-between mt-2">
-                                <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden">
-                                    <button onclick="updateQuantity(${item.id}, -1)" class="w-8 h-7 bg-slate-50 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors"><i class="fa-solid fa-minus text-[10px]"></i></button>
-                                    <span class="w-10 h-7 flex items-center justify-center text-xs font-bold text-slate-800 bg-white">${item.qty}</span>
-                                    <button onclick="updateQuantity(${item.id}, 1)" class="w-8 h-7 bg-slate-50 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center border border-slate-200 rounded-lg bg-slate-50 p-0.5">
+                                    <button onclick="updateQty(${item.id}, -1)" class="w-7 h-7 rounded-md bg-white hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors shadow-sm"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                                    <span class="w-8 text-center text-xs font-bold text-corp-blue">${item.qty}</span>
+                                    <button onclick="updateQty(${item.id}, 1)" class="w-7 h-7 rounded-md bg-white hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors shadow-sm"><i class="fa-solid fa-plus text-[10px]"></i></button>
                                 </div>
-                                <button onclick="removeFromCart(${item.id})" class="text-xs text-red-500 hover:text-red-700 font-semibold"><i class="fa-regular fa-trash-can"></i> Hapus</button>
                             </div>
                         </div>
+                        <button onclick="removeItem(${item.id})" class="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors p-1"><i class="fa-regular fa-trash-can text-sm"></i></button>
                     </div>
                 `).join('');
             }
 
+            // Totals
             document.getElementById('cart-subtotal').innerText = formatRupiah(totalPrice);
             document.getElementById('cart-total').innerText = formatRupiah(totalPrice);
+            document.getElementById('form-grand-total').innerText = formatRupiah(totalPrice);
 
-            // Update Form Summary
-            const formSummary = document.getElementById('form-cart-summary');
+            // Form Summary
+            const formSummary = document.getElementById('form-summary-list');
             if (cart.length === 0) {
-                formSummary.innerHTML = '<p class="text-center italic py-2">Keranjang masih kosong.</p>';
-                document.getElementById('form-total-price').innerText = 'Rp 0';
+                formSummary.innerHTML = '<p class="text-center italic opacity-70">Keranjang belum diisi.</p>';
             } else {
                 formSummary.innerHTML = cart.map(item => `
-                    <div class="flex justify-between items-center">
-                        <span>${item.qty}x ${item.name}</span>
-                        <span class="font-medium">${formatRupiah(item.price * item.qty)}</span>
+                    <div class="flex justify-between items-center py-1 border-b border-white/10 last:border-0">
+                        <span class="truncate pr-4 text-xs font-medium">${item.qty}x ${item.name}</span>
+                        <span class="font-bold text-xs whitespace-nowrap">${formatRupiah(item.price * item.qty)}</span>
                     </div>
                 `).join('');
-                document.getElementById('form-total-price').innerText = formatRupiah(totalPrice);
             }
         };
 
-        // Cart Drawer Control
+        const animateCartBadge = () => {
+            const badges = [document.getElementById('header-cart-badge'), document.getElementById('bottom-cart-badge')];
+            badges.forEach(b => {
+                b.classList.add('scale-125');
+                setTimeout(() => b.classList.remove('scale-125'), 200);
+            });
+        };
+
         const openCart = () => {
             document.getElementById('cart-drawer').classList.add('open');
-            document.getElementById('cart-overlay').classList.add('open');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            const overlay = document.getElementById('cart-overlay');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden'; // Stop bg scroll
         };
+
         const closeCart = () => {
             document.getElementById('cart-drawer').classList.remove('open');
-            document.getElementById('cart-overlay').classList.remove('open');
-            document.body.style.overflow = '';
+            const overlay = document.getElementById('cart-overlay');
+            overlay.classList.remove('opacity-100', 'pointer-events-auto');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = ''; 
         };
 
-        // --- 5. EVENT LISTENERS ---
-
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // Set Year in footer
-            document.getElementById('year').innerText = new Date().getFullYear();
-
-            // Render initial products
-            renderProducts(productsData);
-
-            // Remove Loader
+        const checkoutToForm = () => {
+            closeCart();
             setTimeout(() => {
-                const loader = document.getElementById('loader');
-                loader.style.opacity = '0';
-                setTimeout(() => loader.remove(), 500);
-            }, 800);
+                document.getElementById('pemesanan').scrollIntoView({behavior: 'smooth'});
+                // Focus first input
+                setTimeout(()=> document.getElementById('f_nama').focus(), 800);
+            }, 300);
+        };
 
-            // Search Logic
-            document.getElementById('searchInput').addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase();
-                const filtered = productsData.filter(p => p.name.toLowerCase().includes(term));
-                renderProducts(filtered);
+        // 6. Filter & Search
+        const filterProducts = (type) => {
+            // Update UI buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn whitespace-nowrap px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold transition-colors";
+            });
+            event.target.className = "filter-btn active whitespace-nowrap px-4 py-2 rounded-lg bg-corp-blue text-white text-xs font-bold transition-colors";
+
+            // Reset Search Input
+            document.getElementById('searchInput').value = '';
+
+            if (type === 'all') {
+                currentProducts = [...rawProducts];
+            } else {
+                currentProducts = rawProducts.filter(p => p.name.toLowerCase().includes(type.toLowerCase()));
+            }
+            renderProducts(currentProducts);
+        };
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            // Reset active filter button to "Semua" visual state
+            document.querySelectorAll('.filter-btn').forEach((btn, i) => {
+                btn.className = i===0 ? "filter-btn active whitespace-nowrap px-4 py-2 rounded-lg bg-corp-blue text-white text-xs font-bold transition-colors" : "filter-btn whitespace-nowrap px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold transition-colors";
             });
 
-            // Cart Toggles
-            document.getElementById('cart-btn').addEventListener('click', openCart);
-            document.getElementById('cart-overlay').addEventListener('click', closeCart);
+            const term = e.target.value.toLowerCase();
+            currentProducts = rawProducts.filter(p => p.name.toLowerCase().includes(term));
+            renderProducts(currentProducts);
+        });
 
-            // Mobile Menu Toggle
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            // Close mobile menu on link click
-            document.querySelectorAll('.mobile-link').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-            });
+        // 7. Form Submission (WhatsApp Gateway)
+        document.getElementById('orderForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (cart.length === 0) {
+                showToast('Pilih minimal 1 produk sebelum memesan.', 'error');
+                return;
+            }
 
-            // Form Submit Logic (WhatsApp Gateway)
-            document.getElementById('orderForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                if (cart.length === 0) {
-                    showToast('Keranjang pesanan masih kosong!', 'error');
-                    return;
-                }
-
-                // Gather Data
-                const nama = document.getElementById('f_nama').value;
-                const hp = document.getElementById('f_hp').value;
-                const alamat = document.getElementById('f_alamat').value;
-                const provinsi = document.getElementById('f_provinsi').value;
-                const kota = document.getElementById('f_kota').value;
-                const kecamatan = document.getElementById('f_kecamatan').value;
-                const kodepos = document.getElementById('f_kodepos').value;
-                const ekspedisi = document.getElementById('f_ekspedisi').value;
-                const catatan = document.getElementById('f_catatan').value || '-';
-
-                const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
-                // Format WhatsApp Message
-                let msg = `*PURCHASE ORDER - R2 NUSANTARA*%0A`;
-                msg += `-----------------------------------------%0A`;
-                msg += `*INFORMASI PENERIMA*%0A`;
-                msg += `👤 Nama: ${nama}%0A`;
-                msg += `📞 No. HP: ${hp}%0A`;
-                msg += `📍 Alamat: ${alamat}%0A`;
-                msg += `Kec: ${kecamatan}, Kab/Kota: ${kota}%0A`;
-                msg += `Prov: ${provinsi} - ${kodepos}%0A`;
-                msg += `-----------------------------------------%0A`;
-                msg += `*PENGIRIMAN*%0A`;
-                msg += `🚚 Ekspedisi: ${ekspedisi}%0A`;
-                msg += `📝 Catatan: ${catatan}%0A`;
-                msg += `-----------------------------------------%0A`;
-                msg += `*DAFTAR PESANAN*%0A`;
-                
-                cart.forEach((item, index) => {
-                    msg += `${index+1}. ${item.name} (${item.qty}x) = ${formatRupiah(item.price * item.qty)}%0A`;
-                });
-                
-                msg += `-----------------------------------------%0A`;
-                msg += `*TOTAL ESTIMASI: ${formatRupiah(totalPrice)}*%0A`;
-                msg += `_(Belum termasuk ongkos kirim)_%0A%0A`;
-                msg += `*Saya menyetujui sistem pembayaran transfer setelah resi diterbitkan.*`;
-
-                // Open WhatsApp
-                const waUrl = `https://wa.me/6285715905079?text=${msg}`;
-                window.open(waUrl, '_blank');
-                
-                showToast('Membuka WhatsApp...', 'success');
-            });
-
-            // Scroll Events (Navbar, Progress, BackToTop, Animations)
-            const navbar = document.getElementById('navbar');
-            const backToTopBtn = document.getElementById('back-to-top');
-            const progressBar = document.getElementById('progress-bar');
-
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                const docHeight = document.body.scrollHeight - window.innerHeight;
-                
-                // Progress bar
-                const scrollPercent = (scrollY / docHeight) * 100;
-                progressBar.style.width = scrollPercent + '%';
-
-                // Navbar glass effect
-                if (scrollY > 50) {
-                    navbar.classList.add('shadow-md');
-                    navbar.firstElementChild.classList.add('bg-white/90');
-                } else {
-                    navbar.classList.remove('shadow-md');
-                    navbar.firstElementChild.classList.remove('bg-white/90');
-                }
-
-                // Back to top button
-                if (scrollY > 500) {
-                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-                } else {
-                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-                }
-            });
-
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Intersection Observer for scroll animations (.reveal)
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
+            const data = {
+                nama: document.getElementById('f_nama').value.trim(),
+                hp: document.getElementById('f_hp').value.trim(),
+                alamat: document.getElementById('f_alamat').value.trim(),
+                provinsi: document.getElementById('f_provinsi').value.trim(),
+                kota: document.getElementById('f_kota').value.trim(),
+                kec: document.getElementById('f_kecamatan').value.trim(),
+                pos: document.getElementById('f_kodepos').value.trim(),
+                ekspedisi: document.getElementById('f_ekspedisi').value,
+                catatan: document.getElementById('f_catatan').value.trim() || '-'
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            // Construct WA Message
+            let msg = `*PURCHASE ORDER - R2 NUSANTARA*%0A`;
+            msg += `==============================%0A%0A`;
+            
+            msg += `*🧾 DATA PEMESAN*%0A`;
+            msg += `👤 Nama: ${data.nama}%0A`;
+            msg += `📞 WhatsApp: ${data.hp}%0A%0A`;
+            
+            msg += `*📍 ALAMAT PENGIRIMAN*%0A`;
+            msg += `${data.alamat}%0A`;
+            msg += `Kec. ${data.kec}, Kab/Kota. ${data.kota}%0A`;
+            msg += `Prov. ${data.provinsi} - ${data.pos}%0A%0A`;
+            
+            msg += `*🚚 LOGISTIK*%0A`;
+            msg += `Ekspedisi: ${data.ekspedisi}%0A`;
+            msg += `Catatan: ${data.catatan}%0A%0A`;
+            
+            msg += `*📦 DETAIL PESANAN*%0A`;
+            msg += `------------------------------%0A`;
+            cart.forEach((item, index) => {
+                msg += `${index+1}. ${item.name}%0A   ${item.qty} x ${formatRupiah(item.price)} = ${formatRupiah(item.price * item.qty)}%0A`;
+            });
+            msg += `------------------------------%0A`;
+            msg += `*💰 TOTAL: ${formatRupiah(total)}*%0A`;
+            msg += `_(Total belum termasuk ongkir)_%0A%0A`;
+            msg += `✅ _Saya menyetujui sistem pembayaran dilakukan HANYA setelah resi resmi diterbitkan oleh pihak logistik._`;
+
+            // Show Success Modal before redirecting
+            const modal = document.getElementById('success-modal');
+            const progress = document.getElementById('modal-progress');
+            const countEl = document.getElementById('countdown');
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => document.getElementById('success-modal-content').classList.remove('scale-95'), 10);
+            
+            // Progress Bar Animation
+            requestAnimationFrame(() => {
+                progress.style.width = '100%';
+            });
+
+            let seconds = 3;
+            const timer = setInterval(() => {
+                seconds--;
+                countEl.innerText = seconds;
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    progress.style.width = '0%';
+                    // Open WhatsApp
+                    window.open(`https://wa.me/6285715905079?text=${msg}`, '_blank');
+                    // Reset form and cart (optional, doing it for completeness)
+                    document.getElementById('orderForm').reset();
+                    cart = [];
+                    updateCartUI();
+                }
+            }, 1000);
+        });
+
+        // 8. Intersection Observer (Scroll Reveal)
+        const observeReveals = () => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        // Optional: stop observing once animated
-                        // observer.unobserve(entry.target); 
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-            document.querySelectorAll('.reveal').forEach((el) => {
-                observer.observe(el);
+            document.querySelectorAll('.reveal:not(.active)').forEach(el => observer.observe(el));
+        };
+
+        // 9. Accordion Logic
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Toggle this one
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                }
             });
         });
+
+        // 10. Document Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Copyright Year
+            document.getElementById('year').innerText = new Date().getFullYear();
+
+            // Initial Render
+            renderProducts(rawProducts);
+
+            // Hide Loader after window is fully ready (or 1s min)
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const loader = document.getElementById('loader');
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                    setTimeout(() => loader.remove(), 600);
+                    // Trigger first reveals
+                    document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('active'));
+                }, 800);
+            });
+            
+            // Scroll Events
+            const header = document.getElementById('header');
+            const progress = document.getElementById('scroll-progress');
+            const backToTop = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                
+                // Progress Bar
+                progress.style.width = `${(scrolled / docHeight) * 100}%`;
+
+                // Header Shadow & Blur
+                if (scrolled > 20) {
+                    header.classList.add('shadow-md');
+                    header.firstElementChild.classList.add('bg-white/95');
+                    header.firstElementChild.classList.remove('border-b');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.firstElementChild.classList.remove('bg-white/95');
+                    header.firstElementChild.classList.add('border-b');
+                }
+
+                // Back to Top Button
+                if (scrolled > 500) {
+                    backToTop.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                } else {
+                    backToTop.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                }
+            });
+
+            backToTop.addEventListener('click', () => window.scrollTo(0, 0));
+        });
+
     </script>
 </body>
 </html>
+
 
