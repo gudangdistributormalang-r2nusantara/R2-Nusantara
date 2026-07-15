@@ -3,174 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- === META UNTUK THUMBNAIL PREVIEW WHATSAPP / OPEN GRAPH === -->
-    <meta property="og:title" content="R2 Nusantara">
-    <meta property="og:description" content="Order Sekarang Gratis Ongkir">
+    <meta property="og:title" content="R2 Nusantara — Cigarette Tabaco Shop">
+    <meta property="og:description" content="Order Sekarang — Gratis Ongkir. Sistem Escrow: Bayar Setelah Resi Terbit.">
     <meta property="og:image" content="https://i.ibb.co.com/FbBqkRGb/IMG-20260704-192231.jpg">
-    <meta property="og:url" content="Cigarette Tabaco Shop">
+    <meta property="og:url" content="https://r2nusantara.id">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Gudang Distributor">
+    <meta property="og:site_name" content="R2 Nusantara Distributor">
     <meta property="og:locale" content="id_ID">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Gudang Distributor — R2 Nusantara">
-
     <title>R2 Nusantara | Official B2B Distributor Portal</title>
-    
+
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- SweetAlert2 for Professional Modals -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
 
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        heading: ['Montserrat', 'sans-serif'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
                         body: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
                         navy: {
-                            900: '#0B1120', // Deeper corporate navy
-                            800: '#111827',
-                            700: '#1E293B',
+                            950: '#020817',
+                            900: '#030B1A',
+                            850: '#051025',
+                            800: '#071530',
+                            750: '#0A1A3A',
+                            700: '#0F1F45',
+                            600: '#1A2D55',
                         },
                         gold: {
-                            300: '#FDE68A',
+                            200: '#FDE68A',
+                            300: '#FCD34D',
                             400: '#FBBF24',
                             500: '#F59E0B',
                             600: '#D97706',
+                            700: '#B45309',
+                        },
+                        platinum: {
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                            400: '#94A3B8',
+                            500: '#64748B',
                         }
                     },
                     boxShadow: {
-                        'glow': '0 0 20px rgba(245, 158, 11, 0.15)',
-                        'glow-lg': '0 0 30px rgba(245, 158, 11, 0.3)',
-                    }
+                        'glow-sm': '0 0 15px rgba(245, 158, 11, 0.15)',
+                        'glow': '0 0 25px rgba(245, 158, 11, 0.25)',
+                        'glow-lg': '0 0 40px rgba(245, 158, 11, 0.35)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0,0,0,0.3)',
+                        'card': '0 4px 24px rgba(0,0,0,0.4), 0 1px 2px rgba(255,255,255,0.03)',
+                        'card-hover': '0 12px 36px rgba(0,0,0,0.55), 0 1px 2px rgba(255,255,255,0.06)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 7s ease-in-out 1s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'marquee': 'marquee 35s linear infinite',
+                        'marquee2': 'marquee 35s linear 17.5s infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                    },
                 }
             }
         }
     </script>
 
     <style>
-        /* Custom Styles & Overrides */
+        :root {
+            --bg-primary: #020817;
+            --bg-secondary: #030B1A;
+            --bg-card: #051025;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-medium: rgba(255, 255, 255, 0.1);
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --accent: #F59E0B;
+            --accent-glow: rgba(245, 158, 11, 0.3);
+            --green: #22c55e;
+            --red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #334155 transparent;
+        }
         body {
-            background-color: #0B1120;
-            color: #F8FAFC;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            cursor: default;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
-        h1, h2, h3, h4, h5, h6, .font-heading {
-            font-family: 'Montserrat', sans-serif;
+        ::-webkit-scrollbar {
+            width: 5px;
         }
-
-        /* Sleek Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0B1120; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
-
-        /* Hide scrollbar for cart items but keep functionality */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Glassmorphism utilities */
-        .glass {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+        ::selection {
+            background: rgba(245, 158, 11, 0.4);
+            color: #fff;
         }
 
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #F59E0B;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+        .cursor-ring {
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid rgba(245, 158, 11, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transition: all 0.2s ease;
+            mix-blend-mode: difference;
+        }
+        .cursor-hover .cursor-ring {
+            width: 56px;
+            height: 56px;
+            border-color: #F59E0B;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cursor-dot,
+            .cursor-ring {
+                display: none;
+            }
+        }
+
+        /* Glass Morphism */
+        .glass-panel {
+            background: rgba(5, 16, 37, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
         .glass-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(17, 24, 39, 0.8) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, rgba(10, 26, 58, 0.6) 0%, rgba(3, 11, 26, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.35);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 20px rgba(245, 158, 11, 0.08);
+            transform: translateY(-2px);
         }
 
-        /* Animations */
-        .reveal {
+        /* Tilt Effect */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.1s ease-out;
+        }
+        .tilt-card-inner {
+            transform-style: preserve-3d;
+        }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #0F1F45 25%, #1A2D55 50%, #0F1F45 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.8s ease-in-out infinite;
+            border-radius: 8px;
+        }
+
+        /* Magnetic Button */
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Scroll Progress Bar */
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2.5px;
+            background: linear-gradient(90deg, #F59E0B, #FBBF24, #FDE68A);
+            z-index: 9999;
+            transition: width 0.15s linear;
+            border-radius: 0 2px 2px 0;
+            box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Back to Top */
+        #backToTop {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        #backToTop.hidden-btt {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px) scale(0.8);
+            pointer-events: none;
         }
-        .reveal.active {
+        #backToTop.visible-btt {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
         }
 
-        /* Cart Drawer Animation */
+        /* Cart Drawer */
         #cartDrawer {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .cart-open { transform: translateX(0) !important; }
+        .cart-open {
+            transform: translateX(0) !important;
+        }
 
-        /* Toast Animation */
-        @keyframes slideInUp {
-            from { transform: translate(-50%, 100%); opacity: 0; }
-            to { transform: translate(-50%, 0); opacity: 1; }
+        /* Preloader */
+        #preloader {
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
-        .toast-animate {
-            animation: slideInUp 0.3s ease-out forwards;
+        #preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Animated border */
+        .border-glow-animated {
+            position: relative;
+            overflow: hidden;
+        }
+        .border-glow-animated::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.5), transparent, rgba(245, 158, 11, 0.3));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderRotate 4s linear infinite;
+        }
+        @keyframes borderRotate {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 200% 200%;
+            }
+        }
+
+        /* Toast */
+        .toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 99990;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toast-item {
+            animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(120%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Particle canvas */
+        #particleCanvas {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 640px) {
+            .glass-card:hover {
+                transform: none;
+            }
+            .tilt-card {
+                transform: none !important;
+            }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-gold-500 selection:text-navy-900">
+<body class="antialiased">
 
-    <!-- Konfigurasi -->
-    <script>
-        const WA_NUMBER = "6285715905079";
-    </script>
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[99999] bg-navy-950 flex items-center justify-center transition-all duration-600">
+        <div class="flex flex-col items-center gap-5">
+            <div class="relative w-20 h-20">
+                <svg class="w-20 h-20 animate-spin-slow" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="35" stroke="rgba(245,158,11,0.2)" stroke-width="2" fill="none"/>
+                    <circle cx="40" cy="40" r="35" stroke="url(#preloaderGrad)" stroke-width="2.5" fill="none" stroke-dasharray="220" stroke-dashoffset="60" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="preloaderGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#F59E0B"/>
+                            <stop offset="100%" stop-color="#FDE68A"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center font-heading font-black text-gold-400 text-xl">R2</div>
+            </div>
+            <p class="text-platinum-400 text-sm font-mono tracking-widest animate-pulse-slow">MEMUAT PORTAL</p>
+        </div>
+    </div>
 
-    <!-- Overlay Global (for Cart/Modals) -->
-    <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300" onclick="closeCart()"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" style="width:0%"></div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Announcement Marquee Bar -->
+    <div class="relative z-50 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 border-b border-white/5 overflow-hidden h-9 flex items-center">
+        <div class="flex animate-marquee whitespace-nowrap gap-16 px-8">
+            <span class="text-xs text-gold-300 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Pembelian 1 Bal (20 Slop) — GRATIS ONGKIR ke Seluruh Indonesia</span>
+            <span class="text-xs text-platinum-400 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span> Sistem Escrow — Bayar Setelah Resi Terbit</span>
+            <span class="text-xs text-platinum-400 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> 50+ Merek Tersedia — Stok Gudang Selalu Siap</span>
+            <span class="text-xs text-green-400 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Admin Online 24/7 — Fast Response</span>
+        </div>
+        <div class="flex animate-marquee2 whitespace-nowrap gap-16 px-8 absolute top-0 left-0 h-full items-center">
+            <span class="text-xs text-gold-300 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Pembelian 1 Bal (20 Slop) — GRATIS ONGKIR ke Seluruh Indonesia</span>
+            <span class="text-xs text-platinum-400 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span> Sistem Escrow — Bayar Setelah Resi Terbit</span>
+            <span class="text-xs text-platinum-400 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> 50+ Merek Tersedia — Stok Gudang Selalu Siap</span>
+            <span class="text-xs text-green-400 font-medium tracking-wide flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Admin Online 24/7 — Fast Response</span>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="fixed w-full top-0 z-40 glass transition-all duration-300 border-b border-white/10" id="header">
+    <header id="mainHeader" class="sticky top-0 z-40 glass-panel transition-all duration-500 border-b border-white/5" style="margin-top:0;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-[68px]">
                 <!-- Logo -->
-                <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
-                    <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-navy-900 shadow-glow group-hover:shadow-glow-lg transition-all">
-                        <!-- Professional SVG Logo -->
-                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 20h.01M7 20h.01M12 20h.01M17 20h.01M22 20h.01M4 15l4-4 4 4 4-4 4 4"></path>
-                            <path d="M4 15V9a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v6"></path>
-                            <path d="M9 5V3m6 2V3"></path>
-                        </svg>
+                <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-navy-950 shadow-glow-sm group-hover:shadow-glow transition-all duration-300 relative overflow-hidden">
+                        <span class="font-heading font-black text-lg relative z-10">R2</span>
+                        <div class="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-xl"></div>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-heading font-black text-xl tracking-wide text-white leading-none">R2 NUSANTARA</span>
-                        <span class="text-[10px] text-gold-400 font-semibold tracking-[0.2em] uppercase">Gudang Distributor</span>
+                        <span class="font-heading font-extrabold text-lg tracking-tight text-white leading-none">R2 NUSANTARA</span>
+                        <span class="text-[10px] text-gold-400 font-semibold tracking-[0.25em] uppercase">Gudang Distributor</span>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                    <a href="#katalog" class="hover:text-gold-400 transition-colors">Katalog Produk</a>
-                    <a href="#sistem" class="hover:text-gold-400 transition-colors">Sistem Bisnis</a>
-                    <a href="#kontak" class="hover:text-gold-400 transition-colors">Kontak</a>
+                <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+                    <a href="#katalog" class="px-4 py-2 rounded-lg text-platinum-300 hover:text-gold-400 hover:bg-white/[0.03] transition-all duration-300">Katalog</a>
+                    <a href="#keunggulan" class="px-4 py-2 rounded-lg text-platinum-300 hover:text-gold-400 hover:bg-white/[0.03] transition-all duration-300">Keunggulan</a>
+                    <a href="#testimoni" class="px-4 py-2 rounded-lg text-platinum-300 hover:text-gold-400 hover:bg-white/[0.03] transition-all duration-300">Testimoni</a>
+                    <a href="#faq" class="px-4 py-2 rounded-lg text-platinum-300 hover:text-gold-400 hover:bg-white/[0.03] transition-all duration-300">FAQ</a>
+                    <a href="#kontak" class="px-4 py-2 rounded-lg text-platinum-300 hover:text-gold-400 hover:bg-white/[0.03] transition-all duration-300">Kontak</a>
                 </nav>
 
                 <!-- Actions -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
                     <!-- Cart Button -->
-                    <button onclick="toggleCart()" class="relative p-2 text-slate-300 hover:text-gold-400 transition-colors group">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                        <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-navy-900 scale-0 transition-transform origin-center">0</span>
+                    <button onclick="toggleCart()" class="relative p-2.5 text-platinum-300 hover:text-gold-400 transition-all duration-300 rounded-xl hover:bg-white/[0.04] group magnetic-btn" aria-label="Keranjang">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-navy-900 scale-0 transition-all duration-300 origin-center">0</span>
                     </button>
-                    <!-- WA Button (Desktop) -->
-                    <a href="https://wa.me/6285715905079" target="_blank" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all transform hover:-translate-y-0.5 shadow-[0_4px_15px_rgba(34,197,94,0.3)]">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937 0 3.825-3.113 6.938-6.939 6.938z"/></svg>
+                    <!-- WA Button -->
+                    <a href="https://wa.me/6285715905079" target="_blank" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-[0_4px_20px_rgba(34,197,94,0.4)] hover:-translate-y-0.5 magnetic-btn">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
                         Hubungi Admin
                     </a>
                 </div>
@@ -179,90 +443,95 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Abstract Background Elements -->
+    <section id="hero" class="relative pt-28 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <canvas id="particleCanvas" class="absolute inset-0 z-0"></canvas>
         <div class="absolute inset-0 z-0">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-600/10 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gold-600/8 rounded-full blur-[150px] animate-float"></div>
+            <div class="absolute bottom-1/3 right-1/5 w-[400px] h-[400px] bg-blue-600/6 rounded-full blur-[130px] animate-float-delayed"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/4 rounded-full blur-[180px]"></div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-left reveal">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs font-bold uppercase tracking-wider mb-6">
-                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-                        Official B2B Distributor
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/25 bg-gold-500/8 text-gold-400 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
+                        </span>
+                        Official B2B Distributor — Verified
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.1] mb-6">
-                        Mitra <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-600">Terpercaya</span><br>
-                        Distribusi Skala Besar.
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.08] mb-6 tracking-tight">
+                        Mitra <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-amber-400 to-gold-500">Terpercaya</span><br>
+                        <span class="text-white">Distribusi Skala</span> Besar.
                     </h1>
-                    <p class="text-slate-300 text-lg mb-8 max-w-xl leading-relaxed border-l-4 border-gold-500 pl-4">
-                        Pusat pengadaan produk tembakau resmi. Tersedia 50+ merek ternama dengan sistem pembayaran Escrow (Bayar Setelah Resi) yang menjamin keamanan transaksi Anda 100%.
+                    <p class="text-platinum-300 text-base md:text-lg mb-8 max-w-xl leading-relaxed border-l-[3px] border-gold-500 pl-5 font-medium">
+                        Pusat pengadaan produk tembakau resmi. <strong class="text-white">50+ merek</strong> ternama dengan sistem <em class="text-gold-400 not-italic">Escrow</em> — bayar <u>setelah resi</u> terbit. Aman, transparan, profesional.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#katalog" class="bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-900 font-bold px-8 py-4 rounded-xl transition-all shadow-glow flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="#katalog" class="magnetic-btn bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-950 font-bold px-7 py-3.5 rounded-xl transition-all shadow-glow flex items-center justify-center gap-2 text-sm group">
+                            <svg class="w-5 h-5 group-hover:animate-bounce-gentle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                             Mulai Belanja Grosir
                         </a>
-                        <a href="#sistem" class="bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                        <a href="#keunggulan" class="magnetic-btn bg-white/[0.03] hover:bg-white/[0.07] text-white border border-white/10 font-semibold px-7 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-sm backdrop-blur-sm">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             Pelajari Sistem
                         </a>
                     </div>
-                    
                     <!-- Trust Badges -->
-                    <div class="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-6 items-center">
-                        <div class="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                    <div class="mt-10 pt-8 border-t border-white/8 flex flex-wrap gap-6 items-center">
+                        <div class="flex items-center gap-2 text-sm text-platinum-400 font-medium">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                             100% Produk Original
                         </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                        <div class="flex items-center gap-2 text-sm text-platinum-400 font-medium">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                             Verified Distributor
                         </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                        <div class="flex items-center gap-2 text-sm text-platinum-400 font-medium">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                             Pengiriman Nasional
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Graphic (Simulated Dashboard/Package visual) -->
-                <div class="hidden lg:block relative reveal" style="transition-delay: 200ms;">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-gold-500/20 to-transparent rounded-2xl blur-2xl"></div>
-                    <div class="glass-card rounded-2xl p-6 relative z-10 border border-white/10">
-                        <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-                            <div class="font-heading font-bold text-lg text-white">Live Status Pengiriman</div>
+                <!-- Hero Dashboard Visual -->
+                <div class="hidden lg:block relative" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-gold-500/15 to-transparent rounded-2xl blur-3xl"></div>
+                    <div class="glass-card rounded-2xl p-6 relative z-10 border border-white/8">
+                        <div class="flex justify-between items-center mb-5 border-b border-white/8 pb-4">
+                            <span class="font-heading font-bold text-base text-white tracking-tight">Live Status Pengiriman</span>
                             <span class="flex h-3 w-3 relative">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                             </span>
                         </div>
-                        <div class="space-y-4">
-                            <!-- Simulated Live Feed -->
-                            <div class="flex items-center gap-4 bg-navy-800/50 p-3 rounded-lg border border-white/5">
-                                <div class="w-10 h-10 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">CG</div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">Bpk. Anton - Jakarta</div>
-                                    <div class="text-xs text-slate-400">Order 5 Bal (100 Slop) • <span class="text-green-400">Sedang Dikemas</span></div>
+                        <div class="space-y-3.5">
+                            <div class="flex items-center gap-4 bg-navy-750/60 p-3 rounded-lg border border-white/5 hover:border-white/10 transition-all">
+                                <div class="w-10 h-10 rounded-lg bg-blue-500/15 text-blue-400 flex items-center justify-center font-bold font-mono text-sm">CG</div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-sm font-semibold text-white truncate">Bpk. Anton — Jakarta</div>
+                                    <div class="text-xs text-platinum-500">5 Bal (100 Slop) • <span class="text-green-400 font-medium">Sedang Dikemas</span></div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-4 bg-navy-800/50 p-3 rounded-lg border border-white/5">
-                                <div class="w-10 h-10 rounded bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">SBY</div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">Toko Makmur - Surabaya</div>
-                                    <div class="text-xs text-slate-400">Order 2 Bal (40 Slop) • <span class="text-blue-400">Diserahkan ke Kurir</span></div>
+                            <div class="flex items-center gap-4 bg-navy-750/60 p-3 rounded-lg border border-white/5 hover:border-white/10 transition-all">
+                                <div class="w-10 h-10 rounded-lg bg-purple-500/15 text-purple-400 flex items-center justify-center font-bold font-mono text-sm">SBY</div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-sm font-semibold text-white truncate">Toko Makmur — Surabaya</div>
+                                    <div class="text-xs text-platinum-500">2 Bal (40 Slop) • <span class="text-blue-400 font-medium">Diserahkan Kurir</span></div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-4 bg-navy-800/50 p-3 rounded-lg border border-white/5">
-                                <div class="w-10 h-10 rounded bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">MKS</div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">CV. Indah Jaya - Makassar</div>
-                                    <div class="text-xs text-slate-400">Order 10 Bal (200 Slop) • <span class="text-emerald-400">Pesanan Selesai</span></div>
+                            <div class="flex items-center gap-4 bg-navy-750/60 p-3 rounded-lg border border-white/5 hover:border-white/10 transition-all">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/15 text-gold-400 flex items-center justify-center font-bold font-mono text-sm">MKS</div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-sm font-semibold text-white truncate">CV. Indah Jaya — Makassar</div>
+                                    <div class="text-xs text-platinum-500">10 Bal (200 Slop) • <span class="text-emerald-400 font-medium">Pesanan Selesai ✓</span></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-white/8 flex justify-between text-xs text-platinum-500">
+                            <span>Total Hari Ini: <strong class="text-white">47 Order</strong></span>
+                            <span>Rata-rata Response: <strong class="text-green-400">3 menit</strong></span>
                         </div>
                     </div>
                 </div>
@@ -270,76 +539,79 @@
         </div>
     </section>
 
-    <!-- Logistics Partners -->
-    <section class="py-6 border-y border-white/5 bg-navy-800/50">
-        <div class="max-w-7xl mx-auto px-4 overflow-hidden">
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Logistics Text Placeholders to look formal -->
-                <span class="font-heading font-black text-xl italic tracking-tighter">J&T CARGO</span>
-                <span class="font-heading font-bold text-xl uppercase tracking-widest text-blue-400">JNE Trucking</span>
-                <span class="font-heading font-bold text-xl uppercase text-red-500">INDAH LOGISTIK</span>
-                <span class="font-heading font-bold text-xl uppercase text-orange-400">POS INDONESIA</span>
-                <span class="font-heading font-bold text-xl uppercase text-yellow-500">LION PARCEL</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sistem Bisnis / Keunggulan -->
-    <section id="sistem" class="py-24 bg-navy-900 relative">
+    <!-- Stats Counter Section -->
+    <section class="py-14 bg-navy-850/50 border-y border-white/5 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-bold text-gold-500 tracking-widest uppercase mb-2">Mengapa R2 Nusantara?</h2>
-                <h3 class="text-3xl md:text-4xl font-heading font-black">Standar B2B Profesional</h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="glass-card p-8 rounded-2xl reveal group">
-                    <div class="w-14 h-14 bg-navy-800 rounded-xl border border-white/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h4 class="font-heading font-bold text-xl mb-3">Keamanan Transaksi Escrow</h4>
-                    <p class="text-slate-400 leading-relaxed text-sm">Pembayaran ditahan dan hanya dilakukan <b>SETELAH resi pengiriman resmi keluar</b> dari pihak logistik. Kami tidak meminta transfer di awal.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl md:text-5xl font-heading font-black text-gold-400 mb-2 counter" data-target="12500">0</div>
+                    <p class="text-platinum-400 text-sm font-medium">Order Terkirim</p>
                 </div>
-                
-                <!-- Card 2 -->
-                <div class="glass-card p-8 rounded-2xl reveal group" style="transition-delay: 100ms;">
-                    <div class="w-14 h-14 bg-navy-800 rounded-xl border border-white/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                    <h4 class="font-heading font-bold text-xl mb-3">Kapasitas Gudang Besar</h4>
-                    <p class="text-slate-400 leading-relaxed text-sm">Stok puluhan merek selalu sedia. Mampu melayani partai kecil maupun skala distributor agen besar tanpa *indent* atau *pre-order*.</p>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-heading font-black text-gold-400 mb-2 counter" data-target="52">0</div>
+                    <p class="text-platinum-400 text-sm font-medium">Merek Tersedia</p>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="glass-card p-8 rounded-2xl reveal group relative overflow-hidden" style="transition-delay: 200ms;">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-gold-500/20 rounded-full blur-2xl"></div>
-                    <div class="w-14 h-14 bg-navy-800 rounded-xl border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors relative z-10">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
-                    </div>
-                    <h4 class="font-heading font-bold text-xl mb-3 text-gold-400">Subsidi / Gratis Ongkir</h4>
-                    <p class="text-slate-300 leading-relaxed text-sm relative z-10">Spesial mitra setia: Pembelian minimum <b>1 Bal (20 Slop)</b> otomatis mendapatkan pembebasan biaya kirim (Subsidi Gudang).</p>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-heading font-black text-gold-400 mb-2 counter" data-target="380">0</div>
+                    <p class="text-platinum-400 text-sm font-medium">Mitra Aktif</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-heading font-black text-gold-400 mb-2 counter" data-target="34">0</div>
+                    <p class="text-platinum-400 text-sm font-medium">Provinsi Terjangkau</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Katalog Produk (E-commerce Style) -->
-    <section id="katalog" class="py-24 bg-navy-800 min-h-screen">
+    <!-- Keunggulan Section -->
+    <section id="keunggulan" class="py-24 bg-navy-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6 reveal">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase mb-3 block">Mengapa R2 Nusantara?</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-white">Standar B2B Profesional</h2>
+                <p class="text-platinum-400 mt-3 max-w-xl mx-auto text-sm">Dibangun untuk kepercayaan dan efisiensi bisnis Anda.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-7 rounded-2xl group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 bg-navy-750 rounded-xl border border-white/8 flex items-center justify-center text-gold-400 mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-all duration-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg mb-2 text-white">Keamanan Transaksi Escrow</h4>
+                    <p class="text-platinum-400 text-sm leading-relaxed">Pembayaran ditahan dan hanya dilakukan <b class="text-white">SETELAH resi pengiriman resmi keluar</b> dari pihak logistik. Kami tidak meminta transfer di awal.</p>
+                </div>
+                <div class="glass-card p-7 rounded-2xl group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 bg-navy-750 rounded-xl border border-white/8 flex items-center justify-center text-gold-400 mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-all duration-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg mb-2 text-white">Kapasitas Gudang Besar</h4>
+                    <p class="text-platinum-400 text-sm leading-relaxed">Stok puluhan merek selalu sedia. Mampu melayani partai kecil maupun skala distributor agen besar tanpa <i>indent</i> atau <i>pre-order</i>.</p>
+                </div>
+                <div class="glass-card p-7 rounded-2xl group relative overflow-hidden border-glow-animated" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-navy-750 rounded-xl border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-all duration-400 relative z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg mb-2 text-gold-400 relative z-10">Subsidi / Gratis Ongkir</h4>
+                    <p class="text-platinum-300 text-sm leading-relaxed relative z-10">Spesial mitra setia: Pembelian minimum <b class="text-white">1 Bal (20 Slop)</b> otomatis mendapatkan pembebasan biaya kirim (Subsidi Gudang).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section id="katalog" class="py-24 bg-navy-800 min-h-screen relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6" data-aos="fade-up">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-heading font-black mb-3">Market Grosir</h2>
-                    <p class="text-slate-400 text-sm md:text-base">Pilih produk dan masukkan ke keranjang PO Anda. Harga tertera adalah per-Slop.</p>
+                    <span class="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase mb-2 block">Market Grosir</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black text-white mb-1">Katalog Produk</h2>
+                    <p class="text-platinum-400 text-sm">Harga tertera per <b>Slop</b>. Minimal order fleksibel.</p>
                 </div>
-                
-                <!-- Filter & Search -->
                 <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
-                    <div class="relative w-full sm:w-64">
-                        <input type="text" id="searchInput" placeholder="Cari nama produk..." class="w-full bg-navy-900 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors placeholder:text-slate-500">
-                        <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <div class="relative w-full sm:w-60">
+                        <input type="text" id="searchInput" placeholder="Cari nama produk..." class="w-full bg-navy-900 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all placeholder:text-platinum-500">
+                        <svg class="w-4 h-4 absolute left-3.5 top-3 text-platinum-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
-                    <select id="sortSelect" class="w-full sm:w-40 bg-navy-900 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 appearance-none cursor-pointer">
+                    <select id="sortSelect" class="w-full sm:w-44 bg-navy-900 border border-white/10 rounded-xl py-2.5 px-4 text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 appearance-none cursor-pointer">
                         <option value="default">Urutan Default</option>
                         <option value="name_asc">Nama (A-Z)</option>
                         <option value="price_asc">Harga Terendah</option>
@@ -348,194 +620,265 @@
                 </div>
             </div>
 
+            <!-- Active Filters Chips -->
+            <div id="filterChips" class="flex flex-wrap gap-2 mb-6 hidden"></div>
+
             <!-- Product Grid -->
-            <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 reveal">
-                <!-- JS will inject product cards here -->
+            <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5"></div>
+
+            <!-- Skeleton Loading -->
+            <div id="skeletonGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+                <!-- 10 skeleton cards -->
+                <script>
+                    for (let i = 0; i < 10; i++) {
+                        document.write(`
+                            <div class="bg-navy-900 border border-white/5 rounded-xl overflow-hidden p-4">
+                                <div class="skeleton h-28 w-full mb-3"></div>
+                                <div class="skeleton h-4 w-3/4 mb-2"></div>
+                                <div class="skeleton h-5 w-1/2 mb-3"></div>
+                                <div class="skeleton h-9 w-full rounded-lg"></div>
+                            </div>
+                        `);
+                    }
+                </script>
             </div>
 
             <div id="noResult" class="hidden text-center py-20">
-                <svg class="w-16 h-16 text-slate-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <svg class="w-16 h-16 text-platinum-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <h3 class="text-xl font-heading font-bold text-white mb-2">Produk Tidak Ditemukan</h3>
-                <p class="text-slate-400 text-sm">Coba kata kunci lain.</p>
+                <p class="text-platinum-400 text-sm">Coba kata kunci lain.</p>
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="flex justify-center items-center gap-3 mt-10"></div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-24 bg-navy-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-gold-500/4 rounded-full blur-[120px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <span class="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase mb-3 block">Testimoni Mitra</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-white">Dipercaya Ratusan Pengusaha</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center gap-1 mb-3 text-gold-400">★★★★★</div>
+                    <p class="text-platinum-300 text-sm leading-relaxed mb-4 italic">"Sistem escrow-nya bikin tenang. Barang sampai dulu, baru bayar. Stok selalu ready, nggak pernah kecewa."</p>
+                    <div class="flex items-center gap-3 border-t border-white/6 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">TA</div>
+                        <div>
+                            <div class="text-white font-semibold text-sm">Toko Amanah</div>
+                            <div class="text-platinum-500 text-xs">Jakarta Pusat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center gap-1 mb-3 text-gold-400">★★★★★</div>
+                    <p class="text-platinum-300 text-sm leading-relaxed mb-4 italic">"Gratis ongkir untuk 1 bal itu sangat membantu margin. Respon admin cepat, pengiriman tepat waktu."</p>
+                    <div class="flex items-center gap-3 border-t border-white/6 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-xs">BM</div>
+                        <div>
+                            <div class="text-white font-semibold text-sm">Berkah Makmur</div>
+                            <div class="text-platinum-500 text-xs">Surabaya</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-1 mb-3 text-gold-400">★★★★★</div>
+                    <p class="text-platinum-300 text-sm leading-relaxed mb-4 italic">"Sudah 2 tahun jadi mitra. Harga kompetitif, packing rapi, dan selalu ada diskon untuk order besar."</p>
+                    <div class="flex items-center gap-3 border-t border-white/6 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-xs">CS</div>
+                        <div>
+                            <div class="text-white font-semibold text-sm">CV. Cahaya Sentosa</div>
+                            <div class="text-platinum-500 text-xs">Makassar</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Corporate -->
-    <footer id="kontak" class="bg-navy-900 border-t border-white/5 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Branding -->
-                <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center text-navy-900 font-heading font-bold text-xl">R2</div>
-                        <span class="font-heading font-black text-xl tracking-wide text-white">NUSANTARA</span>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Mitra andalan B2B untuk pengadaan dan distribusi produk tembakau ke seluruh wilayah Indonesia. Profesional, aman, dan terpercaya.
-                    </p>
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center border border-white/10 opacity-50 cursor-not-allowed" title="Instagram">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center border border-white/10 opacity-50 cursor-not-allowed" title="Facebook">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                        </div>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-navy-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <span class="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase mb-3 block">FAQ</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-white">Pertanyaan Umum</h2>
+            </div>
+            <div class="space-y-3">
+                <div class="glass-card rounded-xl overflow-hidden" data-aos="fade-up">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-white text-sm md:text-base hover:text-gold-400 transition-colors" data-target="faq1">
+                        <span>Bagaimana sistem Escrow bekerja?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq1" class="faq-content max-h-0 overflow-hidden transition-all duration-400">
+                        <p class="px-5 pb-5 text-platinum-400 text-sm leading-relaxed">Anda melakukan pemesanan melalui form PO. Setelah kami memproses dan mengirimkan barang, <b>resi pengiriman resmi</b> dari ekspedisi akan kami kirimkan. Pembayaran dilakukan <b>setelah resi tersebut terbit</b>, bukan sebelumnya. Ini menjamin keamanan transaksi Anda 100%.</p>
                     </div>
                 </div>
-
-                <!-- Informasi Kontak -->
-                <div class="lg:col-span-1">
-                    <h4 class="font-heading font-bold text-lg mb-6 text-white border-b border-white/10 pb-2 inline-block">Kantor Pusat</h4>
-                    <ul class="space-y-4 text-sm text-slate-400">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 shrink-0 text-gold-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <span class="leading-relaxed">Desa Karangduren,<br>Kec. Pakisaji, Kab. Malang,<br>Jawa Timur 65162</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 shrink-0 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            <span>+62 857-1590-5079</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Tautan Menu -->
-                <div class="lg:col-span-1">
-                    <h4 class="font-heading font-bold text-lg mb-6 text-white border-b border-white/10 pb-2 inline-block">Bantuan</h4>
-                    <ul class="space-y-3 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Cara Pemesanan</a></li>
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Kebijakan Privasi</a></li>
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">FAQ / Tanya Jawab</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legalitas & Security -->
-                <div class="lg:col-span-1">
-                    <h4 class="font-heading font-bold text-lg mb-6 text-white border-b border-white/10 pb-2 inline-block">Keamanan</h4>
-                    <div class="bg-navy-800 p-4 rounded-xl border border-white/5 mb-4 flex items-center gap-3">
-                        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        <div>
-                            <div class="text-xs text-slate-400">Transaksi Dijamin</div>
-                            <div class="text-sm font-bold text-white">100% Aman & Terpercaya</div>
-                        </div>
+                <div class="glass-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-white text-sm md:text-base hover:text-gold-400 transition-colors" data-target="faq2">
+                        <span>Berapa minimal order untuk gratis ongkir?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq2" class="faq-content max-h-0 overflow-hidden transition-all duration-400">
+                        <p class="px-5 pb-5 text-platinum-400 text-sm leading-relaxed">Pembelian minimum <b>1 Bal = 20 Slop</b> (bisa campur merek) otomatis mendapatkan <b>Subsidi Gratis Ongkir</b> dari gudang kami ke seluruh Indonesia.</p>
                     </div>
-                    <div class="bg-red-900/20 p-4 rounded-xl border border-red-500/20 text-slate-300 text-xs">
-                        <div class="flex items-center gap-2 mb-1 text-white font-bold">
-                            <span class="bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded text-[10px]">18+</span>
-                            Peringatan Usia
-                        </div>
-                        <p class="text-[11px] leading-tight text-slate-400">Hanya untuk 18+. Merokok sebabkan kanker, penyakit jantung, dll.</p>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-white text-sm md:text-base hover:text-gold-400 transition-colors" data-target="faq3">
+                        <span>Apakah produk yang dijual original?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq3" class="faq-content max-h-0 overflow-hidden transition-all duration-400">
+                        <p class="px-5 pb-5 text-platinum-400 text-sm leading-relaxed">Ya, 100%. Kami adalah distributor resmi yang bekerja langsung dengan produsen. Setiap produk dilengkapi dengan pita cukai resmi dan dapat diverifikasi keasliannya.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-white text-sm md:text-base hover:text-gold-400 transition-colors" data-target="faq4">
+                        <span>Ekspedisi apa saja yang digunakan?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq4" class="faq-content max-h-0 overflow-hidden transition-all duration-400">
+                        <p class="px-5 pb-5 text-platinum-400 text-sm leading-relaxed">Kami bermitra dengan J&T Cargo, JNE Trucking, Indah Logistik, Pos Indonesia, dan Lion Parcel. Anda dapat memilih atau kami rekomendasikan yang terbaik untuk lokasi Anda.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-                <p>&copy; 2026 R2 Nusantara Distributor. Hak Cipta Dilindungi.</p>
-                <div class="flex gap-4">
-                    <span class="flex items-center gap-1"><svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg> SSL Secured</span>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.06),transparent_70%)]"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-heading font-black text-white mb-4">Siap Menjadi Mitra Kami?</h2>
+            <p class="text-platinum-300 mb-8 max-w-xl mx-auto text-sm">Hubungi admin sekarang untuk konsultasi kebutuhan distribusi Anda. Respon cepat, solusi tepat.</p>
+            <a href="https://wa.me/6285715905079" target="_blank" class="magnetic-btn inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_25px_rgba(34,197,94,0.4)] text-sm group">
+                <svg class="w-5 h-5 group-hover:animate-bounce-gentle" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+                Hubungi via WhatsApp Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-navy-950 border-t border-white/5 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-gold-500 flex items-center justify-center text-navy-950 font-heading font-black text-lg">R2</div>
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-white">NUSANTARA</span>
+                    </div>
+                    <p class="text-platinum-400 text-sm leading-relaxed mb-5">Mitra andalan B2B untuk pengadaan dan distribusi produk tembakau ke seluruh Indonesia. Profesional, aman, terpercaya.</p>
                 </div>
+                <div>
+                    <h4 class="font-heading font-bold text-base mb-4 text-white">Kantor Pusat</h4>
+                    <ul class="space-y-3 text-sm text-platinum-400">
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 shrink-0 text-gold-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Desa Karangduren, Kec. Pakisaji, Kab. Malang, Jawa Timur 65162</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+62 857-1590-5079</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-base mb-4 text-white">Bantuan</h4>
+                    <ul class="space-y-2 text-sm text-platinum-400">
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Cara Pemesanan</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="bg-navy-800 p-4 rounded-xl border border-white/5 mb-4 flex items-center gap-3">
+                        <svg class="w-7 h-7 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div>
+                            <div class="text-xs text-platinum-400">Transaksi Dijamin</div>
+                            <div class="text-sm font-bold text-white">100% Aman & Terpercaya</div>
+                        </div>
+                    </div>
+                    <div class="bg-red-900/15 p-3.5 rounded-xl border border-red-500/15 text-platinum-300 text-xs">
+                        <div class="flex items-center gap-2 mb-1 text-white font-bold"><span class="bg-red-600 text-white w-5 h-5 flex items-center justify-center rounded text-[10px]">18+</span>Peringatan Usia</div>
+                        <p class="text-[11px] leading-tight text-platinum-500">Hanya untuk 18+. Merokok sebabkan kanker, penyakit jantung, dll.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-platinum-600">
+                <p>&copy; 2026 R2 Nusantara Distributor. Hak Cipta Dilindungi.</p>
+                <span class="flex items-center gap-1"><svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg> SSL Secured</span>
             </div>
         </div>
     </footer>
 
-    <!-- Shopping Cart Drawer (Right Side) -->
-    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-navy-900 shadow-2xl z-50 transform translate-x-full border-l border-white/10 flex flex-col">
-        <!-- Drawer Header -->
-        <div class="p-5 border-b border-white/10 flex justify-between items-center bg-navy-800">
-            <h2 class="font-heading font-bold text-xl flex items-center gap-2">
-                <svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+    <!-- Cart Drawer -->
+    <div id="overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-400" onclick="closeCart()"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-navy-900 shadow-2xl z-50 transform translate-x-full border-l border-white/8 flex flex-col">
+        <div class="p-5 border-b border-white/8 flex justify-between items-center bg-navy-850">
+            <h2 class="font-heading font-bold text-lg flex items-center gap-2 text-white">
+                <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 Purchase Order (PO)
             </h2>
-            <button onclick="closeCart()" class="text-slate-400 hover:text-white transition-colors p-2">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <button onclick="closeCart()" class="text-platinum-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/[0.04]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
-        
-        <!-- Cart Items Container -->
-        <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-4 no-scrollbar">
-            <!-- Items injected by JS -->
-            <div class="h-full flex flex-col items-center justify-center text-slate-500 text-center opacity-50">
+        <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-4" style="scrollbar-width:thin;scrollbar-color:#334155 transparent;">
+            <div class="h-full flex flex-col items-center justify-center text-platinum-500 text-center opacity-60">
                 <svg class="w-16 h-16 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                 <p>PO masih kosong.<br>Silakan pilih produk.</p>
             </div>
         </div>
-
-        <!-- Checkout Summary Area -->
-        <div class="bg-navy-800 border-t border-white/10 p-5">
-            <div id="freeShippingAlert" class="hidden mb-4 bg-green-500/10 border border-green-500/20 text-green-400 text-xs px-3 py-2 rounded-lg flex items-center justify-between">
+        <div class="bg-navy-850 border-t border-white/8 p-5">
+            <div id="freeShippingAlert" class="hidden mb-4 bg-green-500/10 border border-green-500/20 text-green-400 text-xs px-3 py-2.5 rounded-xl flex items-center justify-between">
                 <span class="flex items-center gap-1 font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Target 20 Slop Tercapai!</span>
                 <span class="font-bold">GRATIS ONGKIR</span>
             </div>
-            
-            <div class="flex justify-between text-sm text-slate-400 mb-2">
-                <span>Total Item (Slop)</span>
-                <span id="cartTotalItems" class="font-bold text-white">0</span>
-            </div>
-            <div class="flex justify-between items-end mb-6">
-                <span class="text-slate-400 text-sm">Estimasi Total</span>
-                <span id="cartTotalPrice" class="font-heading font-bold text-2xl text-gold-400">Rp 0</span>
-            </div>
-            
-            <button onclick="openCheckoutModal()" id="btnProcessPO" disabled class="w-full bg-gold-500 hover:bg-gold-400 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-navy-900 font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2">
+            <div class="flex justify-between text-sm text-platinum-400 mb-1.5"><span>Total Item (Slop)</span><span id="cartTotalItems" class="font-bold text-white">0</span></div>
+            <div class="flex justify-between items-end mb-5"><span class="text-platinum-400 text-sm">Estimasi Total</span><span id="cartTotalPrice" class="font-heading font-bold text-2xl text-gold-400">Rp 0</span></div>
+            <button onclick="openCheckoutModal()" id="btnProcessPO" disabled class="w-full bg-gold-500 hover:bg-gold-400 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-navy-950 font-bold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-sm magnetic-btn">
                 Proses Pesanan Sekarang
             </button>
         </div>
     </div>
 
-    <!-- Checkout Modal Form -->
-    <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center px-4 py-6 opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeCheckoutModal()"></div>
-        
-        <div class="bg-navy-900 border border-white/10 rounded-2xl w-full max-w-2xl max-h-full overflow-y-auto relative z-10 shadow-2xl">
-            <!-- Modal Header -->
-            <div class="sticky top-0 bg-navy-800 border-b border-white/10 px-6 py-4 flex justify-between items-center z-20">
-                <h3 class="font-heading font-bold text-xl text-white">Formulir Pengiriman B2B</h3>
-                <button onclick="closeCheckoutModal()" class="text-slate-400 hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center px-4 py-6 opacity-0 transition-opacity duration-400">
+        <div class="absolute inset-0 bg-black/85 backdrop-blur-md" onclick="closeCheckoutModal()"></div>
+        <div class="bg-navy-900 border border-white/8 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl" style="scrollbar-width:thin;scrollbar-color:#334155 transparent;">
+            <div class="sticky top-0 bg-navy-850 border-b border-white/8 px-6 py-4 flex justify-between items-center z-20 rounded-t-2xl">
+                <h3 class="font-heading font-bold text-lg text-white">Formulir Pengiriman B2B</h3>
+                <button onclick="closeCheckoutModal()" class="text-platinum-400 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/[0.04]">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            
-            <!-- Modal Body -->
             <form id="checkoutForm" onsubmit="submitOrder(event)" class="p-6">
-                <!-- Payment Method Information -->
-                <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 mb-6 flex gap-4 items-start">
-                    <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="bg-blue-500/8 border border-blue-500/15 rounded-xl p-4 mb-6 flex gap-4 items-start">
+                    <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <div>
                         <h4 class="font-bold text-blue-400 text-sm mb-1">Metode Pembayaran: Escrow / Invoice</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">Anda tidak perlu mentransfer dana sekarang. Pembayaran dilakukan setelah resi fisik/digital diterbitkan oleh ekspedisi. Form ini akan diteruskan ke sistem WhatsApp Admin.</p>
+                        <p class="text-xs text-platinum-300 leading-relaxed">Anda tidak perlu mentransfer dana sekarang. Pembayaran dilakukan setelah resi fisik/digital diterbitkan oleh ekspedisi.</p>
                     </div>
                 </div>
-
                 <div class="grid md:grid-cols-2 gap-5 mb-5">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Nama Lengkap / Toko *</label>
-                        <input type="text" id="co_name" required class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                        <label class="block text-xs font-semibold text-platinum-400 mb-2 uppercase tracking-wide">Nama Lengkap / Toko *</label>
+                        <input type="text" id="co_name" required class="w-full bg-navy-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">No. WhatsApp Aktif *</label>
-                        <input type="tel" id="co_phone" required placeholder="08..." class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                        <label class="block text-xs font-semibold text-platinum-400 mb-2 uppercase tracking-wide">No. WhatsApp Aktif *</label>
+                        <input type="tel" id="co_phone" required placeholder="08..." class="w-full bg-navy-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all text-sm">
                     </div>
                 </div>
-                
                 <div class="mb-5">
-                    <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman *</label>
-                    <textarea id="co_address" required rows="3" placeholder="Nama Jalan, No. Rumah, RT/RW, Kel, Kec, Kota/Kab, Provinsi, Kode Pos" class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500"></textarea>
+                    <label class="block text-xs font-semibold text-platinum-400 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman *</label>
+                    <textarea id="co_address" required rows="3" placeholder="Nama Jalan, No. Rumah, RT/RW, Kel, Kec, Kota/Kab, Provinsi, Kode Pos" class="w-full bg-navy-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all text-sm resize-none"></textarea>
                 </div>
-
-                <div class="mb-8">
-                    <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Catatan Ekspedisi / Packing (Opsional)</label>
-                    <input type="text" id="co_notes" placeholder="Misal: Tolong packing kayu, kirim via J&T Cargo" class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                <div class="mb-6">
+                    <label class="block text-xs font-semibold text-platinum-400 mb-2 uppercase tracking-wide">Catatan Ekspedisi (Opsional)</label>
+                    <input type="text" id="co_notes" placeholder="Misal: Tolong packing kayu, kirim via J&T Cargo" class="w-full bg-navy-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all text-sm">
                 </div>
-
-                <!-- Fixed Footer within Modal -->
-                <div class="pt-5 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                    <div class="text-sm text-slate-400 text-center sm:text-left">
-                        Total Pembayaran:<br>
-                        <strong class="text-xl text-white font-heading" id="co_totalPrice">Rp 0</strong>
-                    </div>
-                    <button type="submit" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 px-8 rounded-xl flex justify-center items-center gap-2 transition-colors shadow-lg">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+                <div class="pt-5 border-t border-white/8 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <div class="text-sm text-platinum-400 text-center sm:text-left">Total Pembayaran:<br><strong class="text-xl text-white font-heading" id="co_totalPrice">Rp 0</strong></div>
+                    <button type="submit" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 px-7 rounded-xl flex justify-center items-center gap-2 transition-all shadow-lg text-sm magnetic-btn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
                         Kirim Invoice ke WA
                     </button>
                 </div>
@@ -543,390 +886,585 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Status Badge -->
-    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-3 pointer-events-none">
-        <div class="bg-white text-navy-900 text-xs font-bold px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2 toast-animate pointer-events-auto">
-            <span class="relative flex h-2.5 w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-            </span>
+    <!-- Back to Top -->
+    <button id="backToTop" class="hidden-btt fixed bottom-24 right-6 z-30 w-11 h-11 rounded-full bg-navy-800 border border-white/10 text-gold-400 flex items-center justify-center shadow-lg hover:bg-gold-500 hover:text-navy-950 transition-all duration-400 group" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">
+        <svg class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+        <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 44 44">
+            <circle cx="22" cy="22" r="20" fill="none" stroke="rgba(245,158,11,0.2)" stroke-width="2.5"/>
+            <circle id="bttProgress" cx="22" cy="22" r="20" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="125.6" stroke-dashoffset="125.6" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Floating WA Badge -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-2 pointer-events-none">
+        <div class="bg-white text-navy-950 text-xs font-bold px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2 pointer-events-auto" data-aos="fade-up" data-aos-delay="500">
+            <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span></span>
             Admin Online
         </div>
-        <a href="https://wa.me/6285715905079" target="_blank" class="bg-gradient-to-tr from-green-500 to-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-glow hover:scale-110 transition-transform pointer-events-auto group">
-            <svg class="w-8 h-8 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937 0 3.825-3.113 6.938-6.939 6.938z"/></svg>
+        <a href="https://wa.me/6285715905079" target="_blank" class="bg-gradient-to-tr from-green-500 to-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-glow hover:scale-110 transition-all duration-300 pointer-events-auto group magnetic-btn" aria-label="Chat WhatsApp">
+            <svg class="w-7 h-7 group-hover:animate-bounce-gentle" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
         </a>
     </div>
 
-    <!-- Main JavaScript Logic -->
     <script>
-        // Data Produk Induk (52 Item)
+        // ============ CONFIGURATION ============
+        const WA_NUMBER = "6285715905079";
+        const ITEMS_PER_PAGE = 15;
+
+        // ============ PRODUCT DATA (52 items) ============
         const products = [
-            { id: 1, name: "Age Pro", price: 65000 }, { id: 2, name: "Bani Click", price: 85000 },
-            { id: 3, name: "Bigben", price: 80000 }, { id: 4, name: "Booster", price: 80000 },
-            { id: 5, name: "Brand Djati", price: 85000 }, { id: 6, name: "Cahaya Pro", price: 85000 },
-            { id: 7, name: "Cartel", price: 80000 }, { id: 8, name: "Cesa", price: 80000 },
-            { id: 9, name: "Coffee Stick", price: 80000 }, { id: 10, name: "Connext", price: 80000 },
-            { id: 11, name: "Djanda", price: 85000 }, { id: 12, name: "DTE", price: 80000 },
-            { id: 13, name: "ERA", price: 90000 }, { id: 14, name: "Excel Click", price: 85000 },
-            { id: 15, name: "Feloz", price: 85000 }, { id: 16, name: "GA Bold", price: 80000 },
-            { id: 17, name: "Gan Bold", price: 80000 }, { id: 18, name: "Gess Bold", price: 80000 },
-            { id: 19, name: "H&D", price: 85000 }, { id: 20, name: "IB", price: 80000 },
-            { id: 21, name: "Jeco", price: 85000 }, { id: 22, name: "Kalbaco", price: 85000 },
-            { id: 23, name: "King Garet", price: 80000 }, { id: 24, name: "Konser", price: 85000 },
-            { id: 25, name: "Link Bold", price: 80000 }, { id: 26, name: "Liox", price: 80000 },
-            { id: 27, name: "Mami Baru", price: 85000 }, { id: 28, name: "Manchester", price: 90000 },
-            { id: 29, name: "Manggo Top", price: 80000 }, { id: 30, name: "Martel", price: 85000 },
-            { id: 31, name: "MBS", price: 85000 }, { id: 32, name: "Naxan Bold", price: 80000 },
-            { id: 33, name: "Naxan Click", price: 85000 }, { id: 34, name: "Nayan Bold", price: 80000 },
-            { id: 35, name: "Nayan Click", price: 85000 }, { id: 36, name: "Novem", price: 85000 },
-            { id: 37, name: "PMS", price: 85000 }, { id: 38, name: "PS Djeram", price: 70000 },
-            { id: 39, name: "QQ", price: 80000 }, { id: 40, name: "R9 Bold", price: 80000 },
-            { id: 41, name: "Rastel", price: 80000 }, { id: 42, name: "RC", price: 80000 },
-            { id: 43, name: "Rocker", price: 80000 }, { id: 44, name: "Saga", price: 80000 },
-            { id: 45, name: "San Marino", price: 90000 }, { id: 46, name: "Slava", price: 80000 },
-            { id: 47, name: "Smith", price: 75000 }, { id: 48, name: "Stigma", price: 75000 },
-            { id: 49, name: "Tabaco", price: 85000 }, { id: 50, name: "Toracino", price: 80000 },
-            { id: 51, name: "Van Bold", price: 80000 }, { id: 52, name: "Win Click", price: 85000 }
+            { id: 1, name: "Age Pro", price: 65000 }, { id: 2, name: "Bani Click", price: 85000 }, { id: 3,
+                name: "Bigben", price: 80000 }, { id: 4, name: "Booster", price: 80000 }, { id: 5,
+                name: "Brand Djati", price: 85000 }, { id: 6, name: "Cahaya Pro", price: 85000 }, { id: 7,
+                name: "Cartel", price: 80000 }, { id: 8, name: "Cesa", price: 80000 }, { id: 9, name: "Coffee Stick",
+                price: 80000 }, { id: 10, name: "Connext", price: 80000 }, { id: 11, name: "Djanda",
+            price: 85000 }, { id: 12, name: "DTE", price: 80000 }, { id: 13, name: "ERA", price: 90000 }, { id: 14,
+                name: "Excel Click", price: 85000 }, { id: 15, name: "Feloz", price: 85000 }, { id: 16, name: "GA Bold",
+                price: 80000 }, { id: 17, name: "Gan Bold", price: 80000 }, { id: 18, name: "Gess Bold",
+            price: 80000 }, { id: 19, name: "H&D", price: 85000 }, { id: 20, name: "IB", price: 80000 }, { id: 21,
+                name: "Jeco", price: 85000 }, { id: 22, name: "Kalbaco", price: 85000 }, { id: 23, name: "King Garet",
+                price: 80000 }, { id: 24, name: "Konser", price: 85000 }, { id: 25, name: "Link Bold",
+            price: 80000 }, { id: 26, name: "Liox", price: 80000 }, { id: 27, name: "Mami Baru", price: 85000 }, { id: 28,
+                name: "Manchester", price: 90000 }, { id: 29, name: "Manggo Top", price: 80000 }, { id: 30,
+                name: "Martel", price: 85000 }, { id: 31, name: "MBS", price: 85000 }, { id: 32, name: "Naxan Bold",
+                price: 80000 }, { id: 33, name: "Naxan Click", price: 85000 }, { id: 34, name: "Nayan Bold",
+            price: 80000 }, { id: 35, name: "Nayan Click", price: 85000 }, { id: 36, name: "Novem", price: 85000 }, { id: 37,
+                name: "PMS", price: 85000 }, { id: 38, name: "PS Djeram", price: 70000 }, { id: 39, name: "QQ",
+                price: 80000 }, { id: 40, name: "R9 Bold", price: 80000 }, { id: 41, name: "Rastel",
+            price: 80000 }, { id: 42, name: "RC", price: 80000 }, { id: 43, name: "Rocker", price: 80000 }, { id: 44,
+                name: "Saga", price: 80000 }, { id: 45, name: "San Marino", price: 90000 }, { id: 46, name: "Slava",
+                price: 80000 }, { id: 47, name: "Smith", price: 75000 }, { id: 48, name: "Stigma", price: 75000 }, { id: 49,
+                name: "Tabaco", price: 85000 }, { id: 50, name: "Toracino", price: 80000 }, { id: 51, name: "Van Bold",
+                price: 80000 }, { id: 52, name: "Win Click", price: 85000 }
         ];
 
         let cart = [];
-        let currentProducts = [...products];
+        let currentPage = 1;
+        let filteredProducts = [...products];
 
-        // Format Currency
-        const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
+        // ============ UTILS ============
+        const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR',
+            minimumFractionDigits: 0 }).format(num);
+        const $ = (sel) => document.querySelector(sel);
+        const $$ = (sel) => document.querySelectorAll(sel);
 
-        // Render Grid Produk
-        function renderGrid(data) {
+        // ============ TOAST SYSTEM ============
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            const bgColors = { success: 'bg-green-500/90', info: 'bg-blue-500/90', warning: 'bg-amber-500/90',
+                error: 'bg-red-500/90' };
+            toast.className =
+                `toast-item ${bgColors[type] || bgColors.success} text-white text-xs font-semibold px-4 py-3 rounded-xl shadow-lg backdrop-blur-sm flex items-center gap-2 max-w-xs`;
+            toast.innerHTML =
+                `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(120%)';
+                toast.style.transition = 'all 0.4s ease';
+                setTimeout(() => toast.remove(), 400);
+            }, 2500);
+        }
+
+        // ============ RENDER PRODUCT GRID ============
+        function renderGrid(data, page = 1) {
             const grid = document.getElementById('productGrid');
+            const skeletonGrid = document.getElementById('skeletonGrid');
             const noResult = document.getElementById('noResult');
+            const pagination = document.getElementById('pagination');
+
+            skeletonGrid.classList.add('hidden');
             grid.innerHTML = '';
 
             if (data.length === 0) {
                 noResult.classList.remove('hidden');
-            } else {
-                noResult.classList.add('hidden');
-                data.forEach((item) => {
-                    // Create box visual placeholder
-                    const firstLetter = item.name.charAt(0);
-                    
-                    const card = document.createElement('div');
-                    card.className = "bg-navy-900 border border-white/5 rounded-xl overflow-hidden hover:border-gold-500/50 transition-all group flex flex-col shadow-lg";
-                    card.innerHTML = `
-                        <!-- Placeholder Image Area -->
-                        <div class="h-32 bg-gradient-to-br from-navy-800 to-navy-700 relative flex items-center justify-center border-b border-white/5">
-                            <div class="text-4xl font-heading font-black text-white/10 select-none">${firstLetter}</div>
-                            <div class="absolute top-2 right-2 bg-black/50 backdrop-blur text-[10px] px-2 py-1 rounded text-slate-300">Ready</div>
+                pagination.innerHTML = '';
+                return;
+            }
+            noResult.classList.add('hidden');
+
+            const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+            const start = (page - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageItems = data.slice(start, end);
+
+            pageItems.forEach((item, index) => {
+                const firstLetter = item.name.charAt(0);
+                const card = document.createElement('div');
+                card.className =
+                    'glass-card rounded-xl overflow-hidden flex flex-col tilt-card group';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index % 5) * 40);
+                card.innerHTML = `
+                    <div class="tilt-card-inner">
+                        <div class="h-28 bg-gradient-to-br from-navy-750 to-navy-700 relative flex items-center justify-center border-b border-white/5 overflow-hidden">
+                            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.08),transparent)]"></div>
+                            <span class="text-4xl font-heading font-black text-white/8 select-none relative z-10">${firstLetter}</span>
+                            <span class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] px-2 py-0.5 rounded-full text-platinum-300 font-medium">Ready</span>
                         </div>
-                        <!-- Content Area -->
                         <div class="p-4 flex-1 flex flex-col">
-                            <h3 class="font-bold text-white text-sm md:text-base leading-tight mb-1 truncate" title="${item.name}">${item.name}</h3>
-                            <p class="text-gold-400 font-heading font-bold text-sm md:text-base mb-4">${formatRupiah(item.price)} <span class="text-[10px] text-slate-500 font-normal">/ Slop</span></p>
-                            
-                            <div class="mt-auto">
-                                <div class="flex items-center gap-2">
-                                    <!-- Custom Number Input -->
-                                    <div class="flex items-center bg-navy-800 rounded-lg border border-white/10 w-24">
-                                        <button onclick="decrementQty(${item.id})" class="px-2.5 py-1.5 text-slate-400 hover:text-white">-</button>
-                                        <input type="number" id="qty_${item.id}" value="1" min="1" class="w-full bg-transparent text-center text-sm text-white focus:outline-none no-scrollbar appearance-none m-0" style="-moz-appearance: textfield;">
-                                        <button onclick="incrementQty(${item.id})" class="px-2.5 py-1.5 text-slate-400 hover:text-white">+</button>
-                                    </div>
-                                    
-                                    <!-- Add button -->
-                                    <button onclick="addToCart(${item.id}, '${item.name}', ${item.price})" class="flex-1 bg-gold-500/10 hover:bg-gold-500 text-gold-400 hover:text-navy-900 border border-gold-500/30 font-semibold py-2 rounded-lg text-sm transition-colors flex justify-center items-center">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                                    </button>
+                            <h3 class="font-bold text-white text-sm leading-tight mb-1 truncate" title="${item.name}">${item.name}</h3>
+                            <p class="text-gold-400 font-heading font-bold text-sm mb-3">${formatRupiah(item.price)} <span class="text-[10px] text-platinum-500 font-normal">/ Slop</span></p>
+                            <div class="mt-auto flex items-center gap-2">
+                                <div class="flex items-center bg-navy-800 rounded-lg border border-white/10 w-[72px]">
+                                    <button onclick="event.stopPropagation();decrementQty(${item.id})" class="px-2 py-1.5 text-platinum-400 hover:text-white text-xs">−</button>
+                                    <input type="number" id="qty_${item.id}" value="1" min="1" class="w-full bg-transparent text-center text-xs text-white focus:outline-none appearance-none" style="-moz-appearance:textfield">
+                                    <button onclick="event.stopPropagation();incrementQty(${item.id})" class="px-2 py-1.5 text-platinum-400 hover:text-white text-xs">+</button>
                                 </div>
+                                <button onclick="event.stopPropagation();addToCart(${item.id},'${item.name}',${item.price})" class="flex-1 bg-gold-500/10 hover:bg-gold-500 text-gold-400 hover:text-navy-950 border border-gold-500/25 font-semibold py-2 rounded-lg text-xs transition-all flex justify-center items-center magnetic-btn">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
+                                </button>
                             </div>
                         </div>
-                    `;
-                    grid.appendChild(card);
-                });
+                    </div>`;
+                grid.appendChild(card);
+            });
+
+            // Pagination
+            pagination.innerHTML = '';
+            if (totalPages > 1) {
+                for (let i = 1; i <= totalPages; i++) {
+                    const btn = document.createElement('button');
+                    btn.textContent = i;
+                    btn.className =
+                        `w-9 h-9 rounded-lg text-sm font-semibold transition-all ${i === page ? 'bg-gold-500 text-navy-950' : 'bg-navy-800 text-platinum-400 hover:text-white border border-white/8'}`;
+                    btn.onclick = () => {
+                        currentPage = i;
+                        renderGrid(data, i);
+                        document.getElementById('katalog').scrollIntoView({ behavior: 'smooth',
+                            block: 'start' });
+                    };
+                    pagination.appendChild(btn);
+                }
             }
+
+            // Re-init AOS for new elements
+            setTimeout(() => AOS.refresh(), 100);
         }
 
-        // Input Qty Helpers
-        function incrementQty(id) {
-            const input = document.getElementById(`qty_${id}`);
-            input.value = parseInt(input.value) + 1;
-        }
-        function decrementQty(id) {
-            const input = document.getElementById(`qty_${id}`);
-            if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
-        }
+        function incrementQty(id) { const inp = document.getElementById(`qty_${id}`); if (inp) inp.value = parseInt(inp
+            .value) + 1; }
 
-        // Filter & Sort Logic
+        function decrementQty(id) { const inp = document.getElementById(`qty_${id}`); if (inp && parseInt(inp.value) > 1) inp
+                .value = parseInt(inp.value) - 1; }
+
+        // ============ SEARCH & SORT ============
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
-            currentProducts = products.filter(p => p.name.toLowerCase().includes(term));
-            applySort(); // Re-apply sort if active
-        });
-
-        document.getElementById('sortSelect').addEventListener('change', () => {
+            filteredProducts = products.filter(p => p.name.toLowerCase().includes(term));
+            currentPage = 1;
             applySort();
         });
+        document.getElementById('sortSelect').addEventListener('change', () => { currentPage = 1;
+            applySort(); });
 
         function applySort() {
             const val = document.getElementById('sortSelect').value;
-            let sorted = [...currentProducts];
-            
+            let sorted = [...filteredProducts];
             if (val === 'name_asc') sorted.sort((a, b) => a.name.localeCompare(b.name));
             else if (val === 'price_asc') sorted.sort((a, b) => a.price - b.price);
             else if (val === 'price_desc') sorted.sort((a, b) => b.price - a.price);
-            else sorted = [...products].filter(p => p.name.toLowerCase().includes(document.getElementById('searchInput').value.toLowerCase())); // Reset to original filtered
-
-            renderGrid(sorted);
+            renderGrid(sorted, currentPage);
         }
 
-        // --- CART LOGIC ---
+        // ============ CART SYSTEM ============
         function addToCart(id, name, price) {
-            const qty = parseInt(document.getElementById(`qty_${id}`).value);
-            
-            const existingItem = cart.find(item => item.id === id);
-            if (existingItem) {
-                existingItem.qty += qty;
-            } else {
-                cart.push({ id, name, price, qty });
-            }
-            
-            // SweetAlert Toast Success
-            Swal.fire({
-                toast: true,
-                position: 'top-end',
-                icon: 'success',
-                title: `${qty} Slop ${name} ditambahkan`,
-                showConfirmButton: false,
-                timer: 2000,
-                background: '#1E293B',
-                color: '#fff',
-                iconColor: '#F59E0B'
-            });
-
-            // Reset input to 1
-            document.getElementById(`qty_${id}`).value = 1;
+            const qtyInput = document.getElementById(`qty_${id}`);
+            const qty = qtyInput ? parseInt(qtyInput.value) : 1;
+            const existing = cart.find(item => item.id === id);
+            if (existing) { existing.qty += qty; } else { cart.push({ id, name, price, qty }); }
+            if (qtyInput) qtyInput.value = 1;
             updateCartUI();
+            showToast(`${qty} Slop ${name} ditambahkan ke PO`, 'success');
         }
 
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            updateCartUI();
-        }
+        function removeFromCart(id) { cart = cart.filter(item => item.id !== id);
+            updateCartUI(); }
 
         function updateCartItemQty(id, newQty) {
             const item = cart.find(i => i.id === id);
-            if(item) {
-                if(newQty < 1) removeFromCart(id);
-                else {
-                    item.qty = newQty;
-                    updateCartUI();
-                }
+            if (item) {
+                if (newQty < 1) removeFromCart(id);
+                else { item.qty = newQty;
+                    updateCartUI(); }
             }
         }
 
         function updateCartUI() {
             const container = document.getElementById('cartItems');
-            const countBadge = document.getElementById('cartCountBadge');
+            const badge = document.getElementById('cartCountBadge');
             const totalItemsEl = document.getElementById('cartTotalItems');
             const totalPriceEl = document.getElementById('cartTotalPrice');
             const coTotalPriceEl = document.getElementById('co_totalPrice');
             const btnProcess = document.getElementById('btnProcessPO');
-            const freeShippingAlert = document.getElementById('freeShippingAlert');
-
-            let totalQty = 0;
-            let totalPrice = 0;
+            const freeShipAlert = document.getElementById('freeShippingAlert');
+            let totalQty = 0,
+                totalPrice = 0;
 
             if (cart.length === 0) {
                 container.innerHTML = `
-                    <div class="h-full flex flex-col items-center justify-center text-slate-500 text-center opacity-50 pt-20">
+                    <div class="h-full flex flex-col items-center justify-center text-platinum-500 text-center opacity-60 pt-20">
                         <svg class="w-16 h-16 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                         <p>PO masih kosong.<br>Silakan pilih produk.</p>
                     </div>`;
                 btnProcess.disabled = true;
+                badge.classList.add('scale-0');
             } else {
                 btnProcess.disabled = false;
                 container.innerHTML = '';
                 cart.forEach(item => {
                     totalQty += item.qty;
                     totalPrice += (item.price * item.qty);
-
                     container.innerHTML += `
-                        <div class="bg-navy-800 p-3 rounded-xl border border-white/5 flex items-center justify-between gap-3">
+                        <div class="bg-navy-800 p-3.5 rounded-xl border border-white/6 flex items-center justify-between gap-3 hover:border-white/12 transition-all">
                             <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-white text-sm truncate">${item.name}</h4>
+                                <h4 class="font-semibold text-white text-sm truncate">${item.name}</h4>
                                 <div class="text-gold-400 text-xs">${formatRupiah(item.price)}</div>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="flex items-center bg-navy-900 rounded border border-white/10">
-                                    <button onclick="updateCartItemQty(${item.id}, ${item.qty - 1})" class="px-2 py-1 text-slate-400 hover:text-white">-</button>
-                                    <span class="w-6 text-center text-xs text-white font-medium">${item.qty}</span>
-                                    <button onclick="updateCartItemQty(${item.id}, ${item.qty + 1})" class="px-2 py-1 text-slate-400 hover:text-white">+</button>
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center bg-navy-900 rounded-lg border border-white/8">
+                                    <button onclick="updateCartItemQty(${item.id},${item.qty-1})" class="px-2 py-1 text-platinum-400 hover:text-white text-xs">−</button>
+                                    <span class="w-7 text-center text-xs text-white font-medium">${item.qty}</span>
+                                    <button onclick="updateCartItemQty(${item.id},${item.qty+1})" class="px-2 py-1 text-platinum-400 hover:text-white text-xs">+</button>
                                 </div>
-                                <button onclick="removeFromCart(${item.id})" class="text-slate-500 hover:text-red-500 p-1 transition-colors">
+                                <button onclick="removeFromCart(${item.id})" class="text-platinum-500 hover:text-red-400 p-1.5 transition-colors rounded-lg hover:bg-red-500/10">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                 </button>
                             </div>
-                        </div>
-                    `;
+                        </div>`;
                 });
+                badge.classList.remove('scale-0');
+                badge.innerText = totalQty;
             }
-
-            // Update Badges & Totals
-            if (totalQty > 0) {
-                countBadge.classList.remove('scale-0');
-                countBadge.innerText = totalQty;
-            } else {
-                countBadge.classList.add('scale-0');
-            }
-
             totalItemsEl.innerText = `${totalQty} Slop`;
             totalPriceEl.innerText = formatRupiah(totalPrice);
             coTotalPriceEl.innerText = formatRupiah(totalPrice);
-
-            // Free Shipping Logic
-            if (totalQty >= 20) {
-                freeShippingAlert.classList.remove('hidden');
-            } else {
-                freeShippingAlert.classList.add('hidden');
-            }
+            if (totalQty >= 20) freeShipAlert.classList.remove('hidden');
+            else freeShipAlert.classList.add('hidden');
         }
 
-        // Cart Drawer Controls
-        const overlay = document.getElementById('overlay');
-        const cartDrawer = document.getElementById('cartDrawer');
-        const checkoutModal = document.getElementById('checkoutModal');
+        // ============ CART DRAWER ============
+        function toggleCart() { document.getElementById('cartDrawer').classList.contains('cart-open') ? closeCart() :
+            openCart(); }
 
-        function toggleCart() {
-            if (cartDrawer.classList.contains('cart-open')) closeCart();
-            else openCart();
-        }
         function openCart() {
-            cartDrawer.classList.add('cart-open');
+            document.getElementById('cartDrawer').classList.add('cart-open');
+            const overlay = document.getElementById('overlay');
             overlay.classList.remove('hidden');
-            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-            document.body.style.overflow = 'hidden'; // prevent bg scroll
-        }
-        function closeCart() {
-            cartDrawer.classList.remove('cart-open');
-            overlay.classList.add('opacity-0');
-            setTimeout(() => {
-                overlay.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-        }
-
-        // Checkout Modal Controls
-        function openCheckoutModal() {
-            if(cart.length === 0) return;
-            closeCart();
-            checkoutModal.classList.remove('hidden');
-            setTimeout(() => checkoutModal.classList.remove('opacity-0'), 10);
+            requestAnimationFrame(() => overlay.classList.remove('opacity-0'));
             document.body.style.overflow = 'hidden';
         }
-        function closeCheckoutModal() {
-            checkoutModal.classList.add('opacity-0');
-            setTimeout(() => {
-                checkoutModal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
+
+        function closeCart() {
+            document.getElementById('cartDrawer').classList.remove('cart-open');
+            const overlay = document.getElementById('overlay');
+            overlay.classList.add('opacity-0');
+            setTimeout(() => { overlay.classList.add('hidden');
+                document.body.style.overflow = ''; }, 400);
         }
 
-        // Submit Final Order (Generate Professional WA Invoice)
+        // ============ CHECKOUT MODAL ============
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            closeCart();
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => modal.classList.remove('opacity-0'));
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCheckoutModal() {
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden');
+                document.body.style.overflow = ''; }, 400);
+        }
+
         function submitOrder(e) {
             e.preventDefault();
-            
             const name = document.getElementById('co_name').value;
             const phone = document.getElementById('co_phone').value;
             const address = document.getElementById('co_address').value;
             const notes = document.getElementById('co_notes').value;
-
-            // Generate Item List String
-            let totalSlop = 0;
-            let totalPrice = 0;
-            let itemListText = "";
-            
-            cart.forEach((item, index) => {
+            let totalSlop = 0,
+                totalPrice = 0,
+                itemListText = "";
+            cart.forEach((item, i) => {
                 totalSlop += item.qty;
                 const sub = item.price * item.qty;
                 totalPrice += sub;
-                itemListText += `${index+1}. ${item.name} | ${item.qty} Slop (Rp ${sub.toLocaleString('id-ID')})\n`;
+                itemListText +=
+                    `${i+1}. ${item.name} | ${item.qty} Slop (Rp ${sub.toLocaleString('id-ID')})\n`;
             });
-
-            // Ongkir Logic string
-            let ongkirText = totalSlop >= 20 ? "*SUBSIDI/GRATIS ONGKIR DARI GUDANG*" : "Menunggu estimasi admin ekspedisi";
-
-            // Generate Professional PO Format
-            const invoiceFormat = `📑 *PURCHASE ORDER (PO) R2 NUSANTARA*
-------------------------------------------------------
-*ID Pesanan:* #PO-${Math.floor(Date.now() / 1000)}
-*Tanggal:* ${new Date().toLocaleDateString('id-ID')}
-
-*DATA PEMESAN:*
-Nama Toko/Penerima: ${name}
-No. HP / WA: ${phone}
-Alamat Pengiriman:
-${address}
-
-*DETAIL PESANAN:*
-${itemListText}
-------------------------------------------------------
-*Total Item:* ${totalSlop} Slop
-*Estimasi Ongkos Kirim:* ${ongkirText}
-*TOTAL PEMBAYARAN:* *${formatRupiah(totalPrice)}*
-
-*Catatan Khusus:* ${notes ? notes : '-'}
-*Sistem Pembayaran:* ESCROW (Bayar setelah resi terbit)
-
-_Mohon admin mengecek ketersediaan stok & menyiapkan dokumentasi packing._ 🙏`;
-
-            const encodedURL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(invoiceFormat)}`;
-            
-            // Show Success Alert before redirect
+            const ongkirText = totalSlop >= 20 ? "*SUBSIDI/GRATIS ONGKIR DARI GUDANG*" :
+                "Menunggu estimasi admin ekspedisi";
+            const invoiceFormat =
+                `📑 *PURCHASE ORDER (PO) R2 NUSANTARA*\n------------------------------------------------------\n*ID Pesanan:* #PO-${Math.floor(Date.now()/1000)}\n*Tanggal:* ${new Date().toLocaleDateString('id-ID')}\n\n*DATA PEMESAN:*\nNama Toko/Penerima: ${name}\nNo. HP / WA: ${phone}\nAlamat Pengiriman:\n${address}\n\n*DETAIL PESANAN:*\n${itemListText}\n------------------------------------------------------\n*Total Item:* ${totalSlop} Slop\n*Estimasi Ongkos Kirim:* ${ongkirText}\n*TOTAL PEMBAYARAN:* *${formatRupiah(totalPrice)}*\n\n*Catatan Khusus:* ${notes || '-'}\n*Sistem Pembayaran:* ESCROW (Bayar setelah resi terbit)\n\n_Mohon admin mengecek ketersediaan stok & menyiapkan dokumentasi packing._ 🙏`;
             Swal.fire({
                 title: 'Pesanan Dibuat!',
                 text: 'Meneruskan ke WhatsApp Admin...',
                 icon: 'success',
-                background: '#1E293B',
-                color: '#fff',
+                background: '#051025',
+                color: '#F1F5F9',
                 confirmButtonColor: '#F59E0B',
                 timer: 2000,
                 timerProgressBar: true,
                 showConfirmButton: false
             }).then(() => {
-                window.open(encodedURL, '_blank');
-                // Clear cart after success
+                window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(invoiceFormat)}`,
+                    '_blank');
                 cart = [];
                 updateCartUI();
                 closeCheckoutModal();
             });
         }
 
-        // Initialize Everything
-        document.addEventListener('DOMContentLoaded', () => {
-            renderGrid(products);
+        // ============ FAQ ACCORDION ============
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = document.getElementById(btn.dataset.target);
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = target.classList.contains('max-h-[300px]');
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.remove(
+                    'max-h-[300px]'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove(
+                'rotate-180'));
+                if (!isOpen) {
+                    target.classList.add('max-h-[300px]');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
 
-            // Sticky Header & Scroll Animations Setup
-            const header = document.getElementById('header');
-            
+        // ============ COUNTER ANIMATION ============
+        function animateCounters() {
+            document.querySelectorAll('.counter').forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const start = performance.now();
+                const step = (timestamp) => {
+                    const elapsed = timestamp - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(eased * target).toLocaleString(
+                    'id-ID');
+                    if (progress < 1) requestAnimationFrame(step);
+                    else counter.textContent = target.toLocaleString('id-ID');
+                };
+                requestAnimationFrame(step);
+            });
+        }
+
+        // ============ SCROLL PROGRESS & BACK TO TOP ============
+        function updateScrollUI() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById('scrollProgress').style.width = progress + '%';
+            const btt = document.getElementById('backToTop');
+            const bttCircle = document.getElementById('bttProgress');
+            if (scrollTop > 500) {
+                btt.classList.remove('hidden-btt');
+                btt.classList.add('visible-btt');
+            } else {
+                btt.classList.add('hidden-btt');
+                btt.classList.remove('visible-btt');
+            }
+            const circumference = 125.6;
+            const offset = circumference - (progress / 100) * circumference;
+            if (bttCircle) bttCircle.style.strokeDashoffset = offset;
+        }
+
+        // ============ CUSTOM CURSOR ============
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorRing = document.getElementById('cursorRing');
+        let mouseX = 0,
+            mouseY = 0;
+        let ringX = 0,
+            ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (cursorDot) { cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px'; }
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            if (cursorRing) { cursorRing.style.left = ringX - 16 + 'px';
+                cursorRing.style.top = ringY - 16 + 'px'; }
+            requestAnimationFrame(animateRing);
+        }
+        if (cursorRing) requestAnimationFrame(animateRing);
+
+        document.querySelectorAll('a, button, .magnetic-btn, input, textarea, select, .tilt-card').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // ============ MAGNETIC BUTTONS ============
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x*0.15}px, ${y*0.15}px)`;
+            });
+            btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+        });
+
+        // ============ TILT EFFECT ============
+        document.addEventListener('mousemove', (e) => {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY >
+                    rect.bottom) {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+                    return;
+                }
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform =
+                    `perspective(1000px) rotateY(${x*4}deg) rotateX(${-y*4}deg)`;
+            });
+        });
+
+        // ============ PARTICLES CANVAS ============
+        function initParticles() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const maxParticles = 50;
+
+            function resize() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.3;
+                    this.speedY = (Math.random() - 0.5) * 0.3;
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this
+                        .reset();
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(245,158,11,${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < maxParticles; i++) particles.push(new Particle());
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update();
+                    p.draw(); });
+                // Draw connections
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle =
+                                `rgba(245,158,11,${0.04 * (1 - dist/100)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // ============ PRELOADER ============
+        function hidePreloader() {
+            document.getElementById('preloader').classList.add('loaded');
+            setTimeout(() => {
+                const pl = document.getElementById('preloader');
+                if (pl) pl.style.display = 'none';
+            }, 600);
+        }
+
+        // ============ INIT ============
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide preloader after short delay
+            setTimeout(hidePreloader, 1200);
+
+            // Init AOS
+            AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+            // Render products with skeleton delay
+            setTimeout(() => {
+                document.getElementById('skeletonGrid').classList.add('hidden');
+                renderGrid(products, 1);
+            }, 800);
+
+            // Init particles
+            initParticles();
+
+            // Scroll listener
+            window.addEventListener('scroll', updateScrollUI, { passive: true });
+            updateScrollUI();
+
+            // Header shadow on scroll
+            const header = document.getElementById('mainHeader');
             window.addEventListener('scroll', () => {
-                if(window.scrollY > 50) {
-                    header.classList.add('shadow-lg', 'bg-navy-900/95');
-                } else {
-                    header.classList.remove('shadow-lg', 'bg-navy-900/95');
+                if (window.scrollY > 20) header.style.boxShadow =
+                    '0 4px 24px rgba(0,0,0,0.5)';
+                else header.style.boxShadow = 'none';
+            }, { passive: true });
+
+            // Observe counters
+            const counterSection = document.querySelector('.counter')?.closest('section');
+            if (counterSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.4 });
+                observer.observe(counterSection);
+            }
+
+            // Close modals on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeCart();
+                    closeCheckoutModal();
                 }
             });
 
-            // Intersection Observer for scroll reveals
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            console.log('%c🚀 R2 Nusantara B2B Portal %cReady',
+                'color:#F59E0B;font-size:16px;font-weight:bold;', 'color:#94A3B8;');
+            console.log('%cEnterprise Distribution System v3.0', 'color:#64748B;font-size:11px;');
         });
     </script>
 </body>
 </html>
-
