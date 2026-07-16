@@ -6,21 +6,24 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- === META UNTUK THUMBNAIL PREVIEW WHATSAPP / OPEN GRAPH === -->
-    <meta property="og:title" content="R2 Nusantara">
-    <meta property="og:description" content="Join Me">
+    <meta property="og:title" content="R2 Nusantara — Portal Mitra B2B">
+    <meta property="og:description" content="Portal pengadaan khusus mitra terdaftar R2 Nusantara.">
     <meta property="og:image" content="https://i.ibb.co.com/FbBqkRGb/IMG-20260704-192231.jpg">
-    <meta property="og:url" content="gudangdistributormalang@gmail.com">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Gudang Distributor">
+    <meta property="og:site_name" content="R2 Nusantara">
     <meta property="og:locale" content="id_ID">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Gudang Distributor — R2 Nusantara">
-    
+    <meta property="og:image:alt" content="R2 Nusantara — Portal Mitra B2B">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg">
+    <link rel="apple-touch-icon" href="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg">
+
     <!-- SEO Standard -->
-    <meta name="description" content="Portal Distributor B2B Resmi R2 Nusantara. Pemesanan grosir rokok & tembakau. Sistem Escrow aman, subsidi logistik nasional, 50+ merek premium.">
-    <meta name="keywords" content="R2 Nusantara, Distributor, Grosir, Pabrik, Tembakau, Escrow, B2B, Supply Chain">
-    <title>R2 Nusantara | Corporate Tobacco Distributor</title>
+    <meta name="description" content="Portal pengadaan B2B khusus mitra terdaftar R2 Nusantara. Akses katalog, harga grosir, dan sistem Escrow melalui akun kemitraan Anda.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>R2 Nusantara | Portal Mitra B2B</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -214,9 +217,38 @@
         .btn-gold:hover {
             background: #b5952f; box-shadow: 0 8px 25px -5px rgba(212, 175, 55, 0.4);
         }
+
+        /* Accessibility: visible keyboard focus */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 2px solid #D4AF37; outline-offset: 2px; border-radius: 4px;
+        }
+        .skip-link {
+            position: absolute; left: -9999px; top: 0; z-index: 10000;
+            background: #0B2046; color: #fff; padding: 12px 20px; border-radius: 0 0 10px 0; font-weight: 700; font-size: 13px;
+        }
+        .skip-link:focus { left: 0; }
+
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+
+        /* Nav active state */
+        nav a.nav-active { color: #0B2046; }
+        nav a.nav-active::after { content: ''; display: block; height: 2px; background: #D4AF37; margin-top: 4px; border-radius: 2px; }
+
+        /* Mobile nav drawer */
+        #mobileNav { transform: translateY(-8px); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.3s ease; }
+        #mobileNav.open { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
+
+        /* Free shipping progress bar */
+        .progress-track { background: #E2E8F0; border-radius: 99px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #D4AF37, #F59E0B); transition: width 0.4s ease; }
     </style>
 </head>
 <body class="font-body overflow-x-hidden">
+
+    <a href="#katalog" class="skip-link">Langsung ke Katalog</a>
 
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
@@ -245,26 +277,40 @@
                 </div>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="#keunggulan" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Infrastruktur</a>
-                    <a href="#sistem-bayar" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Sistem Escrow</a>
-                    <a href="#katalog" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Katalog B2B</a>
-                    <a href="#informasi" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Pengiriman</a>
+                <nav class="hidden lg:flex items-center gap-8" aria-label="Navigasi utama">
+                    <a href="#keunggulan" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Infrastruktur</a>
+                    <a href="#sistem-bayar" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Sistem Escrow</a>
+                    <a href="#katalog" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Katalog B2B</a>
+                    <a href="#informasi" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Pengiriman</a>
                 </nav>
 
                 <!-- Actions -->
-                <div class="flex items-center gap-3 md:gap-5">
+                <div class="flex items-center gap-2 md:gap-5">
                     <button onclick="toggleCart()" class="relative p-2.5 text-corporate-600 hover:text-corporate-blue bg-corporate-50 rounded-xl hover:bg-corporate-100 transition-colors" aria-label="Purchase Order">
                         <i class="fa-solid fa-briefcase text-lg"></i>
                         <span id="cartBadge" class="absolute -top-1 -right-1 bg-corporate-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white scale-0 transition-transform">0</span>
                     </button>
-                    <a href="https://wa.me/6285715905079" target="_blank" class="hidden md:flex btn-corporate text-sm gap-2">
+                    <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="hidden md:flex btn-corporate text-sm gap-2">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         Hubungi Sales
                     </a>
+                    <button onclick="toggleMobileNav()" id="mobileNavBtn" class="lg:hidden p-2.5 text-corporate-600 bg-corporate-50 rounded-xl hover:bg-corporate-100 transition-colors" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileNav">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
                 </div>
                 
             </div>
+
+            <!-- Mobile Nav Panel -->
+            <nav id="mobileNav" class="lg:hidden absolute top-full left-0 w-full bg-white border-t border-corporate-100 shadow-premium px-5 py-4 flex flex-col gap-1" aria-label="Navigasi mobile">
+                <a href="#keunggulan" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Infrastruktur</a>
+                <a href="#sistem-bayar" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Sistem Escrow</a>
+                <a href="#katalog" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Katalog B2B</a>
+                <a href="#informasi" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Pengiriman</a>
+                <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="mt-2 btn-corporate justify-center text-sm gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Sales
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -320,7 +366,7 @@
                         <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-corporate-blue/10 rounded-full blur-3xl"></div>
                         
                         <div class="hero-image-wrapper border-4 border-white animate-float">
-                            <img src="https://i.ibb.co.com/bq2xSSQ/1750480573786.jpg" alt="R2 Nusantara Warehouse" class="w-full h-auto object-cover md:h-[500px]">
+                            <img src="https://i.ibb.co.com/bq2xSSQ/1750480573786.jpg" alt="R2 Nusantara Warehouse" loading="eager" decoding="async" class="w-full h-auto object-cover md:h-[500px] aspect-[4/3] md:aspect-auto">
                             
                             <!-- Floating Badge -->
                             <div class="absolute bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-floating border border-gray-100 flex items-center gap-4">
@@ -501,9 +547,38 @@
                         <p class="text-corporate-600 text-sm leading-relaxed">Semua harga di bawah tertera dalam satuan <strong class="text-corporate-900 font-bold">Per Slop</strong>. Gunakan fitur pencarian untuk merakit form Purchase Order Anda.</p>
                     </div>
                     
-                    <div class="w-full md:w-auto relative">
-                        <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-corporate-400"></i>
-                        <input type="text" id="searchInput" placeholder="Pencarian SKU Produk..." class="input-corporate pl-11 md:w-80 shadow-sm">
+                    <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-1">
+                            <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-corporate-400"></i>
+                            <label for="searchInput" class="sr-only">Cari SKU produk</label>
+                            <input type="text" id="searchInput" placeholder="Pencarian SKU Produk..." class="input-corporate pl-11 md:w-72 shadow-sm">
+                        </div>
+                        <div class="relative">
+                            <label for="sortSelect" class="sr-only">Urutkan katalog</label>
+                            <select id="sortSelect" class="input-corporate pr-9 appearance-none cursor-pointer shadow-sm sm:w-44">
+                                <option value="default">Urutan Default</option>
+                                <option value="name-asc">Nama A–Z</option>
+                                <option value="price-asc">Harga Terendah</option>
+                                <option value="price-desc">Harga Tertinggi</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-corporate-400 pointer-events-none text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Shipping Progress Nudge -->
+                <div id="shippingNudge" class="card-premium p-4 sm:p-5 mb-8 flex items-center gap-4" data-aos="fade-up">
+                    <div class="w-11 h-11 shrink-0 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-center mb-1.5 gap-2">
+                            <p id="shippingNudgeText" class="text-xs sm:text-sm font-semibold text-corporate-700 truncate">Tambahkan 20 Slop di keranjang untuk membuka Gratis Ongkir.</p>
+                            <span id="shippingNudgeCount" class="text-xs font-bold text-corporate-400 shrink-0">0/20</span>
+                        </div>
+                        <div class="progress-track h-2 w-full">
+                            <div id="shippingNudgeFill" class="progress-fill h-2" style="width: 0%"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -536,6 +611,13 @@
                     <p class="text-sm text-corporate-500">Coba gunakan kata kunci pencarian yang lain.</p>
                 </div>
 
+                <div class="flex flex-col items-center mt-10 gap-3">
+                    <p id="catalogCount" class="text-xs font-semibold text-corporate-400 uppercase tracking-wider"></p>
+                    <button id="loadMoreBtn" onclick="loadMore()" class="hidden px-8 py-3 rounded-xl border border-corporate-200 bg-white text-corporate-800 text-sm font-bold hover:border-corporate-400 hover:bg-corporate-50 transition-all shadow-sm">
+                        Tampilkan Lebih Banyak <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                </div>
+
             </div>
         </section>
 
@@ -547,7 +629,7 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
                 <div class="md:col-span-12 lg:col-span-4">
                     <div class="flex items-center gap-4 mb-6">
-                        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Logo" class="w-12 h-12 rounded-xl object-cover bg-white p-0.5">
+                        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Logo" loading="lazy" decoding="async" class="w-12 h-12 rounded-xl object-cover bg-white p-0.5">
                         <div class="flex flex-col">
                             <span class="font-heading font-extrabold text-[18px] text-white leading-tight">R2 NUSANTARA</span>
                             <span class="text-[10px] text-corporate-300 font-bold tracking-widest uppercase">Cigarette Tabaco Shop</span>
@@ -561,7 +643,7 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3 text-sm text-corporate-300 hover:text-white transition-colors">
                             <i class="fa-brands fa-whatsapp text-lg mt-0.5 text-green-400"></i>
-                            <a href="https://wa.me/6285715905079" target="_blank">(+62) 857-1590-5079</a>
+                            <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer">(+62) 857-1590-5079</a>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-corporate-300 hover:text-white transition-colors">
                             <i class="fa-regular fa-envelope text-lg mt-0.5"></i>
@@ -582,6 +664,25 @@
                             <span>Layanan Online 24/7</span>
                         </li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
+                    <i class="fa-solid fa-shield-halved text-corporate-gold text-lg"></i>
+                    <span class="text-xs font-bold text-corporate-200">Escrow Terverifikasi</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
+                    <i class="fa-solid fa-user-shield text-corporate-gold text-lg"></i>
+                    <span class="text-xs font-bold text-corporate-200">Khusus Mitra 18+</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
+                    <i class="fa-solid fa-warehouse text-corporate-gold text-lg"></i>
+                    <span class="text-xs font-bold text-corporate-200">Ready Stock Gudang</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
+                    <i class="fa-solid fa-headset text-corporate-gold text-lg"></i>
+                    <span class="text-xs font-bold text-corporate-200">Support 24/7</span>
                 </div>
             </div>
             
@@ -676,42 +777,42 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Nama Toko/Instansi <span class="text-red-500">*</span></label>
+                        <label for="f_name" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Nama Toko/Instansi <span class="text-red-500">*</span></label>
                         <input type="text" id="f_name" required class="input-corporate" placeholder="Masukkan nama...">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">No. WhatsApp <span class="text-red-500">*</span></label>
+                        <label for="f_phone" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">No. WhatsApp <span class="text-red-500">*</span></label>
                         <input type="tel" id="f_phone" required class="input-corporate" placeholder="08XXXXXXXXXX">
                     </div>
                 </div>
 
                 <div class="mb-5">
-                    <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman <span class="text-red-500">*</span></label>
+                    <label for="f_address" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman <span class="text-red-500">*</span></label>
                     <textarea id="f_address" required rows="2" class="input-corporate resize-none" placeholder="Nama Jalan, RT/RW, Patokan..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-5">
                     <div class="col-span-2 sm:col-span-1">
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kecamatan <span class="text-red-500">*</span></label>
+                        <label for="f_kec" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kecamatan <span class="text-red-500">*</span></label>
                         <input type="text" id="f_kec" required class="input-corporate" placeholder="Kecamatan">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kab/Kota <span class="text-red-500">*</span></label>
+                        <label for="f_kab" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kab/Kota <span class="text-red-500">*</span></label>
                         <input type="text" id="f_kab" required class="input-corporate" placeholder="Kab/Kota">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Provinsi <span class="text-red-500">*</span></label>
+                        <label for="f_prov" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Provinsi <span class="text-red-500">*</span></label>
                         <input type="text" id="f_prov" required class="input-corporate" placeholder="Provinsi">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kode Pos <span class="text-red-500">*</span></label>
+                        <label for="f_pos" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kode Pos <span class="text-red-500">*</span></label>
                         <input type="text" id="f_pos" required class="input-corporate" placeholder="Kodepos">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
                     <div>
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Pilihan Ekspedisi <span class="text-red-500">*</span></label>
+                        <label for="f_ekspedisi" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Pilihan Ekspedisi <span class="text-red-500">*</span></label>
                         <div class="relative">
                             <select id="f_ekspedisi" required class="input-corporate appearance-none cursor-pointer">
                                 <option value="" disabled selected>Pilih Kurir...</option>
@@ -729,7 +830,7 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Catatan Ekstra (Opsional)</label>
+                        <label for="f_notes" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Catatan Ekstra (Opsional)</label>
                         <input type="text" id="f_notes" class="input-corporate" placeholder="Cth: Packing kayu, dll...">
                     </div>
                 </div>
@@ -783,9 +884,18 @@
         const WA_NUMBER = "6285715905079";
         let cart = [];
         let searchKeyword = "";
+        let sortMode = "default";
+        const PAGE_SIZE = 15;
+        let visibleCount = PAGE_SIZE;
 
         // Core Formatters
         const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
+
+        // Deterministic accent color + initials per brand, so each of the 52 SKUs
+        // reads as distinct in the grid instead of an identical repeated icon.
+        const BRAND_PALETTE = ['#0B2046', '#334e68', '#8a6d1f', '#1f6f5c', '#7a3b3b', '#4a4a7a'];
+        const brandInitials = (name) => name.replace(/&/g, '').split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+        const brandColor = (id) => BRAND_PALETTE[id % BRAND_PALETTE.length];
         
         // Premium Toast Notification
         const showToast = (message) => {
@@ -799,30 +909,47 @@
         }
 
         // Render Product Catalog
+        const getFilteredSortedData = () => {
+            let data = inventoryData.filter(item => item.name.toLowerCase().includes(searchKeyword.toLowerCase()));
+            if (sortMode === 'name-asc') data = [...data].sort((a, b) => a.name.localeCompare(b.name));
+            else if (sortMode === 'price-asc') data = [...data].sort((a, b) => a.price - b.price);
+            else if (sortMode === 'price-desc') data = [...data].sort((a, b) => b.price - a.price);
+            return data;
+        }
+
         const renderCatalog = () => {
             const grid = document.getElementById('productGrid');
             const noResult = document.getElementById('noResult');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const catalogCount = document.getElementById('catalogCount');
             
             // Hide Skeleton
             document.getElementById('skeletonGrid').classList.add('hidden');
             grid.innerHTML = '';
 
-            const filteredData = inventoryData.filter(item => item.name.toLowerCase().includes(searchKeyword.toLowerCase()));
+            const filteredData = getFilteredSortedData();
 
             if(filteredData.length === 0) {
-                noResult.classList.remove('hidden'); return;
+                noResult.classList.remove('hidden');
+                loadMoreBtn.classList.add('hidden');
+                catalogCount.textContent = '';
+                return;
             } else {
                 noResult.classList.add('hidden');
             }
 
-            filteredData.forEach((item, index) => {
+            const shownData = filteredData.slice(0, visibleCount);
+
+            shownData.forEach((item, index) => {
                 const delay = (index % 10) * 50; // simple cascade
+                const initials = brandInitials(item.name);
+                const color = brandColor(item.id);
                 grid.innerHTML += `
                     <div class="card-premium flex flex-col h-full bg-white relative group" data-aos="fade-up" data-aos-delay="${delay}">
-                        <!-- Icon area replacing image -->
-                        <div class="h-[120px] bg-corporate-50 rounded-t-[19px] border-b border-corporate-100 flex items-center justify-center relative overflow-hidden transition-colors group-hover:bg-blue-50/50">
-                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-800 flex items-center justify-center shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-500">
-                                <i class="fa-solid fa-box text-corporate-gold text-2xl"></i>
+                        <!-- Brand initial badge area -->
+                        <div class="h-[120px] rounded-t-[19px] border-b border-corporate-100 flex items-center justify-center relative overflow-hidden transition-colors" style="background: linear-gradient(135deg, ${color}12, ${color}06);">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-500" style="background: ${color};">
+                                <span class="text-corporate-gold font-heading font-extrabold text-lg">${initials}</span>
                             </div>
                             <div class="absolute top-3 right-3 bg-white text-[9px] font-bold text-corporate-600 px-2 py-1 rounded shadow-sm uppercase tracking-wider">Ready</div>
                         </div>
@@ -836,9 +963,9 @@
                             <!-- Action Control -->
                             <div class="mt-auto flex items-center gap-2">
                                 <div class="flex items-center bg-corporate-50 border border-corporate-200 rounded-xl h-10 w-[80px] shrink-0">
-                                    <button onclick="changeQtyUI(${item.id}, -1)" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
-                                    <input type="number" id="qty_${item.id}" value="1" min="1" class="w-full text-center bg-transparent text-sm font-bold text-corporate-900 focus:outline-none hide-arrows pointer-events-none">
-                                    <button onclick="changeQtyUI(${item.id}, 1)" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-plus text-xs"></i></button>
+                                    <button onclick="changeQtyUI(${item.id}, -1)" aria-label="Kurangi jumlah ${item.name}" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
+                                    <input type="number" id="qty_${item.id}" value="1" min="1" aria-label="Jumlah ${item.name}" class="w-full text-center bg-transparent text-sm font-bold text-corporate-900 focus:outline-none hide-arrows pointer-events-none">
+                                    <button onclick="changeQtyUI(${item.id}, 1)" aria-label="Tambah jumlah ${item.name}" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-plus text-xs"></i></button>
                                 </div>
                                 <button onclick="addToCart(${item.id})" class="flex-1 h-10 bg-corporate-blue hover:bg-corporate-900 text-white font-bold text-[13px] rounded-xl transition-all shadow-sm hover:shadow-premium-sm flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-cart-plus"></i> Tambah
@@ -848,7 +975,16 @@
                     </div>
                 `;
             });
+
+            catalogCount.textContent = `Menampilkan ${shownData.length} dari ${filteredData.length} SKU`;
+            loadMoreBtn.classList.toggle('hidden', visibleCount >= filteredData.length);
+
             AOS.refresh(); // Refresh animations for dynamically added elements
+        }
+
+        const loadMore = () => {
+            visibleCount += PAGE_SIZE;
+            renderCatalog();
         }
 
         // Add to Cart Logic
@@ -952,6 +1088,61 @@
             formTotal.innerText = formatRupiah(tPrice);
 
             if(tQty >= 20) promoAlert.classList.remove('hidden'); else promoAlert.classList.add('hidden');
+
+            updateShippingNudge(tQty);
+        }
+
+        // Free Shipping Progress Nudge
+        const updateShippingNudge = (tQty) => {
+            const text = document.getElementById('shippingNudgeText');
+            const count = document.getElementById('shippingNudgeCount');
+            const fill = document.getElementById('shippingNudgeFill');
+            if(!text) return;
+
+            const pct = Math.min(100, Math.round((tQty / 20) * 100));
+            fill.style.width = pct + '%';
+            count.textContent = `${Math.min(tQty, 20)}/20`;
+
+            const iconWrap = document.querySelector('#shippingNudge > div:first-child');
+            if(tQty >= 20) {
+                text.textContent = 'Selamat! Purchase Order Anda memenuhi syarat Gratis Ongkir.';
+                iconWrap.className = 'w-11 h-11 shrink-0 rounded-xl bg-green-50 text-green-600 flex items-center justify-center text-lg';
+                iconWrap.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+            } else {
+                const sisa = 20 - tQty;
+                text.textContent = tQty === 0 ? 'Tambahkan 20 Slop di keranjang untuk membuka Gratis Ongkir.' : `Tambahkan ${sisa} Slop lagi untuk membuka Gratis Ongkir.`;
+                iconWrap.className = 'w-11 h-11 shrink-0 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg';
+                iconWrap.innerHTML = '<i class="fa-solid fa-truck-fast"></i>';
+            }
+        }
+
+        // Mobile Nav Controls
+        const toggleMobileNav = () => {
+            const nav = document.getElementById('mobileNav');
+            const btn = document.getElementById('mobileNavBtn');
+            const isOpen = nav.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            btn.querySelector('i').className = isOpen ? 'fa-solid fa-times text-lg' : 'fa-solid fa-bars text-lg';
+        }
+        const closeMobileNav = () => {
+            const nav = document.getElementById('mobileNav');
+            const btn = document.getElementById('mobileNavBtn');
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.querySelector('i').className = 'fa-solid fa-bars text-lg';
+        }
+
+        // Scrollspy: highlight the nav link matching the section in view
+        const sectionIds = ['keunggulan', 'sistem-bayar', 'katalog', 'informasi'];
+        const updateScrollspy = () => {
+            let current = null;
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if(el && el.getBoundingClientRect().top <= 140) current = id;
+            });
+            document.querySelectorAll('[data-navlink]').forEach(link => {
+                link.classList.toggle('nav-active', current && link.getAttribute('href') === `#${current}`);
+            });
         }
 
         // Drawer Controls
@@ -1022,6 +1213,14 @@
         // Live Search Handling
         document.getElementById('searchInput').addEventListener('input', (e) => {
             searchKeyword = e.target.value;
+            visibleCount = PAGE_SIZE;
+            renderCatalog();
+        });
+
+        // Sort Handling
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            sortMode = e.target.value;
+            visibleCount = PAGE_SIZE;
             renderCatalog();
         });
 
@@ -1038,6 +1237,8 @@
             const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrollPercent = (st / docHeight) * 100;
             p.style.width = scrollPercent + '%';
+
+            updateScrollspy();
         });
 
         // Initialize App
@@ -1067,4 +1268,3 @@
     </script>
 </body>
 </html>
-
