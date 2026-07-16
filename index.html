@@ -5,75 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="theme-color" content="#ffffff">
     
-    <!-- Complete SEO & Meta Tags -->
-    <meta name="description" content="R2 Nusantara — Cigarette Tobaco Shop. Jaminan stok puluhan merek, transaksi aman via Escrow, dan subsidi logistik nasional.">
-    <meta name="keywords" content="Gudang Distributor, Grosir, R2 Nusantara, Supplier Resmi, Escrow, Tembakau">
-    <meta name="author" content="R2 Nusantara">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="R2 Nusantara — Cigarette Tobaco Shop">
-    <meta property="og:description" content="Infrastruktur distribusi skala besar. Transaksi aman dengan sistem Escrow 100%. Gratis ongkir seluruh Indonesia.">
-    <meta property="og:image" content="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg">
-    <meta property="og:url" content="https://r2nusantara.id">
+    <!-- === META UNTUK THUMBNAIL PREVIEW WHATSAPP / OPEN GRAPH === -->
+    <meta property="og:title" content="R2 Nusantara">
+    <meta property="og:description" content="Join Me">
+    <meta property="og:image" content="https://i.ibb.co.com/FbBqkRGb/IMG-20260704-192231.jpg">
+    <meta property="og:url" content="gudangdistributormalang@gmail.com">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="R2 Nusantara Enterprise">
+    <meta property="og:site_name" content="Gudang Distributor">
     <meta property="og:locale" content="id_ID">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Gudang Distributor — R2 Nusantara">
     
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="R2 Nusantara — Premium B2B Distributor Portal">
-    <meta name="twitter:description" content="Infrastruktur distribusi B2B skala besar. Transaksi aman dengan sistem Escrow 100%.">
-    <meta name="twitter:image" content="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg">
-    <link rel="canonical" href="https://r2nusantara.id">
-    
-    <title>R2 Nusantara | Cigarette Tobaco Shop</title>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "R2 Nusantara Distributor",
-            "alternateName": "R2 Nusantara B2B",
-            "url": "https://r2nusantara.id",
-            "logo": "https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg",
-            "description": "Platform distribusi B2B resmi dengan infrastruktur escrow dan manajemen logistik nasional.",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+62-857-1590-5079",
-                "contactType": "sales",
-                "areaServed": "ID",
-                "availableLanguage": "Indonesian"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Desa Karangduren, Kec. Pakisaji",
-                "addressLocality": "Kab. Malang",
-                "addressRegion": "Jawa Timur",
-                "postalCode": "65162",
-                "addressCountry": "ID"
-            }
-        }
-    </script>
+    <!-- SEO Standard -->
+    <meta name="description" content="Portal Distributor B2B Resmi R2 Nusantara. Pemesanan grosir rokok & tembakau. Sistem Escrow aman, subsidi logistik nasional, 50+ merek premium.">
+    <meta name="keywords" content="R2 Nusantara, Distributor, Grosir, Pabrik, Tembakau, Escrow, B2B, Supply Chain">
+    <title>R2 Nusantara | Corporate Tobacco Distributor</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- AOS Animation Library -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Google Fonts (Optimized Typographic Stack) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- SweetAlert2 & Lucide -->
+    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -81,396 +48,384 @@
                     fontFamily: {
                         heading: ['"Plus Jakarta Sans"', 'sans-serif'],
                         body: ['Inter', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
-                        brand: {
-                            50: '#F4F7FF', 100: '#E4ECFF', 200: '#C7D7FF', 300: '#9DBEFF', 400: '#6B9AFF',
-                            500: '#3D72FF', 600: '#1A53E6', 700: '#0F3DBD', 800: '#103399', 900: '#122E7A', 950: '#0B1C4D',
-                        },
-                        surface: {
-                            50: '#FCFCFD', 100: '#F5F5F7', 200: '#EAEBEF', 300: '#D4D6DD', 400: '#A9ACB6',
-                            500: '#737785', 600: '#525663', 700: '#3F424E', 800: '#1D1D1F', 900: '#131314',
-                        },
+                        corporate: {
+                            50: '#f0f4f8', 100: '#d9e2ec', 200: '#bcccdc', 300: '#9fb3c8', 400: '#829ab1',
+                            500: '#627d98', 600: '#486581', 700: '#334e68', 800: '#243b53', 900: '#102a43',
+                            blue: '#0B2046', gold: '#D4AF37', silver: '#E2E8F0'
+                        }
                     },
                     boxShadow: {
-                        'premium': '0 4px 24px -4px rgba(0, 0, 0, 0.04), 0 16px 48px -8px rgba(0, 0, 0, 0.06)',
-                        'premium-hover': '0 8px 32px -4px rgba(10, 30, 80, 0.06), 0 24px 64px -12px rgba(10, 30, 80, 0.1)',
-                        'premium-sm': '0 2px 10px -2px rgba(0, 0, 0, 0.03), 0 4px 20px -4px rgba(0, 0, 0, 0.05)',
-                        'inner-light': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 0 rgba(0, 0, 0, 0.02)',
-                        'glow-brand': '0 0 32px -6px rgba(61, 114, 255, 0.3)',
-                    },
-                    letterSpacing: {
-                        tightest: '-.03em',
-                        tighter: '-.02em',
-                        tight: '-.01em',
-                        wide: '.015em',
-                        widest: '.15em',
+                        'premium': '0 10px 40px -10px rgba(11, 32, 70, 0.08)',
+                        'premium-hover': '0 20px 40px -10px rgba(11, 32, 70, 0.12)',
+                        'floating': '0 30px 60px -15px rgba(0, 0, 0, 0.1)',
                     },
                     animation: {
-                        'float': 'float 8s ease-in-out infinite',
-                        'float-delayed': 'float 10s ease-in-out 2s infinite',
-                        'shimmer': 'shimmer 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-                        'scale-in': 'scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'border-flow': 'borderFlow 4s linear infinite',
-                        'marquee': 'marquee 45s linear infinite',
-                        'marquee2': 'marquee 45s linear 22.5s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'ripple': 'ripple 1s linear infinite',
                     },
                     keyframes: {
-                        float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } },
-                        shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
-                        scaleIn: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
-                        borderFlow: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '200% 50%' } },
-                        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } },
-                    },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } },
+                        ripple: { '0%': { boxShadow: '0 0 0 0 rgba(212, 175, 55, 0.3)' }, '100%': { boxShadow: '0 0 0 20px rgba(212, 175, 55, 0)' } }
+                    }
                 }
             }
         }
     </script>
 
     <style>
-        :root { --bg-body: #FCFCFD; --text-main: #1D1D1F; --accent-brand: #3D72FF; }
-        
-        /* Base Setup & Typography Overrides */
-        html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #D4D6DD transparent; }
-        body {
-            background-color: var(--bg-body); color: var(--text-main);
-            font-family: 'Inter', sans-serif; overflow-x: hidden;
-            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-            position: relative;
+        /* Base & Resets */
+        body { 
+            background-color: #FAFAFC; 
+            color: #102a43; 
+            -webkit-font-smoothing: antialiased; 
+            position: relative; 
         }
         
-        /* Premium Text Rendering */
-        h1, h2, h3, h4, h5, h6 { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
-        p { font-feature-settings: "cv01", "ss01"; }
-
-        /* Webkit Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #D4D6DD; border-radius: 12px; }
-        ::-webkit-scrollbar-thumb:hover { background: #A9ACB6; }
-        ::selection { background: rgba(61, 114, 255, 0.15); color: #1A53E6; }
-
-        /* Ultra-subtle Noise Texture */
-        .bg-noise { position: relative; }
-        .bg-noise::before {
-            content: ''; position: absolute; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-            pointer-events: none; z-index: 1; mix-blend-mode: multiply;
-        }
-
-        /* Watermark Transparan di Seluruh Halaman */
-        body::after {
+        /* Watermark Background - Sangat Halus (4% opacity) */
+        body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: url('https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg');
+            background-image: url('https://i.ibb.co.com/hxtcLcNc/IMG-20251224-122739.jpg');
             background-repeat: repeat;
-            background-size: 280px;
-            opacity: 0.025;
+            background-size: 350px;
+            opacity: 0.04;
             pointer-events: none;
-            z-index: 9998;
+            z-index: -1;
             mix-blend-mode: multiply;
         }
 
-        /* Custom Refined Cursor */
-        .cursor-dot {
-            width: 5px; height: 5px; background: var(--accent-brand); border-radius: 50%;
-            position: fixed; pointer-events: none; z-index: 99999; transition: transform 0.1s ease;
-        }
-        .cursor-ring {
-            width: 32px; height: 32px; border: 1px solid rgba(61, 114, 255, 0.25); border-radius: 50%;
-            position: fixed; pointer-events: none; z-index: 99998;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); background: rgba(61, 114, 255, 0.01);
-        }
-        .cursor-hover .cursor-ring {
-            width: 56px; height: 56px; border-color: rgba(61, 114, 255, 0.4);
-            background: rgba(61, 114, 255, 0.05); backdrop-filter: blur(1px);
-        }
-        @media (max-width: 1024px) { .cursor-dot, .cursor-ring { display: none; } }
+        /* Custom Scrollbar Premium */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAFAFC; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        ::selection { background: rgba(212, 175, 55, 0.2); color: #0B2046; }
 
-        /* Structural & Glass UI */
-        .glass-panel {
-            background: rgba(252, 252, 253, 0.75);
-            backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        /* Typography Optimizations */
+        h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
+        
+        /* Glassmorphism & UI Components */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: var(--shadow-premium-sm), var(--shadow-inner-light);
+        .card-premium {
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 20px -4px rgba(11, 32, 70, 0.04);
+            border-radius: 20px;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .glass-card:hover {
-            border-color: rgba(61, 114, 255, 0.12);
-            box-shadow: var(--shadow-premium-hover), var(--shadow-inner-light);
+        .card-premium:hover {
+            box-shadow: 0 15px 35px -5px rgba(11, 32, 70, 0.08);
             transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
-        /* 3D Dashboard Tilt */
-        .tilt-card { transform-style: preserve-3d; perspective: 2000px; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
-        .tilt-card-inner { transform-style: preserve-3d; transform: translateZ(30px); }
+        /* Hero Overlay Effect */
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-floating);
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(11, 32, 70, 0.4) 0%, rgba(11, 32, 70, 0.1) 100%);
+            mix-blend-mode: overlay;
+        }
 
-        /* Micro Interactions */
-        .magnetic-btn { transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, background 0.3s ease; }
+        /* Drawer Cart */
+        .drawer {
+            position: fixed; top: 0; right: 0; height: 100vh;
+            width: 100%; max-width: 450px;
+            background: white; z-index: 100;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.08);
+            display: flex; flex-direction: column;
+        }
+        .drawer.open { transform: translateX(0); }
+        .drawer-overlay {
+            position: fixed; inset: 0; background: rgba(11, 32, 70, 0.4);
+            backdrop-filter: blur(4px); z-index: 99;
+            opacity: 0; visibility: hidden; transition: all 0.4s ease;
+        }
+        .drawer-overlay.open { opacity: 1; visibility: visible; }
+
+        /* Mobile specific bottom sheet behavior */
+        @media (max-width: 640px) {
+            .drawer {
+                top: auto; bottom: 0; height: 85vh; max-width: 100%;
+                transform: translateY(100%);
+                border-radius: 24px 24px 0 0;
+            }
+            .drawer.open { transform: translateY(0); }
+        }
+
+        /* Forms */
+        .input-corporate {
+            width: 100%; background: #F8FAFC; border: 1.5px solid #E2E8F0;
+            border-radius: 12px; padding: 14px 16px; font-size: 14px;
+            color: #102a43; transition: all 0.3s ease; font-family: 'Inter', sans-serif;
+        }
+        .input-corporate:focus {
+            outline: none; border-color: #0B2046; background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(11, 32, 70, 0.05);
+        }
         
-        .ripple { position: relative; overflow: hidden; transform: translate3d(0, 0, 0); }
-        .ripple::after {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
-            background-position: center; background-repeat: no-repeat; opacity: 0;
-            transition: opacity 0.5s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); transform: scale(10); pointer-events: none;
-        }
-        .ripple:active::after { opacity: 0.3; transform: scale(0); transition: 0s; }
-
-        .nav-link { position: relative; }
-        .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 50%;
-            background-color: var(--accent-brand); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translateX(-50%); border-radius: 2px;
-        }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-        /* UI Utilities */
-        .skeleton {
-            background: linear-gradient(90deg, #F5F5F7 25%, #EAEBEF 50%, #F5F5F7 75%);
-            background-size: 200% 100%; animation: shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; border-radius: 8px;
-        }
+        /* Smooth Progress Bar */
         #scrollProgress {
-            position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #3D72FF, #1A53E6);
-            z-index: 100000; transition: width 0.1s ease-out; border-radius: 0 2px 2px 0;
-        }
-        #cartDrawer { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        .cart-open { transform: translateX(0) !important; }
-        
-        .border-glow-animated { position: relative; background: white; background-clip: padding-box; border: 1px solid transparent; }
-        .border-glow-animated::before {
-            content: ''; position: absolute; inset: -1px; z-index: -1; border-radius: inherit;
-            background: linear-gradient(90deg, rgba(61, 114, 255, 0.3), rgba(245, 158, 11, 0.3), rgba(61, 114, 255, 0.3));
-            background-size: 200% 100%; animation: borderFlow 4s linear infinite;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #F59E0B);
+            z-index: 1000; transition: width 0.1s ease;
         }
 
-        #particleCanvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.3; mix-blend-mode: multiply; }
-        *:focus-visible { outline: 2px solid var(--accent-brand); outline-offset: 2px; border-radius: 6px; }
+        /* Loaders */
+        .loader-skeleton {
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%; animation: shimmer 2s infinite; border-radius: 12px;
+        }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
-        @media (max-width: 768px) {
-            .glass-card:hover { transform: none; }
-            .tilt-card { transform: none !important; }
+        /* Buttons */
+        .btn-corporate {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: #0B2046; color: white; padding: 14px 28px;
+            border-radius: 12px; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .btn-corporate:hover {
+            background: #102a43; transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(11, 32, 70, 0.3);
+        }
+        .btn-gold {
+            background: #D4AF37; color: #fff;
+        }
+        .btn-gold:hover {
+            background: #b5952f; box-shadow: 0 8px 25px -5px rgba(212, 175, 55, 0.4);
         }
     </style>
 </head>
-<body class="antialiased text-surface-800 bg-noise selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
+<body class="font-body overflow-x-hidden">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[99999] bg-surface-50 flex items-center justify-center backdrop-blur-xl transition-all duration-700 ease-out">
-        <div class="flex flex-col items-center gap-6">
-            <div class="relative w-20 h-20">
-                <svg class="w-full h-full animate-spin-slow" viewBox="0 0 100 100" fill="none">
-                    <circle cx="50" cy="50" r="46" stroke="rgba(61, 114, 255, 0.08)" stroke-width="2" fill="none" />
-                    <circle cx="50" cy="50" r="46" stroke="#3D72FF" stroke-width="3" fill="none" stroke-dasharray="280" stroke-dashoffset="100" stroke-linecap="round" />
-                </svg>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <img src="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg" alt="R2 Logo" class="w-12 h-12 object-contain rounded-full">
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <p class="text-surface-900 text-xs font-heading font-bold tracking-[0.2em] uppercase">Enterprise Portal</p>
-                <div class="h-1 w-10 bg-surface-200 rounded-full overflow-hidden">
-                    <div class="h-full bg-brand-500 w-full origin-left animate-[scaleIn_1s_ease-in-out_infinite_alternate]"></div>
-                </div>
-            </div>
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 mb-6">
+            <div class="absolute inset-0 rounded-full border-4 border-corporate-100 border-t-corporate-blue animate-spin"></div>
+            <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Logo" class="absolute inset-0 m-auto w-14 h-14 object-cover rounded-full">
         </div>
+        <h2 class="font-heading font-bold text-corporate-blue tracking-[0.2em] uppercase text-sm">Enterprise Portal</h2>
     </div>
 
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-    <div id="scrollProgress" style="width:0%"></div>
-    <div class="fixed top-6 right-6 z-[99990] flex flex-col gap-3" id="toastContainer"></div>
+    <!-- Scroll Progress -->
+    <div id="scrollProgress"></div>
 
-    <!-- Announcement Bar -->
-    <div class="relative z-50 bg-surface-900 text-white overflow-hidden h-[38px] flex items-center shadow-sm">
-        <div class="absolute inset-0 bg-gradient-to-r from-surface-900 via-surface-800 to-surface-900 opacity-80"></div>
-        <div class="flex animate-marquee whitespace-nowrap gap-12 px-6 relative z-10 text-[12.5px] font-medium tracking-wide">
-            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.5)]"></span> Minimal 1 Bal (20 Slop) — Gratis Ongkir Nasional</span>
-            <span class="flex items-center gap-2 text-white/80"><span class="w-1 h-1 rounded-full bg-gold-400"></span> Transaksi Aman: Sistem Pembayaran Escrow</span>
-            <span class="flex items-center gap-2 text-white/80"><span class="w-1 h-1 rounded-full bg-brand-400"></span> 50+ Merek Tembakau Tersedia</span>
-            <span class="flex items-center gap-2 text-green-300"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>Support Online 24/7</span>
-        </div>
-        <div class="flex animate-marquee2 whitespace-nowrap gap-12 px-6 absolute top-0 left-0 h-full items-center z-10 text-[12.5px] font-medium tracking-wide">
-            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.5)]"></span> Minimal 1 Bal (20 Slop) — Gratis Ongkir Nasional</span>
-            <span class="flex items-center gap-2 text-white/80"><span class="w-1 h-1 rounded-full bg-gold-400"></span> Transaksi Aman: Sistem Pembayaran Escrow</span>
-            <span class="flex items-center gap-2 text-white/80"><span class="w-1 h-1 rounded-full bg-brand-400"></span> 50+ Merek Tembakau Tersedia</span>
-            <span class="flex items-center gap-2 text-green-300"><span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>Support Online 24/7</span>
-        </div>
-    </div>
-
-    <!-- Main Header -->
-    <header id="mainHeader" class="sticky top-0 z-40 glass-panel transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+    <!-- Header Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24">
                 
                 <!-- Logo -->
-                <div class="flex items-center gap-3.5 cursor-pointer group magnetic-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" role="button" aria-label="Beranda">
-                    <img src="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg" alt="R2 Nusantara Logo" class="w-10 h-10 rounded-xl object-cover shadow-premium-sm group-hover:shadow-md transition-all duration-500 border border-surface-200">
-                    <div class="flex flex-col justify-center">
-                        <span class="font-heading font-extrabold text-[17px] tracking-tight text-surface-900 leading-none mb-1">R2 NUSANTARA</span>
-                        <span class="text-[9.5px] text-surface-500 font-bold tracking-[0.2em] uppercase leading-none">Cigarette Tobaco Shop</span>
+                <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara" class="w-12 h-12 rounded-xl object-cover shadow-sm border border-gray-100">
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-[18px] md:text-[20px] text-corporate-blue leading-tight">R2 NUSANTARA</span>
+                        <span class="text-[10px] md:text-[11px] text-corporate-500 font-bold tracking-widest uppercase">Cigarette Tabaco Shop</span>
                     </div>
                 </div>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <a href="#katalog" class="nav-link text-[13.5px] font-semibold text-surface-600 hover:text-surface-900 transition-colors py-1">Katalog</a>
-                    <a href="#keunggulan" class="nav-link text-[13.5px] font-semibold text-surface-600 hover:text-surface-900 transition-colors py-1">Infrastruktur</a>
-                    <a href="#testimoni" class="nav-link text-[13.5px] font-semibold text-surface-600 hover:text-surface-900 transition-colors py-1">Mitra</a>
-                    <a href="#faq" class="nav-link text-[13.5px] font-semibold text-surface-600 hover:text-surface-900 transition-colors py-1">FAQ</a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#keunggulan" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Infrastruktur</a>
+                    <a href="#sistem-bayar" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Sistem Escrow</a>
+                    <a href="#katalog" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Katalog B2B</a>
+                    <a href="#informasi" class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Pengiriman</a>
                 </nav>
 
                 <!-- Actions -->
-                <div class="flex items-center gap-3">
-                    <button onclick="toggleCart()" class="relative p-2 text-surface-600 hover:text-surface-900 transition-colors rounded-lg hover:bg-surface-100 group magnetic-btn" aria-label="Keranjang PO">
-                        <svg class="w-5 h-5 group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                        <span id="cartCountBadge" class="absolute -top-0.5 -right-0.5 bg-brand-600 text-white text-[9px] font-bold w-4.5 h-4.5 flex items-center justify-center rounded-full border-2 border-white scale-0 transition-transform duration-300 shadow-sm leading-none pt-px">0</span>
+                <div class="flex items-center gap-3 md:gap-5">
+                    <button onclick="toggleCart()" class="relative p-2.5 text-corporate-600 hover:text-corporate-blue bg-corporate-50 rounded-xl hover:bg-corporate-100 transition-colors" aria-label="Purchase Order">
+                        <i class="fa-solid fa-briefcase text-lg"></i>
+                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-corporate-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white scale-0 transition-transform">0</span>
                     </button>
-                    <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 bg-surface-900 text-white hover:bg-brand-600 px-4 py-2.5 rounded-xl font-semibold text-[13px] transition-all duration-400 shadow-premium-sm hover:shadow-glow-brand magnetic-btn ripple">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+                    <a href="https://wa.me/6285715905079" target="_blank" class="hidden md:flex btn-corporate text-sm gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
                         Hubungi Sales
                     </a>
                 </div>
+                
             </div>
         </div>
     </header>
 
-    <!-- Main Content Flow -->
-    <main class="flex-grow">
-        
+    <main>
         <!-- Hero Section -->
-        <section id="hero" class="relative pt-24 pb-28 lg:pt-36 lg:pb-36 overflow-hidden bg-surface-50">
-            <canvas id="particleCanvas" class="absolute inset-0 z-0"></canvas>
-            
-            <!-- Structural Gradients -->
-            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                <div class="absolute top-[-10%] left-[-5%] w-[45vw] h-[45vw] bg-brand-100/50 rounded-full blur-[100px] animate-float opacity-60"></div>
-                <div class="absolute top-[30%] right-[-10%] w-[35vw] h-[35vw] bg-blue-100/30 rounded-full blur-[120px] animate-float-delayed opacity-50"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
                     
-                    <!-- Copywriting -->
-                    <div class="lg:col-span-7" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-surface-200/80 shadow-sm text-surface-800 text-[11px] font-bold tracking-wide mb-8 backdrop-blur-sm">
-                            <span class="relative flex h-2 w-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    <!-- Text Content -->
+                    <div data-aos="fade-right" data-aos-duration="1000" class="relative z-10">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-corporate-blue text-[11px] font-bold tracking-widest uppercase mb-6">
+                            <span class="w-1.5 h-1.5 rounded-full bg-corporate-blue animate-pulse"></span>
+                            Portal Distributor Resmi
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-corporate-900 leading-[1.15] mb-6">
+                            Pusat Pengadaan <br>
+                            <span class="text-corporate-blue relative">
+                                Skala Nasional.
+                                <svg class="absolute w-full h-3 -bottom-1 left-0 text-corporate-gold/30" fill="currentColor" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q50,15 100,5 L100,10 L0,10 Z"></path></svg>
                             </span>
-                            Sistem Distributor Terverifikasi
-                        </div>
-                        
-                        <h1 class="text-5xl md:text-6xl lg:text-[76px] font-heading font-extrabold leading-[1.05] tracking-tightest text-surface-900 mb-6">
-                            Ekosistem <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">Distribusi</span><br>Skala Partai.
                         </h1>
-                        
-                        <!-- Slogan Visual -->
-                        <div class="mb-10">
-                            <img src="https://i.ibb.co.com/NdQds7Gk/1750480573786.jpg" alt="R2 Nusantara Slogan" class="max-w-md w-full h-auto object-contain rounded-2xl shadow-premium-sm border border-surface-200/60 bg-white/60 backdrop-blur-sm p-2">
-                        </div>
-
-                        <p class="text-surface-600 text-lg md:text-xl mb-10 max-w-2xl leading-relaxed font-medium">
-                            Gudang Distributor / grosir terpercaya. Ready <strong class="text-surface-900 font-semibold">50+ merek ORIGINAL</strong> dengan jaminan sistem <em class="text-brand-600 not-italic font-semibold">Escrow</em> — selesaikan pembayaran hanya setelah resi logistik diterbitkan.
+                        <p class="text-corporate-600 text-lg mb-10 max-w-lg leading-relaxed">
+                            Infrastruktur rantai pasok B2B terpadu dengan 50+ merek premium. Transaksi tanpa risiko melalui sistem <strong class="text-corporate-blue">pembayaran pasca-resi (Escrow)</strong>.
                         </p>
                         
-                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                            <a href="#katalog" class="magnetic-btn ripple bg-surface-900 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-400 shadow-premium-sm hover:shadow-glow-brand flex items-center justify-center gap-3 text-[15px] group">
-                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                                Pesan Kuota Grosir
-                            </a>
-                            <a href="#keunggulan" class="magnetic-btn bg-white hover:bg-surface-100 text-surface-800 border border-surface-200 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-[15px] shadow-sm">
-                                Pelajari Infrastruktur
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="document.getElementById('katalog').scrollIntoView()" class="btn-corporate btn-gold text-sm">
+                                Susun Purchase Order
+                            </button>
+                            <a href="#sistem-bayar" class="inline-flex items-center justify-center bg-white border border-corporate-200 text-corporate-800 padding px-6 py-3.5 rounded-xl font-heading font-semibold text-sm hover:border-corporate-400 hover:bg-corporate-50 transition-all shadow-sm">
+                                Pelajari Keamanan Kami
                             </a>
                         </div>
                         
-                        <!-- Mini Trust -->
-                        <div class="pt-6 border-t border-surface-200 flex flex-wrap gap-x-8 gap-y-4">
-                            <div class="flex items-center gap-2.5 text-[13px] text-surface-600 font-semibold">
-                                <div class="w-6 h-6 rounded-full bg-green-50 flex items-center justify-center text-green-600">
-                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                </div>
-                                100% Original
+                        <div class="mt-12 pt-8 border-t border-corporate-100 flex items-center gap-8">
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-heading font-extrabold text-corporate-900">50+</span>
+                                <span class="text-[11px] text-corporate-500 font-bold uppercase tracking-wider">SKU Tersedia</span>
                             </div>
-                            <div class="flex items-center gap-2.5 text-[13px] text-surface-600 font-semibold">
-                                <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand-600">
-                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </div>
-                                Verified Partner
-                            </div>
-                            <div class="flex items-center gap-2.5 text-[13px] text-surface-600 font-semibold">
-                                <div class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path></svg>
-                                </div>
-                                Logistik Nasional
+                            <div class="w-px h-12 bg-corporate-200"></div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-heading font-extrabold text-corporate-900">100%</span>
+                                <span class="text-[11px] text-corporate-500 font-bold uppercase tracking-wider">Keamanan Transaksi</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Dashboard Visual Mockup -->
-                    <div class="lg:col-span-5 hidden lg:block relative" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="100">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-200/40 to-brand-50/20 rounded-3xl blur-3xl transform rotate-6"></div>
+                    <!-- Image / Visual -->
+                    <div data-aos="fade-left" data-aos-duration="1200" class="relative">
+                        <!-- Decorative shapes -->
+                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-corporate-gold/10 rounded-full blur-3xl"></div>
+                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-corporate-blue/10 rounded-full blur-3xl"></div>
                         
-                        <div class="tilt-card">
-                            <div class="tilt-card-inner bg-white/80 backdrop-blur-2xl rounded-[24px] p-6 border border-white shadow-premium relative z-10 flex flex-col h-full">
-                                <div class="flex justify-between items-center mb-6">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="w-2 h-2 rounded-full bg-surface-300"></div>
-                                        <span class="font-heading font-bold text-[14px] text-surface-900 tracking-tight">Status PO Real-Time</span>
-                                    </div>
-                                    <span class="flex items-center gap-1.5 text-[10px] font-bold text-green-700 bg-green-50 px-2 py-1 rounded-md border border-green-200 uppercase tracking-wide">
-                                        <span class="relative flex h-1.5 w-1.5">
-                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                                        </span>
-                                        Live
-                                    </span>
+                        <div class="hero-image-wrapper border-4 border-white animate-float">
+                            <img src="https://i.ibb.co.com/bq2xSSQ/1750480573786.jpg" alt="R2 Nusantara Warehouse" class="w-full h-auto object-cover md:h-[500px]">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-floating border border-gray-100 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-shield-check"></i>
                                 </div>
-                                
-                                <div class="space-y-3">
-                                    <div class="flex items-center gap-4 bg-white p-3 rounded-xl border border-surface-100 shadow-sm cursor-default">
-                                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold font-mono text-[11px] border border-blue-100">CGK</div>
-                                        <div class="flex-1 min-w-0">
-                                            <div class="text-[13px] font-bold text-surface-900 truncate mb-0.5">Bpk. Anton — Jakarta</div>
-                                            <div class="text-[11px] text-surface-500 font-medium">5 Bal (100 Slop) • <span class="text-green-600 font-semibold">Packing</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-4 bg-white p-3 rounded-xl border border-surface-100 shadow-sm cursor-default">
-                                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold font-mono text-[11px] border border-purple-100">SUB</div>
-                                        <div class="flex-1 min-w-0">
-                                            <div class="text-[13px] font-bold text-surface-900 truncate mb-0.5">Toko Makmur — Surabaya</div>
-                                            <div class="text-[11px] text-surface-500 font-medium">2 Bal (40 Slop) • <span class="text-brand-600 font-semibold">Manifested</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-4 bg-white p-3 rounded-xl border border-surface-100 shadow-sm cursor-default opacity-70">
-                                        <div class="w-10 h-10 rounded-lg bg-surface-50 text-surface-600 flex items-center justify-center font-bold font-mono text-[11px] border border-surface-200">UPG</div>
-                                        <div class="flex-1 min-w-0">
-                                            <div class="text-[13px] font-bold text-surface-900 truncate mb-0.5">CV. Indah — Makassar</div>
-                                            <div class="text-[11px] text-surface-500 font-medium">10 Bal (200 Slop) • <span class="text-surface-500">Selesai</span></div>
-                                        </div>
-                                    </div>
+                                <div>
+                                    <p class="text-[10px] font-bold text-corporate-500 uppercase tracking-wider mb-0.5">Verified</p>
+                                    <p class="font-heading font-bold text-sm text-corporate-900">Partner Logistik Resmi</p>
                                 </div>
-                                
-                                <div class="mt-6 pt-4 border-t border-surface-100 flex justify-between items-center px-1">
-                                    <div class="flex flex-col">
-                                        <span class="text-[9px] text-surface-400 font-bold uppercase tracking-widest mb-1">Volume Harian</span>
-                                        <span class="text-[13px] font-heading font-black text-surface-900">47 Diproses</span>
-                                    </div>
-                                    <div class="w-px h-6 bg-surface-200"></div>
-                                    <div class="flex flex-col text-right">
-                                        <span class="text-[9px] text-surface-400 font-bold uppercase tracking-widest mb-1">SLA Response</span>
-                                        <span class="text-[13px] font-heading font-black text-green-600">&lt; 3 Menit</span>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Keunggulan (Corporate Features) -->
+        <section id="keunggulan" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-corporate-gold text-[12px] font-bold tracking-[0.2em] uppercase block mb-3">Keunggulan Operasional</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-corporate-900 leading-tight">Standar Enterprise untuk Bisnis Anda</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Harga Grosir Akurat</h3>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Struktur harga berjenjang yang dioptimalkan untuk margin reseller dan agen distribusi tingkat daerah.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Distribusi Nasional</h3>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Eksekusi pengiriman ke 34 Provinsi. Gratis biaya kirim untuk Purchase Order minimal 1 Bal (20 Slop).</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Gudang Ready Stock</h3>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Inventaris terpusat. Bukan sistem Pre-Order. Seluruh SKU dalam katalog tersedia untuk alokasi instan.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-gold text-2xl mb-6">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Pembayaran Escrow</h3>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Nol risiko finansial. Sistem penagihan dilakukan hanya setelah validitas resi ekspedisi terverifikasi.</p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Dedicated Support</h3>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Tim Account Executive khusus yang mendampingi proses PO hingga tahap serah terima logistik di tujuan.</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Packing Profesional</h3>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Standar pengemasan korporat (kardus tebal & wrapping) memastikan keutuhan pita cukai dan fisik produk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sistem Pembayaran (Escrow Highlight) -->
+        <section id="sistem-bayar" class="py-12">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div class="bg-corporate-blue rounded-[32px] overflow-hidden relative shadow-floating" data-aos="zoom-in">
+                    <!-- Decor -->
+                    <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #D4AF37 0%, transparent 50%);"></div>
+                    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Cg%3E%3C/svg%3E');"></div>
+                    
+                    <div class="px-8 py-16 md:px-16 text-center relative z-10 flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center text-corporate-gold text-4xl mb-8 shadow-sm backdrop-blur-sm animate-ripple">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <span class="text-corporate-gold text-[11px] font-bold tracking-[0.25em] uppercase mb-4">Kebijakan Keamanan Finansial</span>
+                        <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-6">SISTEM PEMBAYARAN ESCROW</h2>
+                        <p class="text-corporate-200 text-lg md:text-xl font-medium max-w-2xl mb-10">
+                            Transfer pembayaran <strong class="text-white text-xl">HANYA</strong> dilakukan setelah nomor resi fisik/digital resmi diterbitkan oleh pihak ekspedisi.
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4 text-sm font-bold">
+                            <div class="bg-white/10 text-white px-5 py-2.5 rounded-full backdrop-blur-sm flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-green-400"></i> Bukan COD
+                            </div>
+                            <div class="bg-white/10 text-white px-5 py-2.5 rounded-full backdrop-blur-sm flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-green-400"></i> Bukan Transfer Di Awal
+                            </div>
+                            <div class="bg-white/10 text-white px-5 py-2.5 rounded-full backdrop-blur-sm flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-green-400"></i> 100% Transparan
                             </div>
                         </div>
                     </div>
@@ -478,811 +433,638 @@
             </div>
         </section>
 
-        <!-- Stats Data -->
-        <section class="py-16 bg-white border-y border-surface-200 relative z-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-                    <div class="text-center md:border-r border-surface-100 px-4" data-aos="fade-up" data-aos-delay="0">
-                        <div class="text-4xl md:text-[40px] font-heading font-black text-surface-900 mb-2 tracking-tight"><span class="counter" data-target="12500">0</span>+</div>
-                        <p class="text-surface-500 text-[11px] font-bold tracking-widest uppercase">Order Terkirim</p>
+        <!-- Informasi Pengiriman -->
+        <section id="informasi" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-3xl font-heading font-extrabold text-corporate-900 mb-6">Manajemen Logistik & Pengiriman</h2>
+                        <p class="text-corporate-600 text-base leading-relaxed mb-8">Pusat distribusi kami berbasis di wilayah operasional Malang. Kami menjalin kemitraan erat dengan berbagai ekspedisi nasional untuk menjamin suplai B2B Anda tiba tepat waktu.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4 items-start">
+                                <div class="w-12 h-12 shrink-0 rounded-xl bg-corporate-50 text-corporate-blue flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-corporate-900 mb-1">Gudang Distributor Pusat</h4>
+                                    <p class="text-sm text-corporate-500 leading-relaxed">Berbasis di Malang, Jawa Timur. Terintegrasi langsung dengan hub ekspedisi utama.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <div class="w-12 h-12 shrink-0 rounded-xl bg-corporate-50 text-corporate-blue flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-corporate-900 mb-1">Estimasi Pengiriman SLA</h4>
+                                    <p class="text-sm text-corporate-500 leading-relaxed">Pulau Jawa: 1-2 Hari Kerja.<br>Luar Pulau Jawa: ±2-3 Hari Kerja (Kargo Udara/Darat).</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-corporate-900 mb-1">Subsidi Gratis Ongkir</h4>
+                                    <p class="text-sm text-corporate-500 leading-relaxed">Fasilitas pengiriman gratis ke seluruh nusantara otomatis aktif untuk Purchase Order minimal 1 Bal (20 Slop).</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center md:border-r border-surface-100 px-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="text-4xl md:text-[40px] font-heading font-black text-brand-600 mb-2 tracking-tight"><span class="counter" data-target="52">0</span></div>
-                        <p class="text-surface-500 text-[11px] font-bold tracking-widest uppercase">Merek Tersedia</p>
-                    </div>
-                    <div class="text-center md:border-r border-surface-100 px-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-4xl md:text-[40px] font-heading font-black text-surface-900 mb-2 tracking-tight"><span class="counter" data-target="380">0</span>+</div>
-                        <p class="text-surface-500 text-[11px] font-bold tracking-widest uppercase">Mitra Aktif</p>
-                    </div>
-                    <div class="text-center px-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="text-4xl md:text-[40px] font-heading font-black text-brand-600 mb-2 tracking-tight"><span class="counter" data-target="34">0</span></div>
-                        <p class="text-surface-500 text-[11px] font-bold tracking-widest uppercase">Provinsi Area</p>
+                    <div data-aos="fade-left" class="bg-corporate-50 rounded-3xl p-8 lg:p-12 border border-corporate-100">
+                        <h4 class="font-heading font-bold text-lg text-corporate-900 mb-6 border-b border-corporate-200 pb-4">Mitra Ekspedisi Terintegrasi</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Ekspedisi List via CSS/Text since we don't have their logos, using clean corporate style -->
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">JNE</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">J&T Express</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">SiCepat</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">POS Indonesia</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">Ninja Express</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">AnterAja</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">Lion Parcel</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">SAP Express</div>
+                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">Indah Cargo</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Infrastruktur / Keunggulan (Bento Grid) -->
-        <section id="keunggulan" class="py-28 lg:py-32 bg-surface-50 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-2xl mx-auto text-center mb-20" data-aos="fade-up">
-                    <span class="text-[11px] font-bold text-brand-600 tracking-[0.2em] uppercase mb-4 block">Infrastruktur Bisnis</span>
-                    <h2 class="text-3xl md:text-[44px] font-heading font-extrabold text-surface-900 tracking-tight leading-[1.1]">Sistem Operasional Enterprise</h2>
-                    <p class="text-surface-500 mt-5 text-base md:text-[17px] font-medium leading-relaxed">Dirancang untuk keamanan mutlak, kecepatan logistik, dan efisiensi margin bisnis Anda.</p>
-                </div>
+        <!-- Direktori Katalog Produk B2B -->
+        <section id="katalog" class="py-24 bg-corporate-50 relative border-t border-corporate-100">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    <!-- Escrow -->
-                    <div class="glass-card p-8 rounded-[24px] bg-white group hover:bg-surface-50/50" data-aos="fade-up" data-aos-delay="0">
-                        <div class="w-12 h-12 bg-surface-50 rounded-xl border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white group-hover:border-brand-500 transition-all duration-500 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        </div>
-                        <h4 class="font-heading font-bold text-lg mb-3 text-surface-900 tracking-tight">Keamanan Escrow 100%</h4>
-                        <p class="text-surface-500 text-[14px] leading-relaxed">Dana Anda aman. Pembayaran invoice hanya ditagihkan <b class="text-surface-800 font-semibold">setelah resi resmi keluar</b> dari pihak logistik.</p>
-                    </div>
-                    
-                    <!-- Kapasitas -->
-                    <div class="glass-card p-8 rounded-[24px] bg-white group hover:bg-surface-50/50" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-12 h-12 bg-surface-50 rounded-xl border border-surface-200 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-500 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                        </div>
-                        <h4 class="font-heading font-bold text-lg mb-3 text-surface-900 tracking-tight">Kapasitas Gudang Skala</h4>
-                        <p class="text-surface-500 text-[14px] leading-relaxed">Inventaris 50+ merek selalu siap. Melayani volume agen besar secara instan tanpa sistem tunggu (pre-order).</p>
-                    </div>
-                    
-                    <!-- Free Ongkir (Glow) -->
-                    <div class="glass-card p-8 rounded-[24px] bg-white relative overflow-hidden border-glow-animated group" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-12 h-12 bg-amber-50 rounded-xl border border-amber-200 flex items-center justify-center text-gold-600 mb-6 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm relative z-10">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
-                        </div>
-                        <h4 class="font-heading font-bold text-lg mb-3 text-surface-900 relative z-10 tracking-tight">Subsidi Logistik</h4>
-                        <p class="text-surface-600 text-[14px] leading-relaxed relative z-10">PO dengan volume minimum <b class="text-surface-900 font-semibold">1 Bal (20 Slop)</b> otomatis mendapatkan pembebasan biaya kirim nasional.</p>
-                    </div>
-
-                    <!-- Distribusi -->
-                    <div class="glass-card p-8 rounded-[24px] bg-white group hover:bg-surface-50/50" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-12 h-12 bg-surface-50 rounded-xl border border-surface-200 flex items-center justify-center text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h4 class="font-heading font-bold text-lg mb-3 text-surface-900 tracking-tight">Rute Jangkauan Nasional</h4>
-                        <p class="text-surface-500 text-[14px] leading-relaxed">Kemitraan logistik dengan J&T Cargo, SiCepat Expres, JNE dan Indah Logistik memastikan suplai terdistribusi aman ke 34 Provinsi.</p>
-                    </div>
-
-                    <!-- Fast Response -->
-                    <div class="glass-card p-8 rounded-[24px] bg-white group hover:bg-surface-50/50" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-12 h-12 bg-surface-50 rounded-xl border border-surface-200 flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h4 class="font-heading font-bold text-lg mb-3 text-surface-900 tracking-tight">SLA Fast Response 24/7</h4>
-                        <p class="text-surface-500 text-[14px] leading-relaxed">Tim Sales Enterprise terdedikasi mengawal PO, konsultasi stok, dan update manifes pengiriman secara real-time.</p>
-                    </div>
-
-                    <!-- Quality -->
-                    <div class="glass-card p-8 rounded-[24px] bg-white group hover:bg-surface-50/50" data-aos="fade-up" data-aos-delay="500">
-                        <div class="w-12 h-12 bg-surface-50 rounded-xl border border-surface-200 flex items-center justify-center text-rose-600 mb-6 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h4 class="font-heading font-bold text-lg mb-3 text-surface-900 tracking-tight">Protokol Quality Assurance</h4>
-                        <p class="text-surface-500 text-[14px] leading-relaxed">QC ketat pre-packing. Jaminan kelengkapan pita cukai resmi, kondisi karton utuh, dan kesesuaian faktur PO.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Katalog Produk -->
-        <section id="katalog" class="py-28 lg:py-32 bg-white min-h-screen relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-8" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8" data-aos="fade-up">
                     <div class="max-w-xl">
-                        <span class="text-[11px] font-bold text-brand-600 tracking-[0.2em] uppercase mb-3 block">Direktori Produk</span>
-                        <h2 class="text-3xl md:text-[44px] font-heading font-extrabold text-surface-900 mb-3 tracking-tight leading-[1.1]">Katalog Grosir B2B</h2>
-                        <p class="text-surface-500 text-[15px] font-medium leading-relaxed">Harga distributor tercantum per <b class="text-surface-900 font-semibold">Slop</b>. Atur kuantitas untuk menyusun Purchase Order Anda.</p>
+                        <span class="text-corporate-gold text-[12px] font-bold tracking-[0.2em] uppercase block mb-3">Direktori B2B</span>
+                        <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-corporate-900 leading-tight mb-4">Katalog Inventaris Resmi</h2>
+                        <p class="text-corporate-600 text-sm leading-relaxed">Semua harga di bawah tertera dalam satuan <strong class="text-corporate-900 font-bold">Per Slop</strong>. Gunakan fitur pencarian untuk merakit form Purchase Order Anda.</p>
                     </div>
                     
-                    <!-- Search & Filter Controls -->
-                    <div class="w-full lg:w-auto flex flex-col sm:flex-row gap-4">
-                        <div class="relative w-full sm:w-[280px]">
-                            <input type="text" id="searchInput" placeholder="Cari nama produk..." class="w-full bg-surface-50 border border-surface-200 rounded-xl py-3 pl-11 pr-4 text-[14px] font-medium text-surface-900 focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all placeholder:text-surface-400 shadow-sm">
-                            <svg class="w-[18px] h-[18px] absolute left-4 top-3.5 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        </div>
-                        <div class="relative">
-                            <select id="sortSelect" class="w-full sm:w-[200px] bg-surface-50 border border-surface-200 rounded-xl py-3 pl-4 pr-10 text-[14px] font-medium text-surface-900 focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 appearance-none cursor-pointer shadow-sm transition-all">
-                                <option value="default">Urutan Standar</option>
-                                <option value="name_asc">Alfabet (A-Z)</option>
-                                <option value="price_asc">Harga Terendah</option>
-                                <option value="price_desc">Harga Tertinggi</option>
-                            </select>
-                            <svg class="w-4 h-4 absolute right-4 top-4 text-surface-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
+                    <div class="w-full md:w-auto relative">
+                        <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-corporate-400"></i>
+                        <input type="text" id="searchInput" placeholder="Pencarian SKU Produk..." class="input-corporate pl-11 md:w-80 shadow-sm">
                     </div>
                 </div>
 
-                <!-- Main Grid -->
-                <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 md:gap-6"></div>
+                <!-- Grid Data Produk -->
+                <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+                    <!-- Dirender via JavaScript -->
+                </div>
 
-                <!-- Skeleton UI -->
-                <div id="skeletonGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 md:gap-6">
+                <!-- Skeleton UI (Placeholder while loading) -->
+                <div id="skeletonGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
                     <script>
-                        for (let i = 0; i < 15; i++) {
+                        for (let i = 0; i < 10; i++) {
                             document.write(`
-                                <div class="bg-white border border-surface-100 rounded-[20px] p-5 shadow-sm">
-                                    <div class="skeleton h-[100px] w-full mb-5 rounded-[12px]"></div>
-                                    <div class="skeleton h-4 w-3/4 mb-2.5 rounded"></div>
-                                    <div class="skeleton h-5 w-1/2 mb-6 rounded"></div>
-                                    <div class="skeleton h-[38px] w-full rounded-xl"></div>
+                                <div class="card-premium p-4">
+                                    <div class="loader-skeleton h-24 w-full mb-4"></div>
+                                    <div class="loader-skeleton h-4 w-2/3 mb-2"></div>
+                                    <div class="loader-skeleton h-5 w-1/2 mb-6"></div>
+                                    <div class="loader-skeleton h-10 w-full"></div>
                                 </div>
                             `);
                         }
                     </script>
                 </div>
 
-                <div id="noResult" class="hidden text-center py-24">
-                    <div class="w-16 h-16 bg-surface-50 rounded-full flex items-center justify-center mx-auto mb-5 border border-surface-200">
-                        <svg class="w-8 h-8 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div id="noResult" class="hidden text-center py-20">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-4 text-corporate-300 text-2xl shadow-sm">
+                        <i class="fa-solid fa-box-open"></i>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-surface-900 mb-2 tracking-tight">Katalog Tidak Ditemukan</h3>
-                    <p class="text-surface-500 text-[14px] font-medium">Coba gunakan kata kunci merek lain.</p>
+                    <h3 class="font-heading font-bold text-lg text-corporate-900">SKU Tidak Ditemukan</h3>
+                    <p class="text-sm text-corporate-500">Coba gunakan kata kunci pencarian yang lain.</p>
                 </div>
 
-                <div id="pagination" class="flex justify-center items-center gap-2 mt-16"></div>
             </div>
         </section>
 
-        <!-- Social Proof / Testimoni -->
-        <section id="testimoni" class="py-28 lg:py-32 bg-surface-50 relative overflow-hidden">
-            <div class="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-brand-100/40 rounded-full blur-[140px] pointer-events-none"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-[11px] font-bold text-brand-600 tracking-[0.2em] uppercase mb-3 block">Jaringan Ekosistem</span>
-                    <h2 class="text-3xl md:text-[44px] font-heading font-extrabold text-surface-900 tracking-tight leading-[1.1]">Kepercayaan Ratusan B2B</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                    <div class="glass-card p-8 rounded-[24px] relative bg-white" data-aos="fade-up" data-aos-delay="0">
-                        <svg class="absolute top-6 right-6 w-7 h-7 text-surface-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        <div class="flex items-center gap-1 mb-6 text-gold-500">
-                            <!-- 5 Stars -->
-                            <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
-                        <p class="text-surface-600 text-[15px] leading-relaxed mb-8 font-medium">"Skema escrow membuat cashflow sangat sehat. Barang tiba dulu, baru bayar tagihan. Manajemen stok sangat efisien tanpa risiko modal terhenti."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-full bg-surface-900 flex items-center justify-center text-white font-bold text-[13px] shadow-sm">TA</div>
-                            <div>
-                                <div class="text-surface-900 font-bold text-[14px]">Toko Amanah B2B</div>
-                                <div class="text-surface-500 text-[12px] font-medium">Jakarta Pusat</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card p-8 rounded-[24px] relative bg-white" data-aos="fade-up" data-aos-delay="100">
-                        <svg class="absolute top-6 right-6 w-7 h-7 text-surface-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        <div class="flex items-center gap-1 mb-6 text-gold-500">
-                            <!-- 5 Stars -->
-                            <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
-                        <p class="text-surface-600 text-[15px] leading-relaxed mb-8 font-medium">"Subsidi ongkir mengubah proyeksi margin agen kami. Layanan representatif R2 sangat premium dan SLA resolusinya luar biasa cepat."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-[13px] shadow-sm">BM</div>
-                            <div>
-                                <div class="text-surface-900 font-bold text-[14px]">Berkah Makmur</div>
-                                <div class="text-surface-500 text-[12px] font-medium">Surabaya</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-[24px] relative bg-white" data-aos="fade-up" data-aos-delay="200">
-                        <svg class="absolute top-6 right-6 w-7 h-7 text-surface-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        <div class="flex items-center gap-1 mb-6 text-gold-500">
-                            <!-- 5 Stars -->
-                            <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
-                        <p class="text-surface-600 text-[15px] leading-relaxed mb-8 font-medium">"Mitra paling bisa diandalkan. Eksekusi pengiriman ke Makassar akurat, manifest rapi, dan harga paling masuk akal di kelasnya."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-full bg-surface-900 flex items-center justify-center text-white font-bold text-[13px] shadow-sm">CS</div>
-                            <div>
-                                <div class="text-surface-900 font-bold text-[14px]">CV. Cahaya Sentosa</div>
-                                <div class="text-surface-500 text-[12px] font-medium">Makassar</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Knowledge Base (FAQ) -->
-        <section id="faq" class="py-28 lg:py-32 bg-white relative">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-[11px] font-bold text-brand-600 tracking-[0.2em] uppercase mb-3 block">Knowledge Base</span>
-                    <h2 class="text-3xl md:text-[44px] font-heading font-extrabold text-surface-900 tracking-tight leading-[1.1]">Pertanyaan Operasional</h2>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="bg-surface-50 border border-surface-200 rounded-[16px] overflow-hidden transition-all duration-300 hover:border-surface-300 shadow-sm" data-aos="fade-up">
-                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-heading font-bold text-surface-900 text-base hover:text-brand-600 transition-colors" data-target="faq1" aria-expanded="false">
-                            <span>Sistem Escrow B2B, bagaimana cara kerjanya?</span>
-                            <div class="w-7 h-7 rounded-full bg-white border border-surface-200 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4 transition-transform duration-400 faq-icon text-surface-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </button>
-                        <div id="faq1" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <p class="px-6 pb-6 pt-1 text-surface-600 text-[15px] leading-relaxed font-medium">Sistem kami menahan tagihan hingga logistik memverifikasi pengiriman. Anda mengisi draft PO, tim kami menyiapkan logistik, dan Anda baru diwajibkan transfer <b class="text-surface-900">setelah resi pengiriman resmi diterbitkan</b>. Nol risiko penipuan.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-surface-50 border border-surface-200 rounded-[16px] overflow-hidden transition-all duration-300 hover:border-surface-300 shadow-sm" data-aos="fade-up" data-aos-delay="50">
-                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-heading font-bold text-surface-900 text-base hover:text-brand-600 transition-colors" data-target="faq2" aria-expanded="false">
-                            <span>Syarat klasifikasi subsidi Gratis Ongkir?</span>
-                            <div class="w-7 h-7 rounded-full bg-white border border-surface-200 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4 transition-transform duration-400 faq-icon text-surface-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </button>
-                        <div id="faq2" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <p class="px-6 pb-6 pt-1 text-surface-600 text-[15px] leading-relaxed font-medium">Subsidi diberikan otomatis pada sistem untuk pemesanan dengan minimum volume <b class="text-surface-900">1 Bal (20 Slop)</b>. Ketentuan berlaku lintas merek (mix items) dengan destinasi seluruh Nusantara.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-surface-50 border border-surface-200 rounded-[16px] overflow-hidden transition-all duration-300 hover:border-surface-300 shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-heading font-bold text-surface-900 text-base hover:text-brand-600 transition-colors" data-target="faq3" aria-expanded="false">
-                            <span>Jaminan keaslian serta kualitas produk?</span>
-                            <div class="w-7 h-7 rounded-full bg-white border border-surface-200 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4 transition-transform duration-400 faq-icon text-surface-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </button>
-                        <div id="faq3" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <p class="px-6 pb-6 pt-1 text-surface-600 text-[15px] leading-relaxed font-medium">Sebagai distributor (First-Party), kami menyalurkan produk langsung dari manufaktur. Validasi mencakup pengecekan pita cukai SKT/SKM, integritas kemasan, serta masa berlaku yang tersertifikasi pada sistem QC kami.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-surface-50 border border-surface-200 rounded-[16px] overflow-hidden transition-all duration-300 hover:border-surface-300 shadow-sm" data-aos="fade-up" data-aos-delay="150">
-                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-heading font-bold text-surface-900 text-base hover:text-brand-600 transition-colors" data-target="faq4" aria-expanded="false">
-                            <span>Manajemen logistik & ekspedisi pengiriman?</span>
-                            <div class="w-7 h-7 rounded-full bg-white border border-surface-200 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4 transition-transform duration-400 faq-icon text-surface-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </button>
-                        <div id="faq4" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <p class="px-6 pb-6 pt-1 text-surface-600 text-[15px] leading-relaxed font-medium">Pengiriman rute darat, laut, maupun udara diserahkan kepada partner strategis kami, meliputi J&T Cargo, SiCepat Express, JNE, Indah Logistik, Lion Parcel, dan Pos Indonesia. Tracking resi terintegrasi pasca penerbitan.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="py-28 bg-surface-900 relative overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute w-[900px] h-[900px] bg-brand-600/10 rounded-full blur-[140px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-                <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px); background-size: 32px 32px; opacity: 0.4;"></div>
-            </div>
-            
-            <div class="max-w-3xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
-                <h2 class="text-4xl md:text-[52px] font-heading font-black text-white mb-6 leading-[1.1] tracking-tight">Eskalasi Bisnis Anda Dimulai di Sini.</h2>
-                <p class="text-white/70 mb-12 text-[17px] font-medium leading-relaxed">Terhubung dengan tim Representatif Enterprise kami. Dapatkan penawaran grosir khusus dan optimalkan siklus suplai bisnis Anda.</p>
-                
-                <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="magnetic-btn ripple inline-flex items-center gap-3 bg-white hover:bg-surface-100 text-surface-900 font-bold px-10 py-4.5 rounded-[16px] transition-all shadow-[0_8px_30px_rgba(255,255,255,0.1)] text-[16px] group">
-                    <svg class="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
-                    Hubungi WhatsApp Sales
-                </a>
-                
-                <div class="mt-8 flex justify-center gap-6 text-[13px] font-semibold text-white/50">
-                    <span class="flex items-center gap-1.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Resolusi &lt; 5 Menit</span>
-                    <span>|</span>
-                    <span>Dukungan B2B 24 Jam</span>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="kontak" class="bg-surface-50 border-t border-surface-200 pt-20 pb-8 text-surface-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Footer Corporate -->
+    <footer class="bg-corporate-900 pt-20 pb-8 text-white relative border-t-4 border-corporate-gold">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-                
-                <!-- Brand Info (Col span 4) -->
                 <div class="md:col-span-12 lg:col-span-4">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg" alt="R2 Logo" class="w-10 h-10 rounded-xl object-cover shadow-sm">
-                        <span class="font-heading font-extrabold text-[20px] tracking-tight text-surface-900">NUSANTARA</span>
-                    </div>
-                    <p class="text-surface-500 text-[14px] leading-relaxed mb-6 font-medium max-w-sm">Infrastruktur terpadu untuk pengadaan dan distribusi logistik ke seluruh Indonesia. Ekosistem aman, partner terpercaya.</p>
-                </div>
-                
-                <!-- Layanan (Col span 2) -->
-                <div class="md:col-span-4 lg:col-span-2">
-                    <h4 class="font-heading font-bold text-[13px] mb-5 text-surface-900 tracking-wider uppercase">Layanan</h4>
-                    <ul class="space-y-3.5 text-[14px] font-medium text-surface-500">
-                        <li><a href="#katalog" class="hover:text-brand-600 transition-colors">Direktori Grosir</a></li>
-                        <li><a href="#keunggulan" class="hover:text-brand-600 transition-colors">Proteksi Escrow</a></li>
-                        <li><a href="#" class="hover:text-brand-600 transition-colors">Rute Logistik</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Perusahaan (Col span 2) -->
-                <div class="md:col-span-4 lg:col-span-2">
-                    <h4 class="font-heading font-bold text-[13px] mb-5 text-surface-900 tracking-wider uppercase">Perusahaan</h4>
-                    <ul class="space-y-3.5 text-[14px] font-medium text-surface-500">
-                        <li><a href="#" class="hover:text-brand-600 transition-colors">Legalitas NIB</a></li>
-                        <li><a href="#" class="hover:text-brand-600 transition-colors">Syarat Kebijakan</a></li>
-                        <li><a href="#" class="hover:text-brand-600 transition-colors">Pusat Bantuan</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Kontak (Col span 4) -->
-                <div class="md:col-span-4 lg:col-span-4">
-                    <h4 class="font-heading font-bold text-[13px] mb-5 text-surface-900 tracking-wider uppercase">Headquarters</h4>
-                    <ul class="space-y-3.5 text-[14px] font-medium text-surface-500 mb-6">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-[18px] h-[18px] shrink-0 text-surface-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <span class="leading-relaxed">Desa Karangduren, Kec. Pakisaji,<br>Kab. Malang, Jawa Timur 65162</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-[18px] h-[18px] shrink-0 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            <span>+62 857-1590-5079</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="bg-white p-3.5 rounded-[12px] border border-surface-200 shadow-sm flex items-center gap-3.5 max-w-sm">
-                        <div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center text-red-600 shrink-0 font-bold text-[10px]">18+</div>
-                        <div>
-                            <div class="text-[12px] font-bold text-surface-900 mb-0.5 tracking-tight">Peringatan Usia (Regulasi)</div>
-                            <p class="text-[10.5px] leading-snug text-surface-500">Platform terbatas usia dewasa (18+).</p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Logo" class="w-12 h-12 rounded-xl object-cover bg-white p-0.5">
+                        <div class="flex flex-col">
+                            <span class="font-heading font-extrabold text-[18px] text-white leading-tight">R2 NUSANTARA</span>
+                            <span class="text-[10px] text-corporate-300 font-bold tracking-widest uppercase">Cigarette Tabaco Shop</span>
                         </div>
                     </div>
+                    <p class="text-corporate-300 text-sm leading-relaxed mb-6">Pusat distribusi grosir B2B dengan infrastruktur pengadaan yang terpercaya, aman, dan berstandar nasional.</p>
+                </div>
+                
+                <div class="md:col-span-6 lg:col-span-4">
+                    <h4 class="font-heading font-bold text-sm tracking-wider uppercase text-corporate-100 mb-6">Pusat Bantuan B2B</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-corporate-300 hover:text-white transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg mt-0.5 text-green-400"></i>
+                            <a href="https://wa.me/6285715905079" target="_blank">(+62) 857-1590-5079</a>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-corporate-300 hover:text-white transition-colors">
+                            <i class="fa-regular fa-envelope text-lg mt-0.5"></i>
+                            <a href="mailto:gudangdistributormalang@gmail.com">gudangdistributormalang@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-6 lg:col-span-4">
+                    <h4 class="font-heading font-bold text-sm tracking-wider uppercase text-corporate-100 mb-6">Operasional</h4>
+                    <ul class="space-y-4 text-sm text-corporate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-map-location-dot text-lg mt-0.5"></i>
+                            <span>Gudang Distributor Pusat<br>Malang, Jawa Timur - Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-regular fa-clock text-lg"></i>
+                            <span>Layanan Online 24/7</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="border-t border-surface-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] font-medium text-surface-500">
-                <p>&copy; 2026 R2 Nusantara. Hak Cipta Dilindungi.</p>
-                <div class="flex items-center gap-6">
-                    <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg> SSL Protected</span>
-                    <span class="hidden sm:inline">Server: <strong class="text-green-500 font-semibold">Operasional</strong></span>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-corporate-400">
+                <p>&copy; 2026 R2 Nusantara Enterprise B2B. Hak Cipta Dilindungi.</p>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-corporate-gold"></i>
+                    <span>Secure Platform 18+</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- PO Drawer / Cart -->
-    <div id="overlay" class="fixed inset-0 bg-surface-900/30 backdrop-blur-[2px] z-[100] hidden opacity-0 transition-opacity duration-400" onclick="closeCart()"></div>
-    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-white shadow-[-10px_0_40px_rgba(0,0,0,0.06)] z-[101] transform translate-x-full flex flex-col">
+    <!-- PO Drawer / Cart (Slide out UI) -->
+    <div id="cartOverlay" class="drawer-overlay" onclick="closeCart()"></div>
+    <div id="cartDrawer" class="drawer">
         
-        <div class="px-6 py-5 border-b border-surface-100 flex justify-between items-center bg-white">
-            <h2 class="font-heading font-black text-[18px] flex items-center gap-2.5 text-surface-900 tracking-tight">
-                <svg class="w-5 h-5 text-surface-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                Purchase Order
+        <!-- Drawer Header -->
+        <div class="px-6 py-5 border-b border-corporate-100 flex justify-between items-center bg-white shadow-sm z-10">
+            <h2 class="font-heading font-extrabold text-lg flex items-center gap-3 text-corporate-900">
+                <i class="fa-solid fa-clipboard-list text-corporate-blue"></i>
+                Draft Purchase Order
             </h2>
-            <button onclick="closeCart()" class="text-surface-500 hover:text-surface-900 transition-colors p-2 rounded-xl hover:bg-surface-100 bg-surface-50 border border-surface-200" aria-label="Tutup">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <button onclick="closeCart()" class="w-8 h-8 rounded-full bg-corporate-50 text-corporate-500 hover:bg-corporate-100 hover:text-corporate-900 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-times"></i>
             </button>
         </div>
         
-        <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-3.5 bg-surface-50/50" style="scrollbar-width:thin;scrollbar-color:#D4D6DD transparent;">
-            <div class="h-full flex flex-col items-center justify-center text-surface-400 text-center opacity-80">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border border-surface-200 shadow-sm mb-4">
-                    <svg class="w-8 h-8 text-surface-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+        <!-- Cart Items Area -->
+        <div id="cartItems" class="flex-1 overflow-y-auto p-6 bg-corporate-50 space-y-3 relative">
+            <!-- Empty state defaults to hidden via JS -->
+            <div id="emptyCartState" class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-corporate-300 text-3xl">
+                    <i class="fa-solid fa-cart-arrow-down"></i>
                 </div>
-                <p class="font-medium text-[14px]">Draft PO kosong.<br>Silakan tambahkan kuantitas produk.</p>
+                <h3 class="font-heading font-bold text-corporate-900 mb-2">Draft PO Kosong</h3>
+                <p class="text-sm text-corporate-500">Silakan tambahkan SKU dari katalog untuk merakit pesanan logistik Anda.</p>
+                <button onclick="closeCart(); document.getElementById('katalog').scrollIntoView()" class="mt-6 px-6 py-2 rounded-full border border-corporate-200 text-sm font-semibold text-corporate-700 hover:bg-corporate-100 transition-colors">
+                    Lihat Katalog
+                </button>
             </div>
         </div>
         
-        <div class="bg-white border-t border-surface-100 p-6 z-10 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
-            <div id="freeShippingAlert" class="hidden mb-4 bg-green-50 border border-green-200 text-green-700 text-[12px] px-3.5 py-2.5 rounded-xl flex items-center justify-between">
-                <span class="flex items-center gap-2 font-bold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Validasi &gt;20 Slop Tercapai</span>
-                <span class="font-black text-[11px] tracking-wide bg-white px-2 py-0.5 rounded border border-green-200/50">GRATIS ONGKIR</span>
+        <!-- Cart Footer & Form Trigger -->
+        <div class="bg-white border-t border-corporate-100 p-6 z-10 shadow-[0_-5px_15px_rgba(0,0,0,0.02)]">
+            
+            <div id="promoAlert" class="hidden mb-4 bg-green-50 border border-green-200 p-3 rounded-xl flex items-center justify-between">
+                <div class="flex items-center gap-2 text-green-700 text-xs font-bold">
+                    <i class="fa-solid fa-circle-check"></i> Validasi >20 Slop Terpenuhi
+                </div>
+                <span class="bg-white px-2 py-1 rounded text-[10px] font-black text-green-600 border border-green-100">GRATIS ONGKIR</span>
+            </div>
+
+            <div class="flex justify-between text-sm font-medium text-corporate-500 mb-2">
+                <span>Total Volume B2B</span>
+                <span id="cartTotalItems" class="font-bold text-corporate-900">0 Slop</span>
+            </div>
+            <div class="flex justify-between items-end mb-6">
+                <span class="text-sm font-medium text-corporate-500">Estimasi Penagihan</span>
+                <span id="cartTotalPrice" class="font-heading font-black text-2xl text-corporate-900 tracking-tight">Rp 0</span>
             </div>
             
-            <div class="flex justify-between text-[14px] font-medium text-surface-500 mb-1.5"><span>Total Volume (Slop)</span><span id="cartTotalItems" class="font-bold text-surface-900">0</span></div>
-            <div class="flex justify-between items-end mb-6"><span class="text-surface-500 text-[14px] font-medium">Estimasi Subtotal</span><span id="cartTotalPrice" class="font-heading font-black text-2xl text-surface-900 tracking-tight">Rp 0</span></div>
-            
-            <button onclick="openCheckoutModal()" id="btnProcessPO" disabled class="w-full bg-surface-900 hover:bg-brand-600 disabled:bg-surface-200 disabled:text-surface-400 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-[14.5px] shadow-sm magnetic-btn ripple">
-                Lanjutkan Tahap Akhir
+            <button onclick="proceedToForm()" id="btnCheckout" class="w-full btn-corporate justify-center gap-2" disabled>
+                Lengkapi Data Pengiriman <i class="fa-solid fa-arrow-right text-sm"></i>
             </button>
         </div>
     </div>
 
-    <!-- Modal Form Checkout -->
-    <div id="checkoutModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center px-4 py-6 opacity-0 transition-opacity duration-400">
-        <div class="absolute inset-0 bg-surface-900/50 backdrop-blur-[3px]" onclick="closeCheckoutModal()"></div>
-        <div class="bg-white border border-surface-200 rounded-[24px] w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 shadow-premium" style="scrollbar-width:thin;scrollbar-color:#D4D6DD transparent;">
-            
-            <div class="sticky top-0 bg-white/90 backdrop-blur-xl border-b border-surface-100 px-7 py-4.5 flex justify-between items-center z-20 rounded-t-[24px]">
-                <h3 class="font-heading font-black text-[18px] text-surface-900 tracking-tight">Formulir Logistik B2B</h3>
-                <button onclick="closeCheckoutModal()" class="text-surface-400 hover:text-surface-900 transition-colors p-2 rounded-xl hover:bg-surface-100 bg-surface-50 border border-surface-200" aria-label="Tutup">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <!-- Modal Form Checkout B2B (Overlay over everything) -->
+    <div id="formModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-400">
+        <div class="absolute inset-0 bg-corporate-900/60 backdrop-blur-sm" onclick="closeFormModal()"></div>
+        
+        <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 shadow-floating flex flex-col" style="scrollbar-width: thin;">
+            <!-- Header Modal -->
+            <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-corporate-100 px-6 py-5 flex justify-between items-center z-20">
+                <h3 class="font-heading font-bold text-lg text-corporate-900">Formulir Logistik B2B</h3>
+                <button onclick="closeFormModal()" class="w-8 h-8 rounded-full bg-corporate-50 text-corporate-500 hover:bg-corporate-100 hover:text-corporate-900 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-times"></i>
                 </button>
             </div>
             
-            <form id="checkoutForm" onsubmit="submitOrder(event)" class="p-7">
-                <div class="bg-surface-50 border border-surface-200 rounded-[16px] p-4.5 mb-7 flex gap-3.5 items-start">
-                    <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 shrink-0">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    </div>
+            <form id="checkoutForm" onsubmit="submitToWhatsApp(event)" class="p-6 sm:p-8">
+                
+                <!-- Notice Escrow -->
+                <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-8 flex gap-3 shadow-sm">
+                    <i class="fa-solid fa-shield-halved text-corporate-blue text-xl shrink-0 mt-0.5"></i>
                     <div>
-                        <h4 class="font-bold text-surface-900 text-[13px] mb-1 uppercase tracking-wide">Sistem Pembayaran: Escrow</h4>
-                        <p class="text-[13px] font-medium text-surface-500 leading-relaxed">Invoice final dikirimkan ke WhatsApp Anda <b class="text-surface-900">setelah</b> resi ekspedisi terbit. Aman & bebas hambatan.</p>
+                        <h4 class="font-bold text-corporate-900 text-sm mb-1">Keamanan Transaksi Escrow</h4>
+                        <p class="text-xs text-corporate-600 leading-relaxed">Nota penagihan akan dikirimkan. Anda <strong class="text-corporate-900">wajib</strong> melakukan pembayaran hanya <strong class="text-corporate-900">SETELAH</strong> nomor resi pelacakan dari ekspedisi terbit.</p>
                     </div>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-5 mb-5">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                        <label class="block text-[10.5px] font-bold text-surface-500 mb-2 uppercase tracking-widest" for="co_name">Nama Instansi / Entitas *</label>
-                        <input type="text" id="co_name" required class="w-full bg-surface-50 border border-surface-200 rounded-[12px] px-4 py-3 text-surface-900 font-medium focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all text-[14px]">
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Nama Toko/Instansi <span class="text-red-500">*</span></label>
+                        <input type="text" id="f_name" required class="input-corporate" placeholder="Masukkan nama...">
                     </div>
                     <div>
-                        <label class="block text-[10.5px] font-bold text-surface-500 mb-2 uppercase tracking-widest" for="co_phone">WhatsApp Penanggung Jawab *</label>
-                        <input type="tel" id="co_phone" required placeholder="08..." class="w-full bg-surface-50 border border-surface-200 rounded-[12px] px-4 py-3 text-surface-900 font-medium focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all text-[14px]">
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">No. WhatsApp <span class="text-red-500">*</span></label>
+                        <input type="tel" id="f_phone" required class="input-corporate" placeholder="08XXXXXXXXXX">
                     </div>
                 </div>
-                
+
                 <div class="mb-5">
-                    <label class="block text-[10.5px] font-bold text-surface-500 mb-2 uppercase tracking-widest" for="co_address">Alamat Detail Tujuan *</label>
-                    <textarea id="co_address" required rows="3" placeholder="Jl. Raya..., RT/RW, Kel, Kec, Kota/Kab, Prov, Kode Pos" class="w-full bg-surface-50 border border-surface-200 rounded-[12px] px-4 py-3 text-surface-900 font-medium focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all text-[14px] resize-none"></textarea>
+                    <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman <span class="text-red-500">*</span></label>
+                    <textarea id="f_address" required rows="2" class="input-corporate resize-none" placeholder="Nama Jalan, RT/RW, Patokan..."></textarea>
                 </div>
-                
-                <div class="mb-7">
-                    <label class="block text-[10.5px] font-bold text-surface-500 mb-2 uppercase tracking-widest" for="co_notes">Catatan & Preferensi Logistik (Opsional)</label>
-                    <input type="text" id="co_notes" placeholder="Misal: Tambah packing kayu, rute J&T Cargo" class="w-full bg-surface-50 border border-surface-200 rounded-[12px] px-4 py-3 text-surface-900 font-medium focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all text-[14px]">
-                </div>
-                
-                <div class="pt-5 border-t border-surface-200 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                    <div class="text-[13px] font-medium text-surface-500 text-center sm:text-left">
-                        Ringkasan Nilai PO:<br>
-                        <strong class="text-2xl text-surface-900 font-heading font-black tracking-tight block mt-0.5" id="co_totalPrice">Rp 0</strong>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-5">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kecamatan <span class="text-red-500">*</span></label>
+                        <input type="text" id="f_kec" required class="input-corporate" placeholder="Kecamatan">
                     </div>
-                    <button type="submit" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 px-8 rounded-xl flex justify-center items-center gap-2.5 transition-all shadow-sm text-[14.5px] magnetic-btn ripple">
-                        Kirim Form via WhatsApp
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kab/Kota <span class="text-red-500">*</span></label>
+                        <input type="text" id="f_kab" required class="input-corporate" placeholder="Kab/Kota">
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Provinsi <span class="text-red-500">*</span></label>
+                        <input type="text" id="f_prov" required class="input-corporate" placeholder="Provinsi">
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kode Pos <span class="text-red-500">*</span></label>
+                        <input type="text" id="f_pos" required class="input-corporate" placeholder="Kodepos">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                    <div>
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Pilihan Ekspedisi <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <select id="f_ekspedisi" required class="input-corporate appearance-none cursor-pointer">
+                                <option value="" disabled selected>Pilih Kurir...</option>
+                                <option value="JNE">JNE</option>
+                                <option value="J&T Express">J&T Express</option>
+                                <option value="SiCepat">SiCepat</option>
+                                <option value="POS Indonesia">POS Indonesia</option>
+                                <option value="Ninja Express">Ninja Express</option>
+                                <option value="AnterAja">AnterAja</option>
+                                <option value="Lion Parcel">Lion Parcel</option>
+                                <option value="SAP Express">SAP Express</option>
+                                <option value="Indah Cargo">Indah Cargo</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-corporate-400 pointer-events-none text-sm"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Catatan Ekstra (Opsional)</label>
+                        <input type="text" id="f_notes" class="input-corporate" placeholder="Cth: Packing kayu, dll...">
+                    </div>
+                </div>
+
+                <!-- Submission Footer -->
+                <div class="pt-6 border-t border-corporate-100 flex flex-col sm:flex-row gap-5 items-center justify-between">
+                    <div class="text-sm font-medium text-corporate-500 text-center sm:text-left">
+                        Total Valuasi:<br>
+                        <strong class="text-2xl text-corporate-900 font-heading font-black tracking-tight" id="f_totalVal">Rp 0</strong>
+                    </div>
+                    <button type="submit" class="w-full sm:w-auto btn-corporate bg-[#25D366] hover:bg-[#128C7E] text-white flex gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Kirim Form ke Sales
                     </button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="hidden-btt fixed bottom-8 right-8 z-30 w-[44px] h-[44px] rounded-full bg-white border border-surface-200 text-surface-600 flex items-center justify-center shadow-premium-sm hover:bg-surface-900 hover:text-white hover:border-surface-900 transition-all duration-400 group" aria-label="Kembali ke atas">
-        <svg class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
-        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 44 44">
-            <circle cx="22" cy="22" r="21" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="2" />
-            <circle id="bttProgress" cx="22" cy="22" r="21" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="131.9" stroke-dashoffset="131.9" stroke-linecap="round" class="text-brand-500 group-hover:text-white transition-colors" />
-        </svg>
+    <!-- Floating Mobile Cart Button -->
+    <button onclick="toggleCart()" id="mobileCartBtn" class="fixed md:hidden bottom-6 right-6 w-14 h-14 bg-corporate-blue text-white rounded-full shadow-floating flex items-center justify-center z-40 transition-transform scale-0">
+        <i class="fa-solid fa-briefcase text-xl"></i>
+        <span id="mobileCartBadge" class="absolute top-0 right-0 bg-corporate-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">0</span>
     </button>
 
-    <!-- Floating WA Sales -->
-    <div class="fixed bottom-24 right-8 z-30 flex flex-col items-end gap-3 pointer-events-none">
-        <div class="bg-white/90 backdrop-blur-md text-surface-900 text-[12.5px] font-bold px-4 py-2.5 rounded-[12px] shadow-sm flex items-center gap-2.5 pointer-events-auto border border-surface-200" data-aos="fade-up" data-aos-delay="400">
-            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
-            Sales Enterprise 
-        </div>
-        <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="bg-surface-900 text-white hover:bg-brand-600 w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-premium-sm transition-all duration-400 pointer-events-auto group magnetic-btn" aria-label="WhatsApp Kami">
-            <svg class="w-[26px] h-[26px] group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
-        </a>
-    </div>
-
-    <!-- Logic Core -->
+    <!-- JS Application Core -->
     <script>
-        const WA_NUMBER = "6285715905079";
-        const ITEMS_PER_PAGE = 15;
-
-        // 52 Full Products 
-        const products = [
-            { id: 1, name: "Age Pro", price: 65000 }, { id: 2, name: "Bani Click", price: 85000 }, { id: 3, name: "Bigben", price: 80000 }, { id: 4, name: "Booster", price: 80000 }, { id: 5, name: "Brand Djati", price: 85000 }, { id: 6, name: "Cahaya Pro", price: 85000 }, { id: 7, name: "Cartel", price: 80000 }, { id: 8, name: "Cesa", price: 80000 }, { id: 9, name: "Coffee Stick", price: 80000 }, { id: 10, name: "Connext", price: 80000 }, { id: 11, name: "Djanda", price: 85000 }, { id: 12, name: "DTE", price: 80000 }, { id: 13, name: "ERA", price: 90000 }, { id: 14, name: "Excel Click", price: 85000 }, { id: 15, name: "Feloz", price: 85000 }, { id: 16, name: "GA Bold", price: 80000 }, { id: 17, name: "Gan Bold", price: 80000 }, { id: 18, name: "Gess Bold", price: 80000 }, { id: 19, name: "H&D", price: 85000 }, { id: 20, name: "IB", price: 80000 }, { id: 21, name: "Jeco", price: 85000 }, { id: 22, name: "Kalbaco", price: 85000 }, { id: 23, name: "King Garet", price: 80000 }, { id: 24, name: "Konser", price: 85000 }, { id: 25, name: "Link Bold", price: 80000 }, { id: 26, name: "Liox", price: 80000 }, { id: 27, name: "Mami Baru", price: 85000 }, { id: 28, name: "Manchester", price: 90000 }, { id: 29, name: "Manggo Top", price: 80000 }, { id: 30, name: "Martel", price: 85000 }, { id: 31, name: "MBS", price: 85000 }, { id: 32, name: "Naxan Bold", price: 80000 }, { id: 33, name: "Naxan Click", price: 85000 }, { id: 34, name: "Nayan Bold", price: 80000 }, { id: 35, name: "Nayan Click", price: 85000 }, { id: 36, name: "Novem", price: 85000 }, { id: 37, name: "PMS", price: 85000 }, { id: 38, name: "PS Djeram", price: 70000 }, { id: 39, name: "QQ", price: 80000 }, { id: 40, name: "R9 Bold", price: 80000 }, { id: 41, name: "Rastel", price: 80000 }, { id: 42, name: "RC", price: 80000 }, { id: 43, name: "Rocker", price: 80000 }, { id: 44, name: "Saga", price: 80000 }, { id: 45, name: "San Marino", price: 90000 }, { id: 46, name: "Slava", price: 80000 }, { id: 47, name: "Smith", price: 75000 }, { id: 48, name: "Stigma", price: 75000 }, { id: 49, name: "Tabaco", price: 85000 }, { id: 50, name: "Toracino", price: 80000 }, { id: 51, name: "Van Bold", price: 80000 }, { id: 52, name: "Win Click", price: 85000 }
+        // Data Base 52 Produk Persis Sesuai Permintaan
+        const inventoryData = [
+            { id: 1, name: "Age Pro", price: 65000 }, { id: 2, name: "Bani Click", price: 85000 }, { id: 3, name: "Bigben", price: 80000 },
+            { id: 4, name: "Booster", price: 80000 }, { id: 5, name: "Brand Djati", price: 85000 }, { id: 6, name: "Cahaya Pro", price: 85000 },
+            { id: 7, name: "Cartel", price: 80000 }, { id: 8, name: "Cesa", price: 80000 }, { id: 9, name: "Coffee Stick", price: 80000 },
+            { id: 10, name: "Connext", price: 80000 }, { id: 11, name: "Djanda", price: 85000 }, { id: 12, name: "DTE", price: 80000 },
+            { id: 13, name: "ERA", price: 90000 }, { id: 14, name: "Excel Click", price: 85000 }, { id: 15, name: "Feloz", price: 85000 },
+            { id: 16, name: "GA Bold", price: 80000 }, { id: 17, name: "Gan Bold", price: 80000 }, { id: 18, name: "Gess Bold", price: 80000 },
+            { id: 19, name: "H&D", price: 85000 }, { id: 20, name: "IB", price: 80000 }, { id: 21, name: "Jeco", price: 85000 },
+            { id: 22, name: "Kalbaco", price: 85000 }, { id: 23, name: "King Garet", price: 80000 }, { id: 24, name: "Konser", price: 85000 },
+            { id: 25, name: "Link Bold", price: 80000 }, { id: 26, name: "Liox", price: 80000 }, { id: 27, name: "Mami Baru", price: 85000 },
+            { id: 28, name: "Manchester", price: 90000 }, { id: 29, name: "Manggo Top", price: 80000 }, { id: 30, name: "Martel", price: 85000 },
+            { id: 31, name: "MBS", price: 85000 }, { id: 32, name: "Naxan Bold", price: 80000 }, { id: 33, name: "Naxan Click", price: 85000 },
+            { id: 34, name: "Nayan Bold", price: 80000 }, { id: 35, name: "Nayan Click", price: 85000 }, { id: 36, name: "Novem", price: 85000 },
+            { id: 37, name: "PMS", price: 85000 }, { id: 38, name: "PS Djeram", price: 70000 }, { id: 39, name: "QQ", price: 80000 },
+            { id: 40, name: "R9 Bold", price: 80000 }, { id: 41, name: "Rastel", price: 80000 }, { id: 42, name: "RC", price: 80000 },
+            { id: 43, name: "Rocker", price: 80000 }, { id: 44, name: "Saga", price: 80000 }, { id: 45, name: "San Marino", price: 90000 },
+            { id: 46, name: "Slava", price: 80000 }, { id: 47, name: "Smith", price: 75000 }, { id: 48, name: "Stigma", price: 75000 },
+            { id: 49, name: "Tabaco", price: 85000 }, { id: 50, name: "Toracino", price: 80000 }, { id: 51, name: "Van Bold", price: 80000 },
+            { id: 52, name: "Win Click", price: 85000 }
         ];
 
-        let cart = [], currentPage = 1, filteredProducts = [...products];
+        // System Variables
+        const WA_NUMBER = "6285715905079";
+        let cart = [];
+        let searchKeyword = "";
 
+        // Core Formatters
         const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
-
-        function showToast(message, type = 'success') {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            const bgColors = { success: 'bg-surface-900', error: 'bg-red-600' };
-            const iconColor = type === 'success' ? 'text-green-400' : 'text-white';
-            
-            toast.className = `toast-item ${bgColors[type] || bgColors.success} text-white text-[12.5px] font-bold px-4 py-3 rounded-xl shadow-premium flex items-center gap-3 border border-white/10`;
-            toast.innerHTML = `<svg class="w-4 h-4 shrink-0 ${iconColor}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg><span>${message}</span>`;
-            
-            container.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateX(100%) scale(0.95)';
-                toast.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
-        }
-
-        function renderGrid(data, page = 1) {
-            const grid = document.getElementById('productGrid'), skeletonGrid = document.getElementById('skeletonGrid');
-            const noResult = document.getElementById('noResult'), pagination = document.getElementById('pagination');
-
-            skeletonGrid.classList.add('hidden'); grid.innerHTML = '';
-
-            if (data.length === 0) {
-                noResult.classList.remove('hidden'); pagination.innerHTML = ''; return;
-            }
-            noResult.classList.add('hidden');
-
-            const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
-            const pageItems = data.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
-
-            pageItems.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'bg-white rounded-[20px] overflow-hidden flex flex-col border border-surface-100/80 shadow-sm hover:shadow-premium-sm hover:border-brand-200 transition-all duration-300 group';
-                card.setAttribute('data-aos', 'fade-up'); card.setAttribute('data-aos-delay', (index % 5) * 40);
-                
-                card.innerHTML = `
-                    <div class="h-[100px] bg-surface-50 relative flex items-center justify-center border-b border-surface-100 transition-colors duration-300">
-                        <span class="text-[40px] font-heading font-extrabold text-surface-200 group-hover:text-surface-300 transition-colors select-none tracking-tighter">${item.name.charAt(0)}</span>
-                        <div class="absolute top-2.5 right-2.5 bg-white text-[9.5px] px-2 py-0.5 rounded-[6px] text-surface-600 font-bold border border-surface-200 shadow-sm">Ready</div>
-                    </div>
-                    <div class="p-4.5 flex-1 flex flex-col bg-white">
-                        <h3 class="font-bold text-surface-900 text-[14.5px] leading-tight mb-0.5 truncate group-hover:text-brand-600 transition-colors" title="${item.name}">${item.name}</h3>
-                        <p class="text-surface-900 font-heading font-black text-[15px] mb-5">${formatRupiah(item.price)} <span class="text-[10px] text-surface-400 font-bold tracking-widest uppercase ml-0.5">/ Slop</span></p>
-                        
-                        <div class="mt-auto flex items-center gap-2">
-                            <div class="flex items-center bg-surface-50 rounded-[10px] border border-surface-200 w-[78px] h-9">
-                                <button onclick="event.stopPropagation();decrementQty(${item.id})" class="px-2.5 py-1 text-surface-400 hover:text-surface-900 text-[15px] font-bold transition-colors">−</button>
-                                <input type="number" id="qty_${item.id}" value="1" min="1" class="w-full bg-transparent text-center text-[13px] font-bold text-surface-900 focus:outline-none appearance-none" style="-moz-appearance:textfield">
-                                <button onclick="event.stopPropagation();incrementQty(${item.id})" class="px-2.5 py-1 text-surface-400 hover:text-surface-900 text-[15px] font-bold transition-colors">+</button>
-                            </div>
-                            <button onclick="event.stopPropagation();addToCart(${item.id},'${item.name}',${item.price})" class="flex-1 bg-surface-900 hover:bg-brand-600 text-white font-bold h-9 rounded-[10px] text-[13px] transition-all magnetic-btn shadow-sm flex items-center justify-center">
-                                Tambah
-                            </button>
-                        </div>
-                    </div>`;
-                grid.appendChild(card);
+        
+        // Premium Toast Notification
+        const showToast = (message) => {
+            const Toast = Swal.mixin({
+                toast: true, position: 'top-end', showConfirmButton: false, timer: 2000,
+                timerProgressBar: true, background: '#102a43', color: '#fff',
+                iconColor: '#D4AF37', customClass: { popup: 'rounded-xl shadow-floating' },
+                didOpen: (toast) => { toast.addEventListener('mouseenter', Swal.stopTimer); toast.addEventListener('mouseleave', Swal.resumeTimer); }
             });
-
-            pagination.innerHTML = '';
-            if (totalPages > 1) {
-                for (let i = 1; i <= totalPages; i++) {
-                    const btn = document.createElement('button');
-                    btn.textContent = i;
-                    btn.className = `w-9 h-9 rounded-xl text-[13px] font-bold transition-all ${i === page ? 'bg-surface-900 text-white shadow-sm' : 'bg-white text-surface-500 hover:text-surface-900 border border-surface-200'}`;
-                    btn.onclick = () => { currentPage = i; renderGrid(data, i); document.getElementById('katalog').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
-                    pagination.appendChild(btn);
-                }
-            }
-            setTimeout(() => AOS.refresh(), 100);
+            Toast.fire({ icon: 'success', title: message });
         }
 
-        function incrementQty(id) { const inp = document.getElementById(`qty_${id}`); if (inp) inp.value = parseInt(inp.value) + 1; }
-        function decrementQty(id) { const inp = document.getElementById(`qty_${id}`); if (inp && parseInt(inp.value) > 1) inp.value = parseInt(inp.value) - 1; }
+        // Render Product Catalog
+        const renderCatalog = () => {
+            const grid = document.getElementById('productGrid');
+            const noResult = document.getElementById('noResult');
+            
+            // Hide Skeleton
+            document.getElementById('skeletonGrid').classList.add('hidden');
+            grid.innerHTML = '';
 
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            filteredProducts = products.filter(p => p.name.toLowerCase().includes(e.target.value.toLowerCase()));
-            currentPage = 1; applySort();
-        });
-        document.getElementById('sortSelect').addEventListener('change', () => { currentPage = 1; applySort(); });
+            const filteredData = inventoryData.filter(item => item.name.toLowerCase().includes(searchKeyword.toLowerCase()));
 
-        function applySort() {
-            const val = document.getElementById('sortSelect').value;
-            let sorted = [...filteredProducts];
-            if (val === 'name_asc') sorted.sort((a, b) => a.name.localeCompare(b.name));
-            else if (val === 'price_asc') sorted.sort((a, b) => a.price - b.price);
-            else if (val === 'price_desc') sorted.sort((a, b) => b.price - a.price);
-            renderGrid(sorted, currentPage);
-        }
-
-        function addToCart(id, name, price) {
-            const inp = document.getElementById(`qty_${id}`), qty = inp ? parseInt(inp.value) : 1;
-            const ex = cart.find(i => i.id === id);
-            if (ex) ex.qty += qty; else cart.push({ id, name, price, qty });
-            if (inp) inp.value = 1;
-            updateCartUI(); showToast(`${qty} Slop ${name} ditambahkan`);
-        }
-        function removeFromCart(id) { cart = cart.filter(i => i.id !== id); updateCartUI(); }
-        function updateCartItemQty(id, nq) { const it = cart.find(i => i.id === id); if (it) { if (nq < 1) removeFromCart(id); else { it.qty = nq; updateCartUI(); } } }
-
-        function updateCartUI() {
-            const ct = document.getElementById('cartItems'), bg = document.getElementById('cartCountBadge');
-            const ti = document.getElementById('cartTotalItems'), tp = document.getElementById('cartTotalPrice');
-            const cp = document.getElementById('co_totalPrice'), bp = document.getElementById('btnProcessPO');
-            const fa = document.getElementById('freeShippingAlert');
-            let tq = 0, pr = 0;
-
-            if (cart.length === 0) {
-                ct.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-surface-400 text-center opacity-80"><div class="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-surface-200 mb-4"><svg class="w-7 h-7 text-surface-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></div><p class="font-medium text-[13px]">Draft PO kosong.<br>Silakan tambahkan kuantitas produk.</p></div>`;
-                bp.disabled = true; bg.classList.add('scale-0');
+            if(filteredData.length === 0) {
+                noResult.classList.remove('hidden'); return;
             } else {
-                bp.disabled = false; ct.innerHTML = '';
-                cart.forEach(i => {
-                    tq += i.qty; pr += (i.price * i.qty);
-                    ct.innerHTML += `<div class="bg-white p-3.5 rounded-[16px] border border-surface-200 flex items-center justify-between gap-3 shadow-sm"><div class="flex-1 min-w-0"><h4 class="font-bold text-surface-900 text-[13.5px] truncate mb-0.5">${i.name}</h4><div class="text-surface-500 text-[12px] font-bold">${formatRupiah(i.price)}</div></div><div class="flex items-center gap-2.5"><div class="flex items-center bg-surface-50 rounded-lg border border-surface-200 h-8"><button onclick="updateCartItemQty(${i.id},${i.qty-1})" class="px-2.5 py-1 text-surface-500 hover:text-surface-900 text-sm font-bold">−</button><span class="w-6 text-center text-[12.5px] text-surface-900 font-bold">${i.qty}</span><button onclick="updateCartItemQty(${i.id},${i.qty+1})" class="px-2.5 py-1 text-surface-500 hover:text-surface-900 text-sm font-bold">+</button></div><button onclick="removeFromCart(${i.id})" class="text-surface-400 hover:text-red-500 p-1.5 rounded-lg hover:bg-red-50"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div></div>`;
-                });
-                bg.classList.remove('scale-0'); bg.innerText = tq;
+                noResult.classList.add('hidden');
             }
-            ti.innerText = `${tq} Slop`; tp.innerText = formatRupiah(pr); cp.innerText = formatRupiah(pr);
-            if (tq >= 20) fa.classList.remove('hidden'); else fa.classList.add('hidden');
-        }
 
-        function toggleCart() { document.getElementById('cartDrawer').classList.contains('cart-open') ? closeCart() : openCart(); }
-        function openCart() {
-            document.getElementById('cartDrawer').classList.add('cart-open');
-            const o = document.getElementById('overlay'); o.classList.remove('hidden');
-            requestAnimationFrame(() => o.classList.remove('opacity-0')); document.body.style.overflow = 'hidden';
-        }
-        function closeCart() {
-            document.getElementById('cartDrawer').classList.remove('cart-open');
-            const o = document.getElementById('overlay'); o.classList.add('opacity-0');
-            setTimeout(() => { o.classList.add('hidden'); document.body.style.overflow = ''; }, 400);
-        }
-
-        function openCheckoutModal() {
-            if (cart.length === 0) return; closeCart();
-            const m = document.getElementById('checkoutModal'); m.classList.remove('hidden');
-            requestAnimationFrame(() => m.classList.remove('opacity-0')); document.body.style.overflow = 'hidden';
-        }
-        function closeCheckoutModal() {
-            const m = document.getElementById('checkoutModal'); m.classList.add('opacity-0');
-            setTimeout(() => { m.classList.add('hidden'); document.body.style.overflow = ''; }, 400);
-        }
-
-        function submitOrder(e) {
-            e.preventDefault();
-            const name = document.getElementById('co_name').value, phone = document.getElementById('co_phone').value;
-            const address = document.getElementById('co_address').value, notes = document.getElementById('co_notes').value;
-            let tq = 0, tp = 0, list = "";
-            
-            cart.forEach((i, idx) => {
-                tq += i.qty; const sub = i.price * i.qty; tp += sub;
-                list += `${idx+1}. ${i.name} | ${i.qty} Slop (Rp ${sub.toLocaleString('id-ID')})\n`;
+            filteredData.forEach((item, index) => {
+                const delay = (index % 10) * 50; // simple cascade
+                grid.innerHTML += `
+                    <div class="card-premium flex flex-col h-full bg-white relative group" data-aos="fade-up" data-aos-delay="${delay}">
+                        <!-- Icon area replacing image -->
+                        <div class="h-[120px] bg-corporate-50 rounded-t-[19px] border-b border-corporate-100 flex items-center justify-center relative overflow-hidden transition-colors group-hover:bg-blue-50/50">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-800 flex items-center justify-center shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-500">
+                                <i class="fa-solid fa-box text-corporate-gold text-2xl"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 bg-white text-[9px] font-bold text-corporate-600 px-2 py-1 rounded shadow-sm uppercase tracking-wider">Ready</div>
+                        </div>
+                        
+                        <div class="p-4 sm:p-5 flex-1 flex flex-col">
+                            <h3 class="font-bold text-corporate-900 text-sm sm:text-[15px] mb-1 group-hover:text-corporate-blue transition-colors leading-tight">${item.name}</h3>
+                            <div class="text-corporate-900 font-heading font-black text-lg mb-4">
+                                ${formatRupiah(item.price)} <span class="text-[9px] text-corporate-400 font-bold uppercase tracking-widest">/ Slop</span>
+                            </div>
+                            
+                            <!-- Action Control -->
+                            <div class="mt-auto flex items-center gap-2">
+                                <div class="flex items-center bg-corporate-50 border border-corporate-200 rounded-xl h-10 w-[80px] shrink-0">
+                                    <button onclick="changeQtyUI(${item.id}, -1)" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
+                                    <input type="number" id="qty_${item.id}" value="1" min="1" class="w-full text-center bg-transparent text-sm font-bold text-corporate-900 focus:outline-none hide-arrows pointer-events-none">
+                                    <button onclick="changeQtyUI(${item.id}, 1)" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-plus text-xs"></i></button>
+                                </div>
+                                <button onclick="addToCart(${item.id})" class="flex-1 h-10 bg-corporate-blue hover:bg-corporate-900 text-white font-bold text-[13px] rounded-xl transition-all shadow-sm hover:shadow-premium-sm flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-cart-plus"></i> Tambah
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
             });
+            AOS.refresh(); // Refresh animations for dynamically added elements
+        }
+
+        // Add to Cart Logic
+        const changeQtyUI = (id, delta) => {
+            const input = document.getElementById(`qty_${id}`);
+            let val = parseInt(input.value) + delta;
+            if(val < 1) val = 1;
+            input.value = val;
+        }
+
+        const addToCart = (id) => {
+            const item = inventoryData.find(p => p.id === id);
+            const qtyInput = document.getElementById(`qty_${id}`);
+            const qty = parseInt(qtyInput.value);
             
-            const ong = tq >= 20 ? "*[SUBSIDI GUDANG] - GRATIS ONGKIR*" : "Menunggu estimasi admin logistik";
-            const msg = `📑 *PURCHASE ORDER B2B*\n🏢 *R2 NUSANTARA*\n----------------------------------------\n*ID:* #PO-${Math.floor(Date.now()/1000)}\n*Tanggal:* ${new Date().toLocaleDateString('id-ID')}\n\n*DATA PEMESAN:*\nInstansi/Toko: ${name}\nNo. WA: ${phone}\nAlamat:\n${address}\n\n*DETAIL PO:*\n${list}----------------------------------------\n*Total Volume:* ${tq} Slop\n*Status Ongkir:* ${ong}\n*TOTAL TAGIHAN:* *${formatRupiah(tp)}*\n\n*Catatan:* ${notes || '-'}\n*Pembayaran:* ESCROW SECURE (Bayar pasca resi terbit)\n\n_Mohon admin untuk validasi stok & penerbitan manifes._`;
+            const existing = cart.find(c => c.id === id);
+            if(existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ ...item, qty: qty });
+            }
             
+            qtyInput.value = 1; // reset UI input
+            updateCartUI();
+            showToast(`${qty} Slop ${item.name} diamankan.`);
+        }
+
+        const updateCartItem = (id, delta) => {
+            const item = cart.find(c => c.id === id);
+            if(item) {
+                item.qty += delta;
+                if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
+                updateCartUI();
+            }
+        }
+        const removeCartItem = (id) => {
+            cart = cart.filter(c => c.id !== id);
+            updateCartUI();
+        }
+
+        const updateCartUI = () => {
+            const cartList = document.getElementById('cartItems');
+            const emptyState = document.getElementById('emptyCartState');
+            const totalItemsEl = document.getElementById('cartTotalItems');
+            const totalPriceEl = document.getElementById('cartTotalPrice');
+            const btnCheckout = document.getElementById('btnCheckout');
+            const promoAlert = document.getElementById('promoAlert');
+            const badge1 = document.getElementById('cartBadge');
+            const badge2 = document.getElementById('mobileCartBadge');
+            const mobileBtn = document.getElementById('mobileCartBtn');
+            const formTotal = document.getElementById('f_totalVal');
+
+            let tQty = 0; let tPrice = 0;
+            
+            // Reset List (keep empty state hidden or visible based on logic below)
+            const children = Array.from(cartList.children);
+            children.forEach(c => { if(c.id !== 'emptyCartState') c.remove(); });
+
+            if(cart.length === 0) {
+                emptyState.style.display = 'flex';
+                btnCheckout.disabled = true;
+                btnCheckout.classList.add('opacity-50', 'cursor-not-allowed');
+                badge1.classList.add('scale-0'); badge2.classList.add('scale-0');
+                mobileBtn.classList.remove('scale-100'); mobileBtn.classList.add('scale-0');
+            } else {
+                emptyState.style.display = 'none';
+                btnCheckout.disabled = false;
+                btnCheckout.classList.remove('opacity-50', 'cursor-not-allowed');
+                badge1.classList.remove('scale-0'); badge2.classList.remove('scale-0');
+                mobileBtn.classList.remove('scale-0'); mobileBtn.classList.add('scale-100');
+
+                cart.forEach(item => {
+                    tQty += item.qty;
+                    tPrice += (item.qty * item.price);
+                    
+                    cartList.insertAdjacentHTML('beforeend', `
+                        <div class="bg-white p-4 rounded-xl border border-corporate-200 shadow-sm flex justify-between items-center gap-3">
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-bold text-corporate-900 text-sm truncate">${item.name}</h4>
+                                <div class="text-xs text-corporate-500 font-semibold mt-1">${formatRupiah(item.price)}</div>
+                            </div>
+                            <div class="flex items-center gap-3 shrink-0">
+                                <div class="flex items-center bg-corporate-50 border border-corporate-200 rounded-lg h-8">
+                                    <button onclick="updateCartItem(${item.id}, -1)" class="w-7 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                                    <span class="w-6 text-center text-xs font-bold text-corporate-900">${item.qty}</span>
+                                    <button onclick="updateCartItem(${item.id}, 1)" class="w-7 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                                </div>
+                                <button onclick="removeCartItem(${item.id})" class="text-corporate-400 hover:text-red-500 transition-colors w-6 h-6 flex items-center justify-center rounded-md hover:bg-red-50">
+                                    <i class="fa-solid fa-trash-can text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+
+            // Update Summaries
+            badge1.innerText = tQty; badge2.innerText = tQty;
+            totalItemsEl.innerText = `${tQty} Slop`;
+            totalPriceEl.innerText = formatRupiah(tPrice);
+            formTotal.innerText = formatRupiah(tPrice);
+
+            if(tQty >= 20) promoAlert.classList.remove('hidden'); else promoAlert.classList.add('hidden');
+        }
+
+        // Drawer Controls
+        const toggleCart = () => {
+            const drawer = document.getElementById('cartDrawer');
+            if(drawer.classList.contains('open')) closeCart(); else openCart();
+        }
+        const openCart = () => {
+            document.getElementById('cartDrawer').classList.add('open');
+            const overlay = document.getElementById('cartOverlay');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        const closeCart = () => {
+            document.getElementById('cartDrawer').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Form Modal Controls
+        const proceedToForm = () => {
+            if(cart.length === 0) return;
+            closeCart();
+            const modal = document.getElementById('formModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+        const closeFormModal = () => {
+            const modal = document.getElementById('formModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = ''; }, 400);
+        }
+
+        // Final Submission to WhatsApp
+        const submitToWhatsApp = (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const val = (id) => document.getElementById(id).value.trim();
+            const name = val('f_name'), phone = val('f_phone'), address = val('f_address');
+            const kec = val('f_kec'), kab = val('f_kab'), prov = val('f_prov'), pos = val('f_pos');
+            const kurir = val('f_ekspedisi'), notes = val('f_notes');
+            
+            let tQty = 0, tPrice = 0, itemsText = "";
+            cart.forEach((c, i) => {
+                const sub = c.qty * c.price;
+                tQty += c.qty; tPrice += sub;
+                itemsText += `${i+1}. ${c.name} - ${c.qty} Slop (Rp ${sub.toLocaleString('id-ID')})\n`;
+            });
+
+            const shippingStatus = tQty >= 20 ? "*[LAYANAN SUBSIDI] - BEBAS ONGKOS KIRIM*" : "Menunggu penghitungan rute ekspedisi.";
+            
+            // Construct text
+            const msg = `📑 *PURCHASE ORDER B2B*\n🏢 *R2 NUSANTARA - CORPORATE*\n----------------------------------------\n*ID:* #PO-R2-${Math.floor(Date.now()/1000)}\n\n*ENTITAS PEMESAN:*\nInstansi / Toko: ${name}\nNo. WhatsApp: ${phone}\n\n*ALAMAT PENGIRIMAN:*\n${address}\nKec. ${kec}, Kab/Kota. ${kab}\nProv. ${prov}, Kode Pos: ${pos}\n\n*RINCIAN DOKUMEN PO:*\n${itemsText}----------------------------------------\n*Total Volume:* ${tQty} Slop\n*Tanggungan Ekspedisi:* ${shippingStatus}\n*Estimasi Ekspedisi:* ${kurir}\n*VALUASI TOTAL:* *${formatRupiah(tPrice)}*\n\n*Catatan Ekstra:* ${notes || '-'}\n\n*KEBIJAKAN PEMBAYARAN:*\nESCROW (Transfer hanya setelah nomor resi pelacakan dari pihak logistik resmi diterbitkan).\n\n_Mohon kepada tim Enterprise Support agar memvalidasi stok dan menyiapkan penerbitan manifes logistik._`;
+
+            // Success UI
             Swal.fire({
-                title: 'Data Valid', text: 'Menghubungkan ke secure line WhatsApp...',
-                icon: 'success', background: '#FCFCFD', color: '#1D1D1F',
-                confirmButtonColor: '#1D1D1F', timer: 1500, timerProgressBar: true,
-                showConfirmButton: false, customClass: { popup: 'rounded-[20px] shadow-premium' }
+                title: 'Otorisasi PO Berhasil', text: 'Mengenkripsi data dan menghubungkan ke WhatsApp Secure Line...',
+                icon: 'success', background: '#ffffff', color: '#102a43',
+                showConfirmButton: false, timer: 2000, customClass: { popup: 'rounded-2xl shadow-floating' }
             }).then(() => {
                 window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-                cart = []; updateCartUI(); closeCheckoutModal();
+                cart = []; updateCartUI(); closeFormModal();
             });
         }
 
-        document.querySelectorAll('.faq-toggle').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tg = document.getElementById(btn.dataset.target), ic = btn.querySelector('.faq-icon');
-                const op = tg.classList.contains('max-h-[300px]');
-                document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('max-h-[300px]'));
-                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
-                if (!op) { tg.classList.add('max-h-[300px]'); ic.classList.add('rotate-180'); }
-                btn.setAttribute('aria-expanded', !op);
-            });
+        // Live Search Handling
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchKeyword = e.target.value;
+            renderCatalog();
         });
 
-        function animateCounters() {
-            document.querySelectorAll('.counter').forEach(c => {
-                const t = +c.getAttribute('data-target'), d = 2500, s = performance.now();
-                const step = (ts) => {
-                    const p = Math.min((ts - s) / d, 1), e = 1 - Math.pow(1 - p, 4);
-                    c.textContent = Math.floor(e * t).toLocaleString('id-ID');
-                    if (p < 1) requestAnimationFrame(step); else c.textContent = t.toLocaleString('id-ID');
-                };
-                requestAnimationFrame(step);
-            });
-        }
-
-        function updateScrollUI() {
-            const st = window.scrollY, dh = document.documentElement.scrollHeight - window.innerHeight;
-            const pr = dh > 0 ? (st / dh) * 100 : 0;
-            document.getElementById('scrollProgress').style.width = pr + '%';
+        // Scroll Effects (Header & Progress)
+        window.addEventListener('scroll', () => {
+            const h = document.getElementById('header');
+            const p = document.getElementById('scrollProgress');
+            const st = window.scrollY;
             
-            const bt = document.getElementById('backToTop'), bc = document.getElementById('bttProgress');
-            if (st > 500) { bt.classList.replace('hidden-btt', 'visible-btt'); } 
-            else { bt.classList.replace('visible-btt', 'hidden-btt'); }
-            if (bc) bc.style.strokeDashoffset = 131.9 - (pr / 100) * 131.9;
+            // Header shadow
+            if(st > 10) h.classList.add('shadow-sm'); else h.classList.remove('shadow-sm');
             
-            const hd = document.getElementById('mainHeader');
-            if (st > 20) { hd.style.background = 'rgba(252, 252, 253, 0.85)'; hd.style.boxShadow = '0 2px 20px rgba(0,0,0,0.03)'; } 
-            else { hd.style.background = 'rgba(252, 252, 253, 0.75)'; hd.style.boxShadow = 'none'; }
-        }
-
-        // Custom Cursor
-        const dot = document.getElementById('cursorDot'), rng = document.getElementById('cursorRing');
-        let mx = 0, my = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', (e) => {
-            mx = e.clientX; my = e.clientY;
-            if (dot) { dot.style.left = mx - 2.5 + 'px'; dot.style.top = my - 2.5 + 'px'; }
-        });
-        function animateRing() {
-            rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
-            if (rng) {
-                const s = document.body.classList.contains('cursor-hover') ? 28 : 16;
-                rng.style.left = rx - s + 'px'; rng.style.top = ry - s + 'px';
-            }
-            requestAnimationFrame(animateRing);
-        }
-        if (rng) requestAnimationFrame(animateRing);
-
-        document.querySelectorAll('a, button, input, textarea, select, .magnetic-btn, .tilt-card').forEach(e => {
-            e.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            e.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+            // Progress width
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (st / docHeight) * 100;
+            p.style.width = scrollPercent + '%';
         });
 
-        document.querySelectorAll('.magnetic-btn').forEach(b => {
-            b.addEventListener('mousemove', (e) => {
-                const r = b.getBoundingClientRect(), x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2;
-                b.style.transform = `translate(${x*0.15}px, ${y*0.15}px)`;
-            });
-            b.addEventListener('mouseleave', () => { b.style.transform = 'translate(0,0)'; });
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            document.querySelectorAll('.tilt-card').forEach(c => {
-                const r = c.getBoundingClientRect();
-                if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) {
-                    c.style.transform = 'perspective(2000px) rotateX(0deg) rotateY(0deg)'; return;
-                }
-                const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-                c.style.transform = `perspective(2000px) rotateY(${x*4}deg) rotateX(${-y*4}deg)`;
-            });
-        });
-
-        function initParticles() {
-            const cv = document.getElementById('particleCanvas'); if (!cv) return;
-            const cx = cv.getContext('2d'); let pt = [];
-            function rz() { cv.width = cv.parentElement.offsetWidth; cv.height = cv.parentElement.offsetHeight; }
-            rz(); window.addEventListener('resize', rz);
-            class P {
-                constructor() { this.reset(); }
-                reset() { this.x = Math.random() * cv.width; this.y = Math.random() * cv.height; this.s = Math.random() * 1.5 + 0.5; this.vx = (Math.random() - 0.5) * 0.15; this.vy = (Math.random() - 0.5) * 0.15; this.a = Math.random() * 0.3 + 0.1; }
-                upd() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > cv.width || this.y < 0 || this.y > cv.height) this.reset(); }
-                drw() { cx.beginPath(); cx.arc(this.x, this.y, this.s, 0, Math.PI * 2); cx.fillStyle = `rgba(61, 114, 255, ${this.a})`; cx.fill(); }
-            }
-            for (let i = 0; i < 30; i++) pt.push(new P());
-            function loop() {
-                cx.clearRect(0, 0, cv.width, cv.height);
-                pt.forEach(p => { p.upd(); p.drw(); });
-                for (let i = 0; i < pt.length; i++) {
-                    for (let j = i + 1; j < pt.length; j++) {
-                        const dx = pt[i].x - pt[j].x, dy = pt[i].y - pt[j].y, d = Math.sqrt(dx*dx + dy*dy);
-                        if (d < 100) { cx.beginPath(); cx.moveTo(pt[i].x, pt[i].y); cx.lineTo(pt[j].x, pt[j].y); cx.strokeStyle = `rgba(61, 114, 255, ${0.04 * (1 - d/100)})`; cx.lineWidth = 1; cx.stroke(); }
-                    }
-                }
-                requestAnimationFrame(loop);
-            }
-            loop();
-        }
-
-        function updateActiveLink() {
-            const sc = document.querySelectorAll('section'), nl = document.querySelectorAll('.nav-link');
-            let cr = '';
-            sc.forEach(s => { if (window.scrollY >= s.offsetTop - 200) cr = s.getAttribute('id'); });
-            nl.forEach(l => {
-                l.classList.remove('active', 'text-surface-900');
-                if (l.getAttribute('href') === `#${cr}`) l.classList.add('active', 'text-surface-900');
-            });
-        }
-        
-        document.getElementById('backToTop').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
+        // Initialize App
         document.addEventListener('DOMContentLoaded', () => {
+            // Remove Preloader
             setTimeout(() => {
-                const pl = document.getElementById('preloader');
-                pl.style.opacity = '0';
-                setTimeout(() => pl.style.display = 'none', 700);
-            }, 1200);
-            
-            AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 40 });
-            
-            setTimeout(() => { document.getElementById('skeletonGrid').classList.add('hidden'); renderGrid(products, 1); }, 1000);
-            
-            initParticles();
-            window.addEventListener('scroll', () => { updateScrollUI(); updateActiveLink(); }, { passive: true });
-            updateScrollUI();
-            
-            const cs = document.querySelector('.counter')?.closest('section');
-            if (cs) {
-                const ob = new IntersectionObserver((e) => { e.forEach(en => { if (en.isIntersecting) { animateCounters(); ob.unobserve(en.target); } }); }, { threshold: 0.4 });
-                ob.observe(cs);
-            }
-            
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeCart(); closeCheckoutModal(); } });
-            
-            console.log('%c🚀 R2 Nusantara UI %cReady', 'color:#3D72FF;font-weight:900;', 'color:#737785;');
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 700);
+                
+                // Initialize AOS after preloader
+                AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+            }, 1000);
+
+            // Hide CSS arrows from input number
+            const style = document.createElement('style');
+            style.innerHTML = `
+                input[type=number].hide-arrows::-webkit-inner-spin-button, 
+                input[type=number].hide-arrows::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+                input[type=number].hide-arrows { -moz-appearance: textfield; }
+            `;
+            document.head.appendChild(style);
+
+            // Render First Paint
+            setTimeout(() => { renderCatalog(); }, 800); // Slight delay for skeleton effect
         });
     </script>
 </body>
 </html>
+
