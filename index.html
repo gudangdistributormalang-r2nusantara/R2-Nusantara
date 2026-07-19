@@ -11,11 +11,22 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="R2 Nusantara">
     <link rel="canonical" href="https://r2nusantara.com/">
+    <meta name="theme-color" content="#0f172a">
 
-    <!-- Open Graph / WhatsApp Preview -->
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22R2%20Nusantara%22%2C%22short_name%22%3A%22R2Nusantara%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230f172a%22%2C%22theme_color%22%3A%22%230f172a%22%2C%22description%22%3A%22Gudang%20distributor%20rokok%20resmi%20Malang%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fi.ibb.co%2Fk61y85fQ%2FIMG-20240328-213425.jpg%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fjpeg%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fi.ibb.co%2Fk61y85fQ%2FIMG-20240328-213425.jpg%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fjpeg%22%7D%5D%7D">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="R2 Nusantara">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph -->
     <meta property="og:title" content="R2 Nusantara — Distributor Rokok Grosir Malang">
-    <meta property="og:description" content="Gudang distributor resmi. Bayar setelah resi keluar. Gratis ongkir min 1 bal (20 slop).">
-    <meta property="og:image" content="https://i.ibb.co.com/sdFbQN3r/IMG-20240328-213425.jpg">
+    <meta property="og:description" content="Gudang distributor resmi. Bayar setelah resi keluar. Gratis ongkir min 1 bal.">
+    <meta property="og:image" content="https://i.ibb.co/sdFbQN3r/IMG-20240328-213425.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="R2 Nusantara Gudang Distributor Rokok Malang">
@@ -24,39 +35,22 @@
     <meta property="og:site_name" content="R2 Nusantara">
     <meta property="og:locale" content="id_ID">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="R2 Nusantara — Distributor Rokok Grosir Malang">
     <meta name="twitter:description" content="Gudang distributor resmi. Bayar setelah resi keluar. Gratis ongkir min 1 bal.">
-    <meta name="twitter:image" content="https://i.ibb.co.com/sdFbQN3r/IMG-20240328-213425.jpg">
-
-    <meta name="theme-color" content="#0f172a">
+    <meta name="twitter:image" content="https://i.ibb.co/sdFbQN3r/IMG-20240328-213425.jpg">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WholesaleStore",
-        "name": "R2 Nusantara",
-        "description": "Gudang distributor rokok resmi wilayah Malang. Menyediakan lebih dari 50 merek dengan sistem bayar setelah resi keluar.",
-        "image": "https://i.ibb.co.com/sdFbQN3r/IMG-20240328-213425.jpg",
-        "address": { "@type": "PostalAddress", "streetAddress": "Desa Karangduren, Kec. Pakisaji", "addressLocality": "Kab. Malang", "addressRegion": "Jawa Timur", "postalCode": "65162", "addressCountry": "ID" },
-        "telephone": "+6285715905079",
-        "openingHours": "Mo-Sa 08:00-17:00",
-        "priceRange": "Rp 65.000 - Rp 90.000",
-        "areaServed": { "@type": "Country", "name": "Indonesia" },
-        "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Katalog Rokok R2 Nusantara", "itemListElement": [ { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Age Pro" }, "price": "65000", "priceCurrency": "IDR" }, { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "ERA" }, "price": "90000", "priceCurrency": "IDR" } ] }
-    }
+    {"@context":"https://schema.org","@type":"WholesaleStore","name":"R2 Nusantara","description":"Gudang distributor rokok resmi wilayah Malang. Menyediakan lebih dari 50 merek dengan sistem bayar setelah resi keluar.","image":"https://i.ibb.co/sdFbQN3r/IMG-20240328-213425.jpg","address":{"@type":"PostalAddress","streetAddress":"Desa Karangduren, Kec. Pakisaji","addressLocality":"Kab. Malang","addressRegion":"Jawa Timur","postalCode":"65162","addressCountry":"ID"},"telephone":"+6285715905079","openingHours":"Mo-Sa 08:00-17:00","priceRange":"Rp 65.000 - Rp 90.000","areaServed":{"@type":"Country","name":"Indonesia"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Katalog Rokok R2 Nusantara","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Age Pro"},"price":"65000","priceCurrency":"IDR"},{"@type":"Offer","itemOffered":{"@type":"Product","name":"ERA"},"price":"90000","priceCurrency":"IDR"}]}}
     </script>
 
     <!-- Preload Fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -66,24 +60,22 @@
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         mono: ['"IBM Plex Mono"', 'monospace'],
                     },
-                    colors: {
-                        corporate: { blue: '#0f172a', light: '#1e293b', accent: '#3b82f6', silver: '#e2e8f0' }
-                    },
+                    colors: { corporate: { blue: '#0f172a', light: '#1e293b', accent: '#3b82f6', silver: '#e2e8f0' } },
                     animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out forwards',
-                        'float': 'float 3s ease-in-out infinite',
-                        'pulse-soft': 'pulseSoft 2s infinite',
-                        'progress-glow': 'progressGlow 2s ease-in-out infinite',
-                        'fly': 'flyToCart 0.5s ease-in forwards',
+                        'fade-in': 'fadeIn 0.5s ease-out', 'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite', 'pulse-soft': 'pulseSoft 2s infinite',
+                        'progress-glow': 'progressGlow 2s ease-in-out infinite', 'fly': 'flyToCart 0.5s ease-in forwards',
+                        'shimmer': 'shimmer 1.5s infinite', 'fab-expand': 'fabExpand 0.3s ease-out forwards',
                     },
                     keyframes: {
                         fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
                         slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
                         float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
-                        pulseSoft: { '0%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.4)' }, '70%': { boxShadow: '0 0 0 15px rgba(37, 211, 102, 0)' }, '100%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0)' } },
+                        pulseSoft: { '0%': { boxShadow: '0 0 0 0 rgba(37,211,102,0.4)' }, '70%': { boxShadow: '0 0 0 15px rgba(37,211,102,0)' }, '100%': { boxShadow: '0 0 0 0 rgba(37,211,102,0)' } },
                         progressGlow: { '0%, 100%': { boxShadow: '0 0 8px rgba(59,130,246,0.4)' }, '50%': { boxShadow: '0 0 20px rgba(59,130,246,0.8)' } },
-                        flyToCart: { '0%': { opacity: '1', transform: 'translate(0,0) scale(1)' }, '100%': { opacity: '0', transform: 'translate(var(--fly-x), var(--fly-y)) scale(0.2)' } }
+                        flyToCart: { '0%': { opacity: '1', transform: 'translate(0,0) scale(1)' }, '100%': { opacity: '0', transform: 'translate(var(--fly-x), var(--fly-y)) scale(0.2)' } },
+                        shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+                        fabExpand: { '0%': { opacity: '0', transform: 'scale(0.5) translateY(10px)' }, '100%': { opacity: '1', transform: 'scale(1) translateY(0)' } }
                     }
                 }
             }
@@ -113,9 +105,13 @@
         .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
         .skip-link { position: absolute; top: -100px; left: 0; background: #0f172a; color: #fff; padding: 8px 16px; z-index: 200; transition: top 0.3s; } .skip-link:focus { top: 0; }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
-        /* Radio button custom */
         .payment-radio:checked + label { border-color: #3b82f6; background: #eff6ff; }
         .payment-radio:checked + label .check-icon { display: inline-block; }
+        :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+        .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 0.75rem; }
+        .fab-menu { transform: scale(0); opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; }
+        .fab-menu.open { transform: scale(1); opacity: 1; pointer-events: auto; }
+        .star-rating i { cursor: pointer; transition: color 0.15s ease; }
     </style>
 </head>
 <body class="text-slate-800 relative selection:bg-blue-200 selection:text-blue-900">
@@ -125,7 +121,7 @@
 
 <!-- Loading Animation -->
 <div id="loader" class="fixed inset-0 z-[100] bg-corporate-blue flex flex-col items-center justify-center">
-    <div class="relative w-24 h-24"><div class="absolute inset-0 border-4 border-slate-700 rounded-full"></div><div class="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div><img src="https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg" alt="R2 Logo" class="absolute inset-0 m-auto w-12 h-12 rounded-full object-cover shadow-lg"></div>
+    <div class="relative w-24 h-24"><div class="absolute inset-0 border-4 border-slate-700 rounded-full"></div><div class="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div><img src="https://i.ibb.co/k61y85fQ/IMG-20240328-213425.jpg" alt="R2 Logo" width="48" height="48" class="absolute inset-0 m-auto w-12 h-12 rounded-full object-cover shadow-lg"></div>
     <h2 class="mt-6 text-white text-xl font-bold tracking-widest uppercase">R2 Nusantara</h2>
     <div class="w-12 h-1 bg-blue-500 mt-3 rounded-full"></div>
 </div>
@@ -137,12 +133,13 @@
 <header class="fixed top-0 w-full z-50 glass transition-all duration-300" id="header" role="banner">
     <div class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <a href="#" class="flex items-center gap-3 group" aria-label="R2 Nusantara Beranda">
-            <div class="relative"><img src="https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg" alt="Logo" class="w-11 h-11 rounded-full shadow-md border-2 border-white group-hover:scale-105 transition-transform duration-300"><img src="https://i.ibb.co.com/60mzSxtN/Desain-tanpa-judul-2.png" alt="Verified" class="w-4 h-4 absolute -bottom-1 -right-1 bg-white rounded-full p-0.5"></div>
+            <div class="relative"><img src="https://i.ibb.co/k61y85fQ/IMG-20240328-213425.jpg" alt="Logo" width="44" height="44" class="w-11 h-11 rounded-full shadow-md border-2 border-white group-hover:scale-105 transition-transform duration-300"><img src="https://i.ibb.co/60mzSxtN/Desain-tanpa-judul-2.png" alt="Verified" width="16" height="16" class="w-4 h-4 absolute -bottom-1 -right-1 bg-white rounded-full p-0.5"></div>
             <div class="flex flex-col"><span class="font-bold text-lg text-corporate-blue tracking-tight leading-none mb-1">R2 NUSANTARA</span><span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Distributor Malang</span></div>
         </a>
         <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600" aria-label="Navigasi Utama" id="mainNav">
             <a href="#beranda" class="nav-link hover:text-blue-600 transition-colors">Beranda</a>
             <a href="#info" class="nav-link hover:text-blue-600 transition-colors">Sistem & Promo</a>
+            <a href="#testimoni" class="nav-link hover:text-blue-600 transition-colors">Testimoni</a>
             <a href="#produk" class="nav-link hover:text-blue-600 transition-colors">Katalog Harga</a>
             <a href="#faq" class="nav-link hover:text-blue-600 transition-colors">FAQ</a>
         </nav>
@@ -153,9 +150,9 @@
 </header>
 
 <main>
-    <!-- Hero dengan Parallax -->
+    <!-- Hero Section -->
     <section id="beranda" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-[95vh]" aria-labelledby="hero-heading">
-        <div class="absolute inset-0 z-0" id="heroParallax"><img src="https://i.ibb.co.com/NdQds7Gk/1750480573786.jpg" alt="Latar belakang gudang" fetchpriority="high" class="w-full h-full object-cover object-center scale-110" id="heroBg"><div class="absolute inset-0 bg-corporate-blue/85 mix-blend-multiply"></div><div class="absolute inset-0 bg-gradient-to-b from-transparent via-corporate-blue/50 to-[#f8fafc]"></div></div>
+        <div class="absolute inset-0 z-0"><img src="https://i.ibb.co/NdQds7Gk/1750480573786.jpg" alt="Latar belakang gudang" fetchpriority="high" width="1920" height="1080" class="w-full h-full object-cover object-center scale-110" id="heroBg"><div class="absolute inset-0 bg-corporate-blue/85 mix-blend-multiply"></div><div class="absolute inset-0 bg-gradient-to-b from-transparent via-corporate-blue/50 to-[#f8fafc]"></div></div>
         <div class="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
             <div class="animate-slide-up" style="animation-delay: 0.1s;"><span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-6 shadow-lg"><i class="fa-solid fa-star text-yellow-400 text-[10px]"></i> Executive Tobacco Distribution</span></div>
             <h1 id="hero-heading" class="hero-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-slide-up drop-shadow-xl" style="animation-delay: 0.2s;">Solusi Kebutuhan Stok <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-200 to-white">Tepat, Cepat, & Aman</span></h1>
@@ -169,11 +166,78 @@
         </div>
     </section>
 
-    <!-- Trust Badges & Slogan -->
-    <section class="py-12 bg-white border-b border-slate-200"><div class="container mx-auto px-4 text-center fade-on-scroll"><p class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8">Mendukung Pengiriman Ke Seluruh Indonesia</p><div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"><div class="flex items-center gap-2"><i class="fa-solid fa-plane-departure text-3xl"></i><span class="font-bold text-lg">CARGO UDARA</span></div><div class="flex items-center gap-2"><i class="fa-solid fa-ship text-3xl"></i><span class="font-bold text-lg">KARGO LAUT</span></div><div class="flex items-center gap-2"><i class="fa-solid fa-truck text-3xl"></i><span class="font-bold text-lg">JALUR DARAT</span></div><div class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-3xl"></i><span class="font-bold text-lg">PACKING AMAN</span></div></div><div class="mt-16"><img src="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg" alt="Slogan R2 Nusantara" loading="lazy" class="max-w-full md:max-w-3xl mx-auto rounded-2xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow"></div></div></section>
+    <!-- Trust Badges -->
+    <section class="py-12 bg-white border-b border-slate-200"><div class="container mx-auto px-4 text-center fade-on-scroll"><p class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8">Mendukung Pengiriman Ke Seluruh Indonesia</p><div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"><div class="flex items-center gap-2"><i class="fa-solid fa-plane-departure text-3xl"></i><span class="font-bold text-lg">CARGO UDARA</span></div><div class="flex items-center gap-2"><i class="fa-solid fa-ship text-3xl"></i><span class="font-bold text-lg">KARGO LAUT</span></div><div class="flex items-center gap-2"><i class="fa-solid fa-truck text-3xl"></i><span class="font-bold text-lg">JALUR DARAT</span></div><div class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-3xl"></i><span class="font-bold text-lg">PACKING AMAN</span></div></div><div class="mt-16"><img src="https://i.ibb.co/NnVzsfr2/IMG-20251224-122739.jpg" alt="Slogan R2 Nusantara" loading="lazy" width="768" height="320" class="max-w-full md:max-w-3xl mx-auto rounded-2xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow"></div></div></section>
 
     <!-- Brand Section -->
     <section class="py-16 bg-gradient-to-b from-white to-slate-50" aria-labelledby="why-r2-heading"><div class="container mx-auto px-4 md:px-8"><div class="max-w-3xl mx-auto text-center mb-12 fade-on-scroll"><span class="text-blue-600 font-bold text-sm tracking-widest uppercase">Kenapa R2 Nusantara?</span><h2 id="why-r2-heading" class="section-heading text-3xl md:text-4xl font-extrabold text-corporate-blue mt-3 mb-4">Mitra Distribusi Tepercaya Sejak 2019</h2><p class="text-slate-500 text-lg">Lebih dari 500 mitra toko telah mempercayakan pasokan rokok mereka kepada kami.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-md transition-shadow fade-on-scroll"><div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-blue-200">📦</div><h3 class="font-bold text-slate-800 mb-2">52+ Varian Merek</h3><p class="text-sm text-slate-500">Pilihan terlengkap untuk semua segmen pasar</p></div><div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-md transition-shadow fade-on-scroll"><div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-green-200">🔒</div><h3 class="font-bold text-slate-800 mb-2">Transaksi Aman</h3><p class="text-sm text-slate-500">Bayar setelah resi pengiriman terbit</p></div><div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-md transition-shadow fade-on-scroll"><div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-purple-200">🚚</div><h3 class="font-bold text-slate-800 mb-2">Gratis Ongkir</h3><p class="text-sm text-slate-500">Minimal pembelian 1 bal (20 slop)</p></div><div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-md transition-shadow fade-on-scroll"><div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-amber-200">📸</div><h3 class="font-bold text-slate-800 mb-2">Dokumentasi Real-time</h3><p class="text-sm text-slate-500">Foto & video packing sebelum kirim</p></div></div></div></section>
+
+    <!-- ========== TESTIMONI SECTION (UPGRADED) ========== -->
+    <section id="testimoni" class="py-20 bg-white relative overflow-hidden" aria-labelledby="testimoni-heading">
+        <div class="absolute -left-40 top-10 w-80 h-80 bg-blue-100 rounded-full blur-[80px] opacity-40"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-10 fade-on-scroll">
+                <span class="text-blue-600 font-bold text-sm tracking-widest uppercase">Testimoni Mitra</span>
+                <h2 id="testimoni-heading" class="section-heading text-3xl md:text-4xl font-extrabold text-corporate-blue mt-3 mb-4">Dipercaya 500+ Toko di Indonesia</h2>
+                <p class="text-slate-500 text-lg">Inilah yang mereka katakan tentang layanan kami.</p>
+            </div>
+
+            <!-- Testimoni Grid -->
+            <div id="testimoniGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-on-scroll">
+                <!-- Diisi dinamis oleh JavaScript -->
+            </div>
+
+            <!-- Tombol Tulis Testimoni -->
+            <div class="text-center mt-10 fade-on-scroll">
+                <button onclick="openTestimoniForm()" class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-corporate-blue text-corporate-blue rounded-xl font-bold hover:bg-corporate-blue hover:text-white transition-all shadow-sm">
+                    <i class="fa-solid fa-pen-to-square"></i> Tulis Testimoni
+                </button>
+                <p class="text-xs text-slate-400 mt-3">Bagikan pengalaman Anda setelah bertransaksi dengan R2 Nusantara.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Form Modal -->
+    <div id="testimoniModal" class="fixed inset-0 bg-corporate-blue/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="testimoniModalTitle" aria-hidden="true">
+        <div class="bg-white p-8 md:p-10 rounded-[2rem] max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <h2 id="testimoniModalTitle" class="text-2xl font-extrabold text-slate-800 mb-6">Tulis Testimoni Anda</h2>
+            <p class="text-sm text-slate-500 mb-6">Beritahu kami pengalaman Anda berbelanja di R2 Nusantara. Testimoni Anda akan ditampilkan di halaman ini.</p>
+            <form id="testimoniForm" onsubmit="submitTestimoni(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Nama Anda</label>
+                    <input type="text" id="testiName" placeholder="Contoh: Budi Santoso" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Nama Toko / Usaha</label>
+                    <input type="text" id="testiToko" placeholder="Contoh: Toko Makmur Jaya" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Kota Domisili</label>
+                    <input type="text" id="testiKota" placeholder="Contoh: Surabaya" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Rating Anda</label>
+                    <div class="flex gap-1 text-2xl star-rating" id="starRating">
+                        <i class="fa-regular fa-star text-yellow-400" data-value="1"></i>
+                        <i class="fa-regular fa-star text-yellow-400" data-value="2"></i>
+                        <i class="fa-regular fa-star text-yellow-400" data-value="3"></i>
+                        <i class="fa-regular fa-star text-yellow-400" data-value="4"></i>
+                        <i class="fa-regular fa-star text-yellow-400" data-value="5"></i>
+                    </div>
+                    <input type="hidden" id="testiRating" value="5">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Pesan Testimoni</label>
+                    <textarea id="testiPesan" rows="3" placeholder="Ceritakan pengalaman Anda..." required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none"></textarea>
+                    <p class="text-xs text-slate-400 mt-1"><span id="charCount">0</span>/200 karakter</p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button type="submit" class="flex-1 py-3 bg-corporate-blue text-white rounded-xl font-bold hover:bg-blue-600 transition-all shadow-md"><i class="fa-solid fa-paper-plane mr-2"></i> Kirim Testimoni</button>
+                    <button type="button" onclick="closeTestimoniForm()" class="px-6 py-3 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all">Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Mechanism Section -->
     <section id="info" class="py-24 bg-slate-50 relative overflow-hidden" aria-labelledby="mechanism-heading"><div class="absolute -right-40 top-20 w-96 h-96 bg-blue-200 rounded-full blur-[100px] opacity-40"></div><div class="absolute -left-40 bottom-20 w-96 h-96 bg-slate-300 rounded-full blur-[100px] opacity-30"></div><div class="container mx-auto px-4 md:px-8 relative z-10"><div class="max-w-3xl mx-auto text-center mb-16 fade-on-scroll"><h2 id="mechanism-heading" class="section-heading text-3xl md:text-5xl font-extrabold text-corporate-blue mb-6">Protokol Keamanan Transaksi</h2><p class="text-slate-600 text-lg leading-relaxed">Kami menerapkan standar keamanan B2B untuk menjamin kenyamanan Anda. <strong class="text-corporate-blue">Tanpa risiko penipuan.</strong></p></div><div class="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgb(0,0,0,0.05)] fade-on-scroll border border-slate-100 relative overflow-hidden"><div class="grid grid-cols-1 lg:grid-cols-2"><div class="p-10 md:p-16"><div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-bold text-sm mb-8 border border-blue-100"><i class="fa-solid fa-scale-balanced"></i> Sistem Pembayaran</div><ul class="space-y-6"><li class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm opacity-70"><div class="mt-0.5 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 border border-red-100"><i class="fa-solid fa-xmark"></i></div><div><h4 class="font-bold text-slate-800 mb-1">BUKAN Transfer Di Awal</h4><p class="text-slate-500 text-sm">Menghindari potensi penipuan online.</p></div></li><li class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm opacity-70"><div class="mt-0.5 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 border border-red-100"><i class="fa-solid fa-xmark"></i></div><div><h4 class="font-bold text-slate-800 mb-1">BUKAN Sistem COD</h4><p class="text-slate-500 text-sm">Menghindari retur sepihak yang merugikan.</p></div></li><li class="flex items-start gap-4 p-6 rounded-2xl bg-blue-50/50 border-2 border-blue-500 shadow-md transform md:-translate-x-4 relative z-10"><div class="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white ring-4 ring-white"><i class="fa-solid fa-check text-xs"></i></div><div class="ml-2"><h4 class="font-bold text-corporate-blue text-lg mb-1">Bayar Setelah Resi Keluar</h4><p class="text-slate-600 text-sm leading-relaxed">Pembayaran ditransfer <b class="text-blue-700">HANYA SETELAH</b> barang terkirim dan resi bisa dilacak.</p></div></li></ul></div><div class="bg-corporate-blue p-10 md:p-16 text-white relative overflow-hidden flex flex-col justify-center"><div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-bl-full"></div><h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fa-solid fa-camera-retro text-blue-400"></i> Dokumentasi Real-time</h3><p class="text-slate-300 leading-relaxed mb-8 text-lg font-light">"Dipastikan saja kebutuhannya berapa banyak. Nanti pada saat proses pengambilan barang ke gudang hingga packing, akan kami <strong class="text-white">dokumentasikan (Foto/Video) secara langsung</strong> agar transparan."</p><div class="grid grid-cols-2 gap-4"><div class="bg-white/10 p-4 rounded-xl border border-white/10 backdrop-blur-sm"><i class="fa-solid fa-stopwatch text-2xl text-blue-300 mb-2"></i><div class="font-bold text-sm">Estimasi Luar Pulau</div><div class="text-slate-300 text-xs mt-1">± 2-3 Hari Kerja</div></div><div class="bg-white/10 p-4 rounded-xl border border-white/10 backdrop-blur-sm"><i class="fa-solid fa-tags text-2xl text-blue-300 mb-2"></i><div class="font-bold text-sm">Subsidi Ongkir</div><div class="text-slate-300 text-xs mt-1">Min. 1 Bal (20 Slop)</div></div></div></div></div></div></div></section>
@@ -211,52 +275,25 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-corporate-blue text-slate-300 py-20 border-t-[6px] border-blue-600 relative overflow-hidden" role="contentinfo"><div class="container mx-auto px-4 md:px-8 relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-center gap-4 mb-6"><div class="bg-white p-1 rounded-full inline-block"><img src="https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg" alt="Logo" class="w-14 h-14 rounded-full"></div><div><h3 class="text-3xl font-bold text-white tracking-tight">R2 NUSANTARA</h3><p class="text-blue-400 font-medium tracking-widest text-sm uppercase">Cigarette Tobacco Shop</p></div></div><p class="text-slate-400 mb-8 max-w-md leading-relaxed text-sm">Mitra distributor terpercaya Anda. Menyediakan berbagai macam merek rokok berkualitas.</p></div><div class="lg:col-span-4"><h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4 inline-block">Kontak</h4><ul class="space-y-5"><li class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10"><i class="fa-solid fa-location-dot text-blue-400"></i></div><span class="text-sm">Desa Karangduren, Kec. Pakisaji,<br>Kab. Malang, Jawa Timur 65162.</span></li><li class="flex items-center gap-4 group cursor-pointer" onclick="copyText('085715905079','Nomor disalin')"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-[#25D366]/20"><i class="fa-brands fa-whatsapp text-blue-400 group-hover:text-[#25D366]"></i></div><div><div class="text-xs text-slate-500">Admin</div><span class="text-sm font-bold text-white">(+62) 857-1590-5079</span></div></li></ul></div><div class="lg:col-span-3"><h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4 inline-block">Tautan</h4><ul class="space-y-3"><li><a href="#beranda" class="text-sm text-slate-400 hover:text-blue-400">Beranda</a></li><li><a href="#info" class="text-sm text-slate-400 hover:text-blue-400">Sistem</a></li><li><a href="#produk" class="text-sm text-slate-400 hover:text-blue-400">Katalog</a></li><li><a href="#faq" class="text-sm text-slate-400 hover:text-blue-400">FAQ</a></li></ul></div></div><div class="mt-20 pt-8 border-t border-white/10 text-center"><p class="text-sm text-slate-500">&copy; 2024 R2 Nusantara.</p></div></div></footer>
+<footer class="bg-corporate-blue text-slate-300 py-20 border-t-[6px] border-blue-600 relative overflow-hidden" role="contentinfo"><div class="container mx-auto px-4 md:px-8 relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-center gap-4 mb-6"><div class="bg-white p-1 rounded-full inline-block"><img src="https://i.ibb.co/k61y85fQ/IMG-20240328-213425.jpg" alt="Logo" width="56" height="56" loading="lazy" class="w-14 h-14 rounded-full"></div><div><h3 class="text-3xl font-bold text-white tracking-tight">R2 NUSANTARA</h3><p class="text-blue-400 font-medium tracking-widest text-sm uppercase">Cigarette Tobacco Shop</p></div></div><p class="text-slate-400 mb-8 max-w-md leading-relaxed text-sm">Mitra distributor terpercaya Anda. Menyediakan berbagai macam merek rokok berkualitas.</p><div class="flex gap-3"><a href="#kebijakan" onclick="openPrivacyModal()" class="text-xs text-slate-400 hover:text-white underline">Kebijakan Privasi</a><span class="text-slate-600">|</span><a href="#ketentuan" onclick="openTermsModal()" class="text-xs text-slate-400 hover:text-white underline">Syarat & Ketentuan</a></div></div><div class="lg:col-span-4"><h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4 inline-block">Kontak</h4><ul class="space-y-5"><li class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10"><i class="fa-solid fa-location-dot text-blue-400"></i></div><span class="text-sm">Desa Karangduren, Kec. Pakisaji,<br>Kab. Malang, Jawa Timur 65162.</span></li><li class="flex items-center gap-4 group cursor-pointer" onclick="copyText('085715905079','Nomor disalin')"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-[#25D366]/20"><i class="fa-brands fa-whatsapp text-blue-400 group-hover:text-[#25D366]"></i></div><div><div class="text-xs text-slate-500">Admin</div><span class="text-sm font-bold text-white">(+62) 857-1590-5079</span></div></li></ul></div><div class="lg:col-span-3"><h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4 inline-block">Tautan</h4><ul class="space-y-3"><li><a href="#beranda" class="text-sm text-slate-400 hover:text-blue-400">Beranda</a></li><li><a href="#testimoni" class="text-sm text-slate-400 hover:text-blue-400">Testimoni</a></li><li><a href="#info" class="text-sm text-slate-400 hover:text-blue-400">Sistem</a></li><li><a href="#produk" class="text-sm text-slate-400 hover:text-blue-400">Katalog</a></li><li><a href="#faq" class="text-sm text-slate-400 hover:text-blue-400">FAQ</a></li></ul></div></div><div class="mt-20 pt-8 border-t border-white/10 text-center"><p class="text-sm text-slate-500">&copy; 2024 R2 Nusantara. Seluruh hak cipta dilindungi.</p></div></div></footer>
 
 <!-- Cart Sidebar -->
-<div id="cartOverlay" class="fixed inset-0 bg-corporate-blue/70 backdrop-blur-sm z-[70] hidden opacity-0 transition-opacity duration-300" onclick="toggleCart()"></div>
-<div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-[80] transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col border-l border-slate-100">
-    <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white z-10 shadow-sm"><h3 class="text-xl font-bold text-corporate-blue flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-clipboard-list"></i></div> Daftar Pesanan</h3><button onclick="toggleCart()" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-red-500 hover:border-red-500 transition-all"><i class="fa-solid fa-xmark"></i></button></div>
+<div id="cartOverlay" class="fixed inset-0 bg-corporate-blue/70 backdrop-blur-sm z-[70] hidden opacity-0 transition-opacity duration-300" onclick="toggleCart()" aria-hidden="true"></div>
+<div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-[80] transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col border-l border-slate-100" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white z-10 shadow-sm"><h3 id="cartTitle" class="text-xl font-bold text-corporate-blue flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-clipboard-list"></i></div> Daftar Pesanan</h3><button onclick="toggleCart()" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-red-500 hover:border-red-500 transition-all" aria-label="Tutup keranjang"><i class="fa-solid fa-xmark"></i></button></div>
     <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 no-scrollbar space-y-4 bg-slate-50/50"><div id="emptyCartState" class="h-full flex flex-col items-center justify-center text-center mt-10"><div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6 border-4 border-white shadow-sm"><i class="fa-solid fa-cart-arrow-down text-4xl text-slate-300"></i></div><p class="text-xl font-bold text-slate-700 mb-2">Keranjang Kosong</p><p class="text-sm text-slate-500">Silakan pilih produk.</p><button onclick="toggleCart()" class="mt-8 px-8 py-3 bg-white border-2 border-corporate-blue text-corporate-blue font-bold rounded-xl hover:bg-corporate-blue hover:text-white transition-all shadow-sm">Mulai Belanja</button></div></div>
     <div class="p-6 border-t border-slate-200 bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.05)] relative z-10">
         <div id="cartSummary" class="hidden">
             <div id="promoMessage" class="text-xs py-2.5 px-4 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 mb-5 flex gap-3 items-center shadow-sm"><i class="fa-solid fa-circle-info text-lg"></i> <span>Beli 20 Slop (1 Bal) untuk Gratis Ongkir!</span></div>
             <div class="flex justify-between items-end mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100"><div><span class="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">Total Item & Harga</span><span id="totalItemsDisplay" class="font-bold text-slate-700 bg-white px-2 py-0.5 rounded text-sm border border-slate-200">0 Slop</span></div><span id="totalPriceDisplay" class="text-2xl font-extrabold text-corporate-blue tracking-tight font-mono">Rp 0</span></div>
-            <!-- Form dengan tambahan ekspedisi & metode bayar -->
             <div class="space-y-4 mb-6 relative">
                 <div class="absolute -top-3 left-3 bg-white px-2 text-[10px] font-bold text-blue-600 uppercase tracking-widest">Data Pengiriman</div>
                 <div class="pt-2 border border-slate-200 rounded-xl p-4 bg-white space-y-3 shadow-sm">
                     <div class="relative"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fa-brands fa-whatsapp text-slate-400"></i></div><input type="tel" id="custPhone" placeholder="No. HP / WhatsApp" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 transition-all" required></div>
                     <div class="relative"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fa-regular fa-user text-slate-400"></i></div><input type="text" id="custName" placeholder="Nama Penerima" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 transition-all" required></div>
                     <div class="relative"><div class="absolute top-3 left-3 pointer-events-none"><i class="fa-solid fa-location-dot text-slate-400"></i></div><textarea id="custAddress" placeholder="Alamat Lengkap Tujuan" rows="2" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 resize-none transition-all" required></textarea></div>
-                    <!-- Pilihan Ekspedisi -->
-                    <div class="relative">
-                        <div class="absolute top-3 left-3 pointer-events-none"><i class="fa-solid fa-truck-fast text-slate-400"></i></div>
-                        <select id="custExpedition" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 transition-all appearance-none">
-                            <option value="">Pilih Ekspedisi (opsional)</option>
-                            <option value="J&T Reguler">J&T Reguler</option>
-                            <option value="JNE Reguler">JNE Reguler</option>
-                            <option value="SiCepat Reguler">SiCepat Reguler</option>
-                            <option value="Cargo Udara">Cargo Udara</option>
-                            <option value="Cargo Laut">Cargo Laut</option>
-                        </select>
-                    </div>
-                    <!-- Metode Pembayaran -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-600 block">Metode Pembayaran</span>
-                        <div class="grid grid-cols-1 gap-2">
-                            <label class="flex items-center gap-3 p-3 border-2 border-blue-200 rounded-xl cursor-pointer bg-blue-50/30 payment-label" id="labelAfterResi">
-                                <input type="radio" name="paymentMethod" value="Bayar Setelah Resi Keluar" checked class="payment-radio hidden">
-                                <div class="w-5 h-5 rounded-full border-2 border-blue-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-blue-600 text-xs check-icon hidden"></i></div>
-                                <div><span class="font-bold text-sm text-blue-700">Bayar Setelah Resi Keluar</span><p class="text-xs text-slate-500">Pembayaran ditransfer setelah resi terbit.</p></div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-blue-200 payment-label" id="labelTransfer">
-                                <input type="radio" name="paymentMethod" value="Transfer Bank" class="payment-radio hidden">
-                                <div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-blue-600 text-xs check-icon hidden"></i></div>
-                                <div><span class="font-bold text-sm text-slate-700">Transfer Bank</span><p class="text-xs text-slate-500">Rekening tujuan dikirim via WhatsApp.</p></div>
-                            </label>
-                        </div>
-                    </div>
+                    <div class="relative"><div class="absolute top-3 left-3 pointer-events-none"><i class="fa-solid fa-truck-fast text-slate-400"></i></div><select id="custExpedition" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 transition-all appearance-none"><option value="">Pilih Ekspedisi (opsional)</option><option value="J&T Reguler">J&T Reguler</option><option value="JNE Reguler">JNE Reguler</option><option value="SiCepat Reguler">SiCepat Reguler</option><option value="Cargo Udara">Cargo Udara</option><option value="Cargo Laut">Cargo Laut</option></select></div>
+                    <div class="space-y-2"><span class="text-xs font-bold text-slate-600 block">Metode Pembayaran</span><div class="grid grid-cols-1 gap-2"><label class="flex items-center gap-3 p-3 border-2 border-blue-200 rounded-xl cursor-pointer bg-blue-50/30 payment-label"><input type="radio" name="paymentMethod" value="Bayar Setelah Resi Keluar" checked class="payment-radio hidden"><div class="w-5 h-5 rounded-full border-2 border-blue-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-blue-600 text-xs check-icon"></i></div><div><span class="font-bold text-sm text-blue-700">Bayar Setelah Resi Keluar</span><p class="text-xs text-slate-500">Pembayaran ditransfer setelah resi terbit.</p></div></label><label class="flex items-center gap-3 p-3 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-blue-200 payment-label"><input type="radio" name="paymentMethod" value="Transfer Bank" class="payment-radio hidden"><div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-blue-600 text-xs check-icon hidden"></i></div><div><span class="font-bold text-sm text-slate-700">Transfer Bank</span><p class="text-xs text-slate-500">Rekening tujuan dikirim via WhatsApp.</p></div></label></div></div>
                     <div class="relative"><div class="absolute top-3 left-3 pointer-events-none"><i class="fa-regular fa-clipboard text-slate-400"></i></div><textarea id="custNotes" placeholder="Catatan tambahan (Opsional)" rows="1" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 resize-none transition-all"></textarea></div>
                 </div>
             </div>
@@ -266,24 +303,67 @@
 </div>
 
 <!-- Success Popup -->
-<div id="successPopup" class="fixed inset-0 bg-corporate-blue/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4"><div class="bg-white p-10 rounded-[2rem] max-w-sm w-full text-center shadow-2xl transform scale-90 transition-transform duration-300 relative overflow-hidden" id="popupContent"><div class="absolute -top-20 -right-20 w-40 h-40 bg-green-50 rounded-full"></div><div class="relative z-10"><div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-green-200 ring-8 ring-green-50"><i class="fa-solid fa-check text-4xl"></i></div><h3 class="text-2xl font-extrabold text-slate-800 mb-2">Form Berhasil Dibuat!</h3><p class="text-slate-500 mb-8 text-sm">Mengalihkan ke WhatsApp...</p><div class="bg-slate-50 py-3 px-4 rounded-xl inline-flex items-center gap-3 border border-slate-200"><i class="fa-solid fa-spinner animate-spin text-blue-500 text-lg"></i> <span class="text-slate-700 font-bold text-sm">Mengalihkan... <span id="countdown" class="text-blue-600">3</span>s</span></div></div></div></div>
+<div id="successPopup" class="fixed inset-0 bg-corporate-blue/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
+    <div class="bg-white p-10 rounded-[2rem] max-w-sm w-full text-center shadow-2xl transform scale-90 transition-transform duration-300 relative overflow-hidden" id="popupContent"><div class="absolute -top-20 -right-20 w-40 h-40 bg-green-50 rounded-full"></div><div class="relative z-10"><div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-green-200 ring-8 ring-green-50"><i class="fa-solid fa-check text-4xl"></i></div><h2 id="popupTitle" class="text-2xl font-extrabold text-slate-800 mb-2">Form Berhasil Dibuat!</h2><p class="text-slate-500 mb-8 text-sm">Mengalihkan ke WhatsApp...</p><div class="bg-slate-50 py-3 px-4 rounded-xl inline-flex items-center gap-3 border border-slate-200"><i class="fa-solid fa-spinner animate-spin text-blue-500 text-lg"></i> <span class="text-slate-700 font-bold text-sm">Mengalihkan... <span id="countdown" class="text-blue-600">3</span>s</span></div></div></div>
+</div>
 
-<!-- Floating Actions -->
-<a href="https://wa.me/6285715905079" target="_blank" class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-4xl shadow-[0_4px_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform z-40 animate-pulse-soft" title="Chat WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-<button id="backToTop" onclick="window.scrollTo(0,0)" class="fixed bottom-44 right-6 md:bottom-28 md:right-8 w-12 h-12 bg-corporate-blue text-white rounded-full flex items-center justify-center text-xl shadow-lg border border-slate-700 hover:bg-blue-600 transition-all transform scale-0 z-40"><i class="fa-solid fa-arrow-up"></i></button>
+<!-- Kebijakan Modal -->
+<div id="privacyModal" class="fixed inset-0 bg-corporate-blue/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+    <div class="bg-white p-8 md:p-10 rounded-[2rem] max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl"><h2 id="privacyTitle" class="text-2xl font-extrabold text-slate-800 mb-4">Kebijakan Privasi</h2><p class="text-slate-600 text-sm leading-relaxed mb-4">R2 Nusantara melindungi data pribadi Anda. Informasi yang dikumpulkan (nama, nomor HP, alamat) hanya digunakan untuk proses pemesanan dan pengiriman. Data tidak akan dijual atau dibagikan ke pihak ketiga tanpa izin.</p><p class="text-slate-600 text-sm leading-relaxed mb-4">Kami menggunakan WhatsApp sebagai saluran komunikasi utama. Riwayat chat dan data transaksi disimpan untuk keperluan administrasi dan peningkatan layanan.</p><button onclick="closePrivacyModal()" class="px-6 py-3 bg-corporate-blue text-white rounded-xl font-bold hover:bg-blue-600 transition-all">Tutup</button></div>
+</div>
+<div id="termsModal" class="fixed inset-0 bg-corporate-blue/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
+    <div class="bg-white p-8 md:p-10 rounded-[2rem] max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl"><h2 id="termsTitle" class="text-2xl font-extrabold text-slate-800 mb-4">Syarat & Ketentuan</h2><p class="text-slate-600 text-sm leading-relaxed mb-4">Dengan memesan di R2 Nusantara, Anda menyetujui sistem pembayaran setelah resi keluar. Pembatalan hanya dapat dilakukan sebelum barang dikirim. Harga dapat berubah sewaktu-waktu tanpa pemberitahuan.</p><p class="text-slate-600 text-sm leading-relaxed mb-4">Kami berhak menolak pesanan jika data tidak valid. Gratis ongkir berlaku untuk pembelian minimal 1 bal (20 slop).</p><button onclick="closeTermsModal()" class="px-6 py-3 bg-corporate-blue text-white rounded-xl font-bold hover:bg-blue-600 transition-all">Tutup</button></div>
+</div>
+
+<!-- FAB Menu -->
+<div class="fixed bottom-28 right-6 md:bottom-8 md:right-8 z-40 flex flex-col items-end gap-3" id="fabContainer">
+    <div class="fab-menu flex flex-col items-end gap-3" id="fabMenu">
+        <a href="https://wa.me/6285715905079" target="_blank" class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center text-xl shadow-lg hover:scale-110 transition-transform" title="Chat WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+6285715905079" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl shadow-lg hover:scale-110 transition-transform" title="Telepon"><i class="fa-solid fa-phone"></i></a>
+        <button onclick="window.scrollTo(0,0)" class="w-12 h-12 bg-corporate-blue text-white rounded-full flex items-center justify-center text-xl shadow-lg hover:scale-110 transition-transform" title="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+    <button onclick="toggleFab()" class="w-14 h-14 bg-corporate-blue text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-blue-600 transition-all z-50" id="fabMainBtn" aria-label="Menu aksi"><i class="fa-solid fa-ellipsis" id="fabIcon"></i></button>
+</div>
 
 <!-- Mobile Bottom Nav -->
 <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-200 flex justify-around items-center py-2 z-50 pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
     <a href="#beranda" class="flex flex-col items-center text-slate-400 hover:text-blue-600 w-16 p-1"><i class="fa-solid fa-house mb-1 text-xl"></i><span class="text-[10px] font-bold">Beranda</span></a>
     <a href="#produk" class="flex flex-col items-center text-slate-400 hover:text-blue-600 w-16 p-1"><i class="fa-solid fa-tags mb-1 text-xl"></i><span class="text-[10px] font-bold">Katalog</span></a>
     <div class="relative -top-5"><button onclick="toggleCart()" class="w-14 h-14 bg-corporate-blue text-white rounded-full flex items-center justify-center shadow-lg border-4 border-white"><i class="fa-solid fa-bag-shopping text-xl"></i><span id="mobileCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center transform scale-0">0</span></button></div>
-    <a href="#info" class="flex flex-col items-center text-slate-400 hover:text-blue-600 w-16 p-1"><i class="fa-solid fa-shield-halved mb-1 text-xl"></i><span class="text-[10px] font-bold">Garansi</span></a>
+    <a href="#testimoni" class="flex flex-col items-center text-slate-400 hover:text-blue-600 w-16 p-1"><i class="fa-solid fa-star mb-1 text-xl"></i><span class="text-[10px] font-bold">Testimoni</span></a>
     <a href="#faq" class="flex flex-col items-center text-slate-400 hover:text-blue-600 w-16 p-1"><i class="fa-solid fa-circle-question mb-1 text-xl"></i><span class="text-[10px] font-bold">Bantuan</span></a>
 </div>
 
 <!-- Toast Container -->
 <div id="toast-container" class="fixed top-24 right-4 flex flex-col gap-2 pointer-events-none z-[110]"></div>
 
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/REPLACE_WITH_YOUR_TAWKTO_ID/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+
+<!-- Service Worker untuk PWA -->
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register("data:text/javascript," + encodeURIComponent(
+                "const CACHE='r2nusantara-v1';self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./']))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));"
+            )).catch(function(err) { console.log('SW registered via data URI'); });
+        });
+    }
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
+</script>
+
+<!-- Main JavaScript -->
 <script>
     // ========== DATA PRODUK ==========
     const products = [
@@ -307,6 +387,136 @@
         { id: 52, name: "Win Click", price: 85000 }
     ];
 
+    // ========== DATA TESTIMONI ==========
+    const defaultTestimonials = [
+        { name: "Hendra Gunawan", toko: "Toko Sinar Baru", kota: "Surabaya", rating: 5, pesan: "Stok selalu ready, pengiriman cepat, dan yang paling penting bayarnya setelah resi keluar. Saya sudah 2 tahun langganan, gak pernah kecewa!" },
+        { name: "Siti Nurhaliza", toko: "Toko Makmur Sentosa", kota: "Malang", rating: 5, pesan: "Gratis ongkirnya benar-benar membantu. Saya biasa ambil 2 bal sekali order, langsung dikirim tanpa biaya tambahan. Recommended!" },
+        { name: "Rudi Hartono", toko: "Toko Kelontong Jaya", kota: "Yogyakarta", rating: 5, pesan: "Dokumentasi packing bikin saya tenang. Jadi tahu barang beneran dikirim. Harga juga kompetitif buat toko saya di pasar." },
+        { name: "Ahmad Fauzi", toko: "Warung Sembako Berkah", kota: "Bandung", rating: 4, pesan: "Pertama kali order agak ragu, tapi setelah lihat resi langsung keluar dan barang sampai sesuai pesanan. Sekarang jadi langganan tetap." }
+    ];
+
+    function loadTestimonials() {
+        const stored = localStorage.getItem('r2nusantara_testimonials');
+        return stored ? JSON.parse(stored) : [...defaultTestimonials];
+    }
+
+    function saveTestimonials(data) {
+        localStorage.setItem('r2nusantara_testimonials', JSON.stringify(data));
+    }
+
+    let testimonials = loadTestimonials();
+
+    function renderTestimonials() {
+        const grid = document.getElementById('testimoniGrid');
+        if (!grid) return;
+
+        grid.innerHTML = testimonials.map((t, idx) => `
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 relative fade-on-scroll" style="animation-delay: ${idx * 0.1}s">
+                <div class="flex gap-1 mb-4 text-yellow-400">
+                    ${Array.from({length: 5}, (_, i) => `<i class="fa-solid fa-star${i < t.rating ? '' : '-empty'}"></i>`).join('')}
+                </div>
+                <p class="text-slate-600 mb-6 leading-relaxed italic">"${escapeHtml(t.pesan)}"</p>
+                <div class="flex items-center gap-3 border-t pt-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm">${escapeHtml(t.name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase())}</div>
+                    <div>
+                        <div class="font-bold text-slate-800 text-sm">${escapeHtml(t.name)}</div>
+                        <div class="text-xs text-slate-500">${escapeHtml(t.toko)}, ${escapeHtml(t.kota)}</div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // re-trigger fade-on-scroll observer
+        observeElements();
+    }
+
+    // ========== TESTIMONI FORM ==========
+    let selectedRating = 5;
+
+    function openTestimoniForm() {
+        document.getElementById('testimoniModal').classList.remove('hidden');
+        document.getElementById('testimoniModal').classList.add('flex');
+        document.getElementById('testimoniModal').setAttribute('aria-hidden', 'false');
+        document.getElementById('testiName').focus();
+        selectedRating = 5;
+        updateStarDisplay();
+        document.getElementById('testiRating').value = 5;
+        document.getElementById('charCount').innerText = '0';
+        document.getElementById('testiPesan').value = '';
+    }
+
+    function closeTestimoniForm() {
+        document.getElementById('testimoniModal').classList.add('hidden');
+        document.getElementById('testimoniModal').classList.remove('flex');
+        document.getElementById('testimoniModal').setAttribute('aria-hidden', 'true');
+        document.getElementById('testimoniForm').reset();
+        selectedRating = 5;
+        updateStarDisplay();
+    }
+
+    function updateStarDisplay() {
+        const stars = document.querySelectorAll('#starRating i');
+        stars.forEach(s => {
+            const val = parseInt(s.getAttribute('data-value'));
+            if (val <= selectedRating) {
+                s.classList.remove('fa-regular');
+                s.classList.add('fa-solid');
+            } else {
+                s.classList.remove('fa-solid');
+                s.classList.add('fa-regular');
+            }
+        });
+        document.getElementById('testiRating').value = selectedRating;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('#starRating i');
+        stars.forEach(s => {
+            s.addEventListener('click', function() {
+                selectedRating = parseInt(this.getAttribute('data-value'));
+                updateStarDisplay();
+            });
+            s.addEventListener('mouseenter', function() {
+                const val = parseInt(this.getAttribute('data-value'));
+                stars.forEach(st => {
+                    const v = parseInt(st.getAttribute('data-value'));
+                    st.classList.toggle('fa-solid', v <= val);
+                    st.classList.toggle('fa-regular', v > val);
+                });
+            });
+        });
+        document.getElementById('starRating').addEventListener('mouseleave', updateStarDisplay);
+
+        document.getElementById('testiPesan').addEventListener('input', function() {
+            const len = this.value.length;
+            document.getElementById('charCount').innerText = len;
+            if (len > 200) this.value = this.value.substring(0, 200);
+        });
+    });
+
+    function submitTestimoni(e) {
+        e.preventDefault();
+        const name = document.getElementById('testiName').value.trim();
+        const toko = document.getElementById('testiToko').value.trim();
+        const kota = document.getElementById('testiKota').value.trim();
+        const pesan = document.getElementById('testiPesan').value.trim();
+        const rating = parseInt(document.getElementById('testiRating').value);
+
+        if (!name || !toko || !kota || !pesan) {
+            showToast('Mohon lengkapi semua field!', 'error');
+            return;
+        }
+
+        const newTestimoni = { name, toko, kota, rating, pesan };
+        testimonials.unshift(newTestimoni);
+        if (testimonials.length > 12) testimonials = testimonials.slice(0, 12);
+        saveTestimonials(testimonials);
+        renderTestimonials();
+        closeTestimoniForm();
+        showToast('Testimoni berhasil dikirim! Terima kasih 🙏');
+    }
+
+    // ========== STATE ==========
     let cart = [];
     let currentView = 'grid';
     let currentPage = 1;
@@ -314,24 +524,22 @@
     let activeFilter = 'all';
     let activeSort = 'name-asc';
     let searchTerm = '';
+    let lastFocusedElement = null;
 
     // ========== UTILITIES ==========
-    const formatRupiah = (number) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+    const formatRupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n);
     const getProductTier = (price) => price <= 75000 ? 'hemat' : price >= 90000 ? 'premium' : 'populer';
     const getTierLabel = (tier) => ({ hemat: 'Hemat', populer: 'Populer', premium: 'Premium' }[tier]);
-    const getTierColors = (tier) => ({
-        hemat: { badge: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
-        populer: { badge: 'bg-blue-100 text-blue-700 border-blue-200' },
-        premium: { badge: 'bg-purple-100 text-purple-700 border-purple-200' }
-    }[tier] || { badge: 'bg-blue-100 text-blue-700 border-blue-200' });
+    const getTierColors = (tier) => ({hemat:{badge:'bg-emerald-100 text-emerald-700 border-emerald-200'},populer:{badge:'bg-blue-100 text-blue-700 border-blue-200'},premium:{badge:'bg-purple-100 text-purple-700 border-purple-200'}}[tier]||{badge:'bg-blue-100 text-blue-700 border-blue-200'});
     const getCartQty = (id) => { const item = cart.find(i => i.id === id); return item ? item.qty : 0; };
+    const escapeHtml = (str) => str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
     const showToast = (message, type = 'success') => {
         const container = document.getElementById('toast-container');
         const toast = document.createElement('div');
         const bgColor = type === 'success' ? 'bg-corporate-blue' : 'bg-red-500';
         toast.className = `${bgColor} text-white px-6 py-4 rounded-xl shadow-lg flex items-center gap-4 transform translate-x-full transition-transform duration-300 pointer-events-auto relative overflow-hidden`;
-        toast.innerHTML = `<i class="fa-solid ${type==='success'?'fa-check-circle text-green-400':'fa-circle-exclamation'} text-xl"></i> <span class="font-bold text-sm">${message}</span><div class="absolute bottom-0 left-0 h-1 bg-white/30 w-full"><div class="h-full bg-white toast-progress" style="width:100%"></div></div>`;
+        toast.innerHTML = `<i class="fa-solid ${type==='success'?'fa-check-circle text-green-400':'fa-circle-exclamation'} text-xl"></i> <span class="font-bold text-sm">${escapeHtml(message)}</span><div class="absolute bottom-0 left-0 h-1 bg-white/30 w-full"><div class="h-full bg-white toast-progress" style="width:100%"></div></div>`;
         container.appendChild(toast);
         setTimeout(() => toast.classList.remove('translate-x-full'), 10);
         const progress = toast.querySelector('.toast-progress');
@@ -341,6 +549,16 @@
     };
 
     const copyText = (text, msg) => navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => showToast('Gagal menyalin','error'));
+
+    // ========== SKELETON LOADING ==========
+    const showSkeleton = () => {
+        const grid = document.getElementById('productGrid');
+        if (currentView !== 'grid') return;
+        grid.classList.remove('hidden');
+        let html = '';
+        for (let i = 0; i < 8; i++) html += `<div class="bg-white rounded-2xl border border-slate-100 p-5"><div class="skeleton h-4 w-20 mb-3"></div><div class="skeleton h-5 w-3/4 mb-2"></div><div class="skeleton h-6 w-1/2 mb-4"></div><div class="skeleton h-10 w-full rounded-xl"></div></div>`;
+        grid.innerHTML = html;
+    };
 
     // ========== PRODUCT PROCESSING ==========
     const getProcessedProducts = () => {
@@ -359,10 +577,11 @@
     const getPageProducts = () => { const start = (currentPage-1)*itemsPerPage; return getProcessedProducts().slice(start, start+itemsPerPage); };
 
     const highlightMatch = (text, query) => {
-        if (!query.trim()) return text;
+        const safeText = escapeHtml(text);
+        if (!query.trim()) return safeText;
         const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const regex = new RegExp(`(${escaped})`, 'gi');
-        return text.replace(regex, '<mark class="bg-yellow-200 text-corporate-blue rounded px-0.5">$1</mark>');
+        return safeText.replace(regex, '<mark class="bg-yellow-200 text-corporate-blue rounded px-0.5">$1</mark>');
     };
 
     const animateFlyToCart = (buttonElement) => {
@@ -384,226 +603,106 @@
 
     // ========== RENDER PRODUCTS ==========
     const renderProductDisplay = () => {
-        const totalPages = getTotalPages();
-        if (currentPage > totalPages) currentPage = totalPages;
-        const pageProducts = getPageProducts();
-        const grid = document.getElementById('productGrid'), table = document.getElementById('productTableContainer'), tbody = document.getElementById('productTableBody');
-        const empty = document.getElementById('noProductFound'), pag = document.getElementById('paginationContainer');
-        grid.innerHTML = ''; tbody.innerHTML = '';
-        if (!pageProducts.length) { grid.classList.add('hidden'); table.classList.add('hidden'); empty.classList.remove('hidden'); pag.innerHTML = ''; return; }
-        empty.classList.add('hidden');
-        if (currentView === 'grid') {
-            grid.classList.remove('hidden'); table.classList.add('hidden');
-            pageProducts.forEach((p, idx) => {
-                const tier = getProductTier(p.price), tierLabel = getTierLabel(tier), colors = getTierColors(tier), qty = getCartQty(p.id);
-                const card = document.createElement('div');
-                card.className = `bg-white rounded-2xl border border-slate-100 card-hover-lift relative overflow-hidden group fade-on-scroll flex flex-col`;
-                card.style.animationDelay = `${(idx%8)*0.04}s`;
-                const highlightedName = highlightMatch(p.name, searchTerm);
-                card.innerHTML = `<div class="absolute -right-6 -bottom-6 w-28 h-28 opacity-[0.03] pointer-events-none"><img src="https://i.ibb.co.com/FqCFwM49/Desain-tanpa-judul-1.png" class="w-full h-full object-contain grayscale"></div>
-                    <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border ${colors.badge} shadow-sm">${tier==='hemat'?'💰':tier==='premium'?'👑':'🔥'} ${tierLabel}</span>
-                    <div class="relative z-10 flex flex-col h-full p-5 pt-12">
-                        <div class="flex justify-between items-start mb-3"><span class="bg-green-50 text-green-600 text-[10px] font-bold px-2.5 py-1 rounded-md border border-green-100"><i class="fa-solid fa-check mr-1"></i> Ready</span><span class="text-slate-300 text-xs font-bold bg-slate-50 px-2 py-0.5 rounded border font-mono">#${p.id.toString().padStart(2,'0')}</span></div>
-                        <h3 class="text-lg font-extrabold text-corporate-blue mb-1 group-hover:text-blue-600 leading-tight">${highlightedName}</h3>
-                        <p class="text-blue-600 font-bold text-xl mb-5 font-mono">${formatRupiah(p.price)} <span class="text-xs text-slate-400 font-normal font-sans">/slop</span></p>
-                        <div class="mt-auto flex gap-2">${qty > 0 ? `<div class="flex items-center border-2 border-blue-300 rounded-xl bg-blue-50/50 h-11 stepper-enter shadow-sm"><button onclick="event.stopPropagation();updateCartItemQty(${p.id},-1)" class="w-11 h-full flex items-center justify-center text-blue-600 hover:bg-blue-100 font-bold text-lg rounded-l-lg">−</button><span class="w-10 text-center font-bold text-blue-700 text-sm font-mono">${qty}</span><button onclick="event.stopPropagation();updateCartItemQty(${p.id},1)" class="w-11 h-full flex items-center justify-center text-blue-600 hover:bg-blue-100 font-bold text-lg rounded-r-lg">+</button></div>` : `<button onclick="event.stopPropagation();addToCart(${p.id}, this)" class="flex-1 bg-corporate-blue text-white hover:bg-blue-600 rounded-xl text-sm font-bold transition-all ripple flex items-center justify-center gap-2 h-11 shadow-md"><i class="fa-solid fa-cart-plus"></i> Tambah</button>`}</div></div>`;
-                grid.appendChild(card);
-            });
-        } else {
-            grid.classList.add('hidden'); table.classList.remove('hidden');
-            pageProducts.forEach((p, idx) => {
-                const tier = getProductTier(p.price), tierLabel = getTierLabel(tier), colors = getTierColors(tier), qty = getCartQty(p.id);
-                const tr = document.createElement('tr'); tr.className = "fade-on-scroll transition-colors group"; tr.style.animationDelay = `${(idx%8)*0.04}s`;
-                const highlightedName = highlightMatch(p.name, searchTerm);
-                tr.innerHTML = `<td class="text-center text-slate-400 font-mono text-xs">#${((currentPage-1)*itemsPerPage+idx+1).toString().padStart(2,'0')}</td>
-                    <td class="font-bold text-corporate-blue">${highlightedName}</td>
-                    <td><span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase border ${colors.badge}">${tierLabel}</span></td>
-                    <td class="font-bold text-slate-700 font-mono">${formatRupiah(p.price)} <span class="text-xs text-slate-400 font-sans">/slop</span></td>
-                    <td class="text-center">${qty > 0 ? `<div class="flex items-center justify-center border-2 border-blue-300 rounded-lg bg-blue-50/50 w-32 mx-auto h-9 stepper-enter shadow-sm"><button onclick="updateCartItemQty(${p.id},-1)" class="w-9 h-full flex items-center justify-center text-blue-600 font-bold rounded-l-lg">−</button><span class="w-8 text-center font-bold text-blue-700 text-xs font-mono">${qty}</span><button onclick="updateCartItemQty(${p.id},1)" class="w-9 h-full flex items-center justify-center text-blue-600 font-bold rounded-r-lg">+</button></div>` : `<button onclick="addToCart(${p.id}, this)" class="bg-corporate-blue text-white hover:bg-blue-600 px-4 py-2 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-cart-plus"></i> Tambah</button>`}</td>`;
-                tbody.appendChild(tr);
-            });
-        }
-        renderPagination(totalPages);
-        observeElements();
+        showSkeleton();
+        setTimeout(() => {
+            const totalPages = getTotalPages();
+            if (currentPage > totalPages) currentPage = totalPages;
+            const pageProducts = getPageProducts();
+            const grid = document.getElementById('productGrid'), table = document.getElementById('productTableContainer'), tbody = document.getElementById('productTableBody');
+            const empty = document.getElementById('noProductFound'), pag = document.getElementById('paginationContainer');
+            grid.innerHTML = ''; tbody.innerHTML = '';
+            if (!pageProducts.length) { grid.classList.add('hidden'); table.classList.add('hidden'); empty.classList.remove('hidden'); pag.innerHTML = ''; return; }
+            empty.classList.add('hidden');
+            if (currentView === 'grid') {
+                grid.classList.remove('hidden'); table.classList.add('hidden');
+                pageProducts.forEach((p, idx) => {
+                    const tier = getProductTier(p.price), tierLabel = getTierLabel(tier), colors = getTierColors(tier), qty = getCartQty(p.id);
+                    const card = document.createElement('div');
+                    card.className = `bg-white rounded-2xl border border-slate-100 card-hover-lift relative overflow-hidden group fade-on-scroll flex flex-col`;
+                    card.style.animationDelay = `${(idx%8)*0.04}s`;
+                    card.innerHTML = `<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border ${colors.badge} shadow-sm">${tier==='hemat'?'💰':tier==='premium'?'👑':'🔥'} ${escapeHtml(tierLabel)}</span>
+                        <div class="relative z-10 flex flex-col h-full p-5 pt-12">
+                            <div class="flex justify-between items-start mb-3"><span class="bg-green-50 text-green-600 text-[10px] font-bold px-2.5 py-1 rounded-md border border-green-100"><i class="fa-solid fa-check mr-1"></i> Ready</span><span class="text-slate-300 text-xs font-bold bg-slate-50 px-2 py-0.5 rounded border font-mono">#${p.id.toString().padStart(2,'0')}</span></div>
+                            <h3 class="text-lg font-extrabold text-corporate-blue mb-1 group-hover:text-blue-600 leading-tight">${highlightMatch(p.name, searchTerm)}</h3>
+                            <p class="text-blue-600 font-bold text-xl mb-5 font-mono">${formatRupiah(p.price)} <span class="text-xs text-slate-400 font-normal font-sans">/slop</span></p>
+                            <div class="mt-auto flex gap-2">${qty > 0 ? `<div class="flex items-center border-2 border-blue-300 rounded-xl bg-blue-50/50 h-11 stepper-enter shadow-sm"><button onclick="event.stopPropagation();updateCartItemQty(${p.id},-1)" class="w-11 h-full flex items-center justify-center text-blue-600 hover:bg-blue-100 font-bold text-lg rounded-l-lg" aria-label="Kurangi">−</button><span class="w-10 text-center font-bold text-blue-700 text-sm font-mono">${qty}</span><button onclick="event.stopPropagation();updateCartItemQty(${p.id},1)" class="w-11 h-full flex items-center justify-center text-blue-600 hover:bg-blue-100 font-bold text-lg rounded-r-lg" aria-label="Tambah">+</button></div>` : `<button onclick="event.stopPropagation();addToCart(${p.id}, this)" class="flex-1 bg-corporate-blue text-white hover:bg-blue-600 rounded-xl text-sm font-bold transition-all ripple flex items-center justify-center gap-2 h-11 shadow-md"><i class="fa-solid fa-cart-plus"></i> Tambah</button>`}</div>`;
+                    grid.appendChild(card);
+                });
+            } else {
+                grid.classList.add('hidden'); table.classList.remove('hidden');
+                pageProducts.forEach((p, idx) => {
+                    const tier = getProductTier(p.price), tierLabel = getTierLabel(tier), colors = getTierColors(tier), qty = getCartQty(p.id);
+                    const tr = document.createElement('tr'); tr.className = "fade-on-scroll transition-colors group"; tr.style.animationDelay = `${(idx%8)*0.04}s`;
+                    tr.innerHTML = `<td class="text-center text-slate-400 font-mono text-xs">#${((currentPage-1)*itemsPerPage+idx+1).toString().padStart(2,'0')}</td><td class="font-bold text-corporate-blue">${highlightMatch(p.name, searchTerm)}</td><td><span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase border ${colors.badge}">${escapeHtml(tierLabel)}</span></td><td class="font-bold text-slate-700 font-mono">${formatRupiah(p.price)}</td><td class="text-center">${qty>0?`<div class="flex items-center justify-center border-2 border-blue-300 rounded-lg bg-blue-50/50 w-32 mx-auto h-9 stepper-enter shadow-sm"><button onclick="updateCartItemQty(${p.id},-1)" class="w-9 h-full flex items-center justify-center text-blue-600 font-bold rounded-l-lg">−</button><span class="w-8 text-center font-bold text-blue-700 text-xs font-mono">${qty}</span><button onclick="updateCartItemQty(${p.id},1)" class="w-9 h-full flex items-center justify-center text-blue-600 font-bold rounded-r-lg">+</button></div>`:`<button onclick="addToCart(${p.id}, this)" class="bg-corporate-blue text-white hover:bg-blue-600 px-4 py-2 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-cart-plus"></i> Tambah</button>`}</td>`;
+                    tbody.appendChild(tr);
+                });
+            }
+            renderPagination(totalPages);
+            observeElements();
+        }, 200);
     };
 
     const renderPagination = (totalPages) => {
         const container = document.getElementById('paginationContainer');
         if (totalPages <= 1) { container.innerHTML = ''; return; }
-        let html = `<button onclick="goToPage(${currentPage-1})" ${currentPage===1?'disabled':''} class="w-10 h-10 rounded-xl border-2 border-slate-200 flex items-center justify-center font-bold ${currentPage===1?'opacity-40':'hover:border-blue-300 hover:text-blue-600'}"><i class="fa-solid fa-chevron-left text-xs"></i></button>`;
-        const maxVisible = 5; let start = Math.max(1, currentPage - Math.floor(maxVisible/2)), end = Math.min(totalPages, start + maxVisible - 1);
-        if (end - start < maxVisible - 1) start = Math.max(1, end - maxVisible + 1);
-        if (start > 1) { html += `<button onclick="goToPage(1)" class="w-10 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold">1</button>`; if (start > 2) html += `<span class="w-10 h-10 flex items-center justify-center">…</span>`; }
-        for (let i=start; i<=end; i++) html += `<button onclick="goToPage(${i})" class="w-10 h-10 rounded-xl border-2 text-sm font-bold ${i===currentPage?'page-btn-active':'border-slate-200 text-slate-500 hover:border-blue-300 hover:text-blue-600'}">${i}</button>`;
-        if (end < totalPages) { if (end < totalPages-1) html += `<span class="w-10 h-10 flex items-center justify-center">…</span>`; html += `<button onclick="goToPage(${totalPages})" class="w-10 h-10 rounded-xl border-2 text-sm font-bold">${totalPages}</button>`; }
-        html += `<button onclick="goToPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''} class="w-10 h-10 rounded-xl border-2 flex items-center justify-center font-bold ${currentPage===totalPages?'opacity-40':'hover:border-blue-300 hover:text-blue-600'}"><i class="fa-solid fa-chevron-right text-xs"></i></button>`;
-        container.innerHTML = html;
+        let html = `<button onclick="goToPage(${currentPage-1})" ${currentPage===1?'disabled':''} class="w-10 h-10 rounded-xl border-2 border-slate-200 flex items-center justify-center font-bold ${currentPage===1?'opacity-40':'hover:border-blue-300 hover:text-blue-600'}" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left text-xs"></i></button>`;
+        const maxVisible=5; let start=Math.max(1,currentPage-Math.floor(maxVisible/2)), end=Math.min(totalPages,start+maxVisible-1);
+        if(end-start<maxVisible-1) start=Math.max(1,end-maxVisible+1);
+        if(start>1){html+=`<button onclick="goToPage(1)" class="w-10 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold">1</button>`;if(start>2)html+=`<span class="w-10 h-10 flex items-center justify-center">…</span>`;}
+        for(let i=start;i<=end;i++) html+=`<button onclick="goToPage(${i})" class="w-10 h-10 rounded-xl border-2 text-sm font-bold ${i===currentPage?'page-btn-active':'border-slate-200 text-slate-500 hover:border-blue-300 hover:text-blue-600'}" ${i===currentPage?'aria-current="page"':''}>${i}</button>`;
+        if(end<totalPages){if(end<totalPages-1)html+=`<span class="w-10 h-10 flex items-center justify-center">…</span>`;html+=`<button onclick="goToPage(${totalPages})" class="w-10 h-10 rounded-xl border-2 text-sm font-bold">${totalPages}</button>`;}
+        html+=`<button onclick="goToPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''} class="w-10 h-10 rounded-xl border-2 flex items-center justify-center font-bold ${currentPage===totalPages?'opacity-40':'hover:border-blue-300 hover:text-blue-600'}" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right text-xs"></i></button>`;
+        container.innerHTML=html;
     };
 
-    const goToPage = (page) => { const tp = getTotalPages(); if (page < 1 || page > tp) return; currentPage = page; renderProductDisplay(); document.getElementById('produk').scrollIntoView({behavior:'smooth'}); };
-    const applyFilter = (filter) => { activeFilter = filter; currentPage = 1; updateFilterChipsUI(); renderProductDisplay(); };
-    const applySort = (sortType) => { activeSort = sortType; currentPage = 1; renderProductDisplay(); };
-    const updateFilterChipsUI = () => {
-        document.querySelectorAll('.filter-chip').forEach(c => { c.classList.remove('bg-corporate-blue','text-white','border-corporate-blue','shadow-md'); c.classList.add('bg-white','border-slate-200','text-slate-600'); });
-        const ac = document.getElementById(`chip-${activeFilter}`);
-        if (ac) { ac.classList.remove('bg-white','border-slate-200','text-slate-600'); ac.classList.add('bg-corporate-blue','text-white','border-corporate-blue','shadow-md'); }
-    };
-    const setViewMode = (mode) => {
-        currentView = mode;
-        document.getElementById('btnGridView').className = `px-4 py-2.5 rounded-lg text-sm font-bold ${mode==='grid'?'bg-white text-blue-600 shadow-sm':'text-slate-500'} transition-all flex items-center gap-2`;
-        document.getElementById('btnTableView').className = `px-4 py-2.5 rounded-lg text-sm font-bold ${mode==='table'?'bg-white text-blue-600 shadow-sm':'text-slate-500'} transition-all flex items-center gap-2`;
-        renderProductDisplay();
-    };
+    const goToPage=(p)=>{const tp=getTotalPages();if(p<1||p>tp)return;currentPage=p;renderProductDisplay();document.getElementById('produk').scrollIntoView({behavior:'smooth'});};
+    const applyFilter=(f)=>{activeFilter=f;currentPage=1;updateFilterChipsUI();renderProductDisplay();};
+    const applySort=(s)=>{activeSort=s;currentPage=1;renderProductDisplay();};
+    const updateFilterChipsUI=()=>{document.querySelectorAll('.filter-chip').forEach(c=>{c.classList.remove('bg-corporate-blue','text-white','border-corporate-blue','shadow-md');c.classList.add('bg-white','border-slate-200','text-slate-600');});const ac=document.getElementById(`chip-${activeFilter}`);if(ac){ac.classList.remove('bg-white','border-slate-200','text-slate-600');ac.classList.add('bg-corporate-blue','text-white','border-corporate-blue','shadow-md');}};
+    const setViewMode=(m)=>{currentView=m;document.getElementById('btnGridView').className=`px-4 py-2.5 rounded-lg text-sm font-bold ${m==='grid'?'bg-white text-blue-600 shadow-sm':'text-slate-500'} transition-all flex items-center gap-2`;document.getElementById('btnTableView').className=`px-4 py-2.5 rounded-lg text-sm font-bold ${m==='table'?'bg-white text-blue-600 shadow-sm':'text-slate-500'} transition-all flex items-center gap-2`;renderProductDisplay();};
 
     // ========== CART LOGIC ==========
-    const addToCart = (id, buttonEl) => {
-        const p = products.find(x=>x.id===id);
-        const exist = cart.find(x=>x.id===id);
-        if (exist) exist.qty++; else cart.push({...p, qty:1});
-        updateCartUI();
-        showToast(`${p.name} ditambahkan`);
-        if (buttonEl) animateFlyToCart(buttonEl);
-    };
-    const removeFromCart = (id) => { cart = cart.filter(x=>x.id!==id); updateCartUI(); };
-    const updateCartItemQty = (id, change) => {
-        const item = cart.find(x=>x.id===id);
-        if (item) { item.qty += change; if (item.qty < 1) removeFromCart(id); else updateCartUI(); }
-        else if (change > 0) addToCart(id);
-    };
+    const addToCart=(id,btnEl)=>{const p=products.find(x=>x.id===id);const exist=cart.find(x=>x.id===id);if(exist)exist.qty++;else cart.push({...p,qty:1});updateCartUI();showToast(`${p.name} ditambahkan`);if(btnEl)animateFlyToCart(btnEl);};
+    const removeFromCart=(id)=>{cart=cart.filter(x=>x.id!==id);updateCartUI();};
+    const updateCartItemQty=(id,ch)=>{const item=cart.find(x=>x.id===id);if(item){item.qty+=ch;if(item.qty<1)removeFromCart(id);else updateCartUI();}else if(ch>0)addToCart(id);};
 
-    const updateProgressBanner = () => {
-        const totalQty = cart.reduce((s,i)=>s+i.qty,0), percent = Math.min((totalQty/20)*100,100);
-        document.getElementById('progressFill').style.width = `${percent}%`;
-        document.getElementById('bannerQty').innerText = totalQty;
-        if (totalQty >= 20) {
-            document.getElementById('bannerTitle').innerText = '🎉 Gratis Ongkir Terpenuhi';
-            document.getElementById('bannerSubtitle').innerHTML = 'Anda berhak <b class="text-green-600">GRATIS ONGKIR</b>.';
-            document.getElementById('bannerBadge').classList.remove('bg-blue-50','text-blue-700'); document.getElementById('bannerBadge').classList.add('bg-green-50','text-green-700');
-        } else {
-            const rem = 20-totalQty;
-            document.getElementById('bannerTitle').innerText = 'Menuju Gratis Ongkir';
-            document.getElementById('bannerSubtitle').innerHTML = `Tambahkan <b class="text-blue-600">${rem} slop</b> lagi.`;
-            document.getElementById('bannerBadge').classList.remove('bg-green-50','text-green-700'); document.getElementById('bannerBadge').classList.add('bg-blue-50','text-blue-700');
-        }
-    };
+    const updateProgressBanner=()=>{const t=cart.reduce((s,i)=>s+i.qty,0),p=Math.min((t/20)*100,100);document.getElementById('progressFill').style.width=`${p}%`;document.getElementById('bannerQty').innerText=t;if(t>=20){document.getElementById('bannerTitle').innerText='🎉 Gratis Ongkir Terpenuhi';document.getElementById('bannerSubtitle').innerHTML='Anda berhak <b class="text-green-600">GRATIS ONGKIR</b>.';document.getElementById('bannerBadge').classList.remove('bg-blue-50','text-blue-700');document.getElementById('bannerBadge').classList.add('bg-green-50','text-green-700');}else{const r=20-t;document.getElementById('bannerTitle').innerText='Menuju Gratis Ongkir';document.getElementById('bannerSubtitle').innerHTML=`Tambahkan <b class="text-blue-600">${r} slop</b> lagi.`;document.getElementById('bannerBadge').classList.remove('bg-green-50','text-green-700');document.getElementById('bannerBadge').classList.add('bg-blue-50','text-blue-700');}};
 
-    const updateCartUI = () => {
-        const totalQty = cart.reduce((s,i)=>s+i.qty,0), totalPrice = cart.reduce((s,i)=>s+(i.price*i.qty),0);
-        [document.getElementById('cartBadge'), document.getElementById('mobileCartBadge')].forEach(b => { if(b){ b.innerText = totalQty>99?'99+':totalQty; b.classList.toggle('scale-100', totalQty>0); b.classList.toggle('scale-0', totalQty===0); } });
-        const container = document.getElementById('cartItemsContainer'), summary = document.getElementById('cartSummary'), empty = document.getElementById('emptyCartState');
-        if (!cart.length) {
-            container.innerHTML = ''; container.appendChild(empty); empty.classList.remove('hidden'); summary.classList.add('hidden');
-        } else {
-            empty.classList.add('hidden'); summary.classList.remove('hidden');
-            container.innerHTML = cart.map(item => `<div class="flex gap-4 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm"><div class="w-16 h-16 bg-slate-50 rounded-xl border flex items-center justify-center shrink-0"><i class="fa-solid fa-box text-blue-200 text-2xl"></i></div><div class="flex-1"><div class="flex justify-between"><h4 class="font-bold text-sm">${item.name}</h4><button onclick="removeFromCart(${item.id})" class="text-slate-300 hover:text-red-500"><i class="fa-solid fa-trash-can text-xs"></i></button></div><div class="flex justify-between items-end mt-2"><span class="text-blue-600 font-extrabold text-sm font-mono">${formatRupiah(item.price)}</span><div class="flex items-center border rounded-lg bg-slate-50 h-7"><button onclick="updateCartItemQty(${item.id},-1)" class="w-7 h-full flex items-center justify-center">-</button><span class="w-8 text-center text-xs font-bold">${item.qty}</span><button onclick="updateCartItemQty(${item.id},1)" class="w-7 h-full flex items-center justify-center">+</button></div></div></div></div>`).join('');
-            container.appendChild(empty);
-            document.getElementById('totalItemsDisplay').innerText = `${totalQty} Slop`;
-            document.getElementById('totalPriceDisplay').innerText = formatRupiah(totalPrice);
-            const promo = document.getElementById('promoMessage');
-            if (totalQty >= 20) { promo.className = "text-xs py-2.5 px-4 rounded-lg bg-green-50 text-green-700 border border-green-200 mb-5 flex gap-3 items-center shadow-sm"; promo.innerHTML = '<i class="fa-solid fa-check-circle text-lg text-green-500"></i> <span>Selamat! Memenuhi syarat <b>GRATIS ONGKIR</b>.</span>'; }
-            else { promo.className = "text-xs py-2.5 px-4 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 mb-5 flex gap-3 items-center shadow-sm"; promo.innerHTML = `<i class="fa-solid fa-circle-info text-lg text-blue-400"></i> <span>Tambah <b class="text-blue-800">${20-totalQty} slop</b> lagi.</span>`; }
-        }
-        updateProgressBanner();
-        renderProductDisplay();
-    };
+    const updateCartUI=()=>{const t=cart.reduce((s,i)=>s+i.qty,0),tp=cart.reduce((s,i)=>s+(i.price*i.qty),0);[document.getElementById('cartBadge'),document.getElementById('mobileCartBadge')].forEach(b=>{if(b){b.innerText=t>99?'99+':t;b.classList.toggle('scale-100',t>0);b.classList.toggle('scale-0',t===0);}});const c=document.getElementById('cartItemsContainer'),s=document.getElementById('cartSummary'),e=document.getElementById('emptyCartState');if(!cart.length){c.innerHTML='';c.appendChild(e);e.classList.remove('hidden');s.classList.add('hidden');}else{e.classList.add('hidden');s.classList.remove('hidden');c.innerHTML=cart.map(i=>`<div class="flex gap-4 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm"><div class="w-16 h-16 bg-slate-50 rounded-xl border flex items-center justify-center shrink-0"><i class="fa-solid fa-box text-blue-200 text-2xl"></i></div><div class="flex-1"><div class="flex justify-between"><h4 class="font-bold text-sm">${escapeHtml(i.name)}</h4><button onclick="removeFromCart(${i.id})" class="text-slate-300 hover:text-red-500"><i class="fa-solid fa-trash-can text-xs"></i></button></div><div class="flex justify-between items-end mt-2"><span class="text-blue-600 font-extrabold text-sm font-mono">${formatRupiah(i.price)}</span><div class="flex items-center border rounded-lg bg-slate-50 h-7"><button onclick="updateCartItemQty(${i.id},-1)" class="w-7">-</button><span class="w-8 text-center text-xs font-bold">${i.qty}</span><button onclick="updateCartItemQty(${i.id},1)" class="w-7">+</button></div></div></div></div>`).join('');c.appendChild(e);document.getElementById('totalItemsDisplay').innerText=`${t} Slop`;document.getElementById('totalPriceDisplay').innerText=formatRupiah(tp);const pm=document.getElementById('promoMessage');if(t>=20){pm.className="text-xs py-2.5 px-4 rounded-lg bg-green-50 text-green-700 border border-green-200 mb-5 flex gap-3 items-center shadow-sm";pm.innerHTML='<i class="fa-solid fa-check-circle text-lg text-green-500"></i> <span>Selamat! Memenuhi syarat <b>GRATIS ONGKIR</b>.</span>';}else{pm.className="text-xs py-2.5 px-4 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 mb-5 flex gap-3 items-center shadow-sm";pm.innerHTML=`<i class="fa-solid fa-circle-info text-lg text-blue-400"></i> <span>Tambah <b class="text-blue-800">${20-t} slop</b> lagi.</span>`;}}updateProgressBanner();renderProductDisplay();};
 
-    const toggleCart = () => {
-        const overlay = document.getElementById('cartOverlay'), sidebar = document.getElementById('cartSidebar');
-        if (sidebar.classList.contains('translate-x-full')) { overlay.classList.remove('hidden'); setTimeout(()=>{overlay.classList.remove('opacity-0');sidebar.classList.remove('translate-x-full');},10); document.body.style.overflow='hidden'; }
-        else { overlay.classList.add('opacity-0'); sidebar.classList.add('translate-x-full'); setTimeout(()=>overlay.classList.add('hidden'),300); document.body.style.overflow=''; }
-    };
+    const toggleCart=()=>{const o=document.getElementById('cartOverlay'),sb=document.getElementById('cartSidebar');const isOpen=!sb.classList.contains('translate-x-full');if(!isOpen){lastFocusedElement=document.activeElement;o.classList.remove('hidden');o.setAttribute('aria-hidden','false');sb.setAttribute('aria-hidden','false');setTimeout(()=>{o.classList.remove('opacity-0');sb.classList.remove('translate-x-full');},10);document.body.style.overflow='hidden';setTimeout(()=>{const cb=sb.querySelector('button');if(cb)cb.focus();},300);}else{o.classList.add('opacity-0');sb.classList.add('translate-x-full');o.setAttribute('aria-hidden','true');sb.setAttribute('aria-hidden','true');setTimeout(()=>o.classList.add('hidden'),300);document.body.style.overflow='';if(lastFocusedElement)lastFocusedElement.focus();}};
 
-    // Update label radio visual
-    document.addEventListener('change', function(e) {
-        if (e.target.name === 'paymentMethod') {
-            document.querySelectorAll('.payment-label').forEach(l => l.classList.remove('bg-blue-50/30','border-blue-200'));
-            document.querySelectorAll('.check-icon').forEach(i => i.classList.add('hidden'));
-            const selectedLabel = e.target.closest('.payment-label');
-            if (selectedLabel) {
-                selectedLabel.classList.add('bg-blue-50/30','border-blue-200');
-                selectedLabel.querySelector('.check-icon').classList.remove('hidden');
-            }
-        }
-    });
+    document.addEventListener('change',function(e){if(e.target.name==='paymentMethod'){document.querySelectorAll('.payment-label').forEach(l=>{l.classList.remove('bg-blue-50/30','border-blue-200');l.querySelector('.check-icon')?.classList.add('hidden');});const sl=e.target.closest('.payment-label');if(sl){sl.classList.add('bg-blue-50/30','border-blue-200');sl.querySelector('.check-icon')?.classList.remove('hidden');}}});
 
-    const processCheckout = () => {
-        const phone = document.getElementById('custPhone').value.trim();
-        const name = document.getElementById('custName').value.trim();
-        const address = document.getElementById('custAddress').value.trim();
-        const expedition = document.getElementById('custExpedition').value;
-        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || 'Bayar Setelah Resi Keluar';
-        const notes = document.getElementById('custNotes').value.trim();
+    const processCheckout=()=>{const ph=document.getElementById('custPhone').value.trim(),nm=document.getElementById('custName').value.trim(),ad=document.getElementById('custAddress').value.trim(),ex=document.getElementById('custExpedition').value,pm=document.querySelector('input[name="paymentMethod"]:checked')?.value||'Bayar Setelah Resi Keluar',nt=document.getElementById('custNotes').value.trim();if(!ph||!nm||!ad){showToast('Lengkapi data!','error');return;}let msg=`📝 *FORM PEMESANAN ROKOK*\n\nNo. HP : ${ph}\nNama : ${nm}\nAlamat : ${ad}\n`;if(ex)msg+=`Ekspedisi : ${ex}\n`;msg+=`Metode Bayar : ${pm}\nMerek :\n`;cart.forEach(i=>msg+=`  - ${i.name} (${i.qty} slop)\n`);const t=cart.reduce((s,i)=>s+i.qty,0);msg+=`Jumlah : ${t} slop\nCatatan : ${nt} ${t>=20?'(✅ Gratis Ongkir)':''}\n\n_Mohon konfirmasi._`;toggleCart();const pp=document.getElementById('successPopup'),pc=document.getElementById('popupContent'),cd=document.getElementById('countdown');pp.classList.remove('hidden');pp.classList.add('flex');pp.setAttribute('aria-hidden','false');setTimeout(()=>pc.classList.remove('scale-90'),10);let c=3;cd.innerText=c;const timer=setInterval(()=>{c--;cd.innerText=c;if(c<=0){clearInterval(timer);pp.classList.add('hidden');pp.classList.remove('flex');pp.setAttribute('aria-hidden','true');window.open(`https://wa.me/6285715905079?text=${encodeURIComponent(msg)}`,'_blank');cart=[];['custPhone','custName','custAddress','custNotes'].forEach(id=>document.getElementById(id).value='');document.getElementById('custExpedition').value='';document.querySelector('input[name="paymentMethod"][value="Bayar Setelah Resi Keluar"]').checked=true;updateCartUI();}},1000);};
 
-        if (!phone || !name || !address) { showToast('Lengkapi data!','error'); return; }
+    // ========== FAB MENU ==========
+    const toggleFab=()=>{const menu=document.getElementById('fabMenu');const icon=document.getElementById('fabIcon');menu.classList.toggle('open');icon.classList.toggle('fa-ellipsis');icon.classList.toggle('fa-xmark');};
 
-        let msg = `📝 *FORM PEMESANAN ROKOK*\n\n`;
-        msg += `No. HP : ${phone}\n`;
-        msg += `Nama : ${name}\n`;
-        msg += `Alamat : ${address}\n`;
-        if (expedition) msg += `Ekspedisi : ${expedition}\n`;
-        msg += `Metode Bayar : ${paymentMethod}\n`;
-        msg += `Merek :\n`;
-        cart.forEach(i => msg += `  - ${i.name} (${i.qty} slop)\n`);
-        const totalQty = cart.reduce((s,i)=>s+i.qty,0);
-        msg += `Jumlah : ${totalQty} slop\n`;
-        msg += `Catatan : ${notes} ${totalQty>=20?'(✅ Gratis Ongkir)':''}\n\n`;
-        msg += `_Mohon konfirmasi._`;
-
-        toggleCart();
-        const popup = document.getElementById('successPopup'), content = document.getElementById('popupContent'), cd = document.getElementById('countdown');
-        popup.classList.remove('hidden'); popup.classList.add('flex'); setTimeout(()=>content.classList.remove('scale-90'),10);
-        let count=3; cd.innerText=count;
-        const timer = setInterval(() => { count--; cd.innerText=count; if(count<=0){ clearInterval(timer); popup.classList.add('hidden'); popup.classList.remove('flex'); window.open(`https://wa.me/6285715905079?text=${encodeURIComponent(msg)}`,'_blank'); cart=[]; ['custPhone','custName','custAddress','custNotes'].forEach(id=>document.getElementById(id).value=''); document.getElementById('custExpedition').value=''; document.querySelector('input[name="paymentMethod"][value="Bayar Setelah Resi Keluar"]').checked=true; updateCartUI(); } },1000);
-    };
+    // ========== MODALS ==========
+    const openPrivacyModal=()=>{const m=document.getElementById('privacyModal');m.classList.remove('hidden');m.classList.add('flex');m.setAttribute('aria-hidden','false');};
+    const closePrivacyModal=()=>{const m=document.getElementById('privacyModal');m.classList.add('hidden');m.classList.remove('flex');m.setAttribute('aria-hidden','true');};
+    const openTermsModal=()=>{const m=document.getElementById('termsModal');m.classList.remove('hidden');m.classList.add('flex');m.setAttribute('aria-hidden','false');};
+    const closeTermsModal=()=>{const m=document.getElementById('termsModal');m.classList.add('hidden');m.classList.remove('flex');m.setAttribute('aria-hidden','true');};
 
     // Search debounce
     let searchTimeout;
-    document.getElementById('searchInput').addEventListener('input', e => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => { searchTerm = e.target.value; currentPage=1; renderProductDisplay(); }, 300);
-    });
+    document.getElementById('searchInput').addEventListener('input',e=>{clearTimeout(searchTimeout);searchTimeout=setTimeout(()=>{searchTerm=e.target.value;currentPage=1;renderProductDisplay();},300);});
 
     // FAQ
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling, icon = btn.querySelector('i');
-            document.querySelectorAll('.faq-content').forEach(c => { if (c !== content) c.style.maxHeight = null; });
-            document.querySelectorAll('.faq-btn i').forEach(i => { if (i !== icon) { i.classList.remove('fa-minus'); i.classList.add('fa-plus'); } });
-            if (content.style.maxHeight) { content.style.maxHeight = null; icon.classList.remove('fa-minus'); icon.classList.add('fa-plus'); }
-            else { content.style.maxHeight = content.scrollHeight + 'px'; icon.classList.remove('fa-plus'); icon.classList.add('fa-minus'); }
-        });
-    });
+    document.querySelectorAll('.faq-btn').forEach(b=>{b.addEventListener('click',()=>{const cnt=b.nextElementSibling,ic=b.querySelector('i');const isExp=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!isExp);document.querySelectorAll('.faq-content').forEach(c=>{if(c!==cnt)c.style.maxHeight=null;});document.querySelectorAll('.faq-btn').forEach(x=>{if(x!==b)x.setAttribute('aria-expanded','false');});if(cnt.style.maxHeight){cnt.style.maxHeight=null;ic.classList.remove('fa-minus');ic.classList.add('fa-plus');}else{cnt.style.maxHeight=cnt.scrollHeight+'px';ic.classList.remove('fa-plus');ic.classList.add('fa-minus');}});});
 
-    // Active nav & parallax
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY, docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        document.getElementById('progressBar').style.width = (scrollTop/docHeight)*100 + '%';
-        const header = document.getElementById('header'), back = document.getElementById('backToTop');
-        if (scrollTop > 50) { header.classList.add('shadow-md'); header.style.paddingTop='10px'; header.style.paddingBottom='10px'; }
-        else { header.classList.remove('shadow-md'); header.style.paddingTop='16px'; header.style.paddingBottom='16px'; }
-        back.classList.toggle('scale-100', scrollTop > 500); back.classList.toggle('scale-0', scrollTop <= 500);
-        const heroBg = document.getElementById('heroBg');
-        if (heroBg) heroBg.style.transform = `translateY(${scrollTop * 0.15}px) scale(1.1)`;
-        document.querySelectorAll('section[id]').forEach(section => {
-            const top = section.offsetTop - 100, id = section.getAttribute('id');
-            const link = document.querySelector(`nav a[href="#${id}"]`);
-            if (link) link.classList.toggle('text-blue-600', scrollTop >= top && scrollTop < top + section.offsetHeight);
-        });
-    });
+    // Scroll
+    window.addEventListener('scroll',()=>{const st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('progressBar').style.width=(st/dh)*100+'%';const h=document.getElementById('header');if(st>50){h.classList.add('shadow-md');h.style.paddingTop='10px';h.style.paddingBottom='10px';}else{h.classList.remove('shadow-md');h.style.paddingTop='16px';h.style.paddingBottom='16px';}const hb=document.getElementById('heroBg');if(hb)hb.style.transform=`translateY(${st*0.15}px) scale(1.1)`;document.querySelectorAll('section[id]').forEach(sec=>{const top=sec.offsetTop-100,id=sec.getAttribute('id');const link=document.querySelector(`nav a[href="#${id}"]`);if(link)link.classList.toggle('text-blue-600',st>=top&&st<top+sec.offsetHeight);});});
 
-    const observeElements = () => {
-        const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }), { threshold: 0.1 });
-        document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
-    };
+    const observeElements=()=>{const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-visible');}),{threshold:0.1});document.querySelectorAll('.fade-on-scroll').forEach(el=>obs.observe(el));};
 
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-            document.getElementById('loader').style.opacity = '0';
-            setTimeout(() => { document.getElementById('loader').style.display = 'none'; updateFilterChipsUI(); updateProgressBanner(); renderProductDisplay(); observeElements(); }, 500);
-        }, 1500);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){const sb=document.getElementById('cartSidebar');if(!sb.classList.contains('translate-x-full'))toggleCart();}});
+
+    document.addEventListener('DOMContentLoaded',()=>{
+        renderTestimonials();
+        setTimeout(()=>{document.getElementById('loader').style.opacity='0';setTimeout(()=>{document.getElementById('loader').style.display='none';updateFilterChipsUI();updateProgressBanner();renderProductDisplay();observeElements();},500);},1500);
         updateCartUI();
-        // Set initial radio style
-        document.querySelector('.payment-label.bg-blue-50\\/30')?.classList.add('border-blue-200');
     });
 </script>
 </body>
