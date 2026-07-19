@@ -2,8 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- === META UNTUK THUMBNAIL PREVIEW WHATSAPP / OPEN GRAPH === -->
     <meta property="og:title" content="R2 Nusantara — Cigarette Tobaco Shop">
@@ -15,67 +14,60 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="R2 Nusantara — Cigarette Tobaco Shop">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg">
-    <link rel="apple-touch-icon" href="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg">
-
-    <!-- SEO Standard -->
-    <meta name="description" content="Portal pengadaan B2B khusus mitra terdaftar R2 Nusantara. Akses katalog, harga grosir, dan sistem Escrow melalui akun kemitraan Anda.">
-    <meta name="robots" content="noindex, nofollow">
-    <title>R2 Nusantara | Gudang Distributor</title>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>R2 NUSANTARA | Cigarette Tobacco Distributor</title>
+    <meta name="description" content="Gudang Distributor Malang. Menyediakan berbagai macam rokok dengan sistem pembayaran aman (bayar setelah resi keluar).">
+    <meta name="theme-color" content="#0f172a">
     
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
-    
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans for premium corporate look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-    </script>
-
-    <!-- Tailwind Configuration -->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS (CDN for standalone file) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
                         corporate: {
-                            50: '#f0f4f8', 100: '#d9e2ec', 200: '#bcccdc', 300: '#9fb3c8', 400: '#829ab1',
-                            500: '#627d98', 600: '#486581', 700: '#334e68', 800: '#243b53', 900: '#102a43',
-                            blue: '#0B2046', gold: '#D4AF37', silver: '#E2E8F0'
+                            blue: '#0f172a', // Slate 900
+                            light: '#1e293b', // Slate 800
+                            accent: '#3b82f6', // Blue 500
+                            silver: '#e2e8f0', // Slate 200
                         }
                     },
-                    boxShadow: {
-                        'premium': '0 10px 40px -10px rgba(11, 32, 70, 0.08)',
-                        'premium-hover': '0 20px 40px -10px rgba(11, 32, 70, 0.12)',
-                        'floating': '0 30px 60px -15px rgba(0, 0, 0, 0.1)',
-                    },
                     animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'float': 'float 6s ease-in-out infinite',
-                        'ripple': 'ripple 1s linear infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 2s infinite',
                     },
                     keyframes: {
-                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } },
-                        ripple: { '0%': { boxShadow: '0 0 0 0 rgba(212, 175, 55, 0.3)' }, '100%': { boxShadow: '0 0 0 20px rgba(212, 175, 55, 0)' } }
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseSoft: {
+                            '0%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.4)' },
+                            '70%': { boxShadow: '0 0 0 15px rgba(37, 211, 102, 0)' },
+                            '100%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0)' }
+                        }
                     }
                 }
             }
@@ -83,1193 +75,1198 @@
     </script>
 
     <style>
-        /* Base & Resets */
-        body { 
-            background-color: #FAFAFC; 
-            color: #102a43; 
-            -webkit-font-smoothing: antialiased; 
-            position: relative; 
-        }
-        
-        /* === WATERMARK UPGRADE: Transparan, rapi, posisi sempurna === */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url('https://i.ibb.co.com/DfPxSVPy/IMG-20260716-095959.jpg');
-            background-repeat: repeat;
-            background-size: 320px;
-            background-position: center;
-            opacity: 0.06; /* Sangat halus, elegan, tidak mengganggu konten */
-            pointer-events: none;
-            z-index: -1;
-            /* mix-blend-mode dihilangkan agar warna tetap natural & realistis */
-            filter: grayscale(0.2); /* Sedikit sentuhan agar tidak terlalu dominan */
+        /* Custom Styles & Utilities */
+        :root {
+            --wa-color: #25D366;
         }
 
-        /* Custom Scrollbar Premium */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #FAFAFC; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        ::selection { background: rgba(212, 175, 55, 0.2); color: #0B2046; }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8fafc; /* Slate 50 */
+        }
 
-        /* Typography Optimizations */
-        h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
-        
-        /* Glassmorphism & UI Components */
-        .glass-header {
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Glassmorphism */
+        .glass {
             background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-        
-        .card-premium {
-            background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 20px -4px rgba(11, 32, 70, 0.04);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .card-premium:hover {
-            box-shadow: 0 15px 35px -5px rgba(11, 32, 70, 0.08);
-            transform: translateY(-4px);
-            border-color: rgba(212, 175, 55, 0.3);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hero Overlay Effect */
-        .hero-image-wrapper {
+        /* Ripple Effect */
+        .ripple {
             position: relative;
-            border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow-floating);
+            transform: translate3d(0, 0, 0);
         }
-        .hero-image-wrapper::after {
-            content: '';
+        .ripple::after {
+            content: "";
+            display: block;
             position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(11, 32, 70, 0.4) 0%, rgba(11, 32, 70, 0.1) 100%);
-            mix-blend-mode: overlay;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+        .ripple:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
         }
 
-        /* Drawer Cart */
-        .drawer {
-            position: fixed; top: 0; right: 0; height: 100vh;
-            width: 100%; max-width: 450px;
-            background: white; z-index: 100;
-            transform: translateX(100%);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: -10px 0 40px rgba(0,0,0,0.08);
-            display: flex; flex-direction: column;
+        /* Hide Scrollbar for Cart/Sidebar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .drawer.open { transform: translateX(0); }
-        .drawer-overlay {
-            position: fixed; inset: 0; background: rgba(11, 32, 70, 0.4);
-            backdrop-filter: blur(4px); z-index: 99;
-            opacity: 0; visibility: hidden; transition: all 0.4s ease;
-        }
-        .drawer-overlay.open { opacity: 1; visibility: visible; }
-
-        /* Mobile specific bottom sheet behavior */
-        @media (max-width: 640px) {
-            .drawer {
-                top: auto; bottom: 0; height: 85vh; max-width: 100%;
-                transform: translateY(100%);
-                border-radius: 24px 24px 0 0;
-            }
-            .drawer.open { transform: translateY(0); }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        /* Forms */
-        .input-corporate {
-            width: 100%; background: #F8FAFC; border: 1.5px solid #E2E8F0;
-            border-radius: 12px; padding: 14px 16px; font-size: 14px;
-            color: #102a43; transition: all 0.3s ease; font-family: 'Inter', sans-serif;
+        /* Fade observer class */
+        .fade-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .input-corporate:focus {
-            outline: none; border-color: #0B2046; background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(11, 32, 70, 0.05);
-        }
-        
-        /* Smooth Progress Bar */
-        #scrollProgress {
-            position: fixed; top: 0; left: 0; height: 3px;
-            background: linear-gradient(90deg, #D4AF37, #F59E0B);
-            z-index: 1000; transition: width 0.1s ease;
+        .fade-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Loaders */
-        .loader-skeleton {
-            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
-            background-size: 200% 100%; animation: shimmer 2s infinite; border-radius: 12px;
+        /* Custom Table Styling for View Toggle */
+        .corporate-table th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            border-bottom: 2px solid #e2e8f0;
         }
-        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-
-        /* Buttons */
-        .btn-corporate {
-            display: inline-flex; align-items: center; justify-content: center;
-            background: #0B2046; color: white; padding: 14px 28px;
-            border-radius: 12px; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;
-            transition: all 0.3s ease;
+        .corporate-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
         }
-        .btn-corporate:hover {
-            background: #102a43; transform: translateY(-2px);
-            box-shadow: 0 8px 25px -5px rgba(11, 32, 70, 0.3);
+        .corporate-table tr:hover td {
+            background-color: #f8fafc;
         }
-        .btn-gold {
-            background: #D4AF37; color: #fff;
-        }
-        .btn-gold:hover {
-            background: #b5952f; box-shadow: 0 8px 25px -5px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Accessibility: visible keyboard focus */
-        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-            outline: 2px solid #D4AF37; outline-offset: 2px; border-radius: 4px;
-        }
-        .skip-link {
-            position: absolute; left: -9999px; top: 0; z-index: 10000;
-            background: #0B2046; color: #fff; padding: 12px 20px; border-radius: 0 0 10px 0; font-weight: 700; font-size: 13px;
-        }
-        .skip-link:focus { left: 0; }
-
-        /* Respect reduced motion preference */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-        }
-
-        /* Nav active state */
-        nav a.nav-active { color: #0B2046; }
-        nav a.nav-active::after { content: ''; display: block; height: 2px; background: #D4AF37; margin-top: 4px; border-radius: 2px; }
-
-        /* Mobile nav drawer */
-        #mobileNav { transform: translateY(-8px); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.3s ease; }
-        #mobileNav.open { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
-
-        /* Free shipping progress bar */
-        .progress-track { background: #E2E8F0; border-radius: 99px; overflow: hidden; }
-        .progress-fill { background: linear-gradient(90deg, #D4AF37, #F59E0B); transition: width 0.4s ease; }
     </style>
 </head>
-<body class="font-body overflow-x-hidden">
+<body class="text-slate-800 relative selection:bg-blue-200 selection:text-blue-900">
 
-    <a href="#katalog" class="skip-link">Langsung ke Katalog</a>
-
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
-        <div class="relative w-24 h-24 mb-6">
-            <div class="absolute inset-0 rounded-full border-4 border-corporate-100 border-t-corporate-blue animate-spin"></div>
-            <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Logo" class="absolute inset-0 m-auto w-14 h-14 object-cover rounded-full">
+    <!-- Loading Animation -->
+    <div id="loader" class="fixed inset-0 z-[100] bg-corporate-blue flex flex-col items-center justify-center">
+        <div class="relative w-24 h-24">
+            <div class="absolute inset-0 border-4 border-slate-700 rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
+            <img src="https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg" alt="R2 Logo" class="absolute inset-0 m-auto w-12 h-12 rounded-full object-cover shadow-lg">
         </div>
-        <h2 class="font-heading font-bold text-corporate-blue tracking-[0.2em] uppercase text-sm">Enterprise Portal</h2>
+        <h2 class="mt-6 text-white text-xl font-bold tracking-widest uppercase letter-spacing-2">R2 Nusantara</h2>
+        <div class="w-12 h-1 bg-blue-500 mt-3 rounded-full"></div>
     </div>
 
-    <!-- Scroll Progress -->
-    <div id="scrollProgress"></div>
+    <!-- Scroll Progress Bar -->
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-blue-400 z-[60] w-0 transition-all duration-150" id="progressBar"></div>
 
-    <!-- Header Navigation -->
-    <header id="header" class="fixed w-full top-0 z-50 glass-header transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20 md:h-24">
-                
-                <!-- Logo -->
-                <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Nusantara" class="w-12 h-12 rounded-xl object-cover shadow-sm border border-gray-100">
-                    <div class="flex flex-col">
-                        <span class="font-heading font-extrabold text-[18px] md:text-[20px] text-corporate-blue leading-tight">R2 NUSANTARA</span>
-                        <span class="text-[10px] md:text-[11px] text-corporate-500 font-bold tracking-widest uppercase">Cigarette Tabaco Shop</span>
-                    </div>
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full z-50 glass transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative">
+                    <img src="https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg" alt="R2 Nusantara Logo" class="w-11 h-11 rounded-full shadow-md border-2 border-white group-hover:scale-105 transition-transform duration-300">
+                    <img src="https://i.ibb.co.com/60mzSxtN/Desain-tanpa-judul-2.png" alt="Verified" class="w-4 h-4 absolute -bottom-1 -right-1 bg-white rounded-full p-0.5" title="Verified Distributor">
                 </div>
-
-                <!-- Desktop Nav -->
-                <nav class="hidden lg:flex items-center gap-8" aria-label="Navigasi utama">
-                    <a href="#keunggulan" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Infrastruktur</a>
-                    <a href="#sistem-bayar" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Sistem Escrow</a>
-                    <a href="#katalog" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Katalog R2 Nusantara</a>
-                    <a href="#informasi" data-navlink class="text-sm font-semibold text-corporate-600 hover:text-corporate-blue transition-colors">Pengiriman</a>
-                </nav>
-
-                <!-- Actions -->
-                <div class="flex items-center gap-2 md:gap-5">
-                    <button onclick="toggleCart()" class="relative p-2.5 text-corporate-600 hover:text-corporate-blue bg-corporate-50 rounded-xl hover:bg-corporate-100 transition-colors" aria-label="Purchase Order">
-                        <i class="fa-solid fa-briefcase text-lg"></i>
-                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-corporate-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white scale-0 transition-transform">0</span>
-                    </button>
-                    <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="hidden md:flex btn-corporate text-sm gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        Hubungi Sales
-                    </a>
-                    <button onclick="toggleMobileNav()" id="mobileNavBtn" class="lg:hidden p-2.5 text-corporate-600 bg-corporate-50 rounded-xl hover:bg-corporate-100 transition-colors" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileNav">
-                        <i class="fa-solid fa-bars text-lg"></i>
-                    </button>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg text-corporate-blue tracking-tight leading-none mb-1">R2 NUSANTARA</span>
+                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Distributor Malang</span>
                 </div>
-                
-            </div>
+            </a>
 
-            <!-- Mobile Nav Panel -->
-            <nav id="mobileNav" class="lg:hidden absolute top-full left-0 w-full bg-white border-t border-corporate-100 shadow-premium px-5 py-4 flex flex-col gap-1" aria-label="Navigasi mobile">
-                <a href="#keunggulan" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Infrastruktur</a>
-                <a href="#sistem-bayar" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Sistem Escrow</a>
-                <a href="#katalog" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Katalog B2B</a>
-                <a href="#informasi" data-navlink onclick="closeMobileNav()" class="px-3 py-3 rounded-xl text-sm font-semibold text-corporate-700 hover:bg-corporate-50">Pengiriman</a>
-                <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer" class="mt-2 btn-corporate justify-center text-sm gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Sales
-                </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#beranda" class="hover:text-blue-600 transition-colors">Beranda</a>
+                <a href="#info" class="hover:text-blue-600 transition-colors">Sistem & Promo</a>
+                <a href="#produk" class="hover:text-blue-600 transition-colors">Katalog Harga</a>
+                <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
             </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative p-2.5 text-slate-600 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 transition-all rounded-full ring-1 ring-slate-200 ripple shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center transform scale-0 transition-transform shadow-md border-2 border-white">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-                    
-                    <!-- Text Content -->
-                    <div data-aos="fade-right" data-aos-duration="1000" class="relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-corporate-blue text-[11px] font-bold tracking-widest uppercase mb-6">
-                            <span class="w-1.5 h-1.5 rounded-full bg-corporate-blue animate-pulse"></span>
-                            Gudang Distributor R2
-                        </div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-corporate-900 leading-[1.15] mb-6">
-                            Ready Stok <br>
-                            <span class="text-corporate-blue relative">
-                                Skala Kartonan.
-                                <svg class="absolute w-full h-3 -bottom-1 left-0 text-corporate-gold/30" fill="currentColor" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q50,15 100,5 L100,10 L0,10 Z"></path></svg>
-                            </span>
-                        </h1>
-                        <p class="text-corporate-600 text-lg mb-10 max-w-lg leading-relaxed">
-                            Dengan All Varian Stok R2/Resmi dengan 50+ merek Rokok. Transaksi tanpa risiko melalui sistem <strong class="text-corporate-blue">pembayaran pasca-resi (Escrow)</strong>.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-4">
-                            <button onclick="document.getElementById('katalog').scrollIntoView()" class="btn-corporate btn-gold text-sm">
-                                Susun Purchase Order
-                            </button>
-                            <a href="#sistem-bayar" class="inline-flex items-center justify-center bg-white border border-corporate-200 text-corporate-800 padding px-6 py-3.5 rounded-xl font-heading font-semibold text-sm hover:border-corporate-400 hover:bg-corporate-50 transition-all shadow-sm">
-                                Pelajari Keamanan Kami
-                            </a>
-                        </div>
-                        
-                        <div class="mt-12 pt-8 border-t border-corporate-100 flex items-center gap-8">
-                            <div class="flex flex-col">
-                                <span class="text-3xl font-heading font-extrabold text-corporate-900">50+</span>
-                                <span class="text-[11px] text-corporate-500 font-bold uppercase tracking-wider">SKU Tersedia</span>
-                            </div>
-                            <div class="w-px h-12 bg-corporate-200"></div>
-                            <div class="flex flex-col">
-                                <span class="text-3xl font-heading font-extrabold text-corporate-900">100%</span>
-                                <span class="text-[11px] text-corporate-500 font-bold uppercase tracking-wider">Keamanan Transaksi</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Image / Visual -->
-                    <div data-aos="fade-left" data-aos-duration="1200" class="relative">
-                        <!-- Decorative shapes -->
-                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-corporate-gold/10 rounded-full blur-3xl"></div>
-                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-corporate-blue/10 rounded-full blur-3xl"></div>
-                        
-                        <div class="hero-image-wrapper border-4 border-white animate-float">
-                            <img src="https://i.ibb.co.com/bq2xSSQ/1750480573786.jpg" alt="R2 Nusantara Warehouse" loading="eager" decoding="async" class="w-full h-auto object-cover md:h-[500px] aspect-[4/3] md:aspect-auto">
-                            
-                            <!-- Floating Badge -->
-                            <div class="absolute bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-floating border border-gray-100 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center text-xl">
-                                    <i class="fa-solid fa-shield-check"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold text-corporate-500 uppercase tracking-wider mb-0.5">Verified</p>
-                                    <p class="font-heading font-bold text-sm text-corporate-900">Partner Logistik Resmi</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <!-- Hero Section with Parallax & Dark Overlay -->
+        <section id="beranda" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-[95vh]">
+            <!-- Background Image with Parallax setup -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://i.ibb.co.com/NdQds7Gk/1750480573786.jpg" alt="Background" class="w-full h-full object-cover object-center scale-110" id="heroBg">
+                <div class="absolute inset-0 bg-corporate-blue/85 mix-blend-multiply"></div>
+                <!-- Gradient for smooth fade into next section -->
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-corporate-blue/50 to-[#f8fafc]"></div>
             </div>
-        </section>
 
-        <!-- Keunggulan (Corporate Features) -->
-        <section id="keunggulan" class="py-24 bg-white relative">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                    <span class="text-corporate-gold text-[12px] font-bold tracking-[0.2em] uppercase block mb-3">Keunggulan Operasional</span>
-                    <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-corporate-900 leading-tight">Untuk Orderan Minimal +10 Karton / Main Partai Bisa dikirim melalui armada gudang distributor langsung</h2>
+            <div class="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
+                <!-- Watermark Logo faintly in background of hero -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] opacity-[0.03] pointer-events-none">
+                    <img src="https://i.ibb.co.com/FqCFwM49/Desain-tanpa-judul-1.png" alt="Watermark" class="w-full h-full object-contain">
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Feature 1 -->
-                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="0">
-                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
-                            <i class="fa-solid fa-tags"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Harga Grosir Akurat</h3>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Struktur harga berjenjang yang dioptimalkan untuk margin reseller dan agen distribusi tingkat daerah.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Distribusi Nasional</h3>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Eksekusi pengiriman ke 34 Provinsi. Gratis biaya kirim untuk Purchase Order minimal 1 Bal (20 Slop).</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
-                            <i class="fa-solid fa-warehouse"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Gudang Ready Stock</h3>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Inventaris terpusat. Bukan sistem Pre-Order. Seluruh SKU dalam katalog tersedia untuk alokasi instan.</p>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-gold text-2xl mb-6">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Pembayaran Escrow</h3>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Nol risiko finansial. Sistem penagihan dilakukan hanya setelah validitas resi ekspedisi terverifikasi.</p>
-                    </div>
-                    <!-- Feature 5 -->
-                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Dedicated Support</h3>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Bisa Request Ekspedisi untuk orderan minimal 1 karton (80 slop)</p>
-                    </div>
-                    <!-- Feature 6 -->
-                    <div class="card-premium p-8" data-aos="fade-up" data-aos-delay="500">
-                        <div class="w-14 h-14 rounded-xl bg-corporate-50 flex items-center justify-center text-corporate-blue text-2xl mb-6">
-                            <i class="fa-solid fa-box-open"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-lg text-corporate-900 mb-3">Packing Profesional dan Dijamin Aman</h3>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Standar pengemasan korporat (kardus tebal & wrapping) memastikan keutuhan pita cukai dan fisik produk.</p>
-                    </div>
+                <div class="animate-slide-up" style="animation-delay: 0.1s;">
+                    <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-6 shadow-lg">
+                        <i class="fa-solid fa-star text-yellow-400 text-[10px]"></i> Executive Tobacco Distribution
+                    </span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Sistem Pembayaran (Escrow Highlight) -->
-        <section id="sistem-bayar" class="py-12">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-                <div class="bg-corporate-blue rounded-[32px] overflow-hidden relative shadow-floating" data-aos="zoom-in">
-                    <!-- Decor -->
-                    <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #D4AF37 0%, transparent 50%);"></div>
-                    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Cg%3E%3C/svg%3E');"></div>
-                    
-                    <div class="px-8 py-16 md:px-16 text-center relative z-10 flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center text-corporate-gold text-4xl mb-8 shadow-sm backdrop-blur-sm animate-ripple">
-                            <i class="fa-solid fa-lock"></i>
-                        </div>
-                        <span class="text-corporate-gold text-[11px] font-bold tracking-[0.25em] uppercase mb-4">Kebijakan Keamanan Finansial</span>
-                        <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-6">SISTEM PEMBAYARAN ESCROW</h2>
-                        <p class="text-corporate-200 text-lg md:text-xl font-medium max-w-2xl mb-10">
-                            Transfer pembayaran <strong class="text-white text-xl">HANYA</strong> dilakukan setelah nomor resi fisik/digital resmi diterbitkan oleh pihak ekspedisi.
-                        </p>
-                        <div class="flex flex-wrap justify-center gap-4 text-sm font-bold">
-                            <div class="bg-white/10 text-white px-5 py-2.5 rounded-full backdrop-blur-sm flex items-center gap-2">
-                                <i class="fa-solid fa-check-circle text-green-400"></i> Bukan COD
-                            </div>
-                            <div class="bg-white/10 text-white px-5 py-2.5 rounded-full backdrop-blur-sm flex items-center gap-2">
-                                <i class="fa-solid fa-check-circle text-green-400"></i> Bukan Transfer Di Awal
-                            </div>
-                            <div class="bg-white/10 text-white px-5 py-2.5 rounded-full backdrop-blur-sm flex items-center gap-2">
-                                <i class="fa-solid fa-check-circle text-green-400"></i> 100% Transparan
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Informasi Pengiriman -->
-        <section id="informasi" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div data-aos="fade-right">
-                        <h2 class="text-3xl font-heading font-extrabold text-corporate-900 mb-6">Manajemen Logistik & Pengiriman</h2>
-                        <p class="text-corporate-600 text-base leading-relaxed mb-8">Pusat distribusi kami berbasis di wilayah operasional Malang. Kami menjalin kemitraan erat dengan berbagai ekspedisi nasional untuk menjamin suplai Anda tiba tepat waktu.</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex gap-4 items-start">
-                                <div class="w-12 h-12 shrink-0 rounded-xl bg-corporate-50 text-corporate-blue flex items-center justify-center text-xl">
-                                    <i class="fa-solid fa-map-location-dot"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-corporate-900 mb-1">Gudang Distributor Pusat</h4>
-                                    <p class="text-sm text-corporate-500 leading-relaxed">Berbasis di Malang, Jawa Timur. Terintegrasi langsung dengan hub ekspedisi utama.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-start">
-                                <div class="w-12 h-12 shrink-0 rounded-xl bg-corporate-50 text-corporate-blue flex items-center justify-center text-xl">
-                                    <i class="fa-solid fa-clock-rotate-left"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-corporate-900 mb-1">Estimasi Pengiriman SLA</h4>
-                                    <p class="text-sm text-corporate-500 leading-relaxed">Pulau Jawa: 1-2 Hari Kerja.<br>Luar Pulau Jawa: ±2-3 Hari Kerja (Kargo Udara/Darat).</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-start">
-                                <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
-                                    <i class="fa-solid fa-gift"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-corporate-900 mb-1">Subsidi Gratis Ongkir</h4>
-                                    <p class="text-sm text-corporate-500 leading-relaxed">Fasilitas pengiriman gratis ke seluruh nusantara otomatis aktif untuk Purchase Order minimal 1 Bal (20 Slop).</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-aos="fade-left" class="bg-corporate-50 rounded-3xl p-8 lg:p-12 border border-corporate-100">
-                        <h4 class="font-heading font-bold text-lg text-corporate-900 mb-6 border-b border-corporate-200 pb-4">Mitra Ekspedisi Terintegrasi</h4>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <!-- Ekspedisi List via CSS/Text since we don't have their logos, using clean corporate style -->
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">JNE</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">J&T Express</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">SiCepat Express</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">POS Indonesia</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">Ninja Express</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">AnterAja</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">Lion Parcel</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">SAP Express</div>
-                            <div class="bg-white px-4 py-3 rounded-lg border border-corporate-100 text-center text-sm font-bold text-corporate-600 shadow-sm">Indah Cargo</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Direktori Katalog Produk R2 -->
-        <section id="katalog" class="py-24 bg-corporate-50 relative border-t border-corporate-100">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
                 
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8" data-aos="fade-up">
-                    <div class="max-w-xl">
-                        <span class="text-corporate-gold text-[12px] font-bold tracking-[0.2em] uppercase block mb-3">Direktori B2B</span>
-                        <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-corporate-900 leading-tight mb-4">Produk Ready Stok</h2>
-                        <p class="text-corporate-600 text-sm leading-relaxed">Semua harga di bawah tertera dalam satuan <strong class="text-corporate-900 font-bold">Per Slop</strong>. Gunakan fitur pencarian untuk merakit form Purchase Order Anda.</p>
-                    </div>
-                    
-                    <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
-                        <div class="relative flex-1">
-                            <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-corporate-400"></i>
-                            <label for="searchInput" class="sr-only">Cari SKU produk</label>
-                            <input type="text" id="searchInput" placeholder="Pencarian SKU Produk..." class="input-corporate pl-11 md:w-72 shadow-sm">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-slide-up tracking-tight drop-shadow-xl" style="animation-delay: 0.2s;">
+                    Solusi Kebutuhan Stok <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-200 to-white">Tepat, Cepat, & Aman</span>
+                </h1>
+                
+                <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-slide-up font-light leading-relaxed" style="animation-delay: 0.3s;">
+                    Gudang Distributor Resmi wilayah Malang. Menyediakan lebih dari 50 merek pilihan dengan jaminan <strong class="text-white font-semibold">Bayar Setelah Resi Keluar</strong>.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                    <a href="#produk" class="px-8 py-4 bg-white text-corporate-blue font-bold rounded-xl shadow-[0_8px_30px_rgb(255,255,255,0.2)] hover:shadow-[0_8px_30px_rgb(255,255,255,0.4)] hover:-translate-y-1 transition-all duration-300 ripple flex items-center justify-center gap-3">
+                        Lihat Harga Katalog <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#info" class="px-8 py-4 bg-corporate-blue/40 border border-white/20 text-white font-bold rounded-xl hover:bg-corporate-blue/60 transition-all duration-300 backdrop-blur-md flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-shield-halved"></i> Garansi Pengiriman
+                    </a>
+                </div>
+
+                <!-- Info Cards Floating (Corporate Style) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 w-full max-w-5xl fade-on-scroll relative z-20">
+                    <div class="glass-dark p-8 rounded-2xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-900/50 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-handshake-angle text-2xl"></i>
                         </div>
-                        <div class="relative">
-                            <label for="sortSelect" class="sr-only">Urutkan katalog</label>
-                            <select id="sortSelect" class="input-corporate pr-9 appearance-none cursor-pointer shadow-sm sm:w-44">
-                                <option value="default">Urutan Default</option>
-                                <option value="name-asc">Nama A–Z</option>
-                                <option value="price-asc">Harga Terendah</option>
-                                <option value="price-desc">Harga Tertinggi</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-corporate-400 pointer-events-none text-sm"></i>
+                        <h3 class="text-white font-bold text-xl mb-3 tracking-tight">Transaksi Teraman</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Sistem pembayaran dilakukan <b>setelah</b> resi pengiriman resmi keluar dari pihak ekspedisi terkait.</p>
+                    </div>
+                    <div class="glass-dark p-8 rounded-2xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white mb-6 shadow-lg shadow-green-900/50 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-truck-fast text-2xl"></i>
                         </div>
+                        <h3 class="text-white font-bold text-xl mb-3 tracking-tight">Subsidi Ongkir</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Dapatkan fasilitas <b>Gratis Ongkir</b> dari gudang khusus untuk pengambilan minimal 1 bal (20 slop).</p>
                     </div>
-                </div>
-
-                <!-- Free Shipping Progress Nudge -->
-                <div id="shippingNudge" class="card-premium p-4 sm:p-5 mb-8 flex items-center gap-4" data-aos="fade-up">
-                    <div class="w-11 h-11 shrink-0 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <div class="flex justify-between items-center mb-1.5 gap-2">
-                            <p id="shippingNudgeText" class="text-xs sm:text-sm font-semibold text-corporate-700 truncate">Tambahkan 20 Slop di keranjang untuk membuka Gratis Ongkir.</p>
-                            <span id="shippingNudgeCount" class="text-xs font-bold text-corporate-400 shrink-0">0/20</span>
+                    <div class="glass-dark p-8 rounded-2xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-boxes-stacked text-2xl"></i>
                         </div>
-                        <div class="progress-track h-2 w-full">
-                            <div id="shippingNudgeFill" class="progress-fill h-2" style="width: 0%"></div>
-                        </div>
+                        <h3 class="text-white font-bold text-xl mb-3 tracking-tight">Ketersediaan Stok</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Kapasitas gudang besar dengan puluhan varian merek yang <b>Ready Stock</b> siap kirim ke seluruh nusantara.</p>
                     </div>
                 </div>
-
-                <!-- Grid Data Produk -->
-                <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-                    <!-- Dirender via JavaScript -->
-                </div>
-
-                <!-- Skeleton UI (Placeholder while loading) -->
-                <div id="skeletonGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-                    <script>
-                        for (let i = 0; i < 10; i++) {
-                            document.write(`
-                                <div class="card-premium p-4">
-                                    <div class="loader-skeleton h-24 w-full mb-4"></div>
-                                    <div class="loader-skeleton h-4 w-2/3 mb-2"></div>
-                                    <div class="loader-skeleton h-5 w-1/2 mb-6"></div>
-                                    <div class="loader-skeleton h-10 w-full"></div>
-                                </div>
-                            `);
-                        }
-                    </script>
-                </div>
-
-                <div id="noResult" class="hidden text-center py-20">
-                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-4 text-corporate-300 text-2xl shadow-sm">
-                        <i class="fa-solid fa-box-open"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-corporate-900">SKU Tidak Ditemukan</h3>
-                    <p class="text-sm text-corporate-500">Coba gunakan kata kunci pencarian yang lain.</p>
-                </div>
-
-                <div class="flex flex-col items-center mt-10 gap-3">
-                    <p id="catalogCount" class="text-xs font-semibold text-corporate-400 uppercase tracking-wider"></p>
-                    <button id="loadMoreBtn" onclick="loadMore()" class="hidden px-8 py-3 rounded-xl border border-corporate-200 bg-white text-corporate-800 text-sm font-bold hover:border-corporate-400 hover:bg-corporate-50 transition-all shadow-sm">
-                        Tampilkan Lebih Banyak <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
-                    </button>
-                </div>
-
             </div>
         </section>
 
+        <!-- Trust Badges & Slogan Section -->
+        <section class="py-12 bg-white border-b border-slate-200">
+            <div class="container mx-auto px-4 text-center fade-on-scroll">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8">Mendukung Pengiriman Ke Seluruh Indonesia</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <!-- Placeholder Icons for Trust/Expedition -->
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-plane-departure text-3xl"></i><span class="font-bold text-lg">CARGO UDARA</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-ship text-3xl"></i><span class="font-bold text-lg">KARGO LAUT</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-truck text-3xl"></i><span class="font-bold text-lg">JALUR DARAT</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-3xl"></i><span class="font-bold text-lg">PACKING AMAN</span></div>
+                </div>
+                
+                <div class="mt-16">
+                    <img src="https://i.ibb.co.com/NnVzsfr2/IMG-20251224-122739.jpg" alt="Slogan R2 Nusantara" loading="lazy" class="max-w-full md:max-w-3xl mx-auto rounded-2xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanism Section -->
+        <section id="info" class="py-24 bg-slate-50 relative overflow-hidden">
+            <div class="absolute -right-40 top-20 w-96 h-96 bg-blue-200 rounded-full blur-[100px] opacity-40"></div>
+            <div class="absolute -left-40 bottom-20 w-96 h-96 bg-slate-300 rounded-full blur-[100px] opacity-30"></div>
+            
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto text-center mb-16 fade-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-corporate-blue mb-6 tracking-tight">Protokol Keamanan Transaksi</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">Kami menerapkan standar keamanan B2B (Business to Business) untuk menjamin kenyamanan Anda. <strong class="text-corporate-blue">Tanpa risiko penipuan.</strong></p>
+                </div>
+
+                <div class="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgb(0,0,0,0.05)] fade-on-scroll border border-slate-100 relative overflow-hidden">
+                    <!-- Subtle Watermark -->
+                    <div class="absolute top-10 right-10 w-48 h-48 opacity-[0.02] pointer-events-none">
+                        <img src="https://i.ibb.co.com/FqCFwM49/Desain-tanpa-judul-1.png" alt="Watermark" class="w-full h-full object-contain">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Left Side: Rules -->
+                        <div class="p-10 md:p-16">
+                            <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-bold text-sm mb-8 border border-blue-100">
+                                <i class="fa-solid fa-scale-balanced"></i> Sistem Pembayaran
+                            </div>
+                            
+                            <ul class="space-y-6">
+                                <li class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm opacity-70">
+                                    <div class="mt-0.5 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 border border-red-100"><i class="fa-solid fa-xmark"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 mb-1">BUKAN Transfer Di Awal</h4>
+                                        <p class="text-slate-500 text-sm">Menghindari potensi penipuan online. Anda tidak perlu membayar sebelum barang jelas keberadaannya.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm opacity-70">
+                                    <div class="mt-0.5 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 border border-red-100"><i class="fa-solid fa-xmark"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 mb-1">BUKAN Sistem COD</h4>
+                                        <p class="text-slate-500 text-sm">Menghindari retur sepihak yang merugikan operasional gudang dan pihak ekspedisi.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4 p-6 rounded-2xl bg-blue-50/50 border-2 border-blue-500 shadow-md transform md:-translate-x-4 relative z-10">
+                                    <div class="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white ring-4 ring-white">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div class="ml-2">
+                                        <h4 class="font-bold text-corporate-blue text-lg mb-1">Bayar Setelah Resi Keluar</h4>
+                                        <p class="text-slate-600 text-sm leading-relaxed">Pembayaran ditransfer <b class="text-blue-700">HANYA SETELAH</b> barang Anda terkonfirmasi terkirim di ekspedisi, dan nomor resi pengiriman bisa dilacak serta sesuai dengan data pesanan Anda.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Right Side: Info -->
+                        <div class="bg-corporate-blue p-10 md:p-16 text-white relative overflow-hidden flex flex-col justify-center">
+                            <!-- Geometric decoration -->
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-bl-full"></div>
+                            
+                            <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+                                <i class="fa-solid fa-camera-retro text-blue-400"></i> Dokumentasi Real-time
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed mb-8 text-lg font-light">
+                                "Dipastikan saja kebutuhannya berapa banyak. Nanti pada saat proses pengambilan barang ke gudang hingga *packing*, akan kami <strong class="text-white">dokumentasikan (Foto/Video) secara langsung</strong> agar jelas, transparan, dan sama-sama nyaman."
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 p-4 rounded-xl border border-white/10 backdrop-blur-sm">
+                                    <i class="fa-solid fa-stopwatch text-2xl text-blue-300 mb-2"></i>
+                                    <div class="font-bold text-sm">Estimasi Luar Pulau</div>
+                                    <div class="text-slate-300 text-xs mt-1">± 2-3 Hari Kerja</div>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl border border-white/10 backdrop-blur-sm">
+                                    <i class="fa-solid fa-tags text-2xl text-blue-300 mb-2"></i>
+                                    <div class="font-bold text-sm">Subsidi Ongkir</div>
+                                    <div class="text-slate-300 text-xs mt-1">Min. 1 Bal (20 Slop)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Catalog Section -->
+        <section id="produk" class="py-24 bg-white relative">
+            <div class="container mx-auto px-4 md:px-8">
+                
+                <!-- Section Header & Controls -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8 fade-on-scroll border-b border-slate-200 pb-8">
+                    <div class="max-w-2xl">
+                        <span class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2 block">Daftar Harga Resmi</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-corporate-blue mb-4 tracking-tight">Katalog Produk</h2>
+                        <p class="text-slate-500 text-lg">Harga yang tertera adalah <b>Harga per Slop</b>. Gunakan fitur pencarian untuk menemukan merek kebutuhan Anda dengan cepat.</p>
+                    </div>
+                    
+                    <!-- Search & View Toggles -->
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <!-- Live Search -->
+                        <div class="relative w-full sm:w-80">
+                            <input type="text" id="searchInput" placeholder="Cari merek..." class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all shadow-inner font-medium text-slate-700">
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                        </div>
+
+                        <!-- View Toggle (Grid vs Table) -->
+                        <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
+                            <button id="btnGridView" onclick="setViewMode('grid')" class="px-4 py-2.5 rounded-lg text-sm font-bold bg-white text-blue-600 shadow-sm transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-border-all"></i> Grid
+                            </button>
+                            <button id="btnTableView" onclick="setViewMode('table')" class="px-4 py-2.5 rounded-lg text-sm font-bold text-slate-500 hover:text-slate-700 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-list"></i> List
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product GRID View (Populated by JS) -->
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Cards injected here -->
+                </div>
+
+                <!-- Product TABLE View (Populated by JS) -->
+                <div id="productTableContainer" class="hidden overflow-x-auto bg-white border border-slate-200 rounded-2xl shadow-sm">
+                    <table class="w-full text-left corporate-table">
+                        <thead>
+                            <tr>
+                                <th class="w-16 text-center">No</th>
+                                <th>Merek Produk</th>
+                                <th>Harga / Slop</th>
+                                <th class="w-48 text-center">Kuantitas</th>
+                                <th class="w-32 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            <!-- Rows injected here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Empty Search State -->
+                <div id="noProductFound" class="hidden text-center py-24 bg-slate-50 rounded-2xl border border-dashed border-slate-300 mt-8">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-slate-100">
+                        <i class="fa-solid fa-magnifying-glass-minus text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700 mb-2">Merek tidak ditemukan</h3>
+                    <p class="text-slate-500">Coba gunakan ejaan yang berbeda atau hubungi admin.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto px-4 md:px-8 max-w-3xl">
+                <div class="text-center mb-16 fade-on-scroll">
+                    <span class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2 block">Pusat Bantuan</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-corporate-blue mb-4">FAQ Pemesanan</h2>
+                </div>
+
+                <div class="space-y-4 fade-on-scroll">
+                    <!-- FAQ Items -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-slate-800 text-lg">Bagaimana cara mendapatkan Gratis Ongkir?</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100"><i class="fa-solid fa-plus text-blue-500 transition-transform duration-300"></i></div>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-slate-50/50">
+                            <p class="px-8 pb-6 text-slate-600 leading-relaxed pt-2">
+                                Anda otomatis berhak mendapatkan subsidi ongkir dari gudang (Gratis Ongkir) dengan syarat melakukan pembelian dalam <b>jumlah minimal 1 bal (setara dengan 20 slop)</b>. Sistem kami di keranjang akan otomatis mendeteksi jika pesanan Anda memenuhi syarat ini.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-slate-800 text-lg">Apakah melayani pengiriman ke luar pulau Jawa?</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100"><i class="fa-solid fa-plus text-blue-500 transition-transform duration-300"></i></div>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-slate-50/50">
+                            <p class="px-8 pb-6 text-slate-600 leading-relaxed pt-2">
+                                Ya, tentu saja. Kami melayani pengiriman via ekspedisi rekanan ke <b>seluruh Indonesia</b>. Estimasi waktu barang tiba untuk wilayah luar pulau Jawa kurang lebih 2-3 hari kerja, tergantung lokasi spesifik tujuan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-slate-800 text-lg">Dimana alamat gudang R2 Nusantara?</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100"><i class="fa-solid fa-plus text-blue-500 transition-transform duration-300"></i></div>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-slate-50/50">
+                            <p class="px-8 pb-6 text-slate-600 leading-relaxed pt-2">
+                                Barang dikirim langsung dari gudang distributor utama kami yang berlokasi di <b>Desa Karangduren, Kec. Pakisaji, Kab. Malang, Jawa Timur 65162.</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Corporate -->
-    <footer class="bg-corporate-900 pt-20 pb-8 text-white relative border-t-4 border-corporate-gold">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-                <div class="md:col-span-12 lg:col-span-4">
+    <!-- Footer -->
+    <footer class="bg-corporate-blue text-slate-300 py-20 border-t-[6px] border-blue-600 relative overflow-hidden">
+        <div class="absolute -right-40 top-0 w-96 h-96 bg-blue-500 opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-5">
                     <div class="flex items-center gap-4 mb-6">
-                        <img src="https://i.ibb.co.com/8nf39QLt/IMG-20240328-213425.jpg" alt="R2 Logo" loading="lazy" decoding="async" class="w-12 h-12 rounded-xl object-cover bg-white p-0.5">
-                        <div class="flex flex-col">
-                            <span class="font-heading font-extrabold text-[18px] text-white leading-tight">R2 NUSANTARA</span>
-                            <span class="text-[10px] text-corporate-300 font-bold tracking-widest uppercase">Cigarette Tabaco Shop</span>
+                        <div class="bg-white p-1 rounded-full inline-block">
+                            <img src="https://i.ibb.co.com/k61y85fQ/IMG-20240328-213425.jpg" alt="Logo" class="w-14 h-14 rounded-full">
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-white tracking-tight">R2 NUSANTARA</h3>
+                            <p class="text-blue-400 font-medium tracking-widest text-sm uppercase">Cigarette Tobacco Shop</p>
                         </div>
                     </div>
-                    <p class="text-corporate-300 text-sm leading-relaxed mb-6">Pusat distribusi grosir/partai dengan infrastruktur pengadaan yang terpercaya, aman, dan Original.</p>
+                    <p class="text-slate-400 mb-8 max-w-md leading-relaxed text-sm">
+                        Mitra distributor terpercaya Anda. Menyediakan berbagai macam merek rokok berkualitas dengan sistem B2B paling aman, transparan, dan bergaransi.
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-400">
+                            <i class="fa-solid fa-shield-check text-green-400"></i> Status: <span class="text-white font-semibold">Verified Distributor</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="md:col-span-6 lg:col-span-4">
-                    <h4 class="font-heading font-bold text-sm tracking-wider uppercase text-corporate-100 mb-6">Pusat Bantuan B2B</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-sm text-corporate-300 hover:text-white transition-colors">
-                            <i class="fa-brands fa-whatsapp text-lg mt-0.5 text-green-400"></i>
-                            <a href="https://wa.me/6285715905079" target="_blank" rel="noopener noreferrer">(+62) 857-1590-5079</a>
+
+                <!-- Contact -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4 inline-block">Informasi Kontak</h4>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10"><i class="fa-solid fa-location-dot text-blue-400"></i></div>
+                            <span class="text-sm leading-relaxed mt-1">Desa Karangduren, Kec. Pakisaji,<br>Kab. Malang, Jawa Timur 65162.</span>
                         </li>
-                        <li class="flex items-start gap-3 text-sm text-corporate-300 hover:text-white transition-colors">
-                            <i class="fa-regular fa-envelope text-lg mt-0.5"></i>
-                            <a href="mailto:gudangdistributormalang@gmail.com">gudangdistributormalang@gmail.com</a>
+                        <li class="flex items-center gap-4 group cursor-pointer" onclick="copyText('085715905079', 'Nomor WhatsApp disalin!')">
+                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-[#25D366]/20 transition-colors"><i class="fa-brands fa-whatsapp text-blue-400 group-hover:text-[#25D366] transition-colors"></i></div>
+                            <div>
+                                <div class="text-xs text-slate-500 mb-0.5">Admin Pemesanan</div>
+                                <span class="text-sm font-bold text-white group-hover:text-[#25D366] transition-colors flex items-center gap-2">(+62) 857-1590-5079 <i class="fa-regular fa-copy opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-white/10 p-1 rounded"></i></span>
+                            </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="md:col-span-6 lg:col-span-4">
-                    <h4 class="font-heading font-bold text-sm tracking-wider uppercase text-corporate-100 mb-6">Operasional</h4>
-                    <ul class="space-y-4 text-sm text-corporate-300">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-map-location-dot text-lg mt-0.5"></i>
-                            <span>Gudang Distributor Pusat<br>Malang, Jawa Timur - Indonesia</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-regular fa-clock text-lg"></i>
-                            <span>Layanan Online 24/7</span>
-                        </li>
+                <!-- Fast Links -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4 inline-block">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="text-sm text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> Beranda</a></li>
+                        <li><a href="#info" class="text-sm text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> Panduan Sistem</a></li>
+                        <li><a href="#produk" class="text-sm text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> Daftar Harga (Katalog)</a></li>
+                        <li><a href="#faq" class="text-sm text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> Tanya Jawab (FAQ)</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
-                    <i class="fa-solid fa-shield-halved text-corporate-gold text-lg"></i>
-                    <span class="text-xs font-bold text-corporate-200">Escrow Terverifikasi</span>
-                </div>
-                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
-                    <i class="fa-solid fa-user-shield text-corporate-gold text-lg"></i>
-                    <span class="text-xs font-bold text-corporate-200">Khusus Mitra 18+</span>
-                </div>
-                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
-                    <i class="fa-solid fa-warehouse text-corporate-gold text-lg"></i>
-                    <span class="text-xs font-bold text-corporate-200">Ready Stock Gudang</span>
-                </div>
-                <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
-                    <i class="fa-solid fa-headset text-corporate-gold text-lg"></i>
-                    <span class="text-xs font-bold text-corporate-200">Support 24/7</span>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-corporate-400">
-                <p>&copy; 2026 R2 Nusantara. Hak Cipta Dilindungi.</p>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-corporate-gold"></i>
-                    <span>Secure Platform 18+</span>
+            <div class="mt-20 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">&copy; 2024 R2 Nusantara. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <p class="text-xs text-slate-600 uppercase tracking-widest font-bold">Premium Corporate Site</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- PO Drawer / Cart (Slide out UI) -->
-    <div id="cartOverlay" class="drawer-overlay" onclick="closeCart()"></div>
-    <div id="cartDrawer" class="drawer">
-        
-        <!-- Drawer Header -->
-        <div class="px-6 py-5 border-b border-corporate-100 flex justify-between items-center bg-white shadow-sm z-10">
-            <h2 class="font-heading font-extrabold text-lg flex items-center gap-3 text-corporate-900">
-                <i class="fa-solid fa-clipboard-list text-corporate-blue"></i>
-                Draft Purchase Order
-            </h2>
-            <button onclick="closeCart()" class="w-8 h-8 rounded-full bg-corporate-50 text-corporate-500 hover:bg-corporate-100 hover:text-corporate-900 flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-times"></i>
+    <!-- Shopping Cart Sidebar (Modal) -->
+    <div id="cartOverlay" class="fixed inset-0 bg-corporate-blue/70 backdrop-blur-sm z-[70] hidden opacity-0 transition-opacity duration-300" onclick="toggleCart()"></div>
+    
+    <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-[80] transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col border-l border-slate-100">
+        <!-- Cart Header -->
+        <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white z-10 shadow-sm">
+            <h3 class="text-xl font-bold text-corporate-blue flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-clipboard-list"></i></div>
+                Daftar Pesanan
+            </h3>
+            <button onclick="toggleCart()" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-red-500 hover:border-red-500 transition-all">
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        
-        <!-- Cart Items Area -->
-        <div id="cartItems" class="flex-1 overflow-y-auto p-6 bg-corporate-50 space-y-3 relative">
-            <!-- Empty state defaults to hidden via JS -->
-            <div id="emptyCartState" class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-corporate-300 text-3xl">
-                    <i class="fa-solid fa-cart-arrow-down"></i>
-                </div>
-                <h3 class="font-heading font-bold text-corporate-900 mb-2">Draft PO Kosong</h3>
-                <p class="text-sm text-corporate-500">Silakan tambahkan SKU dari katalog untuk merakit pesanan logistik Anda.</p>
-                <button onclick="closeCart(); document.getElementById('katalog').scrollIntoView()" class="mt-6 px-6 py-2 rounded-full border border-corporate-200 text-sm font-semibold text-corporate-700 hover:bg-corporate-100 transition-colors">
-                    Lihat Katalog
-                </button>
-            </div>
-        </div>
-        
-        <!-- Cart Footer & Form Trigger -->
-        <div class="bg-white border-t border-corporate-100 p-6 z-10 shadow-[0_-5px_15px_rgba(0,0,0,0.02)]">
-            
-            <div id="promoAlert" class="hidden mb-4 bg-green-50 border border-green-200 p-3 rounded-xl flex items-center justify-between">
-                <div class="flex items-center gap-2 text-green-700 text-xs font-bold">
-                    <i class="fa-solid fa-circle-check"></i> Validasi >20 Slop Terpenuhi
-                </div>
-                <span class="bg-white px-2 py-1 rounded text-[10px] font-black text-green-600 border border-green-100">GRATIS ONGKIR</span>
-            </div>
 
-            <div class="flex justify-between text-sm font-medium text-corporate-500 mb-2">
-                <span>Total Volume B2B</span>
-                <span id="cartTotalItems" class="font-bold text-corporate-900">0 Slop</span>
+        <!-- Cart Items List -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 no-scrollbar space-y-4 bg-slate-50/50">
+            <!-- Empty State -->
+            <div id="emptyCartState" class="h-full flex flex-col items-center justify-center text-center mt-10">
+                <div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6 border-4 border-white shadow-sm">
+                    <i class="fa-solid fa-cart-arrow-down text-4xl text-slate-300"></i>
+                </div>
+                <p class="text-xl font-bold text-slate-700 mb-2">Keranjang Kosong</p>
+                <p class="text-sm text-slate-500 max-w-[250px] mx-auto">Silakan pilih produk dari katalog untuk mulai membuat pesanan.</p>
+                <button onclick="toggleCart()" class="mt-8 px-8 py-3 bg-white border-2 border-corporate-blue text-corporate-blue font-bold rounded-xl hover:bg-corporate-blue hover:text-white transition-all shadow-sm">Mulai Belanja</button>
             </div>
-            <div class="flex justify-between items-end mb-6">
-                <span class="text-sm font-medium text-corporate-500">Estimasi Penagihan</span>
-                <span id="cartTotalPrice" class="font-heading font-black text-2xl text-corporate-900 tracking-tight">Rp 0</span>
-            </div>
-            
-            <button onclick="proceedToForm()" id="btnCheckout" class="w-full btn-corporate justify-center gap-2" disabled>
-                Lengkapi Data Pengiriman <i class="fa-solid fa-arrow-right text-sm"></i>
-            </button>
+            <!-- Dynamic Items will go here -->
         </div>
-    </div>
 
-    <!-- Modal Form Checkout R2 Nusantara (Overlay over everything) -->
-    <div id="formModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-400">
-        <div class="absolute inset-0 bg-corporate-900/60 backdrop-blur-sm" onclick="closeFormModal()"></div>
-        
-        <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 shadow-floating flex flex-col" style="scrollbar-width: thin;">
-            <!-- Header Modal -->
-            <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-corporate-100 px-6 py-5 flex justify-between items-center z-20">
-                <h3 class="font-heading font-bold text-lg text-corporate-900">Formulir Logistik</h3>
-                <button onclick="closeFormModal()" class="w-8 h-8 rounded-full bg-corporate-50 text-corporate-500 hover:bg-corporate-100 hover:text-corporate-900 flex items-center justify-center transition-colors">
-                    <i class="fa-solid fa-times"></i>
-                </button>
-            </div>
-            
-            <form id="checkoutForm" onsubmit="submitToWhatsApp(event)" class="p-6 sm:p-8">
+        <!-- Cart Footer / Checkout Form -->
+        <div class="p-6 border-t border-slate-200 bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.05)] relative z-10">
+            <div id="cartSummary" class="hidden">
                 
-                <!-- Notice Escrow -->
-                <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-8 flex gap-3 shadow-sm">
-                    <i class="fa-solid fa-shield-halved text-corporate-blue text-xl shrink-0 mt-0.5"></i>
-                    <div>
-                        <h4 class="font-bold text-corporate-900 text-sm mb-1">Keamanan Transaksi Escrow</h4>
-                        <p class="text-xs text-corporate-600 leading-relaxed">Nota penagihan akan dikirimkan. Anda <strong class="text-corporate-900">wajib</strong> melakukan pembayaran hanya <strong class="text-corporate-900">SETELAH</strong> nomor resi pelacakan dari ekspedisi terbit.</p>
-                    </div>
+                <!-- Promo Banner -->
+                <div id="promoMessage" class="text-xs py-2.5 px-4 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 mb-5 flex gap-3 items-center shadow-sm">
+                    <i class="fa-solid fa-circle-info text-lg"></i>
+                    <span id="promoText">Beli 20 Slop (1 Bal) untuk Gratis Ongkir!</span>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                <!-- Total Row -->
+                <div class="flex justify-between items-end mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
                     <div>
-                        <label for="f_name" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Nama <span class="text-red-500">*</span></label>
-                        <input type="text" id="f_name" required class="input-corporate" placeholder="Masukkan nama...">
+                        <span class="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">Total Item & Harga</span>
+                        <span id="totalItemsDisplay" class="font-bold text-slate-700 bg-white px-2 py-0.5 rounded text-sm border border-slate-200">0 Slop</span>
                     </div>
-                    <div>
-                        <label for="f_phone" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">No. Hp <span class="text-red-500">*</span></label>
-                        <input type="tel" id="f_phone" required class="input-corporate" placeholder="08XXXXXXXXXX">
-                    </div>
+                    <span id="totalPriceDisplay" class="text-2xl font-extrabold text-corporate-blue tracking-tight">Rp 0</span>
                 </div>
-
-                <div class="mb-5">
-                    <label for="f_address" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Alamat Lengkap Pengiriman <span class="text-red-500">*</span></label>
-                    <textarea id="f_address" required rows="2" class="input-corporate resize-none" placeholder="Nama Jalan, RT/RW, Patokan..."></textarea>
-                </div>
-
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-5">
-                    <div class="col-span-2 sm:col-span-1">
-                        <label for="f_kec" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kecamatan <span class="text-red-500">*</span></label>
-                        <input type="text" id="f_kec" required class="input-corporate" placeholder="Kecamatan">
-                    </div>
-                    <div class="col-span-2 sm:col-span-1">
-                        <label for="f_kab" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kab/Kota <span class="text-red-500">*</span></label>
-                        <input type="text" id="f_kab" required class="input-corporate" placeholder="Kab/Kota">
-                    </div>
-                    <div class="col-span-2 sm:col-span-1">
-                        <label for="f_prov" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Provinsi <span class="text-red-500">*</span></label>
-                        <input type="text" id="f_prov" required class="input-corporate" placeholder="Provinsi">
-                    </div>
-                    <div class="col-span-2 sm:col-span-1">
-                        <label for="f_pos" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Kode Pos <span class="text-red-500">*</span></label>
-                        <input type="text" id="f_pos" required class="input-corporate" placeholder="Kodepos">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
-                    <div>
-                        <label for="f_ekspedisi" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Pilihan Ekspedisi <span class="text-red-500">*</span></label>
+                
+                <!-- UPGRADED Checkout Form Inputs -->
+                <div class="space-y-3 mb-6 relative">
+                    <div class="absolute -top-3 left-3 bg-white px-2 text-[10px] font-bold text-blue-600 uppercase tracking-widest">Data Pengiriman</div>
+                    <div class="pt-2 border border-slate-200 rounded-xl p-4 bg-white space-y-3 shadow-sm">
+                        
+                        <!-- NEW: Phone Number Input -->
                         <div class="relative">
-                            <select id="f_ekspedisi" required class="input-corporate appearance-none cursor-pointer">
-                                <option value="" disabled selected>Pilih Kurir...</option>
-                                <option value="JNE">JNE</option>
-                                <option value="J&T Express">J&T Express</option>
-                                <option value="SiCepat">SiCepat Express</option>
-                                <option value="POS Indonesia">POS Indonesia</option>
-                                <option value="Ninja Express">Ninja Express</option>
-                                <option value="AnterAja">AnterAja</option>
-                                <option value="Lion Parcel">Lion Parcel</option>
-                                <option value="SAP Express">SAP Express</option>
-                                <option value="Indah Cargo">Indah Cargo</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-corporate-400 pointer-events-none text-sm"></i>
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa-brands fa-whatsapp text-slate-400"></i>
+                            </div>
+                            <input type="tel" id="custPhone" placeholder="No. HP / WhatsApp" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 transition-all" required>
+                        </div>
+                        
+                        <!-- Name Input -->
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa-regular fa-user text-slate-400"></i>
+                            </div>
+                            <input type="text" id="custName" placeholder="Nama Penerima" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 transition-all" required>
+                        </div>
+
+                        <!-- Address Input -->
+                        <div class="relative">
+                            <div class="absolute top-3 left-3 pointer-events-none">
+                                <i class="fa-solid fa-location-dot text-slate-400"></i>
+                            </div>
+                            <textarea id="custAddress" placeholder="Alamat Lengkap Tujuan" rows="2" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 resize-none transition-all" required></textarea>
+                        </div>
+
+                        <!-- Optional: Catatan -->
+                        <div class="relative">
+                            <div class="absolute top-3 left-3 pointer-events-none">
+                                <i class="fa-regular fa-clipboard text-slate-400"></i>
+                            </div>
+                            <textarea id="custNotes" placeholder="Catatan tambahan (Opsional)" rows="1" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm font-medium text-slate-800 resize-none transition-all"></textarea>
                         </div>
                     </div>
-                    <div>
-                        <label for="f_notes" class="block text-[11px] font-bold text-corporate-500 mb-2 uppercase tracking-wide">Catatan (Opsional)</label>
-                        <input type="text" id="f_notes" class="input-corporate" placeholder="Cth: Packing kayu, dll...">
-                    </div>
                 </div>
 
-                <!-- Submission Footer -->
-                <div class="pt-6 border-t border-corporate-100 flex flex-col sm:flex-row gap-5 items-center justify-between">
-                    <div class="text-sm font-medium text-corporate-500 text-center sm:text-left">
-                        Total Valuasi:<br>
-                        <strong class="text-2xl text-corporate-900 font-heading font-black tracking-tight" id="f_totalVal">Rp 0</strong>
-                    </div>
-                    <button type="submit" class="w-full sm:w-auto btn-corporate bg-[#25D366] hover:bg-[#128C7E] text-white flex gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        Kirim Form ke Sales
-                    </button>
-                </div>
-            </form>
+                <button onclick="processCheckout()" class="w-full py-4 bg-[#25D366] text-white rounded-xl font-bold text-lg hover:bg-[#20bd5a] transition-all ripple flex items-center justify-center gap-3 shadow-[0_8px_20px_rgba(37,211,102,0.3)] hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Lanjutkan ke WhatsApp
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Floating Mobile Cart Button -->
-    <button onclick="toggleCart()" id="mobileCartBtn" class="fixed md:hidden bottom-6 right-6 w-14 h-14 bg-corporate-blue text-white rounded-full shadow-floating flex items-center justify-center z-40 transition-transform scale-0">
-        <i class="fa-solid fa-briefcase text-xl"></i>
-        <span id="mobileCartBadge" class="absolute top-0 right-0 bg-corporate-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">0</span>
+    <!-- Success Popup Modal -->
+    <div id="successPopup" class="fixed inset-0 bg-corporate-blue/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white p-10 rounded-[2rem] max-w-sm w-full text-center shadow-2xl transform scale-90 transition-transform duration-300 relative overflow-hidden" id="popupContent">
+            <!-- decorative background -->
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-green-50 rounded-full"></div>
+            
+            <div class="relative z-10">
+                <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-green-200 ring-8 ring-green-50">
+                    <i class="fa-solid fa-check text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-800 mb-2">Form Berhasil Dibuat!</h3>
+                <p class="text-slate-500 mb-8 text-sm leading-relaxed">Sistem sedang mengalihkan Anda ke WhatsApp Admin R2 Nusantara beserta format pesanan Anda.</p>
+                
+                <div class="bg-slate-50 py-3 px-4 rounded-xl inline-flex items-center gap-3 border border-slate-200">
+                    <i class="fa-solid fa-spinner animate-spin text-blue-500 text-lg"></i> 
+                    <span class="text-slate-700 font-bold text-sm">Mengalihkan... <span id="countdown" class="text-blue-600">3</span>s</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Actions -->
+    <a href="https://wa.me/6285715905079" target="_blank" class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-4xl shadow-[0_4px_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform z-40 animate-pulse-soft" title="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <button id="backToTop" onclick="window.scrollTo(0,0)" class="fixed bottom-44 right-6 md:bottom-28 md:right-8 w-12 h-12 bg-corporate-blue text-white rounded-full flex items-center justify-center text-xl shadow-lg border border-slate-700 hover:bg-blue-600 transition-all transform scale-0 z-40">
+        <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- JS Application Core -->
+    <!-- Mobile Bottom Navigation (App-like feel) -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-200 flex justify-around items-center py-2 z-50 pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+        <a href="#beranda" class="flex flex-col items-center text-slate-400 hover:text-blue-600 transition-colors w-16 p-1">
+            <i class="fa-solid fa-house mb-1 text-xl"></i>
+            <span class="text-[10px] font-bold">Beranda</span>
+        </a>
+        <a href="#produk" class="flex flex-col items-center text-slate-400 hover:text-blue-600 transition-colors w-16 p-1">
+            <i class="fa-solid fa-tags mb-1 text-xl"></i>
+            <span class="text-[10px] font-bold">Katalog</span>
+        </a>
+        <!-- Centered Highlighted Cart -->
+        <div class="relative -top-5">
+            <button onclick="toggleCart()" class="w-14 h-14 bg-corporate-blue text-white rounded-full flex items-center justify-center shadow-lg shadow-blue-900/30 border-4 border-white relative transition-transform hover:scale-105 active:scale-95">
+                <i class="fa-solid fa-bag-shopping text-xl"></i>
+                <span id="mobileCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center transform scale-0 transition-transform shadow-sm">0</span>
+            </button>
+        </div>
+        <a href="#info" class="flex flex-col items-center text-slate-400 hover:text-blue-600 transition-colors w-16 p-1">
+            <i class="fa-solid fa-shield-halved mb-1 text-xl"></i>
+            <span class="text-[10px] font-bold">Garansi</span>
+        </a>
+        <a href="#faq" class="flex flex-col items-center text-slate-400 hover:text-blue-600 transition-colors w-16 p-1">
+            <i class="fa-solid fa-circle-question mb-1 text-xl"></i>
+            <span class="text-[10px] font-bold">Bantuan</span>
+        </a>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-24 right-4 flex flex-col gap-2 pointer-events-none z-[110]"></div>
+
+    <!-- JavaScript Application Logic -->
     <script>
-        // Data Base 52 Produk Persis Sesuai Permintaan
-        const inventoryData = [
-            { id: 1, name: "Age Pro", price: 65000 }, { id: 2, name: "Bani Click", price: 85000 }, { id: 3, name: "Bigben", price: 80000 },
-            { id: 4, name: "Booster", price: 80000 }, { id: 5, name: "Brand Djati", price: 85000 }, { id: 6, name: "Cahaya Pro", price: 85000 },
-            { id: 7, name: "Cartel", price: 80000 }, { id: 8, name: "Cesa", price: 80000 }, { id: 9, name: "Coffee Stick", price: 80000 },
-            { id: 10, name: "Connext", price: 80000 }, { id: 11, name: "Djanda", price: 85000 }, { id: 12, name: "DTE", price: 80000 },
-            { id: 13, name: "ERA", price: 90000 }, { id: 14, name: "Excel Click", price: 85000 }, { id: 15, name: "Feloz", price: 85000 },
-            { id: 16, name: "GA Bold", price: 80000 }, { id: 17, name: "Gan Bold", price: 80000 }, { id: 18, name: "Gess Bold", price: 80000 },
-            { id: 19, name: "H&D", price: 85000 }, { id: 20, name: "IB", price: 80000 }, { id: 21, name: "Jeco", price: 85000 },
-            { id: 22, name: "Kalbaco", price: 85000 }, { id: 23, name: "King Garet", price: 80000 }, { id: 24, name: "Konser", price: 85000 },
-            { id: 25, name: "Link Bold", price: 80000 }, { id: 26, name: "Liox", price: 80000 }, { id: 27, name: "Mami Baru", price: 85000 },
-            { id: 28, name: "Manchester", price: 90000 }, { id: 29, name: "Manggo Top", price: 80000 }, { id: 30, name: "Martel", price: 85000 },
-            { id: 31, name: "MBS", price: 85000 }, { id: 32, name: "Naxan Bold", price: 80000 }, { id: 33, name: "Naxan Click", price: 85000 },
-            { id: 34, name: "Nayan Bold", price: 80000 }, { id: 35, name: "Nayan Click", price: 85000 }, { id: 36, name: "Novem", price: 85000 },
-            { id: 37, name: "PMS", price: 85000 }, { id: 38, name: "PS Djeram", price: 70000 }, { id: 39, name: "QQ", price: 80000 },
-            { id: 40, name: "R9 Bold", price: 80000 }, { id: 41, name: "Rastel", price: 80000 }, { id: 42, name: "RC", price: 80000 },
-            { id: 43, name: "Rocker", price: 80000 }, { id: 44, name: "Saga", price: 80000 }, { id: 45, name: "San Marino", price: 90000 },
-            { id: 46, name: "Slava", price: 80000 }, { id: 47, name: "Smith", price: 75000 }, { id: 48, name: "Stigma", price: 75000 },
-            { id: 49, name: "Tabaco", price: 85000 }, { id: 50, name: "Toracino", price: 80000 }, { id: 51, name: "Van Bold", price: 80000 },
+        // --- 1. DATA PRODUK (52 Item) ---
+        const products = [
+            { id: 1, name: "Age Pro", price: 65000 },
+            { id: 2, name: "Bani Click", price: 85000 },
+            { id: 3, name: "Bigben", price: 80000 },
+            { id: 4, name: "Booster", price: 80000 },
+            { id: 5, name: "Brand Djati", price: 85000 },
+            { id: 6, name: "Cahaya Pro", price: 85000 },
+            { id: 7, name: "Cartel", price: 80000 },
+            { id: 8, name: "Cesa", price: 80000 },
+            { id: 9, name: "Coffee Stick", price: 80000 },
+            { id: 10, name: "Connext", price: 80000 },
+            { id: 11, name: "Djanda", price: 85000 },
+            { id: 12, name: "DTE", price: 80000 },
+            { id: 13, name: "ERA", price: 90000 },
+            { id: 14, name: "Excel Click", price: 85000 },
+            { id: 15, name: "Feloz", price: 85000 },
+            { id: 16, name: "GA Bold", price: 80000 },
+            { id: 17, name: "Gan Bold", price: 80000 },
+            { id: 18, name: "Gess Bold", price: 80000 },
+            { id: 19, name: "H&D", price: 85000 },
+            { id: 20, name: "IB", price: 80000 },
+            { id: 21, name: "Jeco", price: 85000 },
+            { id: 22, name: "Kalbaco", price: 85000 },
+            { id: 23, name: "King Garet", price: 80000 },
+            { id: 24, name: "Konser", price: 85000 },
+            { id: 25, name: "Link Bold", price: 80000 },
+            { id: 26, name: "Liox", price: 80000 },
+            { id: 27, name: "Mami Baru", price: 85000 },
+            { id: 28, name: "Manchester", price: 90000 },
+            { id: 29, name: "Manggo Top", price: 80000 },
+            { id: 30, name: "Martel", price: 85000 },
+            { id: 31, name: "MBS", price: 85000 },
+            { id: 32, name: "Naxan Bold", price: 80000 },
+            { id: 33, name: "Naxan Click", price: 85000 },
+            { id: 34, name: "Nayan Bold", price: 80000 },
+            { id: 35, name: "Nayan Click", price: 85000 },
+            { id: 36, name: "Novem", price: 85000 },
+            { id: 37, name: "PMS", price: 85000 },
+            { id: 38, name: "PS Djeram", price: 70000 },
+            { id: 39, name: "QQ", price: 80000 },
+            { id: 40, name: "R9 Bold", price: 80000 },
+            { id: 41, name: "Rastel", price: 80000 },
+            { id: 42, name: "RC", price: 80000 },
+            { id: 43, name: "Rocker", price: 80000 },
+            { id: 44, name: "Saga", price: 80000 },
+            { id: 45, name: "San Marino", price: 90000 },
+            { id: 46, name: "Slava", price: 80000 },
+            { id: 47, name: "Smith", price: 75000 },
+            { id: 48, name: "Stigma", price: 75000 },
+            { id: 49, name: "Tabaco", price: 85000 },
+            { id: 50, name: "Toracino", price: 80000 },
+            { id: 51, name: "Van Bold", price: 80000 },
             { id: 52, name: "Win Click", price: 85000 }
         ];
 
-        // System Variables
-        const WA_NUMBER = "6285715905079";
         let cart = [];
-        let searchKeyword = "";
-        let sortMode = "default";
-        const PAGE_SIZE = 15;
-        let visibleCount = PAGE_SIZE;
+        let currentView = 'grid'; // 'grid' or 'table'
 
-        // Core Formatters
-        const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
+        // --- 2. UTILITY FUNCTIONS ---
+        const formatRupiah = (number) => {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        };
 
-        // Deterministic accent color + initials per brand, so each of the 52 SKUs
-        // reads as distinct in the grid instead of an identical repeated icon.
-        const BRAND_PALETTE = ['#0B2046', '#334e68', '#8a6d1f', '#1f6f5c', '#7a3b3b', '#4a4a7a'];
-        const brandInitials = (name) => name.replace(/&/g, '').split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
-        const brandColor = (id) => BRAND_PALETTE[id % BRAND_PALETTE.length];
-        
-        // Premium Toast Notification
-        const showToast = (message) => {
-            const Toast = Swal.mixin({
-                toast: true, position: 'top-end', showConfirmButton: false, timer: 2000,
-                timerProgressBar: true, background: '#102a43', color: '#fff',
-                iconColor: '#D4AF37', customClass: { popup: 'rounded-xl shadow-floating' },
-                didOpen: (toast) => { toast.addEventListener('mouseenter', Swal.stopTimer); toast.addEventListener('mouseleave', Swal.resumeTimer); }
-            });
-            Toast.fire({ icon: 'success', title: message });
-        }
-
-        // Render Product Catalog
-        const getFilteredSortedData = () => {
-            let data = inventoryData.filter(item => item.name.toLowerCase().includes(searchKeyword.toLowerCase()));
-            if (sortMode === 'name-asc') data = [...data].sort((a, b) => a.name.localeCompare(b.name));
-            else if (sortMode === 'price-asc') data = [...data].sort((a, b) => a.price - b.price);
-            else if (sortMode === 'price-desc') data = [...data].sort((a, b) => b.price - a.price);
-            return data;
-        }
-
-        const renderCatalog = () => {
-            const grid = document.getElementById('productGrid');
-            const noResult = document.getElementById('noResult');
-            const loadMoreBtn = document.getElementById('loadMoreBtn');
-            const catalogCount = document.getElementById('catalogCount');
+        const showToast = (message, type = 'success') => {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
             
-            // Hide Skeleton
-            document.getElementById('skeletonGrid').classList.add('hidden');
-            grid.innerHTML = '';
+            const bgColor = type === 'success' ? 'bg-corporate-blue' : 'bg-red-500';
+            const icon = type === 'success' ? 'fa-check-circle text-green-400' : 'fa-circle-exclamation text-white';
 
-            const filteredData = getFilteredSortedData();
+            toast.className = `${bgColor} text-white px-6 py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-slate-700 flex items-center gap-4 transform translate-x-full transition-transform duration-300 pointer-events-auto`;
+            toast.innerHTML = `<i class="fa-solid ${icon} text-xl"></i> <span class="font-bold text-sm tracking-wide">${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => toast.classList.remove('translate-x-full'), 10);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        };
 
-            if(filteredData.length === 0) {
-                noResult.classList.remove('hidden');
-                loadMoreBtn.classList.add('hidden');
-                catalogCount.textContent = '';
-                return;
+        const copyText = (text, successMsg) => {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(successMsg);
+            }).catch(err => {
+                // Fallback
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast(successMsg);
+                } catch (err) {
+                    showToast('Gagal menyalin text', 'error');
+                }
+                document.body.removeChild(textArea);
+            });
+        };
+
+        // --- 3. RENDER PRODUCTS (GRID & TABLE) ---
+        const setViewMode = (mode) => {
+            currentView = mode;
+            const btnGrid = document.getElementById('btnGridView');
+            const btnTable = document.getElementById('btnTableView');
+            
+            if (mode === 'grid') {
+                btnGrid.className = "px-4 py-2.5 rounded-lg text-sm font-bold bg-white text-blue-600 shadow-sm transition-all flex items-center gap-2";
+                btnTable.className = "px-4 py-2.5 rounded-lg text-sm font-bold text-slate-500 hover:text-slate-700 transition-all flex items-center gap-2";
             } else {
-                noResult.classList.add('hidden');
+                btnTable.className = "px-4 py-2.5 rounded-lg text-sm font-bold bg-white text-blue-600 shadow-sm transition-all flex items-center gap-2";
+                btnGrid.className = "px-4 py-2.5 rounded-lg text-sm font-bold text-slate-500 hover:text-slate-700 transition-all flex items-center gap-2";
+            }
+            
+            // Trigger search to re-render with current term
+            document.getElementById('searchInput').dispatchEvent(new Event('input'));
+        };
+
+        const renderProducts = (items) => {
+            const gridContainer = document.getElementById('productGrid');
+            const tableContainer = document.getElementById('productTableContainer');
+            const tableBody = document.getElementById('productTableBody');
+            const emptyState = document.getElementById('noProductFound');
+            
+            gridContainer.innerHTML = '';
+            tableBody.innerHTML = '';
+
+            if (items.length === 0) {
+                gridContainer.classList.add('hidden');
+                tableContainer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
             }
 
-            const shownData = filteredData.slice(0, visibleCount);
+            emptyState.classList.add('hidden');
 
-            shownData.forEach((item, index) => {
-                const delay = (index % 10) * 50; // simple cascade
-                const initials = brandInitials(item.name);
-                const color = brandColor(item.id);
-                grid.innerHTML += `
-                    <div class="card-premium flex flex-col h-full bg-white relative group" data-aos="fade-up" data-aos-delay="${delay}">
-                        <!-- Brand initial badge area -->
-                        <div class="h-[120px] rounded-t-[19px] border-b border-corporate-100 flex items-center justify-center relative overflow-hidden transition-colors" style="background: linear-gradient(135deg, ${color}12, ${color}06);">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-500" style="background: ${color};">
-                                <span class="text-corporate-gold font-heading font-extrabold text-lg">${initials}</span>
-                            </div>
-                            <div class="absolute top-3 right-3 bg-white text-[9px] font-bold text-corporate-600 px-2 py-1 rounded shadow-sm uppercase tracking-wider">Ready</div>
+            if (currentView === 'grid') {
+                gridContainer.classList.remove('hidden');
+                tableContainer.classList.add('hidden');
+                
+                items.forEach((product, index) => {
+                    const card = document.createElement('div');
+                    const delay = (index % 10) * 0.05; // staggered anim
+                    
+                    card.className = `bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-blue-200 transition-all duration-300 relative overflow-hidden group fade-on-scroll flex flex-col`;
+                    card.style.animationDelay = `${delay}s`;
+                    
+                    card.innerHTML = `
+                        <div class="absolute -right-6 -bottom-6 w-28 h-28 opacity-[0.03] pointer-events-none group-hover:scale-110 group-hover:opacity-10 transition-all duration-500">
+                            <img src="https://i.ibb.co.com/FqCFwM49/Desain-tanpa-judul-1.png" class="w-full h-full object-contain grayscale">
                         </div>
-                        
-                        <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                            <h3 class="font-bold text-corporate-900 text-sm sm:text-[15px] mb-1 group-hover:text-corporate-blue transition-colors leading-tight">${item.name}</h3>
-                            <div class="text-corporate-900 font-heading font-black text-lg mb-4">
-                                ${formatRupiah(item.price)} <span class="text-[9px] text-corporate-400 font-bold uppercase tracking-widest">/ Slop</span>
+                        <div class="relative z-10 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-5">
+                                <span class="bg-green-50 text-green-600 text-[10px] font-bold px-2.5 py-1 rounded-md border border-green-100 uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i> Ready</span>
+                                <span class="text-slate-300 text-sm font-bold bg-slate-50 px-2 py-0.5 rounded border border-slate-100">#${product.id.toString().padStart(2, '0')}</span>
                             </div>
+                            <h3 class="text-xl font-extrabold text-corporate-blue mb-1 group-hover:text-blue-600 transition-colors">${product.name}</h3>
+                            <p class="text-blue-600 font-bold text-xl mb-6">${formatRupiah(product.price)} <span class="text-xs text-slate-400 font-normal">/slop</span></p>
                             
-                            <!-- Action Control -->
-                            <div class="mt-auto flex items-center gap-2">
-                                <div class="flex items-center bg-corporate-50 border border-corporate-200 rounded-xl h-10 w-[80px] shrink-0">
-                                    <button onclick="changeQtyUI(${item.id}, -1)" aria-label="Kurangi jumlah ${item.name}" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
-                                    <input type="number" id="qty_${item.id}" value="1" min="1" aria-label="Jumlah ${item.name}" class="w-full text-center bg-transparent text-sm font-bold text-corporate-900 focus:outline-none hide-arrows pointer-events-none">
-                                    <button onclick="changeQtyUI(${item.id}, 1)" aria-label="Tambah jumlah ${item.name}" class="w-8 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-plus text-xs"></i></button>
+                            <div class="mt-auto flex gap-3">
+                                <div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 h-11">
+                                    <button onclick="updateTempQty(${product.id}, -1, 'grid')" class="w-10 h-full flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-l-xl transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
+                                    <input type="number" id="qty-grid-${product.id}" value="1" min="1" class="w-10 text-center bg-transparent border-none focus:outline-none text-sm font-bold text-slate-700 pointer-events-none" readonly>
+                                    <button onclick="updateTempQty(${product.id}, 1, 'grid')" class="w-10 h-full flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-r-xl transition-colors"><i class="fa-solid fa-plus text-xs"></i></button>
                                 </div>
-                                <button onclick="addToCart(${item.id})" class="flex-1 h-10 bg-corporate-blue hover:bg-corporate-900 text-white font-bold text-[13px] rounded-xl transition-all shadow-sm hover:shadow-premium-sm flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-cart-plus"></i> Tambah
+                                <button onclick="addToCart(${product.id}, 'grid')" class="flex-1 bg-white border-2 border-corporate-blue text-corporate-blue hover:bg-corporate-blue hover:text-white rounded-xl text-sm font-bold transition-all ripple flex items-center justify-center gap-2 h-11">
+                                    <i class="fa-solid fa-cart-plus"></i>
                                 </button>
+                            </div>
+                        </div>
+                    `;
+                    gridContainer.appendChild(card);
+                });
+            } else {
+                // Table View
+                gridContainer.classList.add('hidden');
+                tableContainer.classList.remove('hidden');
+                
+                items.forEach((product, index) => {
+                    const tr = document.createElement('tr');
+                    tr.className = "fade-on-scroll transition-colors group";
+                    tr.style.animationDelay = `${(index % 10) * 0.05}s`;
+                    tr.innerHTML = `
+                        <td class="text-center text-slate-400 font-medium">#${product.id.toString().padStart(2, '0')}</td>
+                        <td class="font-bold text-corporate-blue group-hover:text-blue-600 transition-colors">${product.name}</td>
+                        <td class="font-bold text-slate-700">${formatRupiah(product.price)} <span class="text-xs font-normal text-slate-400">/ slop</span></td>
+                        <td>
+                            <div class="flex items-center justify-center border border-slate-200 rounded-lg bg-slate-50 w-28 mx-auto h-9">
+                                <button onclick="updateTempQty(${product.id}, -1, 'table')" class="w-8 h-full flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-l-lg transition-colors"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                                <input type="number" id="qty-table-${product.id}" value="1" min="1" class="w-8 text-center bg-transparent border-none focus:outline-none text-xs font-bold text-slate-700 pointer-events-none" readonly>
+                                <button onclick="updateTempQty(${product.id}, 1, 'table')" class="w-8 h-full flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-r-lg transition-colors"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <button onclick="addToCart(${product.id}, 'table')" class="bg-corporate-blue text-white hover:bg-blue-600 px-4 py-2 rounded-lg text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> Tambah
+                            </button>
+                        </td>
+                    `;
+                    tableBody.appendChild(tr);
+                });
+            }
+            
+            observeElements();
+        };
+
+        // Live Search Logic
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(term));
+            renderProducts(filtered);
+        });
+
+        // --- 4. CART LOGIC ---
+        const updateTempQty = (id, change, view) => {
+            const input = document.getElementById(`qty-${view}-${id}`);
+            let newVal = parseInt(input.value) + change;
+            if (newVal >= 1) input.value = newVal;
+        };
+
+        const addToCart = (id, view) => {
+            const product = products.find(p => p.id === id);
+            const qtyInput = document.getElementById(`qty-${view}-${id}`);
+            const qty = parseInt(qtyInput.value);
+
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({ ...product, qty: qty });
+            }
+
+            qtyInput.value = 1; // Reset
+            updateCartUI();
+            showToast(`${qty} slop ${product.name} dimasukkan keranjang`);
+            
+            // Bounce animation on badge
+            const badge = document.getElementById('cartBadge');
+            const mobileBadge = document.getElementById('mobileCartBadge');
+            [badge, mobileBadge].forEach(b => {
+                if(b) {
+                    b.classList.add('animate-bounce');
+                    setTimeout(() => b.classList.remove('animate-bounce'), 1000);
+                }
+            });
+        };
+
+        const removeFromCart = (id) => {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        };
+
+        const updateCartItemQty = (id, change) => {
+            const item = cart.find(i => i.id === id);
+            if(item) {
+                item.qty += change;
+                if(item.qty < 1) {
+                    removeFromCart(id);
+                } else {
+                    updateCartUI();
+                }
+            }
+        };
+
+        const updateCartUI = () => {
+            const container = document.getElementById('cartItemsContainer');
+            const summary = document.getElementById('cartSummary');
+            const emptyState = document.getElementById('emptyCartState');
+            const badges = [document.getElementById('cartBadge'), document.getElementById('mobileCartBadge')];
+            
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            badges.forEach(badge => {
+                if (badge) {
+                    badge.innerText = totalQty > 99 ? '99+' : totalQty;
+                    if(totalQty > 0) {
+                        badge.classList.remove('scale-0');
+                        badge.classList.add('scale-100');
+                    } else {
+                        badge.classList.remove('scale-100');
+                        badge.classList.add('scale-0');
+                    }
+                }
+            });
+
+            if (cart.length === 0) {
+                container.innerHTML = '';
+                container.appendChild(emptyState);
+                emptyState.classList.remove('hidden');
+                summary.classList.add('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                summary.classList.remove('hidden');
+                
+                container.innerHTML = cart.map(item => `
+                    <div class="flex gap-4 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm relative overflow-hidden group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-box text-blue-200 text-2xl"></i>
+                        </div>
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-slate-800 text-sm leading-tight group-hover:text-blue-600 transition-colors">${item.name}</h4>
+                                <button onclick="removeFromCart(${item.id})" class="text-slate-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded-md transition-all"><i class="fa-solid fa-trash-can text-xs"></i></button>
+                            </div>
+                            <div class="flex justify-between items-end mt-2">
+                                <span class="text-blue-600 font-extrabold text-sm">${formatRupiah(item.price)}</span>
+                                <div class="flex items-center border border-slate-200 rounded-lg bg-slate-50 h-7">
+                                    <button onclick="updateCartItemQty(${item.id}, -1)" class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-l-lg"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                                    <span class="w-8 text-center text-xs font-bold text-slate-700">${item.qty}</span>
+                                    <button onclick="updateCartItemQty(${item.id}, 1)" class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-r-lg"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                `;
-            });
+                `).join('');
+                container.appendChild(emptyState);
 
-            catalogCount.textContent = `Menampilkan ${shownData.length} dari ${filteredData.length} SKU`;
-            loadMoreBtn.classList.toggle('hidden', visibleCount >= filteredData.length);
-
-            AOS.refresh(); // Refresh animations for dynamically added elements
-        }
-
-        const loadMore = () => {
-            visibleCount += PAGE_SIZE;
-            renderCatalog();
-        }
-
-        // Add to Cart Logic
-        const changeQtyUI = (id, delta) => {
-            const input = document.getElementById(`qty_${id}`);
-            let val = parseInt(input.value) + delta;
-            if(val < 1) val = 1;
-            input.value = val;
-        }
-
-        const addToCart = (id) => {
-            const item = inventoryData.find(p => p.id === id);
-            const qtyInput = document.getElementById(`qty_${id}`);
-            const qty = parseInt(qtyInput.value);
-            
-            const existing = cart.find(c => c.id === id);
-            if(existing) {
-                existing.qty += qty;
-            } else {
-                cart.push({ ...item, qty: qty });
-            }
-            
-            qtyInput.value = 1; // reset UI input
-            updateCartUI();
-            showToast(`${qty} Slop ${item.name} diamankan.`);
-        }
-
-        const updateCartItem = (id, delta) => {
-            const item = cart.find(c => c.id === id);
-            if(item) {
-                item.qty += delta;
-                if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
-                updateCartUI();
-            }
-        }
-        const removeCartItem = (id) => {
-            cart = cart.filter(c => c.id !== id);
-            updateCartUI();
-        }
-
-        const updateCartUI = () => {
-            const cartList = document.getElementById('cartItems');
-            const emptyState = document.getElementById('emptyCartState');
-            const totalItemsEl = document.getElementById('cartTotalItems');
-            const totalPriceEl = document.getElementById('cartTotalPrice');
-            const btnCheckout = document.getElementById('btnCheckout');
-            const promoAlert = document.getElementById('promoAlert');
-            const badge1 = document.getElementById('cartBadge');
-            const badge2 = document.getElementById('mobileCartBadge');
-            const mobileBtn = document.getElementById('mobileCartBtn');
-            const formTotal = document.getElementById('f_totalVal');
-
-            let tQty = 0; let tPrice = 0;
-            
-            // Reset List (keep empty state hidden or visible based on logic below)
-            const children = Array.from(cartList.children);
-            children.forEach(c => { if(c.id !== 'emptyCartState') c.remove(); });
-
-            if(cart.length === 0) {
-                emptyState.style.display = 'flex';
-                btnCheckout.disabled = true;
-                btnCheckout.classList.add('opacity-50', 'cursor-not-allowed');
-                badge1.classList.add('scale-0'); badge2.classList.add('scale-0');
-                mobileBtn.classList.remove('scale-100'); mobileBtn.classList.add('scale-0');
-            } else {
-                emptyState.style.display = 'none';
-                btnCheckout.disabled = false;
-                btnCheckout.classList.remove('opacity-50', 'cursor-not-allowed');
-                badge1.classList.remove('scale-0'); badge2.classList.remove('scale-0');
-                mobileBtn.classList.remove('scale-0'); mobileBtn.classList.add('scale-100');
-
-                cart.forEach(item => {
-                    tQty += item.qty;
-                    tPrice += (item.qty * item.price);
-                    
-                    cartList.insertAdjacentHTML('beforeend', `
-                        <div class="bg-white p-4 rounded-xl border border-corporate-200 shadow-sm flex justify-between items-center gap-3">
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-corporate-900 text-sm truncate">${item.name}</h4>
-                                <div class="text-xs text-corporate-500 font-semibold mt-1">${formatRupiah(item.price)}</div>
-                            </div>
-                            <div class="flex items-center gap-3 shrink-0">
-                                <div class="flex items-center bg-corporate-50 border border-corporate-200 rounded-lg h-8">
-                                    <button onclick="updateCartItem(${item.id}, -1)" class="w-7 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-minus text-[10px]"></i></button>
-                                    <span class="w-6 text-center text-xs font-bold text-corporate-900">${item.qty}</span>
-                                    <button onclick="updateCartItem(${item.id}, 1)" class="w-7 h-full flex items-center justify-center text-corporate-500 hover:text-corporate-900 transition-colors"><i class="fa-solid fa-plus text-[10px]"></i></button>
-                                </div>
-                                <button onclick="removeCartItem(${item.id})" class="text-corporate-400 hover:text-red-500 transition-colors w-6 h-6 flex items-center justify-center rounded-md hover:bg-red-50">
-                                    <i class="fa-solid fa-trash-can text-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    `);
-                });
-            }
-
-            // Update Summaries
-            badge1.innerText = tQty; badge2.innerText = tQty;
-            totalItemsEl.innerText = `${tQty} Slop`;
-            totalPriceEl.innerText = formatRupiah(tPrice);
-            formTotal.innerText = formatRupiah(tPrice);
-
-            if(tQty >= 20) promoAlert.classList.remove('hidden'); else promoAlert.classList.add('hidden');
-
-            updateShippingNudge(tQty);
-        }
-
-        // Free Shipping Progress Nudge
-        const updateShippingNudge = (tQty) => {
-            const text = document.getElementById('shippingNudgeText');
-            const count = document.getElementById('shippingNudgeCount');
-            const fill = document.getElementById('shippingNudgeFill');
-            if(!text) return;
-
-            const pct = Math.min(100, Math.round((tQty / 20) * 100));
-            fill.style.width = pct + '%';
-            count.textContent = `${Math.min(tQty, 20)}/20`;
-
-            const iconWrap = document.querySelector('#shippingNudge > div:first-child');
-            if(tQty >= 20) {
-                text.textContent = 'Selamat! Purchase Order Anda memenuhi syarat Gratis Ongkir.';
-                iconWrap.className = 'w-11 h-11 shrink-0 rounded-xl bg-green-50 text-green-600 flex items-center justify-center text-lg';
-                iconWrap.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-            } else {
-                const sisa = 20 - tQty;
-                text.textContent = tQty === 0 ? 'Tambahkan 20 Slop di keranjang untuk membuka Gratis Ongkir.' : `Tambahkan ${sisa} Slop lagi untuk membuka Gratis Ongkir.`;
-                iconWrap.className = 'w-11 h-11 shrink-0 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg';
-                iconWrap.innerHTML = '<i class="fa-solid fa-truck-fast"></i>';
-            }
-        }
-
-        // Mobile Nav Controls
-        const toggleMobileNav = () => {
-            const nav = document.getElementById('mobileNav');
-            const btn = document.getElementById('mobileNavBtn');
-            const isOpen = nav.classList.toggle('open');
-            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            btn.querySelector('i').className = isOpen ? 'fa-solid fa-times text-lg' : 'fa-solid fa-bars text-lg';
-        }
-        const closeMobileNav = () => {
-            const nav = document.getElementById('mobileNav');
-            const btn = document.getElementById('mobileNavBtn');
-            nav.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.querySelector('i').className = 'fa-solid fa-bars text-lg';
-        }
-
-        // Scrollspy: highlight the nav link matching the section in view
-        const sectionIds = ['keunggulan', 'sistem-bayar', 'katalog', 'informasi'];
-        const updateScrollspy = () => {
-            let current = null;
-            sectionIds.forEach(id => {
-                const el = document.getElementById(id);
-                if(el && el.getBoundingClientRect().top <= 140) current = id;
-            });
-            document.querySelectorAll('[data-navlink]').forEach(link => {
-                link.classList.toggle('nav-active', current && link.getAttribute('href') === `#${current}`);
-            });
-        }
-
-        // Drawer Controls
-        const toggleCart = () => {
-            const drawer = document.getElementById('cartDrawer');
-            if(drawer.classList.contains('open')) closeCart(); else openCart();
-        }
-        const openCart = () => {
-            document.getElementById('cartDrawer').classList.add('open');
-            const overlay = document.getElementById('cartOverlay');
-            overlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        const closeCart = () => {
-            document.getElementById('cartDrawer').classList.remove('open');
-            document.getElementById('cartOverlay').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        // Form Modal Controls
-        const proceedToForm = () => {
-            if(cart.length === 0) return;
-            closeCart();
-            const modal = document.getElementById('formModal');
-            modal.classList.remove('hidden');
-            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-        const closeFormModal = () => {
-            const modal = document.getElementById('formModal');
-            modal.classList.add('opacity-0');
-            setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = ''; }, 400);
-        }
-
-        // Final Submission to WhatsApp
-        const submitToWhatsApp = (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const val = (id) => document.getElementById(id).value.trim();
-            const name = val('f_name'), phone = val('f_phone'), address = val('f_address');
-            const kec = val('f_kec'), kab = val('f_kab'), prov = val('f_prov'), pos = val('f_pos');
-            const kurir = val('f_ekspedisi'), notes = val('f_notes');
-            
-            let tQty = 0, tPrice = 0, itemsText = "";
-            cart.forEach((c, i) => {
-                const sub = c.qty * c.price;
-                tQty += c.qty; tPrice += sub;
-                itemsText += `${i+1}. ${c.name} - ${c.qty} Slop (Rp ${sub.toLocaleString('id-ID')})\n`;
-            });
-
-            const shippingStatus = tQty >= 20 ? "*[LAYANAN SUBSIDI] - BEBAS ONGKOS KIRIM*" : "Menunggu penghitungan rute ekspedisi.";
-            
-            // Construct text
-            const msg = `📑 *PURCHASE ORDER R2*\n🏢 *R2 NUSANTARA - CORPORATE*\n----------------------------------------\n*ID:* #PO-R2-${Math.floor(Date.now()/1000)}\n\n*DATA PEMESAN:*\nInstansi / Toko: ${name}\nNo. WhatsApp: ${phone}\n\n*ALAMAT PENGIRIMAN:*\n${address}\nKec. ${kec}, Kab/Kota. ${kab}\nProv. ${prov}, Kode Pos: ${pos}\n\n*RINCIAN DOKUMEN PO:*\n${itemsText}----------------------------------------\n*Total Volume:* ${tQty} Slop\n*Tanggungan Ekspedisi:* ${shippingStatus}\n*Estimasi Ekspedisi:* ${kurir}\n*VALUASI TOTAL:* *${formatRupiah(tPrice)}*\n\n*Catatan Ekstra:* ${notes || '-'}\n\n*KEBIJAKAN PEMBAYARAN:*\nESCROW (Transfer hanya setelah nomor resi pelacakan dari pihak logistik resmi diterbitkan).\n\n_Mohon kepada tim Enterprise Support agar memvalidasi stok dan menyiapkan penerbitan manifes logistik._`;
-
-            // Success UI
-            Swal.fire({
-                title: 'Otorisasi PO Berhasil', text: 'Mengenkripsi data dan menghubungkan ke WhatsApp Secure Line...',
-                icon: 'success', background: '#ffffff', color: '#102a43',
-                showConfirmButton: false, timer: 2000, customClass: { popup: 'rounded-2xl shadow-floating' }
-            }).then(() => {
-                window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-                cart = []; updateCartUI(); closeFormModal();
-            });
-        }
-
-        // Live Search Handling
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            searchKeyword = e.target.value;
-            visibleCount = PAGE_SIZE;
-            renderCatalog();
-        });
-
-        // Sort Handling
-        document.getElementById('sortSelect').addEventListener('change', (e) => {
-            sortMode = e.target.value;
-            visibleCount = PAGE_SIZE;
-            renderCatalog();
-        });
-
-        // Scroll Effects (Header & Progress)
-        window.addEventListener('scroll', () => {
-            const h = document.getElementById('header');
-            const p = document.getElementById('scrollProgress');
-            const st = window.scrollY;
-            
-            // Header shadow
-            if(st > 10) h.classList.add('shadow-sm'); else h.classList.remove('shadow-sm');
-            
-            // Progress width
-            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (st / docHeight) * 100;
-            p.style.width = scrollPercent + '%';
-
-            updateScrollspy();
-        });
-
-        // Initialize App
-        document.addEventListener('DOMContentLoaded', () => {
-            // Remove Preloader
-            setTimeout(() => {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                setTimeout(() => { preloader.style.display = 'none'; }, 700);
+                document.getElementById('totalItemsDisplay').innerText = `${totalQty} Slop`;
+                document.getElementById('totalPriceDisplay').innerText = formatRupiah(totalPrice);
                 
-                // Initialize AOS after preloader
-                AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+                const promoBox = document.getElementById('promoMessage');
+                if(totalQty >= 20) {
+                    promoBox.className = "text-xs py-2.5 px-4 rounded-lg bg-green-50 text-green-700 border border-green-200 mb-5 flex gap-3 items-center shadow-sm";
+                    promoBox.innerHTML = '<i class="fa-solid fa-check-circle text-lg text-green-500"></i> <span>Selamat! Memenuhi syarat <b>GRATIS ONGKIR</b>.</span>';
+                } else {
+                    promoBox.className = "text-xs py-2.5 px-4 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 mb-5 flex gap-3 items-center shadow-sm";
+                    promoBox.innerHTML = `<i class="fa-solid fa-circle-info text-lg text-blue-400"></i> <span>Tambah <b class="text-blue-800">${20 - totalQty} slop</b> lagi untuk Gratis Ongkir!</span>`;
+                }
+            }
+        };
+
+        const toggleCart = () => {
+            const overlay = document.getElementById('cartOverlay');
+            const sidebar = document.getElementById('cartSidebar');
+            
+            if (sidebar.classList.contains('translate-x-full')) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    sidebar.classList.remove('translate-x-full');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.add('opacity-0');
+                sidebar.classList.add('translate-x-full');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        };
+
+        // --- 5. CHECKOUT TO WHATSAPP (UPGRADED) ---
+        const processCheckout = () => {
+            const phone = document.getElementById('custPhone').value.trim();
+            const name = document.getElementById('custName').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const notes = document.getElementById('custNotes').value.trim();
+
+            // Validation
+            if (!phone || !name || !address) {
+                showToast('Mohon lengkapi No.HP, Nama, dan Alamat Anda!', 'error');
+                return;
+            }
+            
+            // Basic phone validation (only numbers/plus/spaces)
+            const phoneRegex = /^[0-9+\-\s]+$/;
+            if (!phoneRegex.test(phone)) {
+                showToast('Format No. HP tidak valid!', 'error');
+                return;
+            }
+
+            // EXACT Format required by user prompt
+            let message = `📝 *FORM PEMESANAN ROKOK*\n\n`;
+            message += `No. HP       : ${phone}\n`;
+            message += `Nama Penerima : ${name}\n`;
+            message += `Alamat Lengkap : ${address}\n`;
+            message += `Merek        :\n`;
+            
+            cart.forEach((item, index) => {
+                message += `  - ${item.name} (${item.qty} slop)\n`;
+            });
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            message += `Jumlah       : ${totalQty} slop\n`;
+            
+            // Catatan logic
+            message += `Catatan      : `;
+            if (notes) {
+                message += `${notes} `;
+            }
+            if (totalQty >= 20) {
+                message += `(✅ Memenuhi syarat Promo Gratis Ongkir dari Gudang). `;
+            }
+            message += `\n\n_Mohon konfirmasi total tagihan & pengiriman barang. Terima kasih._`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const waNumber = '6285715905079';
+            const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+            // Show Premium Success Popup
+            toggleCart();
+            const popup = document.getElementById('successPopup');
+            const content = document.getElementById('popupContent');
+            const countdownEl = document.getElementById('countdown');
+            
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            setTimeout(() => content.classList.remove('scale-90'), 10);
+
+            let count = 3;
+            countdownEl.innerText = count;
+            
+            const timer = setInterval(() => {
+                count--;
+                countdownEl.innerText = count;
+                if (count <= 0) {
+                    clearInterval(timer);
+                    popup.classList.add('hidden');
+                    popup.classList.remove('flex');
+                    window.open(waLink, '_blank');
+                    
+                    // Reset Form
+                    cart = [];
+                    document.getElementById('custPhone').value = '';
+                    document.getElementById('custName').value = '';
+                    document.getElementById('custAddress').value = '';
+                    document.getElementById('custNotes').value = '';
+                    updateCartUI();
+                }
             }, 1000);
+        };
 
-            // Hide CSS arrows from input number
-            const style = document.createElement('style');
-            style.innerHTML = `
-                input[type=number].hide-arrows::-webkit-inner-spin-button, 
-                input[type=number].hide-arrows::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-                input[type=number].hide-arrows { -moz-appearance: textfield; }
-            `;
-            document.head.appendChild(style);
+        // --- 6. UI INTERACTIONS ---
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                const allContents = document.querySelectorAll('.faq-content');
+                const allIcons = document.querySelectorAll('.faq-btn i');
+                
+                allContents.forEach(c => { if (c !== content) c.style.maxHeight = null; });
+                allIcons.forEach(i => {
+                    if (i !== icon) {
+                        i.classList.remove('fa-minus');
+                        i.classList.add('fa-plus');
+                        i.style.transform = 'rotate(0deg)';
+                    }
+                });
 
-            // Render First Paint
-            setTimeout(() => { renderCatalog(); }, 800); // Slight delay for skeleton effect
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
         });
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const backToTop = document.getElementById('backToTop');
+            const progressBar = document.getElementById('progressBar');
+            
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
+            progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+
+            if (scrollTop > 50) {
+                header.classList.add('shadow-md');
+                header.style.paddingTop = '10px';
+                header.style.paddingBottom = '10px';
+            } else {
+                header.classList.remove('shadow-md');
+                header.style.paddingTop = '16px';
+                header.style.paddingBottom = '16px';
+            }
+
+            if (scrollTop > 500) {
+                backToTop.classList.remove('scale-0');
+                backToTop.classList.add('scale-100');
+            } else {
+                backToTop.classList.remove('scale-100');
+                backToTop.classList.add('scale-0');
+            }
+        });
+
+        const observeElements = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+        };
+
+        // Init App
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    observeElements();
+                }, 500);
+            }, 1500); 
+
+            renderProducts(products);
+            updateCartUI();
+        });
+
     </script>
 </body>
 </html>
