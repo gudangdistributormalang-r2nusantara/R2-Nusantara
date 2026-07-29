@@ -57,8 +57,6 @@ jobs:
             Langkah berikutnya:
             - Jika workflow dijalankan secara lokal atau di Actions, file gambar akan ditambahkan ke branch.
 
-          path: assets/logo
-
       # Optional fallback using a PAT if push is blocked by branch protection rules.
       # To use this fallback, create a secret named REPO_PAT with a Personal Access Token
       # that has repo scope, then uncomment the following step and comment out the
