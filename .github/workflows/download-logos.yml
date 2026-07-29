@@ -45,6 +45,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Add logos from issues (#2)"
           branch: add-logos-from-issues
+          base: main
           title: "Add logos from issues"
           body: |
             Menambahkan manifest dan skrip untuk mengambil logo yang dilampirkan pada issue #2.
