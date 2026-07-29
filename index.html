@@ -11,22 +11,48 @@
     <link rel="canonical" href="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/">
     <meta name="theme-color" content="#0a1628">
 
-    <link rel="icon" type="image/png" href="./assets/logo/2_1_1Xshz6zgsx06jY5cRAononqKyWd7XFmhb.png">
-    <link rel="apple-touch-icon" href="./assets/logo/2_1_1Xshz6zgsx06jY5cRAononqKyWd7XFmhb.png">
+    <!-- Sinkronisasi penuh branding lokal -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo-r2.webp">
+    <link rel="icon" type="image/webp" href="./assets/logo-r2.webp">
+    <link rel="apple-touch-icon" href="./assets/logo-r2.webp">
     <link rel="manifest" href="./manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="R2 Nusantara">
 
     <meta property="og:title" content="R2 Nusantara — Distributor Rokok Grosir Premium Malang">
     <meta property="og:description" content="Gudang distributor resmi. Bayar setelah resi keluar. Gratis ongkir min 1 bal. 230+ merek ready stock (R2 & Resmi).">
-    <meta property="og:image" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/logo/2_1_1Xshz6zgsx06jY5cRAononqKyWd7XFmhb.png">
+    <meta property="og:image" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/logo-r2.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="R2 Nusantara">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="R2 Nusantara — Distributor Rokok Grosir Premium Malang">
+    <meta name="twitter:description" content="Portal distributor premium dengan sistem bayar setelah resi keluar.">
+    <meta name="twitter:image" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/logo-r2.webp">
+
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WholesaleStore","name":"CV. R2 Nusantara","description":"Gudang distributor rokok resmi Malang. 230+ merek ready stock.","image":"https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/logo/2_1_1Xshz6zgsx06jY5cRAononqKyWd7XFmhb.png","address":{"@type":"PostalAddress","streetAddress":"Desa Karangduren, Kec. Pakisaji","addressLocality":"Kab. Malang","addressRegion":"Jawa Timur","postalCode":"65162","addressCountry":"ID"},"telephone":"+6285715905079","openingHours":"Mo-Sa 08:00-17:00","priceRange":"Rp 65.000 - Rp 480.000"}
+    {
+      "@context": "https://schema.org",
+      "@type": "WholesaleStore",
+      "name": "CV. R2 Nusantara",
+      "description": "Gudang distributor rokok resmi Malang. 230+ merek ready stock.",
+      "image": "https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/logo-r2.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Desa Karangduren, Kec. Pakisaji",
+        "addressLocality": "Kab. Malang",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "65162",
+        "addressCountry": "ID"
+      },
+      "telephone": "+6285715905079",
+      "openingHours": "Mo-Sa 08:00-17:00",
+      "priceRange": "Rp 65.000 - Rp 480.000"
+    }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,20 +67,28 @@
             background-color: #f8f9fc;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: url('./assets/logo/2_3_1Twe3-Fu1XnUZPmHiP7COJxX3cSjoK-Bm.png');
+            background-image: url('./assets/logo-r2.webp');
             background-repeat: no-repeat;
             background-position: center;
             background-size: min(70vw, 900px);
-            opacity: 0.04;
+            opacity: 0.035;
             pointer-events: none;
             z-index: -1;
             filter: grayscale(100%);
+        }
+
+        .brand-watermark {
+            background-image: url('./assets/logo-r2.webp');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
         }
     </style>
 </head>
@@ -65,7 +99,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-          .then(() => console.log('PWA aktif'))
+          .then(() => console.log('PWA aktif dan logo lokal tersinkron'))
           .catch(err => console.error('SW gagal:', err));
       });
     }
