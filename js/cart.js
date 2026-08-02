@@ -1,14 +1,11 @@
 /* ============================================
    R2 NUSANTARA - CART LOGIC
-   Shopping cart management & UI updates
    ============================================ */
-
 'use strict';
 
 var cart = [];
 window.__cart = cart;
 
-// Add to Cart
 window.__addCart = function(id) {
   var p = allProducts.find(function(x) { return x.id === id; });
   if (!p) return;
@@ -19,10 +16,8 @@ window.__addCart = function(id) {
   
   updateCartUI();
   showToast("Berhasil ditambahkan");
-  dispatchCartEvent();
 };
 
-// Update Quantity
 window.__updateQty = function(id, ch) {
   var i = cart.find(function(x) { return x.id === id; });
   if (i) {
@@ -30,27 +25,24 @@ window.__updateQty = function(id, ch) {
     if (i.qty < 1) cart = cart.filter(function(x) { return x.id !== id; });
   }
   updateCartUI();
-  dispatchCartEvent();
 };
 
-// Dispatch Cart Event
-function dispatchCartEvent() {
-  window.dispatchEvent(new CustomEvent('r2:cartUpdated'));
-}
-
-// Update Cart UI
 function updateCartUI() {
   var t = cart.reduce(function(s, i) { return s + i.qty; }, 0);
   var tp = cart.reduce(function(s, i) { return s + (i.price * i.qty); }, 0);
   
-  // Update Badge
   var badge = document.getElementById('cartBadge');
   if (badge) {
     badge.innerText = t;
     badge.classList.toggle('scale-0', t === 0);
   }
   
-  // Update Progress Banner
+  var mobileBadge = document.getElementById('mobileCartBadge');
+  if (mobileBadge) {
+    mobileBadge.innerText = t;
+    mobileBadge.classList.toggle('scale-0', t === 0);
+  }
+  
   var bannerQty = document.getElementById('bannerQty');
   var progressFill = document.getElementById('progressFill');
   var bannerTitle = document.getElementById('bannerTitle');
@@ -76,12 +68,11 @@ function updateCartUI() {
     }
   }
   
-  // Update Cart Items Container
   var cc = document.getElementById('cartItemsContainer');
   var cs = document.getElementById('cartSummary');
   
   if (!cart.length) {
-    if (cc) cc.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center opacity-50"><i class="fa-solid fa-cart-shopping text-6xl text-slate-300 mb-4"></i><p class="font-bold text-slate-600">Keranjang Kosong</p></div>';
+    if (cc) cc.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center opacity-50"><i class="fa-solid fa-cart-shopping text-6xl text-slate-300 dark:text-slate-600 mb-4"></i><p class="font-bold text-slate-600 dark:text-slate-400">Keranjang Kosong</p></div>';
     if (cs) cs.classList.add('hidden');
   } else {
     if (cs) cs.classList.remove('hidden');
@@ -95,22 +86,20 @@ function updateCartUI() {
     if (cc) {
       cc.innerHTML = cart.map(function(i) {
         var catBadge = i.category === 'resmi' ?
-          '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>' :
-          '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded border border-brand-200"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
+          '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-700"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>' :
+          '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-900/30 px-1.5 py-0.5 rounded border border-brand-200 dark:border-brand-700"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
         
-        return '<div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex gap-4"><div class="flex-1 min-w-0"><div class="flex items-center gap-2 mb-1"><span class="font-bold text-sm text-brand-900 truncate">' + escapeHtml(i.name) + '</span>' + catBadge + '</div><div class="text-brand-500 font-bold font-mono text-sm">' + formatRupiah(i.price) + '</div></div><div class="flex items-center border border-slate-200 rounded-lg h-9 shrink-0"><button onclick="window.__updateQty(\'' + i.id + '\',-1)" class="w-9 h-full font-bold text-slate-500 hover:bg-slate-50 transition-colors">-</button><span class="w-8 text-center text-xs font-bold font-mono">' + i.qty + '</span><button onclick="window.__updateQty(\'' + i.id + '\',1)" class="w-9 h-full font-bold text-brand-500 hover:bg-slate-50 transition-colors">+</button></div></div>';
+        return '<div class="bg-white dark:bg-slate-700 p-4 rounded-2xl border border-slate-100 dark:border-slate-600 shadow-sm flex gap-4"><div class="flex-1 min-w-0"><div class="flex items-center gap-2 mb-1"><span class="font-bold text-sm text-brand-900 dark:text-white truncate">' + escapeHtml(i.name) + '</span>' + catBadge + '</div><div class="text-brand-500 font-bold font-mono text-sm">' + formatRupiah(i.price) + '</div></div><div class="flex items-center border border-slate-200 dark:border-slate-600 rounded-lg h-9 shrink-0"><button onclick="window.__updateQty(\'' + i.id + '\',-1)" class="w-9 h-full font-bold text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">-</button><span class="w-8 text-center text-xs font-bold font-mono">' + i.qty + '</span><button onclick="window.__updateQty(\'' + i.id + '\',1)" class="w-9 h-full font-bold text-brand-500 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">+</button></div></div>';
       }).join('');
     }
   }
   
-  // Update Modal Total Price
   var modalPriceDisplay = document.getElementById('modalTotalPrice');
   if (modalPriceDisplay) modalPriceDisplay.innerText = formatRupiah(tp);
   
   renderProductDisplay();
 }
 
-// Toggle Cart
 window.toggleCart = function() {
   var o = document.getElementById('cartOverlay');
   var s = document.getElementById('cartSidebar');
@@ -130,6 +119,4 @@ window.toggleCart = function() {
   }
 };
 
-// Export functions
 window.updateCartUI = updateCartUI;
-window.dispatchCartEvent = dispatchCartEvent;
