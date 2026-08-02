@@ -1,0 +1,15 @@
+[
+  {
+    "id": "p-001",
+    "name": "Minuman Energi — Sample",
+    "price": 25000,
+    "image": "/assets/images/products/sample-800.webp",
+    "images": {
+      "400": "/assets/images/products/sample-400.webp",
+      "800": "/assets/images/products/sample-800.webp",
+      "1200": "/assets/images/products/sample-1200.webp"
+    },
+    "stock": 12,
+    "description": "Contoh produk dari gudang R2 Nusantara."
+  }
+]

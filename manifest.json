@@ -1,22 +1,12 @@
 {
-  "name": "R2 Nusantara",
-  "short_name": "R2Nusantara",
-  "start_url": "./",
-  "scope": "./",
+  "name": "R2-Nusantara",
+  "short_name": "R2",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a1628",
-  "theme_color": "#0a1628",
-  "description": "Portal Distributor R2 Nusantara",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
   "icons": [
-    {
-      "src": "./assets/logo-r2.webp",
-      "sizes": "192x192",
-      "type": "image/webp"
-    },
-    {
-      "src": "./assets/logo-r2.webp",
-      "sizes": "512x512",
-      "type": "image/webp"
-    }
+    {"src":"/assets/logo/icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"/assets/logo/icon-512.png","sizes":"512x512","type":"image/png"}
   ]
 }
