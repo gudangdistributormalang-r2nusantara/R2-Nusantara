@@ -1,30 +1,25 @@
-const CACHE_NAME = 'r2-nusantara-v2';
-
-const ASSETS = [
-  './',
-  './index.html',
-  './manifest.json',
-  './assets/logo-r2.webp',
-  './assets/hero-r2.webp',
-  './assets/watermark-r2.webp'
+// sw.js - basic service worker cache
+const CACHE_NAME = 'r2-static-v1';
+const FILES_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/assets/css/main.css',
+  '/assets/css/components.css',
+  '/assets/js/app.js'
 ];
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+self.addEventListener('install', (evt)=>{
+  evt.waitUntil(
+    caches.open(CACHE_NAME).then(cache=>cache.addAll(FILES_TO_CACHE))
   );
+  self.skipWaiting();
 });
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
-    )
-  );
+self.addEventListener('activate', (evt)=>{
+  evt.waitUntil(self.clients.claim());
 });
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+self.addEventListener('fetch', (evt)=>{
+  if(evt.request.method !== 'GET') return;
+  evt.respondWith(
+    caches.match(evt.request).then(resp=>resp||fetch(evt.request))
   );
 });
