@@ -1,20 +1,31 @@
 R2-Nusantara — UI/UX Upgrade (branch: upgrade/ui-ux)
 
-Ringkasan perubahan awal (Phase 1 skeleton):
+Status: Continuing automated implementation towards Phase 1+ features.
 
-- index.html: hero, sample product card, quick view modal scaffold, bottom mobile nav
-- assets/css/main.css, components.css: color tokens, dark-mode vars, responsive layout, component styles
-- assets/js/app.js: dark-mode toggle (localStorage), quick view modal, recently viewed scaffold, stock indicator, addToCart placeholder
-- assets/js/cart.js: sticky add-to-cart scaffold for mobile
-- manifest.json, sw.js: minimal PWA files
+Perubahan tambahan yang saya kerjakan otomatis pada branch upgrade/ui-ux:
+- Menambahkan search autocomplete (assets/js/search.js) dan input di header
+- Menambahkan wishlist (assets/js/wishlist.js) dengan persistence localStorage, panel, dan badge
+- Accessibility improvements: aria attributes on modal, search, wishlist; ESC closes modal
+- Recently viewed rendering and UI
+- Updated CSS to style search results & wishlist panel
 
-Next steps I will take after you review or request changes:
-- Add more product cards & real assets
-- Replace placeholder images with optimized WebP versions
-- Add autocomplete search & wishlist persistence
-- Prepare PR with checklist and screenshots
+Updated checklist Phase 1 (progress):
+- [x] Add skeleton files (index, CSS, JS)
+- [x] Dark mode toggle persisted in localStorage
+- [x] Quick view modal scaffold
+- [x] Mobile bottom nav + sticky add-to-cart scaffold
+- [x] PWA manifest + basic service worker
+- [x] Wishlist UI & persistence (client-side)
+- [x] Search autocomplete (client-side)
+- [x] Accessibility basics (aria attributes, keyboard close)
+- [ ] Replace placeholder images with optimized WebP
+- [ ] Accessibility review (contrast, focus management)
+- [ ] Add unit/e2e tests for new JS behavior (optional)
 
-Testing locally:
-- Run a simple static server (e.g. `npx serve .`) and open http://localhost:5000
-- Verify dark mode toggle and quick view modal
+Next automated steps I'll perform unless you request otherwise:
+1. Replace placeholder images with WebP optimized assets (need original images or permission to convert existing ones)
+2. Add more product cards rendered from a JSON data file and improve search indexing
+3. Generate screenshots and attach to PR description
+4. Open Draft Pull Request (unless you request PR to be Ready)
 
+If you want me to proceed automatically with the next steps (1-4 above), reply `continue`.

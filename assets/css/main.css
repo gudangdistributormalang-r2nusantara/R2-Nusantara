@@ -34,6 +34,12 @@ body{background:var(--bg);color:var(--text);margin:0;line-height:1.5;transition:
 .brand{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none}
 .header-actions{display:flex;gap:12px;align-items:center}
 
+.search-wrapper{position:relative}
+#searchInput{padding:8px 10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);min-width:200px}
+.search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--glass);border-radius:8px;list-style:none;padding:8px;margin:0;box-shadow:0 8px 24px rgba(2,6,23,0.12);max-height:240px;overflow:auto}
+.search-results li{padding:8px;border-radius:6px;cursor:pointer}
+.search-results li[aria-selected="true"]{background:rgba(102,126,234,0.12)}
+
 .hero{padding:48px 0;text-align:center;background:var(--gradient-primary);color:white;border-radius:0 0 24px 24px}
 .hero h1{font-size:2rem;margin:0 0 8px}
 
@@ -51,6 +57,9 @@ body{background:var(--bg);color:var(--text);margin:0;line-height:1.5;transition:
 .product-name{font-size:1rem;margin:6px 0}
 .product-price{font-weight:700;color:var(--accent)}
 
+.btn-fav{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.9);border-radius:999px;padding:6px;border:0;cursor:pointer}
+.product-actions{display:flex;gap:8px;margin-top:10px}
+
 .badge{background:#ff4757;color:white;border-radius:999px;padding:4px 8px;font-size:0.75rem}
 .stock-indicator{margin-top:8px}
 
@@ -59,9 +68,15 @@ body{background:var(--bg);color:var(--text);margin:0;line-height:1.5;transition:
 .modal.active{opacity:1;pointer-events:auto}
 .modal .quick-view-content{background:var(--bg);padding:20px;border-radius:12px;max-width:720px;width:95%}
 
+/* Wishlist panel */
+.wishlist-panel{position:fixed;right:12px;top:80px;width:320px;max-width:92%;background:var(--glass);border-radius:12px;padding:12px;box-shadow:0 8px 30px rgba(2,6,23,0.2);z-index:80}
+.wishlist-panel header{display:flex;justify-content:space-between;align-items:center}
+
 /* Bottom nav for mobile */
 .bottom-nav{display:none;position:fixed;bottom:12px;left:12px;right:12px;background:var(--glass);padding:8px;border-radius:12px;justify-content:space-around;align-items:center}
 .bottom-nav a{text-decoration:none;color:var(--text);font-weight:600}
+
+.hidden{display:none}
 
 @media (max-width:768px){
   .bottom-nav{display:flex}

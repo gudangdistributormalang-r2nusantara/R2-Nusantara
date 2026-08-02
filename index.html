@@ -10,19 +10,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v1/....woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
       <a class="brand" href="/">R2 Nusantara</a>
-      <div class="header-actions">
+
+      <div class="header-actions" role="navigation" aria-label="Header actions">
+        <div class="search-wrapper">
+          <input id="searchInput" aria-label="Cari produk" placeholder="Cari produk..." autocomplete="off">
+          <ul id="searchResults" class="search-results" role="listbox" aria-label="Hasil pencarian"></ul>
+        </div>
+
         <button id="darkToggle" class="btn btn-ghost" aria-label="Toggle dark mode">🌙</button>
-        <a class="cart" href="/cart.html">🛒<span id="cartCount" class="badge">0</span></a>
+        <a class="cart" href="/cart.html" aria-label="Keranjang">🛒<span id="cartCount" class="badge">0</span></a>
+        <button id="wishlistToggle" class="btn btn-ghost" aria-haspopup="true" aria-expanded="false" aria-controls="wishlistPanel">♡<span id="wishCount" class="badge">0</span></button>
       </div>
     </div>
   </header>
@@ -36,17 +42,17 @@
       </div>
     </section>
 
-    <section id="catalog" class="container catalog">
-      <h2>Katalog Produk</h2>
-      <div class="product-grid">
+    <section id="catalog" class="container catalog" aria-labelledby="catalogHeading">
+      <h2 id="catalogHeading">Katalog Produk</h2>
+      <div class="product-grid" id="productGrid">
         <!-- Sample product card -->
         <article class="product-card" data-id="p-001">
-          <button class="btn-fav" aria-label="Tambah ke wishlist">♡</button>
+          <button class="btn-fav" aria-label="Tambah ke wishlist" data-id="p-001">♡</button>
           <img loading="lazy" src="/assets/images/products/sample.jpg" srcset="/assets/images/products/sample-400.jpg 400w, /assets/images/products/sample-800.jpg 800w" sizes="(max-width:600px) 100vw, 33vw" alt="Produk Sample">
           <div class="product-body">
             <h3 class="product-name">Minuman Energi — Sample</h3>
             <p class="product-price">Rp 25.000</p>
-            <div class="stock-indicator" data-stock="12"></div>
+            <div class="stock-indicator" data-stock="12" aria-live="polite"></div>
             <div class="product-actions">
               <button class="btn" onclick="quickView('p-001')">Quick View</button>
               <button class="btn btn-outline" onclick="addToCart('p-001')">Tambah ke Keranjang</button>
@@ -54,22 +60,38 @@
           </div>
         </article>
 
-        <!-- more cards... -->
+        <!-- more cards can be rendered dynamically -->
       </div>
+
+      <section id="recentlyViewed" class="recently-viewed hidden" aria-label="Produk yang baru dilihat">
+        <h3>Baru Dilihat</h3>
+        <div id="recentList" class="product-grid"></div>
+      </section>
     </section>
   </main>
 
   <!-- Quick View Modal -->
-  <div id="quickViewModal" class="modal" aria-hidden="true"></div>
+  <div id="quickViewModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quickViewTitle"></div>
+
+  <!-- Wishlist Panel -->
+  <aside id="wishlistPanel" class="wishlist-panel hidden" role="region" aria-label="Wishlist">
+    <header>
+      <h2>Wishlist Anda</h2>
+      <button class="btn btn-ghost" onclick="toggleWishlistPanel(false)" aria-label="Tutup wishlist">✕</button>
+    </header>
+    <div id="wishlistContent">Belum ada wishlist</div>
+  </aside>
 
   <!-- Bottom Nav (mobile) -->
-  <nav class="bottom-nav">
+  <nav class="bottom-nav" role="navigation" aria-label="Navigasi bawah">
     <a href="/">Beranda</a>
     <a href="/catalog">Katalog</a>
     <a href="/cart.html">Keranjang</a>
     <a href="/account">Akun</a>
   </nav>
 
+  <script defer src="/assets/js/wishlist.js"></script>
+  <script defer src="/assets/js/search.js"></script>
   <script defer src="/assets/js/cart.js"></script>
   <script defer src="/assets/js/app.js"></script>
 
