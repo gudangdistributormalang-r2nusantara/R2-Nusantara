@@ -1,11 +1,8 @@
 /* ============================================
    R2 NUSANTARA - PRODUCT DATA & CATALOG
-   Product arrays & catalog functions
    ============================================ */
-
 'use strict';
 
-// Product Data - R2 Catalog
 var productsR2 = [
   { id: 'r2-1', name: "Absolute Bold", price: 118000 },
   { id: 'r2-2', name: "Age Pro", price: 65000 },
@@ -176,9 +173,7 @@ var productsR2 = [
   { id: 'r2-167', name: "Win Mild", price: 165000 }
 ].map(function(p) { p.category = 'r2'; return p; });
 
-// Product Data - Resmi Catalog
 var productsResmi = [
-  // Philip Morris (Sampoerna)
   { id: 'resmi-1', name: "A Mild 12", price: 185000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-2', name: "A Mild 16", price: 245000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-3', name: "A Mild Menthol", price: 260000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
@@ -197,8 +192,6 @@ var productsResmi = [
   { id: 'resmi-16', name: "Sampoerna U Bold", price: 230000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-17', name: "Sampoerna U Mild", price: 210000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-18', name: "Sampoerna U Mild 12", price: 175000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
-  
-  // Gudang Garam
   { id: 'resmi-19', name: "Gudang Garam Djaja(SKT)", price: 160000, segment: 'E', segmentName: 'Kretek Tangan/ Legacy' },
   { id: 'resmi-20', name: "Gudang Garam Filter", price: 155000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-21', name: "Gudang Garam Inter", price: 185000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
@@ -209,8 +202,6 @@ var productsResmi = [
   { id: 'resmi-26', name: "Surya Pro 12", price: 160000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-27', name: "Surya Pro 16", price: 200000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-28', name: "Surya Promild", price: 225000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
-  
-  // Djarum
   { id: 'resmi-29', name: "Djarum 76", price: 135000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-30', name: "Djarum 76 Menthol", price: 150000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-31', name: "Djarum Black", price: 210000, segment: 'A', segmentName: 'Kretek Filter Premium' },
@@ -225,8 +216,6 @@ var productsResmi = [
   { id: 'resmi-40', name: "LA Lights 12", price: 180000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-41', name: "LA Lights 16", price: 220000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-42', name: "LA Lights Menthol", price: 240000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
-  
-  // BAT
   { id: 'resmi-43', name: "Bentoel Biru", price: 160000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-44', name: "Bentoel Filter", price: 150000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-45', name: "Bentoel Mild", price: 180000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
@@ -237,8 +226,6 @@ var productsResmi = [
   { id: 'resmi-50', name: "Dunhill Mild", price: 240000, segment: 'D', segmentName: 'SPM Internasional' },
   { id: 'resmi-51', name: "Lucky Strike Filter", price: 220000, segment: 'D', segmentName: 'SPM Internasional' },
   { id: 'resmi-52', name: "Pall Mall Filter", price: 200000, segment: 'D', segmentName: 'SPM Internasional' },
-  
-  // Nojorono
   { id: 'resmi-53', name: "Class Filter", price: 120000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-54', name: "Class Mild 12", price: 175000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-55', name: "Class Mild 16", price: 210000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
@@ -247,8 +234,6 @@ var productsResmi = [
   { id: 'resmi-58', name: "Clas Mild 16", price: 210000, segment: 'C', segmentName: 'Mild/ Rendah Tar' },
   { id: 'resmi-59', name: "Minak Djinggo Original", price: 95000, segment: 'E', segmentName: 'Kretek Tangan/ Legacy' },
   { id: 'resmi-60', name: "Minak Djinggo Rempah", price: 95000, segment: 'E', segmentName: 'Kretek Tangan/ Legacy' },
-  
-  // Wismilak
   { id: 'resmi-61', name: "Galan Filter", price: 100000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
   { id: 'resmi-62', name: "Galan Kretek", price: 100000, segment: 'E', segmentName: 'Kretek Tangan/ Legacy' },
   { id: 'resmi-63', name: "Wismilak Filter", price: 110000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
@@ -259,7 +244,6 @@ var productsResmi = [
 
 var allProducts = productsR2.concat(productsResmi);
 
-// Catalog State
 var activeCatalog = 'r2';
 var currentPage = 1;
 var itemsPerPage = 12;
@@ -267,7 +251,6 @@ var activeFilter = 'all';
 var activeSort = 'name-asc';
 var searchTerm = '';
 
-// Switch Catalog
 window.switchCatalog = function(cat) {
   if (cat !== 'r2' && cat !== 'resmi') return;
   activeCatalog = cat;
@@ -281,41 +264,12 @@ window.switchCatalog = function(cat) {
   document.querySelectorAll('.catalog-tab').forEach(function(tab) {
     var isActive = tab.dataset.tab === cat;
     tab.classList.toggle('active', isActive);
-    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
   
-  updateCatalogInfoBanner();
   buildFilterChips();
-  
-  var indicator = document.getElementById('activeFilterIndicator');
-  if (indicator) indicator.classList.add('hidden');
-  
   renderProductDisplay();
 };
 
-// Update Catalog Info Banner
-function updateCatalogInfoBanner() {
-  var banner = document.getElementById('catalogInfoBanner');
-  var icon = document.getElementById('catalogInfoIcon');
-  var title = document.getElementById('catalogInfoTitle');
-  var desc = document.getElementById('catalogInfoDesc');
-  
-  if (!banner) return;
-  
-  if (activeCatalog === 'r2') {
-    banner.classList.remove('resmi');
-    if (icon) icon.className = 'fa-solid fa-fire-flame-curved text-lg';
-    if (title) title.textContent = 'Katalog R2 Nusantara';
-    if (desc) desc.textContent = '167 merek lokal pilihan dengan harga kompetitif untuk margin maksimal.';
-  } else {
-    banner.classList.add('resmi');
-    if (icon) icon.className = 'fa-solid fa-certificate text-lg';
-    if (title) title.textContent = 'Katalog Resmi — Brand Nasional & Internasional';
-    if (desc) desc.textContent = '66 merek resmi terbagi dalam 5 segmen. Harga grosir per slop.';
-  }
-}
-
-// Build Filter Chips
 function buildFilterChips() {
   var container = document.getElementById('filterChipsContainer');
   if (!container) return;
@@ -323,21 +277,20 @@ function buildFilterChips() {
   if (activeCatalog === 'r2') {
     container.innerHTML = 
       '<button onclick="applyFilter(\'all\')" id="chip-all" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-900 text-white shadow-md">Semua</button>' +
-      '<button onclick="applyFilter(\'hemat\')" id="chip-hemat" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 hover:text-emerald-600"><i class="fa-solid fa-piggy-bank text-[10px]"></i> Hemat</button>' +
-      '<button onclick="applyFilter(\'populer\')" id="chip-populer" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-brand-300 hover:text-brand-600"><i class="fa-solid fa-fire text-[10px]"></i> Populer</button>' +
-      '<button onclick="applyFilter(\'premium\')" id="chip-premium" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-violet-300 hover:text-violet-600"><i class="fa-solid fa-crown text-[10px]"></i> Premium</button>';
+      '<button onclick="applyFilter(\'hemat\')" id="chip-hemat" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-emerald-300 hover:text-emerald-600"><i class="fa-solid fa-piggy-bank text-[10px]"></i> Hemat</button>' +
+      '<button onclick="applyFilter(\'populer\')" id="chip-populer" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-300 hover:text-brand-600"><i class="fa-solid fa-fire text-[10px]"></i> Populer</button>' +
+      '<button onclick="applyFilter(\'premium\')" id="chip-premium" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-violet-300 hover:text-violet-600"><i class="fa-solid fa-crown text-[10px]"></i> Premium</button>';
   } else {
     container.innerHTML = 
       '<button onclick="applyFilter(\'all\')" id="chip-all" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-900 text-white shadow-md">Semua</button>' +
-      '<button onclick="applyFilter(\'segA\')" id="chip-segA" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-amber-300 hover:text-amber-700"><i class="fa-solid fa-gem text-[10px]"></i> Segmen A</button>' +
-      '<button onclick="applyFilter(\'segB\')" id="chip-segB" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-700"><i class="fa-solid fa-star text-[10px]"></i> Segmen B</button>' +
-      '<button onclick="applyFilter(\'segC\')" id="chip-segC" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 hover:text-emerald-700"><i class="fa-solid fa-leaf text-[10px]"></i> Segmen C</button>' +
-      '<button onclick="applyFilter(\'segD\')" id="chip-segD" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-pink-300 hover:text-pink-700"><i class="fa-solid fa-globe text-[10px]"></i> Segmen D</button>' +
-      '<button onclick="applyFilter(\'segE\')" id="chip-segE" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 hover:text-indigo-700"><i class="fa-solid fa-hand-holding-heart text-[10px]"></i> Segmen E</button>';
+      '<button onclick="applyFilter(\'segA\')" id="chip-segA" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-amber-300 hover:text-amber-700"><i class="fa-solid fa-gem text-[10px]"></i> Segmen A</button>' +
+      '<button onclick="applyFilter(\'segB\')" id="chip-segB" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-blue-300 hover:text-blue-700"><i class="fa-solid fa-star text-[10px]"></i> Segmen B</button>' +
+      '<button onclick="applyFilter(\'segC\')" id="chip-segC" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-emerald-300 hover:text-emerald-700"><i class="fa-solid fa-leaf text-[10px]"></i> Segmen C</button>' +
+      '<button onclick="applyFilter(\'segD\')" id="chip-segD" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-pink-300 hover:text-pink-700"><i class="fa-solid fa-globe text-[10px]"></i> Segmen D</button>' +
+      '<button onclick="applyFilter(\'segE\')" id="chip-segE" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-600 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-indigo-300 hover:text-indigo-700"><i class="fa-solid fa-hand-holding-heart text-[10px]"></i> Segmen E</button>';
   }
 }
 
-// Get Processed Products
 function getProcessedProducts() {
   var source = activeCatalog === 'r2' ? productsR2 : productsResmi;
   var r = source.slice();
@@ -372,7 +325,6 @@ function getProcessedProducts() {
   return r;
 }
 
-// Render Product Display
 function renderProductDisplay() {
   var processed = getProcessedProducts();
   var tp = Math.ceil(processed.length / itemsPerPage) || 1;
@@ -398,15 +350,11 @@ function renderProductDisplay() {
   pp.forEach(function(p, idx) {
     var c = document.createElement('div');
     var isResmi = p.category === 'resmi';
+    var isWishlisted = wishlist.includes(p.id);
+    var heartClass = isWishlisted ? 'active' : 'text-slate-300 dark:text-slate-600';
     
-    c.className = 'bg-white rounded-3xl p-6 border border-slate-200 card-premium card-glow relative overflow-hidden flex flex-col justify-between group card-enter' + (isResmi ? ' product-card-resmi' : '');
+    c.className = 'product-card rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between group card-enter';
     c.style.animationDelay = (idx * 40) + 'ms';
-    
-    c.addEventListener('mousemove', function(e) {
-      var rect = c.getBoundingClientRect();
-      c.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-      c.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
-    });
     
     var badge = '';
     if (isResmi) {
@@ -423,57 +371,32 @@ function renderProductDisplay() {
     
     var q = getCartQty(p.id);
     var btn = q > 0 ?
-      '<div class="flex items-center justify-between border-2 border-brand-500 rounded-xl bg-brand-50 p-1 mt-4 stepper-enter"><button onclick="window.__updateQty(\'' + p.id + '\',-1)" class="w-9 h-9 rounded-lg bg-white text-brand-600 font-bold shadow-sm hover:bg-slate-50 active:scale-95 transition-transform">-</button><span class="font-bold text-brand-900">' + q + '</span><button onclick="window.__updateQty(\'' + p.id + '\',1)" class="w-9 h-9 rounded-lg bg-brand-500 text-white font-bold shadow-sm hover:bg-brand-600 active:scale-95 transition-transform">+</button></div>' :
-      '<button onclick="window.__addCart(\'' + p.id + '\')" class="w-full mt-4 py-3 bg-slate-100 text-brand-900 font-bold rounded-xl hover:bg-brand-900 hover:text-white transition-colors text-sm flex items-center justify-center gap-2"><i class="fa-solid fa-plus text-xs"></i> Tambah</button>';
+      '<div class="flex items-center justify-between border-2 border-brand-500 rounded-xl bg-brand-50 dark:bg-brand-900/30 p-1 mt-4"><button onclick="window.__updateQty(\'' + p.id + '\',-1)" class="w-9 h-9 rounded-lg bg-white dark:bg-slate-700 text-brand-600 dark:text-brand-400 font-bold shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 active:scale-95 transition-transform">-</button><span class="font-bold text-brand-900 dark:text-white">' + q + '</span><button onclick="window.__updateQty(\'' + p.id + '\',1)" class="w-9 h-9 rounded-lg bg-brand-500 text-white font-bold shadow-sm hover:bg-brand-600 active:scale-95 transition-transform">+</button></div>' :
+      '<button onclick="window.__addCart(\'' + p.id + '\')" class="w-full mt-4 py-3 bg-slate-100 dark:bg-slate-700 text-brand-900 dark:text-white font-bold rounded-xl hover:bg-brand-900 dark:hover:bg-brand-600 hover:text-white transition-colors text-sm flex items-center justify-center gap-2"><i class="fa-solid fa-plus text-xs"></i> Tambah</button>';
     
     var catIndicator = isResmi ?
-      '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>' :
-      '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-brand-700 bg-brand-50 px-2 py-0.5 rounded-md border border-brand-200"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
+      '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-700"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>' :
+      '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-900/30 px-2 py-0.5 rounded-md border border-brand-200 dark:border-brand-700"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
     
-    c.innerHTML = '<div class="relative z-10"><div class="flex justify-between items-start mb-4 gap-2">' +
+    c.innerHTML = 
+      '<div class="absolute top-3 right-3 flex gap-2 z-20">' +
+      '<button onclick="openQuickView(\'' + p.id + '\')" class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 text-slate-500 dark:text-slate-300 flex items-center justify-center shadow-sm hover:text-brand-600 hover:scale-110 transition-all" title="Quick View"><i class="fa-solid fa-eye text-xs"></i></button>' +
+      '<button onclick="toggleWishlistItem(\'' + p.id + '\', event)" class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm hover:scale-110 transition-all heart-btn ' + heartClass + '" title="Wishlist"><i class="fa-' + (isWishlisted ? 'solid' : 'regular') + ' fa-heart text-sm"></i></button>' +
+      '</div>' +
+      '<div class="relative z-10 pt-2"><div class="flex justify-between items-start mb-4 gap-2">' +
       badge + '<div class="flex flex-col items-end gap-1 shrink-0">' + catIndicator +
-      '<span class="text-slate-300 text-[10px] font-mono font-bold">' + p.id.toUpperCase() + '</span></div></div>' +
-      '<h3 class="text-lg font-extrabold text-brand-900 leading-tight mb-1 group-hover:text-brand-500 transition-colors">' + escapeHtml(p.name) + '</h3>' +
-      (isResmi ? '<p class="text-[10px] text-slate-500 font-medium mb-2 italic">' + escapeHtml(p.segmentName) + '</p>' : '') +
-      '<p class="text-2xl font-black text-brand-900 font-mono tracking-tighter">' + formatRupiah(p.price) + '<span class="text-[10px] text-slate-400 font-sans font-medium ml-1">/slop</span></p></div>' +
+      '<span class="text-slate-300 dark:text-slate-600 text-[10px] font-mono font-bold">' + p.id.toUpperCase() + '</span></div></div>' +
+      '<h3 class="text-lg font-extrabold text-brand-900 dark:text-white leading-tight mb-1 group-hover:text-brand-500 transition-colors">' + escapeHtml(p.name) + '</h3>' +
+      (isResmi ? '<p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium mb-2 italic">' + escapeHtml(p.segmentName) + '</p>' : '') +
+      '<p class="text-2xl font-black text-brand-900 dark:text-white font-mono tracking-tighter">' + formatRupiah(p.price) + '<span class="text-[10px] text-slate-400 font-sans font-medium ml-1">/slop</span></p></div>' +
       '<div class="relative z-10">' + btn + '</div>';
     
     g.appendChild(c);
   });
   
   renderPagination(tp);
-  updateActiveFilterIndicator();
 }
 
-// Update Active Filter Indicator
-function updateActiveFilterIndicator() {
-  var indicator = document.getElementById('activeFilterIndicator');
-  var text = document.getElementById('activeFilterText');
-  
-  if (!indicator || !text) return;
-  
-  if (activeFilter === 'all') {
-    indicator.classList.add('hidden');
-    return;
-  }
-  
-  indicator.classList.remove('hidden');
-  
-  var labels = {
-    'hemat': 'Hemat(≤ Rp 76.000)',
-    'populer': 'Populer(Rp 77.000-89.000)',
-    'premium': 'Premium(≥ Rp 90.000)',
-    'segA': 'Segmen A — Kretek Filter Premium',
-    'segB': 'Segmen B — Kretek Filter Reguler',
-    'segC': 'Segmen C — Mild/ Rendah Tar',
-    'segD': 'Segmen D — SPM Internasional',
-    'segE': 'Segmen E — Kretek Tangan/ Legacy'
-  };
-  
-  text.textContent = 'Filter: ' + (labels[activeFilter] || activeFilter);
-}
-
-// Render Pagination
 function renderPagination(tp) {
   var c = document.getElementById('paginationContainer');
   if (!c) return;
@@ -485,58 +408,42 @@ function renderPagination(tp) {
   
   var h = '';
   for (var i = 1; i <= tp; i++) {
-    h += '<button onclick="window.__goToPage(' + i + ')" class="w-10 h-10 rounded-xl text-sm font-bold transition-all ' + (i === currentPage ? 'bg-brand-900 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:border-brand-400') + '">' + i + '</button>';
+    h += '<button onclick="window.__goToPage(' + i + ')" class="w-10 h-10 rounded-xl text-sm font-bold transition-all ' + (i === currentPage ? 'bg-brand-900 dark:bg-brand-600 text-white shadow-md' : 'bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-brand-400') + '">' + i + '</button>';
   }
   
   c.innerHTML = h;
 }
 
-// Go to Page
 window.__goToPage = function(p) {
   currentPage = p;
   renderProductDisplay();
   document.getElementById('produk').scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
-// Apply Filter
 window.applyFilter = function(f) {
   activeFilter = f;
   currentPage = 1;
   
   document.querySelectorAll('.filter-chip').forEach(function(c) {
-    if (c.classList.contains('filter-chip-resmi')) {
-      c.classList.remove('filter-chip-resmi', 'segment-active');
-      c.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-    } else {
-      c.classList.remove('bg-brand-900', 'text-white', 'shadow-md');
-      c.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-    }
+    c.classList.remove('bg-brand-900', 'text-white', 'shadow-md', 'segment-active');
+    c.classList.add('bg-white', 'dark:bg-slate-600', 'text-slate-600', 'dark:text-slate-300', 'border', 'border-slate-200', 'dark:border-slate-700');
   });
   
   var active = document.getElementById('chip-' + f);
   if (active) {
-    if (active.classList.contains('filter-chip-resmi') || f.indexOf('seg') === 0) {
-      active.classList.add('segment-active');
-      active.classList.remove('bg-white', 'text-slate-600');
-    } else {
-      active.classList.add('bg-brand-900', 'text-white', 'shadow-md');
-      active.classList.remove('bg-white', 'text-slate-600');
-    }
+    active.classList.remove('bg-white', 'dark:bg-slate-600', 'text-slate-600', 'dark:text-slate-300');
+    active.classList.add('bg-brand-900', 'text-white', 'shadow-md');
   }
   
   renderProductDisplay();
 };
 
-// Apply Sort
 window.applySort = function(s) {
   activeSort = s;
   currentPage = 1;
   renderProductDisplay();
 };
 
-// Export functions
 window.getProcessedProducts = getProcessedProducts;
 window.renderProductDisplay = renderProductDisplay;
-window.updateCatalogInfoBanner = updateCatalogInfoBanner;
 window.buildFilterChips = buildFilterChips;
-window.updateActiveFilterIndicator = updateActiveFilterIndicator;
