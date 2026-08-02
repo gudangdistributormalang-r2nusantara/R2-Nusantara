@@ -1,0 +1,8 @@
+/* components.css - buttons, small components */
+
+.btn-fav{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.9);border-radius:999px;padding:6px;border:0;cursor:pointer}
+.product-actions{display:flex;gap:8px;margin-top:10px}
+
+/* small utilities */
+.text-center{text-align:center}
+.hidden{display:none}
