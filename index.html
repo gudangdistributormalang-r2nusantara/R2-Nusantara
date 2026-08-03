@@ -1,107 +1,281 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>R2 Nusantara — Upgrade UI/UX</title>
-  <meta name="description" content="Gudang Distributor Malang - versi UI/UX upgrade">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>R2 Nusantara | Gudang Distributor Rokok Grosir Premium</title>
+    <meta name="description" content="Gudang distributor rokok resmi Malang. 230+ merek ready stock. Sistem B2B bayar setelah resi, pengiriman cargo seluruh Indonesia.">
+    <meta name="theme-color" content="#0f172a">
 
-  <!-- Preload & Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo/logo-resmi.png">
+    <link rel="apple-touch-icon" href="assets/logo/logo-resmi.png">
+    <link rel="canonical" href="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/">
 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+    <!-- ====== FONT PREMIUM ====== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Menggunakan Inter + Plus Jakarta Sans untuk tampilan ala Apple/Microsoft -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ====== TAILWIND CSS & KONFIG ====== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+
+    <!-- ====== CUSTOM CSS ====== -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="site-header" role="banner">
-    <div class="container">
-      <a class="brand" href="/">R2 Nusantara</a>
+<body class="text-slate-800 relative selection:bg-brand-500/20 selection:text-brand-900 antialiased overflow-x-hidden">
 
-      <div class="header-actions" role="navigation" aria-label="Header actions">
-        <div class="search-wrapper">
-          <input id="searchInput" aria-label="Cari produk" placeholder="Cari produk..." autocomplete="off">
-          <ul id="searchResults" class="search-results" role="listbox" aria-label="Hasil pencarian"></ul>
+    <!-- ====== LOADER PRO 3D ====== -->
+    <div id="loader" class="fixed inset-0 z-[100] bg-brand-900 flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 flex items-center justify-center">
+            <div class="absolute inset-0 border-4 border-brand-800 rounded-full animate-spin-slow"></div>
+            <div class="absolute inset-2 border-4 border-brand-500 rounded-full border-t-transparent animate-spin"></div>
+            <div class="absolute inset-4 border-2 border-brand-300 rounded-full border-b-transparent animate-spin-reverse"></div>
+            <img src="assets/logo/loader-logo.png" alt="Loading" class="w-10 h-10 rounded-full object-cover z-10">
+        </div>
+        <div class="mt-6 flex gap-1">
+            <div class="w-2 h-2 bg-brand-500 rounded-full animate-bounce-slow" style="animation-delay: 0s"></div>
+            <div class="w-2 h-2 bg-brand-400 rounded-full animate-bounce-slow" style="animation-delay: 0.15s"></div>
+            <div class="w-2 h-2 bg-brand-300 rounded-full animate-bounce-slow" style="animation-delay: 0.3s"></div>
+        </div>
+    </div>
+
+    <!-- ====== HEADER GLASSMORPHISM ====== -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-500" id="header">
+        <div class="glass-pill p-1.5 pr-1.5 sm:px-4 sm:py-2.5 rounded-full flex items-center justify-between shadow-xl border border-white/40" id="headerInner">
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 pl-1 sm:pl-0">
+                <div class="relative transform group-hover:scale-105 transition-transform duration-300 shrink-0">
+                    <img src="assets/logo/logo-resmi.png" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-lg">
+                    <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#25D366] border-2 border-white rounded-full animate-pulse"></div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-[14px] sm:text-[16px] tracking-tight leading-none text-brand-900 uppercase">R2 Nusantara</span>
+                    <span class="text-[7.5px] sm:text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">B2B Grosir Center</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center gap-1 font-bold text-[13px] text-slate-600 mx-auto">
+                <a href="#beranda" class="px-4 py-2 rounded-full hover:text-brand-600 hover:bg-brand-50 transition-all">Beranda</a>
+                <a href="#why" class="px-4 py-2 rounded-full hover:text-brand-600 hover:bg-brand-50 transition-all">Keunggulan</a>
+                <a href="#produk" class="px-4 py-2 rounded-full hover:text-brand-600 hover:bg-brand-50 transition-all">Katalog</a>
+                <a href="#testimoni" class="px-4 py-2 rounded-full hover:text-brand-600 hover:bg-brand-50 transition-all">Testimoni</a>
+            </nav>
+            <button onclick="toggleCart()" class="relative w-10 h-10 sm:w-auto sm:h-10 sm:px-4 flex items-center justify-center gap-2 bg-brand-900 text-white rounded-full hover:bg-brand-800 transition-all shadow-lg hover:shadow-brand-500/30 shrink-0 group">
+                <i class="fa-solid fa-cart-shopping text-[13px] sm:text-sm group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs font-bold hidden sm:block">Pesanan</span>
+                <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center transform scale-0 transition-transform border-2 border-white shadow-lg">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ====== HERO 3D SECTION ====== -->
+        <section id="beranda" class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[95vh] md:min-h-screen bg-brand-900">
+            <!-- 3D Animated Geometric Orbs Background -->
+            <div class="absolute inset-0 z-0 opacity-80">
+                <div class="hero-3d-container">
+                    <div class="hero-orb orb-1"></div>
+                    <div class="hero-orb orb-2"></div>
+                    <div class="hero-orb orb-3"></div>
+                </div>
+            </div>
+            
+            <div class="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
+                <div class="animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="inline-flex items-center gap-3 py-2 px-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-[10px] font-bold tracking-[0.15em] uppercase mb-8 shadow-2xl hover:bg-white/20 transition-colors">
+                        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
+                        Distributor Resmi & B2B
+                    </div>
+                </div>
+
+                <h1 class="text-5xl sm:text-7xl md:text-[5.5rem] font-extrabold text-white leading-[1.05] mb-8 drop-shadow-2xl max-w-5xl tracking-tight animate-slide-up" style="animation-delay: 0.2s;">
+                    Skala Bisnis Anda,<br>
+                    <span class="text-gradient-blue inline-block mt-2">Kami Siap Penuhi.</span>
+                </h1>
+
+                <p class="text-slate-300 text-base md:text-xl max-w-2xl mx-auto mb-10 animate-slide-up font-medium leading-relaxed" style="animation-delay: 0.3s;">
+                    <span class="text-white font-bold">230+ Merek</span> (R2 & Resmi) <b class="text-brand-300">Ready Stock</b>. Sistem Escrow <b class="text-emerald-400">Bayar Setelah Resi</b> untuk 500+ toko di Indonesia.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 animate-slide-up w-full max-w-md mx-auto" style="animation-delay: 0.4s;">
+                    <a href="#produk" class="w-full sm:w-auto px-8 py-4 bg-brand-600 text-white font-bold rounded-2xl shadow-[0_8px_30px_rgba(37,99,235,0.2)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(37,99,235,0.3)] transition-all duration-300 flex items-center justify-center gap-3 text-sm btn-glow">
+                        Lihat Katalog <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="https://wa.me/6285715905079" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-2xl hover:bg-white/20 transition-all flex items-center justify-center gap-2.5 text-sm">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Hubungi Admin
+                    </a>
+                </div>
+
+                <div class="mt-12 animate-slide-up flex flex-col items-center gap-3" style="animation-delay: 0.5s;">
+                    <div class="flex -space-x-3">
+                        <div class="w-12 h-12 rounded-full border-2 border-brand-900 bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">A</div>
+                        <div class="w-12 h-12 rounded-full border-2 border-brand-900 bg-slate-300 flex items-center justify-center text-xs font-bold text-slate-700">B</div>
+                        <div class="w-12 h-12 rounded-full border-2 border-brand-900 bg-slate-400 flex items-center justify-center text-xs font-bold text-slate-800">C</div>
+                        <div class="w-12 h-12 rounded-full border-2 border-brand-900 bg-brand-600 flex items-center justify-center text-[10px] font-bold text-white shadow-lg"><span id="trustCounter">0</span>+</div>
+                    </div>
+                    <div class="text-slate-400 text-xs font-medium">Dipercaya oleh <span class="text-white font-bold" id="trustText">500+</span> Mitra Grosir</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== LIVESTOCK TICKER ====== -->
+        <div class="bg-white border-b border-slate-200/60 py-3 ticker-mask relative z-20">
+            <div class="ticker-wrap flex h-8 items-center">
+                <div class="flex animate-marquee whitespace-nowrap min-w-full shrink-0 items-center gap-8 px-6 text-xs font-bold text-slate-600 uppercase tracking-wider">
+                    <span class="flex items-center gap-2 text-brand-600"><i class="fa-solid fa-circle text-[6px] text-emerald-500 animate-pulse"></i> LIVE STOCK: 230+ MEREK</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-brand-600"></i> GRATIS ONGKIR 1 BAL</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-brand-600"></i> BAYAR SETELAH RESI</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-brand-600"></i> CARGO SELURUH INDONESIA</span>
+                </div>
+            </div>
         </div>
 
-        <button id="darkToggle" class="btn btn-ghost" aria-label="Toggle dark mode">🌙</button>
-        <a class="cart" href="/cart.html" aria-label="Keranjang">🛒<span id="cartCount" class="badge">0</span></a>
-        <button id="wishlistToggle" class="btn btn-ghost" aria-haspopup="true" aria-expanded="false" aria-controls="wishlistPanel">♡<span id="wishCount" class="badge">0</span></button>
-      </div>
-    </div>
-  </header>
+        <!-- ====== WHY US (3D CARDS) ====== -->
+        <section id="why" class="py-24 bg-slate-50 relative">
+            <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+                <div class="text-center mb-16 fade-on-scroll">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100 text-brand-600 font-bold text-[10px] uppercase tracking-widest mb-4 border border-brand-200">
+                        <i class="fa-solid fa-microchip"></i> Keunggulan Eksekutif
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Sistem Enterprise Tanpa Risiko.</h2>
+                    <p class="text-slate-500 mt-4 text-lg max-w-2xl mx-auto">Menggunakan teknologi transparansi penuh untuk keamanan mitra grosir.</p>
+                </div>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Distribusi Berkualitas — R2 Nusantara</h1>
-        <p>Upgrade toko Anda dengan tampilan yang lebih profesional dan pengalaman mobile-first.</p>
-        <a class="btn btn-primary" href="#catalog">Lihat Katalog</a>
-      </div>
-    </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card-3d bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between h-auto min-h-[320px]">
+                        <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-50 rounded-full blur-[60px] pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-sm">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-extrabold text-brand-900 mb-2 tracking-tight">Escrow System</h3>
+                            <p class="text-slate-500 leading-relaxed text-sm">Bayar setelah resi keluar. 100% Anti Penipuan. Tidak ada transfer di awal.</p>
+                        </div>
+                    </div>
 
-    <section id="catalog" class="container catalog" aria-labelledby="catalogHeading">
-      <h2 id="catalogHeading">Katalog Produk</h2>
-      <div class="product-grid" id="productGrid">
-        <!-- Sample product card -->
-        <article class="product-card" data-id="p-001">
-          <button class="btn-fav" aria-label="Tambah ke wishlist" data-id="p-001">♡</button>
-          <img loading="lazy" src="/assets/images/products/sample.jpg" srcset="/assets/images/products/sample-400.jpg 400w, /assets/images/products/sample-800.jpg 800w" sizes="(max-width:600px) 100vw, 33vw" alt="Produk Sample">
-          <div class="product-body">
-            <h3 class="product-name">Minuman Energi — Sample</h3>
-            <p class="product-price">Rp 25.000</p>
-            <div class="stock-indicator" data-stock="12" aria-live="polite"></div>
-            <div class="product-actions">
-              <button class="btn" onclick="quickView('p-001')">Quick View</button>
-              <button class="btn btn-outline" onclick="addToCart('p-001')">Tambah ke Keranjang</button>
+                    <div class="card-3d bg-brand-900 rounded-[2rem] p-8 border border-brand-800 shadow-xl relative overflow-hidden flex flex-col justify-between h-auto min-h-[320px]">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-white/10 text-brand-300 rounded-2xl flex items-center justify-center text-2xl mb-5 border border-white/20">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-extrabold text-white mb-2">Real-time Packing</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Dokumentasi (Foto & Video) langsung dari gudang hingga packing.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-3d bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-center text-center items-center h-auto min-h-[320px] md:col-span-1 lg:col-span-1">
+                        <div class="w-20 h-20 bg-brand-50 text-brand-500 rounded-full flex items-center justify-center text-3xl mb-4 border-8 border-white shadow-md">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <h3 class="text-5xl font-black text-brand-900 tracking-tighter mb-1">233</h3>
+                        <p class="text-slate-500 font-bold text-sm">Merek Ready Stock</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </article>
+        </section>
 
-        <!-- more cards can be rendered dynamically -->
-      </div>
+        <!-- ====== PRODUCT CATALOG ====== -->
+        <section id="produk" class="py-24 bg-white relative">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6 fade-on-scroll">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight mb-3">Katalog Harga Reseller</h2>
+                        <p class="text-slate-500 text-lg">Harga tercantum adalah <b class="text-brand-900">Harga Per Slop</b> (10 Bungkus).</p>
+                    </div>
+                    <div class="text-left md:text-right bg-slate-50 px-6 py-3 rounded-2xl border border-slate-100">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Merek</div>
+                        <div class="text-4xl md:text-5xl font-black text-brand-900 tabular-nums" id="totalBrandCount">233</div>
+                    </div>
+                </div>
 
-      <section id="recentlyViewed" class="recently-viewed hidden" aria-label="Produk yang baru dilihat">
-        <h3>Baru Dilihat</h3>
-        <div id="recentList" class="product-grid"></div>
-      </section>
-    </section>
-  </main>
+                <div class="flex flex-col lg:flex-row justify-between gap-4 mb-6 fade-on-scroll">
+                    <div class="catalog-tab-switcher">
+                        <button class="catalog-tab active" data-tab="r2" onclick="switchCatalog('r2')"><i class="fa-solid fa-fire-flame-curved"></i> R2 Lokal <span class="tab-count" id="countR2">167</span></button>
+                        <button class="catalog-tab" data-tab="resmi" onclick="switchCatalog('resmi')"><i class="fa-solid fa-certificate"></i> Resmi Nasional <span class="tab-count" id="countResmi">66</span></button>
+                    </div>
+                </div>
 
-  <!-- Quick View Modal -->
-  <div id="quickViewModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quickViewTitle"></div>
+                <div id="shippingProgressBanner" class="mb-8 bg-brand-900 rounded-[2rem] p-6 md:p-8 relative overflow-hidden shadow-2xl fade-on-scroll text-white border border-brand-800">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+                        <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 backdrop-blur-sm"><i class="fa-solid fa-gift text-2xl text-brand-300"></i></div>
+                            <div><h4 class="text-xl md:text-2xl font-bold mb-1" id="bannerTitle">Target Gratis Ongkir</h4><p class="text-slate-400 text-sm" id="bannerSubtitle">Tambah <b id="bannerRemaining" class="text-brand-300">20 slop</b> lagi untuk subsidi.</p></div>
+                        </div>
+                        <div class="w-full md:w-1/2"><div class="h-3 bg-white/10 rounded-full overflow-hidden"><div id="progressFill" class="h-full bg-gradient-to-r from-brand-600 to-brand-300 rounded-full transition-all duration-700" style="width:0%;"></div></div></div>
+                    </div>
+                </div>
 
-  <!-- Wishlist Panel -->
-  <aside id="wishlistPanel" class="wishlist-panel hidden" role="region" aria-label="Wishlist">
-    <header>
-      <h2>Wishlist Anda</h2>
-      <button class="btn btn-ghost" onclick="toggleWishlistPanel(false)" aria-label="Tutup wishlist">✕</button>
-    </header>
-    <div id="wishlistContent">Belum ada wishlist</div>
-  </aside>
+                <div class="flex flex-col lg:flex-row gap-4 mb-8 fade-on-scroll justify-between items-start lg:items-center bg-slate-50 p-2 rounded-2xl border border-slate-100">
+                    <input type="text" id="searchInput" placeholder="Cari merek rokok..." class="w-full lg:w-96 pl-12 pr-4 py-3.5 bg-white border border-transparent rounded-xl focus:outline-none focus:border-brand-300 focus:ring-4 focus:ring-brand-500/10 shadow-sm font-medium text-sm placeholder:text-slate-400">
+                    <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar">
+                        <div id="filterChipsContainer" class="flex gap-2 shrink-0"></div>
+                        <select id="sortSelect" onchange="applySort(this.value)" class="w-full sm:w-auto appearance-none bg-white border border-slate-200 rounded-xl px-5 py-2.5 pr-10 text-xs font-bold text-slate-700 focus:outline-none focus:border-brand-300 shadow-sm cursor-pointer"><option value="name-asc">A-Z</option><option value="price-asc">Termurah</option><option value="price-desc">Termahal</option></select>
+                    </div>
+                </div>
 
-  <!-- Bottom Nav (mobile) -->
-  <nav class="bottom-nav" role="navigation" aria-label="Navigasi bawah">
-    <a href="/">Beranda</a>
-    <a href="/catalog">Katalog</a>
-    <a href="/cart.html">Keranjang</a>
-    <a href="/account">Akun</a>
-  </nav>
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+                <div id="noProductFound" class="hidden text-center py-20 bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200 mt-8"><i class="fa-solid fa-box-open text-5xl text-slate-300 mb-4"></i><h3 class="text-xl font-bold text-slate-700">Merek tidak ditemukan</h3></div>
+                <div id="paginationContainer" class="flex justify-center items-center gap-2 mt-12"></div>
+            </div>
+        </section>
 
-  <script defer src="/assets/js/wishlist.js"></script>
-  <script defer src="/assets/js/search.js"></script>
-  <script defer src="/assets/js/cart.js"></script>
-  <script defer src="/assets/js/app.js"></script>
+        <!-- ====== TESTIMONIAL ====== -->
+        <section id="testimoni" class="py-24 bg-slate-50 relative overflow-hidden">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Dipercaya 500+ Mitra.</h2>
+                </div>
+                <div class="flex gap-4 overflow-x-auto pb-6 snap-x no-scrollbar fade-on-scroll" id="testimonialSlider">
+                    <div class="min-w-[300px] md:min-w-[400px] bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><p class="text-slate-600 italic mb-4">"Sistem Escrow benar-benar melindungi kami. Transparan dan aman."</p><div class="font-bold text-brand-900">Agus, Surabaya</div></div>
+                    <div class="min-w-[300px] md:min-w-[400px] bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><p class="text-slate-600 italic mb-4">"Stok lengkap, pengiriman cepat. Harga grosirnya kompetitif sekali."</p><div class="font-bold text-brand-900">Budi, Jakarta</div></div>
+                    <div class="min-w-[300px] md:min-w-[400px] bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><p class="text-slate-600 italic mb-4">"Dokumentasi packing bikin tenang, barang sampai selalu aman."</p><div class="font-bold text-brand-900">Citra, Bandung</div></div>
+                </div>
+            </div>
+        </section>
 
-  <script>
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').catch(function(err){ console.warn('SW failed', err); });
-      });
-    }
-  </script>
+        <!-- ====== FOOTER ====== -->
+        <footer class="bg-brand-900 text-slate-400 relative overflow-hidden border-t border-brand-800">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl pt-16 pb-8 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                    <div class="col-span-1"><h3 class="text-white font-extrabold text-lg mb-2">R2 NUSANTARA</h3><p class="text-xs leading-relaxed">Gudang distributor resmi B2B terpercaya. Ekosistem transaksi aman untuk mitra grosir.</p></div>
+                </div>
+                <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between gap-4 text-[10px]">
+                    <span>© 2026 <span class="text-white font-bold">CV. R2 Nusantara</span>.</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ====== SIDEBAR CART ====== -->
+    <div id="cartOverlay" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-[70] hidden opacity-0 transition-opacity duration-300" onclick="toggleCart()"></div>
+    <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[480px] bg-white z-[80] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl flex flex-col border-l border-slate-100">
+        <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between"><h3 class="text-lg font-extrabold text-brand-900">Pesanan</h3><button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200"><i class="fa-solid fa-xmark text-sm"></i></button></div>
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-3"></div>
+        <div class="bg-white p-6 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.06)] border-t border-slate-100">
+            <div id="cartSummary" class="hidden">
+                <div class="flex justify-between items-end mb-5"><div><span class="text-slate-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Total</span><span id="totalPriceDisplay" class="text-3xl font-black text-brand-900 tracking-tight font-mono">Rp 0</span></div></div>
+                <button onclick="openCheckoutModal()" class="w-full py-4 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg"><span>Lanjut ke Checkout</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== CHECKOUT MODAL ====== -->
+    <div id="checkoutModalOverlay" class="fixed inset-0 bg-brand-900/80 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-opacity duration-250" onclick="closeCheckoutModal()"></div>
+    <div id="checkoutModal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] bg-white rounded-3xl shadow-[0_32px_64px_rgba(0,0,0,0.3)] z-[101] opacity-0 scale-95 pointer-events-none transition-all duration-250 flex flex-col overflow-hidden max-h-[90vh]">
+        <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between"><h2 class="text-xl font-extrabold text-brand-900">Pengiriman</h2><button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="flex-1 overflow-y-auto p-6">
+            <form id="checkoutFormFull" onsubmit="event.preventDefault(); submitOrder();">
+                <div class="mb-6"><h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Data Diri</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div><label class="text-[10px] font-bold text-slate-500 uppercase block mb-1.5">Nama</label><input type="text" id="newCustName" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-400 text-sm"></div><div><label class="text-[10px] font-bold text-slate-500 uppercase block mb-1.5">No. HP</label><input type="tel" id="newCustPhone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-400 text-sm"></div></div></div>
+                <div class="mb-6"><h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Alamat</h3><textarea id="newAlamat" placeholder="Alamat lengkap..." required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-400 text-sm"></textarea></div>
+            </form>
+        </div>
+        <div class="p-4 border-t border-slate-100 flex justify-end"><button type="button" disabled onclick="submitOrder()" id="finalCheckoutBtn" class="px-8 py-3.5 bg-[#25D366] text-white rounded-xl font-bold shadow-lg shadow-[#25D366]/30 flex items-center gap-2"><span id="finalBtnText">Konfirmasi</span><i id="finalBtnIcon" class="fa-brands fa-whatsapp"></i></button></div>
+    </div>
+
+    <!-- ====== SCRIPTS ====== -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
