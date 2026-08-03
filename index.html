@@ -11,14 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="container">
-      <a class="brand" href="/">R2 Nusantara</a>
+      <a class="brand" href="./">R2 Nusantara</a>
 
       <div class="header-actions" role="navigation" aria-label="Header actions">
         <div class="search-wrapper">
@@ -27,7 +27,7 @@
         </div>
 
         <button id="darkToggle" class="btn btn-ghost" aria-label="Toggle dark mode">🌙</button>
-        <a class="cart" href="/cart.html" aria-label="Keranjang">🛒<span id="cartCount" class="badge">0</span></a>
+        <a class="cart" href="cart.html" aria-label="Keranjang">🛒<span id="cartCount" class="badge">0</span></a>
         <button id="wishlistToggle" class="btn btn-ghost" aria-haspopup="true" aria-expanded="false" aria-controls="wishlistPanel">♡<span id="wishCount" class="badge">0</span></button>
       </div>
     </div>
@@ -48,7 +48,7 @@
         <!-- Sample product card -->
         <article class="product-card" data-id="p-001">
           <button class="btn-fav" aria-label="Tambah ke wishlist" data-id="p-001">♡</button>
-          <img loading="lazy" src="/assets/images/products/sample.jpg" srcset="/assets/images/products/sample-400.jpg 400w, /assets/images/products/sample-800.jpg 800w" sizes="(max-width:600px) 100vw, 33vw" alt="Produk Sample">
+          <img loading="lazy" src="assets/images/products/sample.jpg" srcset="assets/images/products/sample-400.jpg 400w, assets/images/products/sample-800.jpg 800w" sizes="(max-width:600px) 100vw, 800px" alt="Sample product">
           <div class="product-body">
             <h3 class="product-name">Minuman Energi — Sample</h3>
             <p class="product-price">Rp 25.000</p>
@@ -84,22 +84,22 @@
 
   <!-- Bottom Nav (mobile) -->
   <nav class="bottom-nav" role="navigation" aria-label="Navigasi bawah">
-    <a href="/">Beranda</a>
-    <a href="/catalog">Katalog</a>
-    <a href="/cart.html">Keranjang</a>
-    <a href="/account">Akun</a>
+    <a href="./">Beranda</a>
+    <a href="#catalog">Katalog</a>
+    <a href="cart.html">Keranjang</a>
+    <a href="account.html">Akun</a>
   </nav>
 
-  <script defer src="/assets/js/wishlist.js"></script>
-  <script defer src="/assets/js/search.js"></script>
-  <script defer src="/assets/js/cart.js"></script>
-  <script defer src="/assets/js/app.js"></script>
+  <script defer src="assets/js/wishlist.js"></script>
+  <script defer src="assets/js/search.js"></script>
+  <script defer src="assets/js/cart.js"></script>
+  <script defer src="assets/js/app.js"></script>
 
   <script>
     // Register service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').catch(function(err){ console.warn('SW failed', err); });
+        navigator.serviceWorker.register('sw.js').catch(function(err){ console.warn('SW failed', err); });
       });
     }
   </script>
