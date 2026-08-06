@@ -29,3 +29,4 @@ Next automated steps I'll perform unless you request otherwise:
 4. Open Draft Pull Request (unless you request PR to be Ready)
 
 If you want me to proceed automatically with the next steps (1-4 above), reply `continue`.
+
