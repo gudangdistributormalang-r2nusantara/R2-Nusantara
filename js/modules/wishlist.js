@@ -1,151 +1,59 @@
-/**
- * Wishlist Module - R2-Nusantara
- * Handles wishlist operations with localStorage persistence
- */
+// ========== Wishlist Logic ==========
+let wishlist = JSON.parse(localStorage.getItem('r2_wishlist')) || [];
 
-import { CONFIG } from './config.js';
-import { LocalStorage, showToast } from './utils.js';
+export function toggleWishlist(id, event) {
+  if (event) event.stopPropagation();
 
-class WishlistManager {
-  constructor() {
-    this.items = [];
-    this.loadWishlist();
+  const index = wishlist.indexOf(id);
+  if (index > -1) {
+    wishlist.splice(index, 1);
+    showToast('Dihapus dari Wishlist', 'info');
+  } else {
+    wishlist.push(id);
+    showToast('Ditambahkan ke Wishlist', 'success');
   }
-
-  // Load wishlist from localStorage
-  loadWishlist() {
-    const saved = LocalStorage.get(CONFIG.WISHLIST_STORAGE_KEY, []);
-    this.items = saved;
-    this.updateUI();
-  }
-
-  // Save wishlist to localStorage
-  saveWishlist() {
-    LocalStorage.set(CONFIG.WISHLIST_STORAGE_KEY, this.items);
-    this.updateUI();
-  }
-
-  // Add item to wishlist
-  addItem(product) {
-    if (this.items.find((item) => item.id === product.id)) {
-      showToast('Already in your wishlist', 'info');
-      return false;
-    }
-
-    if (this.items.length >= CONFIG.WISHLIST_MAX_ITEMS) {
-      showToast('Wishlist is full', 'warning');
-      return false;
-    }
-
-    this.items.push({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      addedAt: new Date().toISOString(),
-    });
-
-    this.saveWishlist();
-    showToast(`${product.name} added to wishlist`, 'success');
-    return true;
-  }
-
-  // Remove item from wishlist
-  removeItem(productId) {
-    this.items = this.items.filter((item) => item.id !== productId);
-    this.saveWishlist();
-    showToast('Removed from wishlist', 'info');
-  }
-
-  // Check if product is in wishlist
-  isInWishlist(productId) {
-    return this.items.some((item) => item.id === productId);
-  }
-
-  // Get wishlist items count
-  getItemCount() {
-    return this.items.length;
-  }
-
-  // Clear wishlist
-  clearWishlist() {
-    if (confirm('Are you sure you want to clear your wishlist?')) {
-      this.items = [];
-      this.saveWishlist();
-      showToast('Wishlist cleared', 'info');
-    }
-  }
-
-  // Update UI
-  updateUI() {
-    const badge = document.getElementById('wishlistBadge');
-    if (badge) {
-      const count = this.getItemCount();
-      badge.textContent = count;
-      badge.style.display = count > 0 ? 'flex' : 'none';
-    }
-
-    // Update wishlist buttons
-    document.querySelectorAll('.wishlist-btn').forEach((btn) => {
-      const productId = parseInt(btn.dataset.productId);
-      const isInWishlist = this.isInWishlist(productId);
-      btn.classList.toggle('active', isInWishlist);
-      btn.textContent = isInWishlist ? '♥' : '♡';
-    });
-  }
-
-  // Render wishlist items
-  renderWishlistItems(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    if (this.items.length === 0) {
-      container.innerHTML = `
-        <div class="text-center py-lg">
-          <p class="text-muted">Your wishlist is empty</p>
-          <a href="/" class="btn btn-primary">Continue Shopping</a>
-        </div>
-      `;
-      return;
-    }
-
-    container.innerHTML = this.items
-      .map(
-        (item) => `
-      <div class="card mb-md" data-product-id="${item.id}">
-        <div style="display: flex; gap: 1rem; padding: 1rem;">
-          <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 0.5rem;">
-          <div style="flex: 1;">
-            <h4>${item.name}</h4>
-            <p style="color: var(--color-primary); font-weight: bold;">Rp ${item.price.toLocaleString('id-ID')}</p>
-            <small style="color: var(--color-text-light);">Added ${new Date(item.addedAt).toLocaleDateString('id-ID')}</small>
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <button class="btn btn-sm btn-primary add-to-cart-from-wishlist" data-product-id="${item.id}">
-              Add to Cart
-            </button>
-            <button class="btn btn-sm btn-danger remove-wishlist-btn" data-product-id="${item.id}">
-              Remove
-            </button>
-          </div>
-        </div>
-      </div>
-    `,
-      )
-      .join('');
-
-    this.attachWishlistListeners();
-  }
-
-  // Attach event listeners
-  attachWishlistListeners() {
-    document.querySelectorAll('.remove-wishlist-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.dataset.productId);
-        this.removeItem(productId);
-      });
-    });
-  }
+  localStorage.setItem('r2_wishlist', JSON.stringify(wishlist));
+  updateWishlistUI();
+  renderProductDisplay(); // Perlu import dari products.js
 }
 
-export const wishlistManager = new WishlistManager();
+export function updateWishlistUI() {
+  const badge = document.getElementById('wishlistBadge');
+  if (badge) {
+    badge.innerText = wishlist.length;
+    badge.classList.toggle('scale-0', wishlist.length === 0);
+  }
+
+  const container = document.getElementById('wishlistItemsContainer');
+  if (!container) return;
+
+  if (!wishlist.length) {
+    container.innerHTML =
+      '<div class="text-center py-10 text-slate-400"><i class="fa-regular fa-heart text-4xl mb-3"></i><p class="text-sm font-bold">Wishlist kosong</p></div>';
+    return;
+  }
+
+  container.innerHTML = wishlist
+    .map((id) => {
+      const p = allProducts.find((x) => x.id === id);
+      if (!p) return '';
+      return `
+        <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-700 p-3 rounded-xl border border-slate-100 dark:border-slate-600">
+          <div class="flex-1 min-w-0">
+            <div class="font-bold text-sm text-brand-900 dark:text-white truncate">${escapeHtml(p.name)}</div>
+            <div class="text-brand-500 font-mono text-xs font-bold">${formatRupiah(p.price)}</div>
+          </div>
+          <button onclick="window.__addCart('${p.id}'); toggleWishlistItem('${p.id}');" class="w-8 h-8 rounded-lg bg-brand-900 dark:bg-brand-600 text-white flex items-center justify-center hover:bg-brand-700 dark:hover:bg-brand-500 transition-colors" title="Pindah ke Keranjang">
+            <i class="fa-solid fa-cart-plus text-xs"></i>
+          </button>
+          <button onclick="toggleWishlistItem('${p.id}')" class="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-900/30 text-red-500 flex items-center justify-center hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors">
+            <i class="fa-solid fa-trash text-xs"></i>
+          </button>
+        </div>
+      `;
+    })
+    .join('');
+}
+
+// Expose ke window
+window.toggleWishlistItem = toggleWishlist;
