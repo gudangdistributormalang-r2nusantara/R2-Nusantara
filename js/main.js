@@ -1,204 +1,152 @@
-/**
- * Main Application Entry Point - R2-Nusantara
- * Initializes all modules and event listeners
- */
+// ============================================
+// MAIN ENTRY — Inisialisasi Semua Modul
+// ============================================
 
+// Impor data & konfigurasi
 import { CONFIG } from './modules/config.js';
-import { cartManager } from './modules/cart.js';
-import { wishlistManager } from './modules/wishlist.js';
-import { productsManager } from './modules/products.js';
-import { checkoutManager } from './modules/checkout.js';
-import { LocalStorage, showToast, debounce } from './modules/utils.js';
+import { allProducts, productsR2, productsResmi } from './modules/data.js';
+import {
+  switchCatalog,
+  buildFilterChips,
+  renderProductDisplay,
+  applyFilter,
+  applySort,
+  goToPage,
+  updateCatalogInfoBanner,
+} from './modules/products.js';
+import { addToCart, updateQty, toggleCart, updateCartUI, cart } from './modules/cart.js';
+import {
+  openCheckoutModal,
+  closeCheckoutModal,
+  submitOrder,
+  validateCheckoutForm,
+} from './modules/checkout.js';
+import { initTestimonialSlider } from './modules/testimonials.js';
+import { toggleWishlist, updateWishlistUI } from './modules/wishlist.js'; // Opsional
+import { showToast, formatRupiah, getR2Tier, escapeHtml } from './modules/utils.js';
 
-// Application state
-const app = {
-  initialized: false,
-  isDarkMode: false,
-};
+// ============================================
+// EXPOSE KE WINDOW UNTUK HTML ONCLICK
+// ============================================
+window.switchCatalog = switchCatalog;
+window.applyFilter = applyFilter;
+window.applySort = applySort;
+window.__goToPage = goToPage;
+window.__addCart = addToCart;
+window.__updateQty = updateQty;
+window.toggleCart = toggleCart;
+window.openCheckoutModal = openCheckoutModal;
+window.closeCheckoutModal = closeCheckoutModal;
+window.submitOrder = submitOrder;
+window.validateCheckoutForm = validateCheckoutForm;
+window.toggleWishlistItem = toggleWishlist;
+window.showToast = showToast;
+window.formatRupiah = formatRupiah;
+window.getR2Tier = getR2Tier;
+window.escapeHtml = escapeHtml;
+window.allProducts = allProducts; // Untuk modul wishlist
 
-// Initialize application
-async function initApp() {
-  console.log('Initializing R2-Nusantara...');
-
-  try {
-    // Initialize modules
-    await productsManager.init();
-    cartManager.loadCart();
-    wishlistManager.loadWishlist();
-
-    // Setup dark mode
-    setupDarkMode();
-
-    // Setup event listeners
-    setupEventListeners();
-
-    // Render initial content
-    renderHomepage();
-
-    app.initialized = true;
-    console.log('R2-Nusantara initialized successfully');
-  } catch (error) {
-    console.error('Failed to initialize app:', error);
-    showToast('Failed to initialize application', 'danger');
-  }
-}
-
-// Setup dark mode
-function setupDarkMode() {
-  const savedTheme = LocalStorage.get(CONFIG.THEME_STORAGE_KEY, CONFIG.THEME_DEFAULT);
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-
-  app.isDarkMode = isDark;
-  applyTheme(isDark ? 'dark' : 'light');
-
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
-    updateThemeButton();
-  }
-}
-
-// Apply theme
-function applyTheme(theme) {
-  const html = document.documentElement;
-  if (theme === 'dark') {
-    html.style.colorScheme = 'dark';
-    document.body.classList.add('dark-mode');
-  } else {
-    html.style.colorScheme = 'light';
-    document.body.classList.remove('dark-mode');
-  }
-  LocalStorage.set(CONFIG.THEME_STORAGE_KEY, theme);
-}
-
-// Toggle theme
-function toggleTheme() {
-  const newTheme = app.isDarkMode ? 'light' : 'dark';
-  app.isDarkMode = !app.isDarkMode;
-  applyTheme(newTheme);
-  updateThemeButton();
-  showToast(`Switched to ${newTheme} mode`, 'info');
-}
-
-// Update theme button
-function updateThemeButton() {
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    themeToggle.textContent = app.isDarkMode ? '☀️' : '🌙';
-  }
-}
-
-// Setup event listeners
-function setupEventListeners() {
-  // Cart button
-  const cartBtn = document.getElementById('cartBtn');
-  if (cartBtn) {
-    cartBtn.addEventListener('click', () => {
-      window.location.href = '/cart.html';
-    });
+// ============================================
+// DOM READY
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Hilangkan loader
+  const loader = document.getElementById('loader');
+  if (loader) {
+    if (window.__clearLoader) window.__clearLoader();
+    loader.style.opacity = '0';
+    setTimeout(() => (loader.style.display = 'none'), 700);
   }
 
-  // Wishlist button
-  const wishlistBtn = document.getElementById('wishlistBtn');
-  if (wishlistBtn) {
-    wishlistBtn.addEventListener('click', () => {
-      window.location.href = '/wishlist.html';
-    });
-  }
+  // Inisialisasi Katalog
+  buildFilterChips();
+  updateCatalogInfoBanner();
+  renderProductDisplay();
+
+  // Update counter merek
+  const countR2 = document.getElementById('countR2');
+  const countResmi = document.getElementById('countResmi');
+  const totalCount = document.getElementById('totalBrandCount');
+  if (countR2) countR2.textContent = productsR2.length;
+  if (countResmi) countResmi.textContent = productsResmi.length;
+  if (totalCount) totalCount.textContent = allProducts.length;
+
+  // Scroll Reveal
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-on-scroll').forEach((el) => observer.observe(el));
+
+  // Header scroll effect
+  const header = document.getElementById('headerInner');
+  window.addEventListener('scroll', () => {
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add('py-2', 'shadow-lg');
+        header.classList.remove('py-3');
+      } else {
+        header.classList.add('py-3');
+        header.classList.remove('py-2', 'shadow-lg');
+      }
+    }
+
+    const btt = document.getElementById('backToTop');
+    if (btt) {
+      if (window.scrollY > 500) btt.classList.add('visible');
+      else btt.classList.remove('visible');
+    }
+  });
 
   // Search
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
-    searchInput.addEventListener(
-      'input',
-      debounce((e) => {
-        productsManager.search(e.target.value);
-        productsManager.renderProductList('productsContainer');
-      }, CONFIG.SEARCH_DEBOUNCE_MS),
-    );
+    let timer;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        // Import searchTerm dari products.js? Kita perlu set state di products.js
+        // Solusi: kita panggil fungsi dari products.js untuk update searchTerm
+        // Karena tidak di-export, kita akan trigger event atau buat fungsi baru.
+        // Untuk kemudahan, kita akses langsung melalui window.searchTerm? 
+        // Sebaiknya kita tambahkan fungsi setSearch di products.js.
+        // Saya tambahkan fungsi setSearchTerm di products.js dan export.
+        // Di sini kita panggil.
+        import('./modules/products.js').then(({ setSearchTerm }) => {
+          setSearchTerm(e.target.value);
+        });
+      }, 200);
+    });
   }
 
-  // Product wishlist buttons
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('wishlist-btn')) {
-      e.preventDefault();
-      const productId = parseInt(e.target.dataset.productId);
-      const product = productsManager.getProductById(productId);
-      if (product) {
-        if (wishlistManager.isInWishlist(productId)) {
-          wishlistManager.removeItem(productId);
-        } else {
-          wishlistManager.addItem(product);
-        }
-      }
-    }
+  // Testimonial Slider
+  initTestimonialSlider();
 
-    // Add to cart from quick view
-    if (e.target.classList.contains('add-to-cart-btn')) {
-      const productId = parseInt(e.target.dataset.productId);
-      const product = productsManager.getProductById(productId);
-      if (product) {
-        cartManager.addItem(product);
-      }
-    }
+  // Checkout form validation awal
+  validateCheckoutForm();
 
-    // Add to cart from wishlist
-    if (e.target.classList.contains('add-to-cart-from-wishlist')) {
-      const productId = parseInt(e.target.dataset.productId);
-      const product = productsManager.getProductById(productId);
-      if (product) {
-        cartManager.addItem(product);
-      }
-    }
-  });
+  // Wishlist (opsional)
+  updateWishlistUI();
 
-  // Close modal with ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const modals = document.querySelectorAll('.modal.show');
-      modals.forEach((modal) => modal.classList.remove('show'));
-    }
-  });
-}
+  // Chatling (lazy load)
+  setTimeout(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.dataset.id = '4136889914';
+    script.id = 'chtl-script';
+    script.type = 'text/javascript';
+    script.src = 'https://chatling.ai/js/embed.js';
+    document.body.appendChild(script);
+  }, 3000);
+});
 
-// Render homepage
-function renderHomepage() {
-  const container = document.getElementById('productsContainer');
-  if (container) {
-    productsManager.renderProductList('productsContainer');
-  }
-}
-
-// Service Worker registration
-function registerServiceWorker() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/sw.js')
-      .then((registration) => {
-        console.log('Service Worker registered:', registration);
-      })
-      .catch((error) => {
-        console.log('Service Worker registration failed:', error);
-      });
-  }
-}
-
-// Initialize on DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    initApp();
-    registerServiceWorker();
-  });
-} else {
-  initApp();
-  registerServiceWorker();
-}
-
-// Export for global access
-window.app = {
-  cartManager,
-  wishlistManager,
-  productsManager,
-  checkoutManager,
-};
+// ============================================
+// FUNGSI TAMBAHAN: SET SEARCH TERM (di products.js)
+// ============================================
+// Tambahkan di products.js:
+// export function setSearchTerm(term) { searchTerm = term; currentPage = 1; renderProductDisplay(); }
+// lalu import di sini.
