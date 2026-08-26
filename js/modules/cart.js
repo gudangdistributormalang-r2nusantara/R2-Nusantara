@@ -1,235 +1,168 @@
-/**
- * Cart Module - R2-Nusantara
- * Handles shopping cart operations
- */
+import { allProducts } from './data.js';
+import { formatRupiah, escapeHtml, showToast } from './utils.js';
+import { renderProductDisplay } from './products.js';
 
-import { CONFIG } from './config.js';
-import { LocalStorage, formatRupiah, showToast } from './utils.js';
+// State
+let cart = [];
+window.__cart = cart; // Untuk akses global (Chatling)
 
-class CartManager {
-  constructor() {
-    this.items = [];
-    this.loadCart();
-  }
+// DOM References
+const cartBadge = document.getElementById('cartBadge');
+const cartItemsContainer = document.getElementById('cartItemsContainer');
+const cartSummary = document.getElementById('cartSummary');
+const totalItemsDisplay = document.getElementById('totalItemsDisplay');
+const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+const modalTotalPrice = document.getElementById('modalTotalPrice');
+const bannerQty = document.getElementById('bannerQty');
+const progressFill = document.getElementById('progressFill');
+const bannerTitle = document.getElementById('bannerTitle');
+const bannerSubtitle = document.getElementById('bannerSubtitle');
+const shippingBanner = document.getElementById('shippingProgressBanner');
 
-  // Load cart from localStorage
-  loadCart() {
-    const saved = LocalStorage.get(CONFIG.CART_STORAGE_KEY, []);
-    this.items = saved;
-    this.updateUI();
-  }
+// ========== Add to Cart ==========
+export function addToCart(id) {
+  const product = allProducts.find((p) => p.id === id);
+  if (!product) return;
 
-  // Save cart to localStorage
-  saveCart() {
-    LocalStorage.set(CONFIG.CART_STORAGE_KEY, this.items);
-    this.updateUI();
-  }
-
-  // Add item to cart
-  addItem(product, quantity = 1) {
-    const existing = this.items.find((item) => item.id === product.id);
-
-    if (existing) {
-      existing.quantity = Math.min(
-        existing.quantity + quantity,
-        CONFIG.MAX_QUANTITY,
-      );
-    } else {
-      this.items.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        quantity: Math.min(quantity, CONFIG.MAX_QUANTITY),
-      });
-    }
-
-    this.saveCart();
-    showToast(`${product.name} added to cart`, 'success');
-  }
-
-  // Update item quantity
-  updateQuantity(productId, quantity) {
-    const item = this.items.find((item) => item.id === productId);
-    if (!item) return;
-
-    if (quantity < CONFIG.MIN_QUANTITY) {
-      this.removeItem(productId);
-    } else if (quantity <= CONFIG.MAX_QUANTITY) {
-      item.quantity = quantity;
-      this.saveCart();
-    }
-  }
-
-  // Remove item from cart
-  removeItem(productId) {
-    this.items = this.items.filter((item) => item.id !== productId);
-    this.saveCart();
-    showToast('Item removed from cart', 'info');
-  }
-
-  // Clear cart
-  clearCart() {
-    if (confirm('Are you sure you want to clear the cart?')) {
-      this.items = [];
-      this.saveCart();
-      showToast('Cart cleared', 'info');
-    }
-  }
-
-  // Get cart total
-  getTotal() {
-    return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
-  }
-
-  // Get item count
-  getItemCount() {
-    return this.items.reduce((count, item) => count + item.quantity, 0);
-  }
-
-  // Get unique items count
-  getUniqueItemCount() {
-    return this.items.length;
-  }
-
-  // Calculate subtotal, tax, and total
-  getCalculations() {
-    const subtotal = this.getTotal();
-    const tax = subtotal * CONFIG.TAX_RATE;
-    const shippingCost =
-      subtotal >= CONFIG.FREE_SHIPPING_THRESHOLD ? 0 : CONFIG.SHIPPING_COST;
-    const total = subtotal + tax + shippingCost;
-
-    return {
-      subtotal,
-      tax,
-      shippingCost,
-      total,
-      freeShipping: subtotal >= CONFIG.FREE_SHIPPING_THRESHOLD,
-    };
-  }
-
-  // Update cart UI
-  updateUI() {
-    const badge = document.getElementById('cartBadge');
-    if (badge) {
-      const count = this.getItemCount();
-      badge.textContent = count;
-      badge.style.display = count > 0 ? 'flex' : 'none';
-    }
-  }
-
-  // Render cart items
-  renderCartItems(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    if (this.items.length === 0) {
-      container.innerHTML = `
-        <div class="text-center py-lg">
-          <p class="text-muted">Your cart is empty</p>
-          <a href="/" class="btn btn-primary">Continue Shopping</a>
-        </div>
-      `;
-      return;
-    }
-
-    container.innerHTML = this.items
-      .map(
-        (item) => `
-      <div class="card cart-item mb-md" data-product-id="${item.id}">
-        <div class="row cols-4" style="gap: 1rem; align-items: center; padding: 1rem;">
-          <div>
-            <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 0.5rem;">
-          </div>
-          <div>
-            <h4 class="mb-sm">${item.name}</h4>
-            <p class="text-muted">${formatRupiah(item.price)}</p>
-          </div>
-          <div>
-            <input type="number" min="${CONFIG.MIN_QUANTITY}" max="${CONFIG.MAX_QUANTITY}" value="${item.quantity}" class="quantity-input" data-product-id="${item.id}" style="width: 80px; padding: 0.5rem;">
-          </div>
-          <div class="text-right">
-            <p class="font-weight-bold mb-md">${formatRupiah(item.price * item.quantity)}</p>
-            <button class="btn btn-sm btn-danger remove-item-btn" data-product-id="${item.id}">Remove</button>
-          </div>
-        </div>
-      </div>
-    `,
-      )
-      .join('');
-
-    this.attachCartListeners();
-  }
-
-  // Attach event listeners for cart
-  attachCartListeners() {
-    document.querySelectorAll('.quantity-input').forEach((input) => {
-      input.addEventListener('change', (e) => {
-        const productId = parseInt(e.target.dataset.productId);
-        const quantity = parseInt(e.target.value);
-        this.updateQuantity(productId, quantity);
-      });
-    });
-
-    document.querySelectorAll('.remove-item-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.dataset.productId);
-        this.removeItem(productId);
-      });
+  const existing = cart.find((item) => item.id === id);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      qty: 1,
+      category: product.category,
     });
   }
 
-  // Render cart summary
-  renderSummary(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+  updateCartUI();
+  showToast('Berhasil ditambahkan');
+}
 
-    const { subtotal, tax, shippingCost, total, freeShipping } =
-      this.getCalculations();
+// ========== Update Quantity ==========
+export function updateQty(id, change) {
+  const item = cart.find((i) => i.id === id);
+  if (!item) return;
 
-    container.innerHTML = `
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title mb-lg">Order Summary</h3>
-          
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span>Subtotal</span>
-            <span>${formatRupiah(subtotal)}</span>
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span>Tax (10%)</span>
-            <span>${formatRupiah(tax)}</span>
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
-            <span>Shipping ${freeShipping ? '(FREE)' : ''}</span>
-            <span>${formatRupiah(shippingCost)}</span>
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.25rem; margin-bottom: 1rem;">
-            <span>Total</span>
-            <span>${formatRupiah(total)}</span>
-          </div>
-          
-          ${
-            freeShipping
-              ? '<div class="alert alert-success">Congratulations! Free Shipping</div>'
-              : `<div class="alert alert-info">Spend ${formatRupiah(CONFIG.FREE_SHIPPING_THRESHOLD - subtotal)} more for free shipping</div>`
-          }
-          
-          <button class="btn btn-primary btn-block btn-lg mb-md" onclick="window.location.href='/checkout'">
-            Proceed to Checkout
-          </button>
-          
-          <button class="btn btn-secondary btn-block" onclick="window.location.href='/'">
-            Continue Shopping
-          </button>
-        </div>
-      </div>
-    `;
+  item.qty += change;
+  if (item.qty < 1) {
+    cart = cart.filter((i) => i.id !== id);
+  }
+
+  updateCartUI();
+}
+
+// ========== Get Cart Qty for a Product ==========
+export function getCartQty(id) {
+  const item = cart.find((i) => i.id === id);
+  return item ? item.qty : 0;
+}
+
+// ========== Update Cart UI ==========
+export function updateCartUI() {
+  const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
+  const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+  // Badge
+  if (cartBadge) {
+    cartBadge.innerText = totalItems;
+    cartBadge.classList.toggle('scale-0', totalItems === 0);
+  }
+
+  // Banner Progress
+  if (bannerQty) bannerQty.innerText = totalItems;
+  if (progressFill) {
+    progressFill.style.width = `${Math.min((totalItems / 20) * 100, 100)}%`;
+  }
+
+  if (totalItems >= 20) {
+    if (bannerTitle) bannerTitle.innerText = '🎉 Target Tercapai';
+    if (bannerSubtitle) bannerSubtitle.innerHTML = 'Anda mendapat <b class="text-emerald-300">GRATIS ONGKIR</b>';
+    if (shippingBanner) {
+      shippingBanner.classList.add('bg-emerald-600');
+      shippingBanner.classList.remove('bg-brand-900');
+    }
+  } else {
+    if (bannerTitle) bannerTitle.innerText = 'Target Gratis Ongkir';
+    if (bannerSubtitle)
+      bannerSubtitle.innerHTML = `Pilih <b class="text-emerald-300">${20 - totalItems} slop</b> lagi untuk subsidi.`;
+    if (shippingBanner) {
+      shippingBanner.classList.remove('bg-emerald-600');
+      shippingBanner.classList.add('bg-brand-900');
+    }
+  }
+
+  // Cart Items
+  if (!cart.length) {
+    if (cartItemsContainer) {
+      cartItemsContainer.innerHTML =
+        '<div class="h-full flex flex-col items-center justify-center text-center opacity-50"><i class="fa-solid fa-cart-shopping text-6xl text-slate-300 mb-4"></i><p class="font-bold text-slate-600">Keranjang Kosong</p></div>';
+    }
+    if (cartSummary) cartSummary.classList.add('hidden');
+  } else {
+    if (cartSummary) cartSummary.classList.remove('hidden');
+    if (totalItemsDisplay) totalItemsDisplay.innerText = totalItems;
+    if (totalPriceDisplay) totalPriceDisplay.innerText = formatRupiah(totalPrice);
+
+    if (cartItemsContainer) {
+      cartItemsContainer.innerHTML = cart
+        .map((item) => {
+          const catBadge =
+            item.category === 'resmi'
+              ? '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>'
+              : '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded border border-brand-200"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
+
+          return `<div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-bold text-sm text-brand-900 truncate">${escapeHtml(item.name)}</span>
+                ${catBadge}
+              </div>
+              <div class="text-brand-500 font-bold font-mono text-sm">${formatRupiah(item.price)}</div>
+            </div>
+            <div class="flex items-center border border-slate-200 rounded-lg h-9 shrink-0">
+              <button onclick="window.__updateQty('${item.id}',-1)" class="w-9 h-full font-bold text-slate-500 hover:bg-slate-50 transition-colors">-</button>
+              <span class="w-8 text-center text-xs font-bold font-mono">${item.qty}</span>
+              <button onclick="window.__updateQty('${item.id}',1)" class="w-9 h-full font-bold text-brand-500 hover:bg-slate-50 transition-colors">+</button>
+            </div>
+          </div>`;
+        })
+        .join('');
+    }
+  }
+
+  // Modal Total
+  if (modalTotalPrice) modalTotalPrice.innerText = formatRupiah(totalPrice);
+
+  // Render ulang produk grid untuk update tombol +/-
+  renderProductDisplay();
+}
+
+// ========== Toggle Cart Sidebar ==========
+export function toggleCart() {
+  const overlay = document.getElementById('cartOverlay');
+  const sidebar = document.getElementById('cartSidebar');
+  if (!overlay || !sidebar) return;
+
+  if (sidebar.classList.contains('translate-x-full')) {
+    overlay.classList.remove('hidden');
+    setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+    sidebar.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  } else {
+    overlay.classList.add('opacity-0');
+    sidebar.classList.add('translate-x-full');
+    setTimeout(() => overlay.classList.add('hidden'), 300);
+    document.body.style.overflow = '';
   }
 }
 
-export const cartManager = new CartManager();
+// ========== Expose ke window ==========
+window.__addCart = addToCart;
+window.__updateQty = updateQty;
+window.toggleCart = toggleCart;
+window.__cart = cart;
+
+export { cart };
