@@ -1,281 +1,242 @@
-/**
- * Checkout Module - R2-Nusantara
- * Handles checkout form validation and order submission
- */
+import { cart, updateCartUI } from './cart.js';
+import { showToast } from './utils.js';
 
-import { CONFIG } from './config.js';
-import { LocalStorage, validateEmail, validatePhone, showToast } from './utils.js';
+// ========== Open Checkout Modal ==========
+export function openCheckoutModal() {
+  window.toggleCart(); // Tutup cart sidebar
+  setTimeout(() => {
+    const overlay = document.getElementById('checkoutModalOverlay');
+    const modal = document.getElementById('checkoutModal');
+    if (overlay) overlay.classList.add('overlay-enter');
+    if (modal) modal.classList.add('modal-enter');
+    document.body.style.overflow = 'hidden';
+    updateProgressStep(1);
+    setTimeout(() => {
+      document.getElementById('newCustName')?.focus();
+      validateCheckoutForm();
+    }, 300);
+  }, 300);
+}
 
-class CheckoutManager {
-  constructor() {
-    this.formData = this.loadFormData();
+// ========== Close Checkout Modal ==========
+export function closeCheckoutModal() {
+  const overlay = document.getElementById('checkoutModalOverlay');
+  const modal = document.getElementById('checkoutModal');
+  if (overlay) overlay.classList.remove('overlay-enter');
+  if (modal) modal.classList.remove('modal-enter');
+  document.body.style.overflow = '';
+}
+
+// ========== Progress Step ==========
+function updateProgressStep(step) {
+  const indicators = [
+    document.getElementById('step1Indicator'),
+    document.getElementById('step2Indicator'),
+    document.getElementById('step3Indicator'),
+  ];
+  const line = document.getElementById('stepProgressLine');
+
+  indicators.forEach((ind, idx) => {
+    if (!ind) return;
+    const numCircle = ind.querySelector('div');
+    const textSpan = ind.querySelector('span');
+    numCircle.className =
+      'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 border-2 border-white ring-2 ring-slate-100 step-indicator' +
+      (idx + 1 === step
+        ? ' active shadow-sm'
+        : idx + 1 < step
+        ? ' completed shadow-sm'
+        : ' bg-slate-100 text-slate-400');
+    textSpan.className =
+      'text-[9px] font-bold uppercase tracking-widest' +
+      (idx + 1 === step
+        ? ' text-brand-900'
+        : idx + 1 < step
+        ? ' text-emerald-500'
+        : ' text-slate-400');
+  });
+
+  const width = step === 1 ? 0 : step === 2 ? 50 : 100;
+  if (line) line.style.width = width + '%';
+}
+
+// ========== Form Validation ==========
+function showError(fieldId, errorId, message) {
+  const field = document.getElementById(fieldId);
+  const error = document.getElementById(errorId);
+  if (field) {
+    field.classList.add('form-field-error');
+    field.classList.remove('field-valid');
   }
-
-  // Load form data from localStorage
-  loadFormData() {
-    return LocalStorage.get(CONFIG.CHECKOUT_STORAGE_KEY, {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      province: '',
-      zipCode: '',
-      paymentMethod: 'bank-transfer',
-      agreeToTerms: false,
-    });
-  }
-
-  // Save form data to localStorage
-  saveFormData() {
-    LocalStorage.set(CONFIG.CHECKOUT_STORAGE_KEY, this.formData);
-  }
-
-  // Validate form
-  validateForm() {
-    const errors = {};
-
-    // First name validation
-    if (!this.formData.firstName.trim()) {
-      errors.firstName = 'First name is required';
-    }
-
-    // Last name validation
-    if (!this.formData.lastName.trim()) {
-      errors.lastName = 'Last name is required';
-    }
-
-    // Email validation
-    if (!this.formData.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (!validateEmail(this.formData.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    // Phone validation
-    if (!this.formData.phone.trim()) {
-      errors.phone = 'Phone number is required';
-    } else if (!validatePhone(this.formData.phone)) {
-      errors.phone = 'Invalid phone number';
-    }
-
-    // Address validation
-    if (!this.formData.address.trim()) {
-      errors.address = 'Address is required';
-    }
-
-    // City validation
-    if (!this.formData.city.trim()) {
-      errors.city = 'City is required';
-    }
-
-    // Province validation
-    if (!this.formData.province.trim()) {
-      errors.province = 'Province is required';
-    }
-
-    // Zip code validation
-    if (!this.formData.zipCode.trim()) {
-      errors.zipCode = 'Zip code is required';
-    } else if (!/^\d{5}$/.test(this.formData.zipCode)) {
-      errors.zipCode = 'Invalid zip code (5 digits required)';
-    }
-
-    // Terms agreement validation
-    if (!this.formData.agreeToTerms) {
-      errors.agreeToTerms = 'You must agree to the terms and conditions';
-    }
-
-    return {
-      valid: Object.keys(errors).length === 0,
-      errors,
-    };
-  }
-
-  // Submit checkout form
-  async submitCheckout() {
-    const validation = this.validateForm();
-
-    if (!validation.valid) {
-      this.displayErrors(validation.errors);
-      showToast('Please fix the errors in the form', 'danger');
-      return false;
-    }
-
-    this.saveFormData();
-
-    // Simulate API call
-    try {
-      const response = await this.simulateOrderSubmission();
-      if (response.success) {
-        showToast('Order placed successfully!', 'success');
-        this.clearFormData();
-        return true;
-      } else {
-        showToast('Order submission failed. Please try again.', 'danger');
-        return false;
-      }
-    } catch (error) {
-      console.error('Checkout error:', error);
-      showToast('An error occurred during checkout', 'danger');
-      return false;
-    }
-  }
-
-  // Simulate order submission
-  async simulateOrderSubmission() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          success: true,
-          orderId: `ORD-${Date.now()}`,
-          message: 'Order has been placed',
-        });
-      }, 2000);
-    });
-  }
-
-  // Display validation errors
-  displayErrors(errors) {
-    // Clear previous errors
-    document.querySelectorAll('.form-error').forEach((el) => el.remove());
-
-    for (const [field, message] of Object.entries(errors)) {
-      const input = document.querySelector(`[name="${field}"]`);
-      if (input) {
-        input.classList.add('error');
-        const errorEl = document.createElement('div');
-        errorEl.className = 'form-error';
-        errorEl.style.cssText = 'color: var(--color-danger); font-size: 0.875rem; margin-top: 0.25rem;';
-        errorEl.textContent = message;
-        input.parentElement.appendChild(errorEl);
-      }
-    }
-  }
-
-  // Clear form data
-  clearFormData() {
-    this.formData = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      province: '',
-      zipCode: '',
-      paymentMethod: 'bank-transfer',
-      agreeToTerms: false,
-    };
-    LocalStorage.remove(CONFIG.CHECKOUT_STORAGE_KEY);
-  }
-
-  // Get saved form data
-  getFormData() {
-    return this.formData;
-  }
-
-  // Update form field
-  updateField(field, value) {
-    this.formData[field] = value;
-  }
-
-  // Render checkout form
-  renderCheckoutForm(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    container.innerHTML = `
-      <form id="checkoutForm" class="checkout-form">
-        <div class="row cols-2">
-          <div>
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" value="${this.formData.firstName}" required>
-          </div>
-          <div>
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" value="${this.formData.lastName}" required>
-          </div>
-        </div>
-
-        <div>
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" value="${this.formData.email}" required>
-        </div>
-
-        <div>
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" value="${this.formData.phone}" placeholder="+62..." required>
-        </div>
-
-        <div>
-          <label for="address">Street Address *</label>
-          <input type="text" id="address" name="address" value="${this.formData.address}" required>
-        </div>
-
-        <div class="row cols-2">
-          <div>
-            <label for="city">City *</label>
-            <input type="text" id="city" name="city" value="${this.formData.city}" required>
-          </div>
-          <div>
-            <label for="province">Province *</label>
-            <input type="text" id="province" name="province" value="${this.formData.province}" required>
-          </div>
-        </div>
-
-        <div>
-          <label for="zipCode">Zip Code *</label>
-          <input type="text" id="zipCode" name="zipCode" value="${this.formData.zipCode}" maxlength="5" required>
-        </div>
-
-        <div class="mb-lg">
-          <label for="paymentMethod">Payment Method *</label>
-          <select id="paymentMethod" name="paymentMethod" required>
-            <option value="bank-transfer" ${this.formData.paymentMethod === 'bank-transfer' ? 'selected' : ''}>Bank Transfer</option>
-            <option value="e-wallet" ${this.formData.paymentMethod === 'e-wallet' ? 'selected' : ''}>E-Wallet</option>
-            <option value="cash-on-delivery" ${this.formData.paymentMethod === 'cash-on-delivery' ? 'selected' : ''}>Cash on Delivery</option>
-          </select>
-        </div>
-
-        <div class="mb-lg">
-          <label>
-            <input type="checkbox" id="agreeToTerms" name="agreeToTerms" ${this.formData.agreeToTerms ? 'checked' : ''}>
-            <span>I agree to the <a href="#terms">Terms and Conditions</a> *</span>
-          </label>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Complete Order</button>
-        <button type="reset" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">Clear Form</button>
-      </form>
-    `;
-
-    this.attachFormListeners();
-  }
-
-  // Attach form listeners
-  attachFormListeners() {
-    const form = document.getElementById('checkoutForm');
-    if (!form) return;
-
-    // Auto-save form fields
-    form.querySelectorAll('input, select, textarea').forEach((field) => {
-      field.addEventListener('change', (e) => {
-        const fieldName = e.target.name;
-        const value =
-          e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-        this.updateField(fieldName, value);
-        this.saveFormData();
-      });
-    });
-
-    // Form submission
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      await this.submitCheckout();
-    });
+  if (error) {
+    const span = error.querySelector('span');
+    if (span) span.textContent = message;
+    error.classList.add('show');
   }
 }
 
-export const checkoutManager = new CheckoutManager();
+function clearError(fieldId, errorId) {
+  const field = document.getElementById(fieldId);
+  const error = document.getElementById(errorId);
+  if (field) {
+    field.classList.remove('form-field-error');
+    field.classList.add('field-valid');
+  }
+  if (error) error.classList.remove('show');
+}
+
+export function validateCheckoutForm() {
+  let isValid = true;
+
+  const name = document.getElementById('newCustName');
+  if (name && name.value.trim().length >= 2) {
+    clearError('newCustName', 'newErrName');
+  } else {
+    if (name && name.value.trim().length > 0) {
+      showError('newCustName', 'newErrName', 'Minimal 2 karakter');
+    }
+    isValid = false;
+  }
+
+  const phone = document.getElementById('newCustPhone');
+  const phoneClean = phone ? phone.value.replace(/\D/g, '') : '';
+  if (phoneClean && /^8[1-9]\d{6,11}$/.test(phoneClean)) {
+    clearError('newCustPhone', 'newErrPhone');
+  } else {
+    if (phoneClean) showError('newCustPhone', 'newErrPhone', 'Nomor tidak valid');
+    isValid = false;
+  }
+
+  const alamat = document.getElementById('newAlamat');
+  if (alamat && alamat.value.trim().length >= 20) {
+    clearError('newAlamat', 'newErrAlamat');
+  } else {
+    if (alamat && alamat.value.trim().length > 0) {
+      showError('newAlamat', 'newErrAlamat', 'Minimal 20 karakter');
+    }
+    isValid = false;
+  }
+
+  const required = [
+    'newProvinsi',
+    'newKota',
+    'newKecamatan',
+    'newKelurahan',
+    'newKodePos',
+    'newEkspedisi',
+    'newMetode',
+    'newAdmin',
+  ];
+  required.forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el || !el.value.trim()) isValid = false;
+  });
+
+  const btn = document.getElementById('finalCheckoutBtn');
+  if (btn) {
+    if (isValid) {
+      btn.removeAttribute('disabled');
+    } else {
+      btn.setAttribute('disabled', 'true');
+    }
+  }
+
+  return isValid;
+}
+
+// ========== Submit Order ==========
+export function submitOrder() {
+  if (!validateCheckoutForm()) {
+    showToast('Lengkapi formulir dengan benar', 'error');
+    return;
+  }
+
+  const name = document.getElementById('newCustName');
+  const phone = document.getElementById('newCustPhone');
+  const provinsi = document.getElementById('newProvinsi');
+  const kota = document.getElementById('newKota');
+  const kecamatan = document.getElementById('newKecamatan');
+  const kelurahan = document.getElementById('newKelurahan');
+  const kodePos = document.getElementById('newKodePos');
+  const alamat = document.getElementById('newAlamat');
+  const patokan = document.getElementById('newPatokan');
+  const ekspedisi = document.getElementById('newEkspedisi');
+  const metode = document.getElementById('newMetode');
+  const admin = document.getElementById('newAdmin');
+
+  const btn = document.getElementById('finalCheckoutBtn');
+  const btnText = document.getElementById('finalBtnText');
+  const btnIcon = document.getElementById('finalBtnIcon');
+
+  btn.classList.add('checkout-btn-loading');
+  btnText.textContent = 'Memproses...';
+  btnIcon.style.display = 'none';
+
+  setTimeout(() => {
+    btn.classList.remove('checkout-btn-loading');
+    btn.classList.add('checkout-success');
+    btnText.textContent = 'Membuka WhatsApp...';
+    btnIcon.className = 'fa-solid fa-check text-lg';
+    btnIcon.style.display = '';
+
+    const waNumber = admin.value;
+    const totalSlop = cart.reduce((sum, i) => sum + i.qty, 0);
+
+    const r2Items = cart.filter((i) => i.category === 'r2');
+    const resmiItems = cart.filter((i) => i.category === 'resmi');
+
+    const fullAddress =
+      alamat.value.trim() +
+      ` (Patokan: ${patokan.value.trim() || '-'})\n` +
+      `Kel: ${kelurahan.value.trim()}, Kec: ${kecamatan.value.trim()}\n` +
+      `${kota.value.trim()}, ${provinsi.value.trim()} - ${kodePos.value.trim()}`;
+
+    let message = '📝 *ORDER R2 NUSANTARA (ENTERPRISE)*\n\n';
+    message += `👤 *Nama:* ${name.value.trim()}\n`;
+    message += `📱 *No. HP:* +62 ${phone.value.trim()}\n`;
+    message += `📍 *Alamat Pengiriman:*\n${fullAddress}\n\n`;
+    message += `🚚 *Ekspedisi:* ${ekspedisi.value}\n`;
+    message += `💳 *Pembayaran:* ${metode.value}\n\n`;
+
+    if (r2Items.length) {
+      message += '*🔥 KATALOG R2:*\n';
+      r2Items.forEach((i) => {
+        message += `• ${i.name} — ${i.qty} slop\n`;
+      });
+      message += '\n';
+    }
+    if (resmiItems.length) {
+      message += '*🏅 KATALOG RESMI:*\n';
+      resmiItems.forEach((i) => {
+        message += `• ${i.name} — ${i.qty} slop\n`;
+      });
+      message += '\n';
+    }
+
+    message += `*Total Order:* ${totalSlop} Slop\n`;
+    message += `*Status Ongkir:* ${totalSlop >= 20 ? '✅ Gratis Ongkir' : 'Reguler'}`;
+
+    setTimeout(() => {
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`, '_blank');
+      // Reset cart
+      cart.length = 0;
+      window.__cart = cart;
+      updateCartUI();
+      closeCheckoutModal();
+      document.getElementById('checkoutFormFull').reset();
+
+      btn.classList.remove('checkout-success');
+      btnText.textContent = 'Konfirmasi Pesanan';
+      btnIcon.className = 'fa-brands fa-whatsapp text-lg';
+      btnIcon.style.display = '';
+      validateCheckoutForm();
+      showToast('Pesanan berhasil dilanjutkan! 🎉');
+    }, 800);
+  }, 1500);
+}
+
+// ========== Expose ke window ==========
+window.openCheckoutModal = openCheckoutModal;
+window.closeCheckoutModal = closeCheckoutModal;
+window.submitOrder = submitOrder;
+window.validateCheckoutForm = validateCheckoutForm;
